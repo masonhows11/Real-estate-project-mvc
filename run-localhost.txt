@@ -1,0 +1,4 @@
+php -S localhost:8000 -t project_name/path
+
+
+"project_name/path" is ur project folder name / path
