@@ -4,10 +4,11 @@
 return [
 
     'APP_TITLE' => 'mvc project',
+    'BASE_URL' => 'http://real_estate_mvc.test/',
+    'BASE_DIR' => realpath(__DIR__ . "/../"),
 
     //'BASE_URL' => 'http://localhost:8000',
-    'BASE_URL' => 'http://real_estate_mvc.test/',
-    define("BASE_DIR", realpath(__DIR__ . "/../")),
+    //define("BASE_DIR", realpath(__DIR__ . "/../")),
 
 
     // providers
