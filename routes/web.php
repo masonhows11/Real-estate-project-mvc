@@ -3,7 +3,7 @@
 use System\Router\Web\Route;
 
 // this sample routes
-Route::get('/', 'HomeController@index','home');
+Route::get('', 'HomeController@index','home');
 
 Route::get('create', 'HomeController@create','userCreate');
 Route::post('store', 'HomeController@store','userStore');

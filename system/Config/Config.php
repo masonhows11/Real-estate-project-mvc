@@ -28,7 +28,9 @@ class Config
     {
 
          // dirname -> Returns a parent directory's path
-        $configPath = dirname(dirname(__DIR__)).'/config';
+
+        $configPath = dirname(dirname(__DIR__)).'/config/';
+
         // read all config php files from config dir as array
         foreach (glob($configPath.'*.php') as $filename)
         {
@@ -40,8 +42,7 @@ class Config
 
             $this->config_nested_array[$key] = $config;
         }
-
-        $this->initialDefaultValues();
+        $this->initialDefaultValues(); // get current route
         $this->config_dot_array = $this->array_dot($this->config_nested_array);
 
     }
@@ -51,21 +52,16 @@ class Config
         // make config item with dot like
         // app.app_title or mail.SMTP.host
         foreach ($array as $key => $value){
-
             if(is_array($value))
             {
                 // if we have nested array
                 // we call array_dot like recursive method
                 $return_array = array_merge($return_array,$this->array_dot($value,$return_array,$return_key.$key.'.'));
-
             }else{
-
                 // example  ['APP_TITLE'] => 'mvc project',
                 $return_array[$return_key . $key] = $value;
-
             }
         }
-
         return  $return_array;
     }
 
