@@ -72,7 +72,7 @@ class Config
     private function initialDefaultValues(): void
     {
 
-        $temporary = str_replace($this->config_dot_array['app']['BASE_URL'],'',explode('?',$_SERVER['REQUEST_URI'][0]));
+        $temporary = str_replace($this->config_nested_array['app']['BASE_URL'],'',explode('?',$_SERVER['REQUEST_URI'][0]));
         $temporary === "/" ? $temporary = "" : $temporary = substr($temporary,1);
         // make current_route & add into app file in array
         $this->config_nested_array['app']['CURRENT_ROUTE'] = $temporary;
