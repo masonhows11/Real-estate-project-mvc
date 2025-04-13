@@ -8,10 +8,10 @@ use System\Config\Config;
 class Routing
 {
 
-    private $current_route;
-    private $method_type;
+    private array $current_route;
+    private string $method_type;
     private $routes;
-    private $values = [];
+    private array $values = [];
 
     public function __construct()
     {
@@ -26,7 +26,7 @@ class Routing
         // var_dump($this->routes);
     }
 
-    private function methodField()
+    private function methodField(): string
     {
         $method = strtolower($_SERVER['REQUEST_METHOD']);
 
@@ -50,7 +50,7 @@ class Routing
     }
 
 
-    public function match()
+    public function match(): array
     {
 
         // read all get method , for example
@@ -104,7 +104,8 @@ class Routing
             // -1 in second substr in last character
             if (substr($reservedRouteUrlElement, 0, 1) == "{" && substr($reservedRouteUrlElement, 0, -1) == "}") {
                 // push value in route variable in values array
-                array_push($this->values, $currentRouteElement);
+                // array_push($this->values, $currentRouteElement);
+                $this->values[] = $currentRouteElement;
 
             } elseif ($reservedRouteUrlElement != $currentRouteElement) {
                 return false;
@@ -126,7 +127,10 @@ class Routing
 
     }
 
-    public function run()
+    /**
+     * @throws \ReflectionException
+     */
+    public function run(): void
     {
 
 
@@ -142,7 +146,7 @@ class Routing
         // call controller class if exists
         $controllerPath = str_replace('\\', '/', $match["class"]);
         // var_dump($controllerPath);
-        $path = BASE_DIR."/app/Http/Controllers/".$controllerPath.".php";
+        $path = Config::get('app.BASE_DIR')."/app/Http/Controllers/".$controllerPath.".php";
         // var_dump($path);
         // if don't exists
         if (!file_exists($path)) {
