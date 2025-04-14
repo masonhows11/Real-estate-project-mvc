@@ -20,6 +20,7 @@ function view($dir, $vars = []): void
     empty($vars) ?: extract($vars);
 
     // to run php code & variables in html document
+    // by eval()
     eval(" ?>" . html_entity_decode($content));
 
 }
