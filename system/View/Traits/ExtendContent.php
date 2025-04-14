@@ -28,6 +28,7 @@ trait ExtendContent
             if($yieldsNamesArray){
                 foreach ($yieldsNamesArray as $yieldName)
                 {
+                    // run yields or set value or html content
                     $this->initialYields($yieldName);
                 }
             }
@@ -66,8 +67,9 @@ trait ExtendContent
 
     private function initialYields($yieldsName): array|string
     {
+        // $this->content is child view contents
         $string = $this->content;
-        $startWord = "@section('" . $yieldsName . "')";
+        $startWord = "@section('".$yieldsName."')";
         $endWord = "@endsection";
 
 
