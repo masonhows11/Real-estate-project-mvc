@@ -41,7 +41,7 @@ trait ExtendContent
     {
         $filePathArray = [];
 
-        // check exists @extends('') string in view contents
+        // check exists @extends('') string in view contents/child view
         // to use extends method or not
         //  put all matches into  $filePathArray
         preg_match("/s*@extends+\('([^)]+)'\)/",$this->content,$filePathArray);
@@ -54,6 +54,8 @@ trait ExtendContent
     {
         $yieldsNamesArray = [];
 
+        // check exists @yields('') string in view extendsContent/master view
+        // There may be multiple yields on the view & we should use  preg_match_all()
         // to use extends method or not
         preg_match_all("/@yield+\('([^)]+)'\)/",$this->extendsContent,$yieldsNamesArray,PREG_UNMATCHED_AS_NULL);
 
