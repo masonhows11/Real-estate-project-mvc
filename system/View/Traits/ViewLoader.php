@@ -24,9 +24,14 @@ trait ViewLoader
         // to check files/directories is exits
         if(file_exists( dirname(__DIR__, 3) ."/resources/view/$dir.php" ))
         {
+            // in $dir last file like (create.php) is view must be rendered or display
 
-            // below code get html tags & put them into $viewContents
+            // register view means save views name or path of views like admin.category.create
+            // into $viewNameArray array
             $this->registerView($dir);
+
+            // htmlentities Convert all applicable characters to HTML entities
+            // below code get html tags & put them into $viewContents
             return htmlentities(file_get_contents( dirname(__DIR__, 3) ."/resources/view/$dir.php" ));
             
         }else {
