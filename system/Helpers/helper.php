@@ -11,12 +11,12 @@ function view($dir, $vars = []): void
     $viewBuilder->run($dir);
 
     // vars are data variables sent to view with composer
-    $viewVars = $viewBuilder->vars;
+    $viewVars = $viewBuilder->vars; // this vars from composer
     $content = $viewBuilder->content;
 
     // data variables with composer
     empty($viewVars) ?: extract($viewVars);
-    // data variables with view method
+    // data variables with view/helper method
     empty($vars) ?: extract($vars);
 
     // to run php code in html

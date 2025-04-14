@@ -19,6 +19,7 @@ class Composer
     private function registerView($name, $callback): void
     {
         if (in_array(str_replace('.', '/', '$name'), $this->viewArray) || $name == '*') {
+
             // $callback() get variables we want pass to view/view's in composer by $callback()
             // then put them to $viewVars
             $viewVars = $callback();
@@ -33,13 +34,10 @@ class Composer
                 //      "adsCount"      => count($ads),
                 //      "postsCount"    => $postsCount
             }
-
             if (isset($this->viewArray[$name])) {   // for prevent set view name in composer view method
                 unset($this->viewArray[$name]);
             }
-
         }
-
     }
 
 
