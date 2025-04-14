@@ -28,7 +28,7 @@ trait ExtendContent
             if($yieldsNamesArray){
                 foreach ($yieldsNamesArray as $yieldName)
                 {
-                    // run yields or set value or html content
+                    // run yields or set value for section in child view
                     $this->initialYields($yieldName);
                 }
             }
@@ -73,7 +73,7 @@ trait ExtendContent
         $endWord = "@endsection";
 
 
-        //// check open @section
+        //// check/find open @section
         // find yield value in child view
         // if yield parent is define in extends/master view
         // example @yield('content') -> @section('content')
@@ -84,7 +84,7 @@ trait ExtendContent
         }
 
 
-        //// check close @endsection
+        //// check/find close @endsection
         // if close section not found remove yield parent is define in extends/master view
         $startPos += strlen($startWord); // @section('content')
         $endPos = strpos($string,$endWord,$startWord);  // @endsection('content')
@@ -93,6 +93,7 @@ trait ExtendContent
             return $this->extendsContent = str_replace("@yield('$yieldsName')","",$this->extendsContent);
         }
 
+        // fill between section/yield
         $length = $endPos - $startPos;
         $sectionContent = substr($string,$startPos,$length);
         // put content between section & endsection in child view
