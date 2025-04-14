@@ -4,6 +4,8 @@
 namespace System\View\Traits;
 
 
+use Exception;
+
 trait ExtendContent
 {
 
@@ -12,7 +14,8 @@ trait ExtendContent
 
 
     /**
-     * @throws \Exception
+     * @throws Exception
+     * check in view is @extend or not
      */
     private function checkExtendsContent(): void
     {
@@ -38,7 +41,9 @@ trait ExtendContent
     {
         $filePathArray = [];
 
+        // check exists @extends('') string in view contents
         // to use extends method or not
+        //  put all matches into  $filePathArray
         preg_match("/s*@extends+\('([^)]+)'\)/",$this->content,$filePathArray);
 
         //  return isset($filePathArray[1]) ? $filePathArray[1] : false;

@@ -22,6 +22,7 @@ class ViewBuilder
     public function run($path): void
     {
 
+        // get all html content from viewLoader trait
         $this->content = $this->viewLoader($path);
 
         $this->checkExtendsContent();
