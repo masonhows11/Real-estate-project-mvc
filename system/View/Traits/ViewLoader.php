@@ -6,6 +6,10 @@ use Exception;
 
 trait ViewLoader
 {
+
+    // put all view names into
+    // $viewNameArray
+    // that use in one view
     private array $viewNameArray = [];
 
 
@@ -15,16 +19,15 @@ trait ViewLoader
     private function viewLoader($path): string
     {
         $dir = trim($path," .");
-
+        // replace / with .
         $dir = str_replace(".","/",$dir);
-
         // to check files/directories is exits
-        if(file_exists( dirname(dirname(dirname(__DIR__)))."/resources/view/$dir.php" ))
+        if(file_exists( dirname(__DIR__, 3) ."/resources/view/$dir.php" ))
         {
 
             // below code get html tags & put them into $viewContents
             $this->registerView($dir);
-            return htmlentities(file_get_contents( dirname(dirname(dirname(__DIR__)))."/resources/view/$dir.php" ));
+            return htmlentities(file_get_contents( dirname(__DIR__, 3) ."/resources/view/$dir.php" ));
             
         }else {
 

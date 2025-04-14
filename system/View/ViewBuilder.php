@@ -19,7 +19,7 @@ class ViewBuilder
     /**
      * @throws Exception
      */
-    public function run($path)
+    public function run($path): void
     {
 
         $this->content = $this->viewLoader($path);
