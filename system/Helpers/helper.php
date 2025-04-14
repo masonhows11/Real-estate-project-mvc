@@ -19,7 +19,7 @@ function view($dir, $vars = []): void
     // data variables with view/helper method
     empty($vars) ?: extract($vars);
 
-    // to run php code in html
+    // to run php code & variables in html document
     eval(" ?>" . html_entity_decode($content));
 
 }
