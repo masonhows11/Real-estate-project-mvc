@@ -23,11 +23,11 @@ class DbBuilder
     private function getMigrations(): array
     {
 
-        $oldMigrationArray =  $this->getFromOldMigration();
-        $migrationsDir = Config::get('app.BASE_DIR').DIRECTORY_SEPARATOR.'database'.DIRECTORY_SEPARATOR.'migrations'.DIRECTORY_SEPARATOR;
-        $allMigrationsArray = glob($migrationsDir."*.php");
+        $oldMigrationArray = $this->getFromOldMigration();
+        $migrationsDir = Config::get('app.BASE_DIR') . DIRECTORY_SEPARATOR . 'database' . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR;
+        $allMigrationsArray = glob($migrationsDir . "*.php");
         // check old migrations from new migrations
-        $newMigrationsArray = array_diff($allMigrationsArray,$oldMigrationArray);
+        $newMigrationsArray = array_diff($allMigrationsArray, $oldMigrationArray);
         $this->putToOldMigration($allMigrationsArray);
         // after migrate successfully
         // if u delete tables from mysql then  run again migrate
@@ -35,12 +35,12 @@ class DbBuilder
         // because oldTables.db contain  migrations table
         // you should first delete oldTables.db file
         // & migrate again
-        $sqlCodeArray  = [];
-        foreach ($newMigrationsArray as $migration){
+        $sqlCodeArray = [];
+        foreach ($newMigrationsArray as $migration) {
 
             $sqlCode = require $migration;
             // $sqlCodeArray[] = $sqlCode[0];
-            array_push($sqlCodeArray,$sqlCode[0]);
+            array_push($sqlCodeArray, $sqlCode[0]);
         }
 
         return $sqlCodeArray;
@@ -59,27 +59,25 @@ class DbBuilder
 
     private function createTables()
     {
-        // dd('hi');
         $migrations = $this->getMigrations();
-
         $pdoInstance = DBConnection::getDbConnectionInstance();
-        foreach ($migrations as $migration) {
 
-            $statement = $pdoInstance->prepare($migration);
-            $statement->execute();
+        try {
+            foreach ($migrations as $migration) {
+                $statement = $pdoInstance->prepare($migration);
+                $statement->execute();
+            }
+            return;
+        } catch (\PDOException $exception) {
+            echo "Migrate has failed" . $exception;
         }
-        return true;
 
-    //        try {
-    //            foreach ($migrations as $migration) {
-    //
-    //                $statement = $pdoInstance->prepare($migration);
-    //                $statement->execute();
-    //            }
-    //            return;
-    //        } catch (\PDOException $exception) {
-    //            echo "Migrate has failed" . $exception;
-    //        }
+        //        foreach ($migrations as $migration) {
+        //
+        //            $statement = $pdoInstance->prepare($migration);
+        //            $statement->execute();
+        //        }
+        //        return true;
 
 
     }
