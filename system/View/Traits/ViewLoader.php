@@ -22,7 +22,7 @@ trait ViewLoader
         // replace / with .
         $dir = str_replace(".","/",$dir);
         // to check files/directories is exits
-        if(file_exists( dirname(__DIR__, 3) ."/resources/view/$dir.php" ))
+        if(file_exists( dirname(__DIR__, 3) ."/resources/view/$dir.blade.php" ))
         {
             // in $dir last file like (create.php) is view must be rendered or display
 
@@ -32,7 +32,7 @@ trait ViewLoader
 
             // htmlentities Convert all applicable characters to HTML entities
             // below code get html tags & put them into $viewContents
-            return htmlentities(file_get_contents( dirname(__DIR__, 3) ."/resources/view/$dir.php" ));
+            return htmlentities(file_get_contents( dirname(__DIR__, 3) ."/resources/view/$dir.blade.php" ));
             
         }else {
 

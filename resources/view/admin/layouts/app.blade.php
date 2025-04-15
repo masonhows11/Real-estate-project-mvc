@@ -2,7 +2,7 @@
 <html class="loading" lang="en" data-textdirection="rtl">
 
 <!-- BEGIN: Head-->
-
+@include('admin.layouts.head')
 <!-- END: Head-->
 
 <!-- BEGIN: Body-->
@@ -42,3 +42,4 @@
 <!-- END: Body-->
 
 </html>
+
