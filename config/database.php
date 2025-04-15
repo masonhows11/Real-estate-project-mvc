@@ -2,9 +2,9 @@
 
 return [
 
-    'DBHOST' => 'localhost',
+    'DBHOST' => '127.0.0.1',
 
-    'DBNAME' => 'php_mvc',
+    'DBNAME' => 'real_estate_db',
 
     'DBUSERNAME' => 'root',
 
