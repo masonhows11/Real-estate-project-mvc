@@ -2,7 +2,9 @@
 <html class="loading" lang="en" data-textdirection="rtl">
 
 <!-- BEGIN: Head-->
+<head>
 @include('admin.layouts.head')
+</head>
 <!-- END: Head-->
 
 <!-- BEGIN: Body-->
