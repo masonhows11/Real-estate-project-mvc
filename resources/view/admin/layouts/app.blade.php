@@ -4,7 +4,7 @@
 <!-- BEGIN: Head-->
 <head>
 @include('admin.layouts.head')
-@yield('admin_title')
+<title>@yield('admin_title')</title>
 </head>
 <!-- END: Head-->
 
