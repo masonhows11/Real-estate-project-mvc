@@ -20,9 +20,11 @@ trait ExtendContent
     private function checkExtendsContent(): void
     {
         $layoutsFilePath = $this->findExtends();
+
         if($layoutsFilePath){
 
             $this->extendsContent = $this->viewLoader($layoutsFilePath);
+
             $yieldsNamesArray = $this->findYieldsNames();
 
             if($yieldsNamesArray){
@@ -41,14 +43,12 @@ trait ExtendContent
     private function findExtends(): null|false
     {
         $filePathArray = [];
-
         // check exists @extends('') string in view contents/child view
         // to use extends method or not
-        //  put all matches into  $filePathArray
-        preg_match("/s*@extends+\('([^)]+)'\)/",$this->content,$filePathArray);
-
-        //  return isset($filePathArray[1]) ? $filePathArray[1] : false;
-        return $filePathArray[1] ?? false;
+        // put all matches into  $filePathArray
+        preg_match("/s*@extends+\('([^)]+)'\)/", $this->content, $filePathArray);
+        print_r($filePathArray);
+        return isset($filePathArray[1]) ? $filePathArray[1] : false;
     }
 
     private function findYieldsNames(): null|false
@@ -59,9 +59,9 @@ trait ExtendContent
         // There may be multiple yields on the view & we should use  preg_match_all()
         // to use extends method or not
         preg_match_all("/@yield+\('([^)]+)'\)/",$this->extendsContent,$yieldsNamesArray,PREG_UNMATCHED_AS_NULL);
-
+        // print_r($yieldsNamesArray);
         // return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
-        return $yieldsNamesArray[1] ?? false;
+        return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
     }
 
 
