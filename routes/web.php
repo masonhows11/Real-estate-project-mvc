@@ -13,6 +13,11 @@ Route::put('/update/{id}', 'HomeController@update','userUpdate');
 
 Route::delete('/delete/{id}', 'HomeController@delete','userDelete');
 
+
+// admin routes
+Route::get('admin/index', 'Admin\AdminController@index','admin.index');
+
+
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
 //

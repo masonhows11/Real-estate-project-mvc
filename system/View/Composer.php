@@ -52,19 +52,19 @@ class Composer
         return $this->vars;
     }
 
-    public static function __callStatic($name, $args)
+    public static function __callStatic($name, $arguments)
     {
         $instance = self::getInstance();
-        switch ($name) {
-
+        switch($name)
+        {
             case "view":
-                return call_user_func_array(array($instance,"registerView"), $args);
+                return call_user_func_array(array($instance, "registerView"), $arguments);
                 break;
             case "setViews":
-                return call_user_func_array(array($instance,"setViewArray"), $args);
+                return call_user_func_array(array($instance, "setViewArray"), $arguments);
                 break;
             case "getVars":
-                return call_user_func_array(array($instance,"getViewVars"), $args);
+                return call_user_func_array(array($instance, "getViewVars"), $arguments);
                 break;
         }
     }

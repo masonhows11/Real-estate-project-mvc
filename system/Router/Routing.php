@@ -2,6 +2,8 @@
 
 namespace System\Router;
 
+use JetBrains\PhpStorm\NoReturn;
+use ReflectionException;
 use ReflectionMethod;
 use System\Config\Config;
 
@@ -61,7 +63,7 @@ class Routing
 
         foreach ($reservedRoutes as $reservedRoute) {
 
-            if ($this->compare($reservedRoute['url']) == true) {
+            if ($this->compare($reservedRoute['url'])) {
 
                 // get controller & method name from route reserved
                 return ["class" => $reservedRoute["class"], "method" => $reservedRoute["method"]];
@@ -128,14 +130,13 @@ class Routing
     }
 
     /**
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function run(): void
     {
 
 
         $match = $this->match();
-
         if (empty($match)) {
 
             $this->error404();
