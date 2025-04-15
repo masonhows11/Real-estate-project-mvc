@@ -66,12 +66,18 @@ class Composer
     }
 
     // singleton method
-    private static function getInstance()
+    private static function getInstance(): Composer
     {
-        if (empty(self::$instance)) {
+        if(empty(self::$instance))
             self::$instance = new self;
-            return self::$instance;
-        }
+        return self::$instance;
+
+        //        if (empty(self::$instance)) {
+        //            self::$instance = new self;
+        //            return self::$instance;
+        //        }else
+        //            return  self::$instance;
+
     }
 
 }
