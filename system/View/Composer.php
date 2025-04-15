@@ -2,13 +2,15 @@
 
 namespace System\View;
 
+/**
+ * @method static getParams()
+ * @method static setViews(array $viewNameArray)
+ */
 class Composer
 {
 
     private static $instance;
-
-    private array $vars = [];
-
+    private array $variablesData = [];
     private array $viewArray = [];
 
     private function __construct()
@@ -26,7 +28,7 @@ class Composer
 
             foreach ($viewVars as $key => $value) {
 
-                $this->vars[$key] = $value;
+                $this->variablesData[$key] = $value;
                 //// store below data as key->value into $vars
                 //// pass these variables to view/views
                 //      "sumArea"       => $sumArea,
@@ -47,26 +49,20 @@ class Composer
 
     }
 
-    private function getViewVars(): array
+    private function getViewParams(): array
     {
-        return $this->vars;
+        return $this->variablesData;
     }
 
     public static function __callStatic($name, $arguments)
     {
         $instance = self::getInstance();
-        switch($name)
-        {
-            case "view":
-                return call_user_func_array(array($instance, "registerView"), $arguments);
-                break;
-            case "setViews":
-                return call_user_func_array(array($instance, "setViewArray"), $arguments);
-                break;
-            case "getVars":
-                return call_user_func_array(array($instance, "getViewVars"), $arguments);
-                break;
-        }
+
+        return match ($name) {
+            "view" => call_user_func_array(array($instance, "registerView"), $arguments),
+            "setViews" => call_user_func_array(array($instance, "setViewArray"), $arguments),
+            "getParams" => call_user_func_array(array($instance, "getViewParams"), $arguments),
+        };
     }
 
     // singleton method
