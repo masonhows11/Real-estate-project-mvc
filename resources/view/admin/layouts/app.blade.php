@@ -12,17 +12,17 @@
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
 
 <!-- BEGIN: Header-->
-
+@include('admin.layouts.header')
 <!-- END: Header-->
 
 
 <!-- BEGIN: Main Menu Sidebar-->
-
+@include('admin.layouts.sidebar')
 <!-- END: Main Menu Sidebar-->
 
 <!-- BEGIN: Content-->
 <div class="app-content content">
-
+@yield('main_content')
 </div>
 <!-- END: Content-->
 
@@ -37,7 +37,7 @@
 <!-- END: Footer-->
 
 <!-- START SCRIPTS -->
-
+@include('admin.layouts.scripts')
 <!-- END SCRIPTS -->
 
 </body>
