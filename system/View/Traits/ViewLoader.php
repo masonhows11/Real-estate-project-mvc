@@ -34,7 +34,7 @@ trait ViewLoader
             // below code get html tags & put them into $viewContents
             return htmlentities(file_get_contents( dirname(__DIR__, 3) ."/resources/view/$dir.blade.php" ));
             
-        }else {
+        } else {
 
             throw new Exception('view not found! 404');
         }
