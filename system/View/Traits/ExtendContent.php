@@ -65,14 +65,13 @@ trait ExtendContent
         // print_r($yieldsNamesArray);
         // return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
 
-        
+
         foreach ($yieldsNamesArray[1] as $yield) {
             $yield = html_entity_decode($yield);
             $yieldArray[] = trim($yield, "'\"");
         }
-
-        var_dump($yieldArray);
-        return isset($yieldsNamesArray) ? $yieldsNamesArray : false;
+        
+        return isset($yieldArray) ? $yieldArray : false;
     }
 
 
