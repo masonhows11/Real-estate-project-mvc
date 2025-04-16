@@ -15,11 +15,12 @@ trait ExtendContent
 
     /**
      * @throws Exception
-     * check in view is @extend or not
+     * check in view is there @extends || not
      */
     private function checkExtendsContent(): void
     {
         $layoutsFilePath = $this->findExtends();
+
 
         if($layoutsFilePath){
 
@@ -40,14 +41,19 @@ trait ExtendContent
     }
 
 
-    private function findExtends(): null|false
+    private function findExtends()
     {
         $filePathArray = [];
         // check exists @extends('') string in view contents/child view
         // to use extends method or not
         // put all matches into  $filePathArray
-        preg_match("/s*@extends+\('([^)]+)'\)/", $this->content, $filePathArray);
-        print_r($filePathArray);
+
+        // preg_match("/s*@extends+\('([^)]+)'\)/", $this->content, $filePathArray);
+
+        // below pattern worked but not correctly
+        preg_match("/@extends\(([^)]+)\)/",$this->content,$filePathArray);
+
+        var_dump($filePathArray);
         return isset($filePathArray[1]) ? $filePathArray[1] : false;
     }
 
