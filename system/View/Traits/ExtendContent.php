@@ -43,7 +43,7 @@ trait ExtendContent
         $filePathArray = [];
         $pattern3 = '/@extends\(([^)]+)\)/';
         preg_match($pattern3, $this->content, $filePathArray);
-        
+
         $clean = html_entity_decode($filePathArray[1]);
         $extends = trim($clean, "'\"");
 
@@ -54,14 +54,25 @@ trait ExtendContent
     private function findYieldsNames()
     {
         $yieldsNamesArray = [];
-
+        $yieldArray = [];
         // check exists @yields('') string in view extendsContent/master view
         // There may be multiple yields on the view & we should use  preg_match_all()
         // to use extends method or not
-        preg_match_all("/@yield+\('([^)]+)'\)/", $this->extendsContent, $yieldsNamesArray, PREG_UNMATCHED_AS_NULL);
+        // preg_match_all("/@yield+\('([^)]+)'\)/", $this->extendsContent, $yieldsNamesArray, PREG_UNMATCHED_AS_NULL);
+
+        preg_match_all("/@yield\(([^)]+)\)/", $this->extendsContent, $yieldsNamesArray, PREG_UNMATCHED_AS_NULL);
+
         // print_r($yieldsNamesArray);
         // return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
-        return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
+
+        
+        foreach ($yieldsNamesArray[1] as $yield) {
+            $yield = html_entity_decode($yield);
+            $yieldArray[] = trim($yield, "'\"");
+        }
+
+        var_dump($yieldArray);
+        return isset($yieldsNamesArray) ? $yieldsNamesArray : false;
     }
 
 
