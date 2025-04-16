@@ -20,15 +20,14 @@ trait ExtendContent
     private function checkExtendsContent(): void
     {
         $layoutsFilePath = $this->findExtends();
-        if($layoutsFilePath){
+        if ($layoutsFilePath) {
 
             $this->extendsContent = $this->viewLoader($layoutsFilePath);
 
             $yieldsNamesArray = $this->findYieldsNames();
 
-            if($yieldsNamesArray){
-                foreach ($yieldsNamesArray as $yieldName)
-                {
+            if ($yieldsNamesArray) {
+                foreach ($yieldsNamesArray as $yieldName) {
                     // run yields or set value for section in child view
                     $this->initialYields($yieldName);
                 }
@@ -82,16 +81,22 @@ trait ExtendContent
         //        echo $clean;
 
         $str = $filePathArray[1];
-        echo 'before trim '.$str;
-        echo '<br/>';
+
+//        echo 'before trim '.$str;
+//        echo '<br/>';
         $clean = trim($str, " ");
         // $clean = str_replace("'","",$clean);
-        echo strlen($clean);
-        echo '<br/>';
+//        echo strlen($clean);
+//        echo '<br/>';
         // echo gettype($clean);
         // echo '<br/>';
         // echo '<br/>';
-        echo 'after trim '.$clean;
+//        echo 'after trim '.$clean;
+//        echo '<br/>';
+
+        $clean = html_entity_decode($clean);
+        $clean = trim($clean, "'\"");
+        echo $clean;
         echo '<br/>';
         //$extends =  $clean;
         // return trim($filePathArray[1]) ?? false;
@@ -106,7 +111,7 @@ trait ExtendContent
         // check exists @yields('') string in view extendsContent/master view
         // There may be multiple yields on the view & we should use  preg_match_all()
         // to use extends method or not
-        preg_match_all("/@yield+\('([^)]+)'\)/",$this->extendsContent,$yieldsNamesArray,PREG_UNMATCHED_AS_NULL);
+        preg_match_all("/@yield+\('([^)]+)'\)/", $this->extendsContent, $yieldsNamesArray, PREG_UNMATCHED_AS_NULL);
         // print_r($yieldsNamesArray);
         // return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
         return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
@@ -117,7 +122,7 @@ trait ExtendContent
     {
         // $this->content is child view contents
         $string = $this->content;
-        $startWord = "@section('".$yieldsName."')";
+        $startWord = "@section('" . $yieldsName . "')";
         $endWord = "@endsection";
 
 
@@ -125,27 +130,27 @@ trait ExtendContent
         // find yield value in child view
         // if yield parent is define in extends/master view
         // example @yield('content') -> @section('content')
-        $startPos = strpos($string,$startWord);
-        if($startPos === false){
+        $startPos = strpos($string, $startWord);
+        if ($startPos === false) {
             // remove @yield from extends/master view
-            return $this->extendsContent = str_replace("@yield('$yieldsName')","",$this->extendsContent);
+            return $this->extendsContent = str_replace("@yield('$yieldsName')", "", $this->extendsContent);
         }
 
 
         //// check/find close @endsection
         // if close section not found remove yield parent is define in extends/master view
         $startPos += strlen($startWord); // @section('content')
-        $endPos = strpos($string,$endWord,$startWord);  // @endsection('content')
-        if($endPos === false){
+        $endPos = strpos($string, $endWord, $startWord);  // @endsection('content')
+        if ($endPos === false) {
             // remove @yield from extends/master view
-            return $this->extendsContent = str_replace("@yield('$yieldsName')","",$this->extendsContent);
+            return $this->extendsContent = str_replace("@yield('$yieldsName')", "", $this->extendsContent);
         }
 
         // fill between section/yield
         $length = $endPos - $startPos;
-        $sectionContent = substr($string,$startPos,$length);
+        $sectionContent = substr($string, $startPos, $length);
         // put content between section & endsection in child view
-        return $this->extendsContent = str_replace("@yield('$yieldsName')",$sectionContent,$this->extendsContent);
+        return $this->extendsContent = str_replace("@yield('$yieldsName')", $sectionContent, $this->extendsContent);
 
     }
 
