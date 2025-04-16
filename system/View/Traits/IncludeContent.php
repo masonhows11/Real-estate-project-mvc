@@ -16,8 +16,15 @@ trait IncludeContent
         // $includesNamesArray -> there may be multiple @include in view
         // then find all &  put them into $includesNamesArray
         // this while(1) for while we have nested includes
+
+        // $includesNamesArray = $this->findIncludesNames();
+        // print_r($includesNamesArray);
+        // exit();
+
         while (1) {
+
             $includesNamesArray = $this->findIncludesNames();
+
             if (!empty($includesNamesArray)) {
                 foreach ($includesNamesArray as $includeName) {
                     $this->initialIncludes($includeName);
@@ -41,12 +48,11 @@ trait IncludeContent
 
         preg_match_all("/@include\(([^)]+)\)/", $this->content, $includesNamesArray);
 
-        foreach ($includesNamesArray[1] as $include)
-        {
+        foreach ($includesNamesArray[1] as $include) {
             $include = html_entity_decode($include);
             $includeArray[] = trim($include, "'\"");
         }
-        echo 'findIncludesNames';
+
         //var_dump($includeArray);
         //exit();
         // return isset($includesNamesArray[1]) ? $includesNamesArray[1] : false;
@@ -59,12 +65,14 @@ trait IncludeContent
      * @throws Exception
      * fill @include in child view
      */
-    private function initialIncludes($includeName): array|string
+    private function initialIncludes($includeName)
     {
-        echo 'initialIncludes';
+
         // @include('views.404')
         // $this->content is content of child view
         // add view define in @include with viewLoader() method
-        return $this->content = str_replace("@include('$includeName')", $this->viewLoader($includeName), $this->content);
+
+        // test this
+        $this->content = str_replace("@include('$includeName')", $this->viewLoader($includeName), $this->content);
     }
 }

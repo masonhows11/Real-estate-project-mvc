@@ -24,7 +24,7 @@ trait ViewLoader
 
         //  echo $dir;
         //  echo '<br/>';
-
+       
         // to check files/directories is exits
         if (file_exists(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php")) {
             // in $dir last file like (create.php) is view must be rendered or display
