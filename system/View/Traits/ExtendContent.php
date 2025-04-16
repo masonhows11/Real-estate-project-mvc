@@ -41,66 +41,13 @@ trait ExtendContent
     private function findExtends(): false|string
     {
         $filePathArray = [];
-        // check exists @extends('') string in view contents/child view
-        // to use extends method or not
-        // put all matches into  $filePathArray
-
-        // preg_match("/s*@extends+\('([^)]+)'\)/", $this->content, $filePathArray);
-
-        // below pattern worked but not correctly
-        // preg_match("/@extends\(([^)]+)\)/",$this->content,$filePathArray);
-        // preg_match("/@extends\(\s*['"][^'"]+['"]\s*\)/",$this->content,$filePathArray);
-
-        // $line = "@extends('layouts.app')";
-        // $pattern = '/@extends\(\s*[\'"]([^\'"]+)[\'"]\s*\)/';
-        // preg_match($pattern, $this->content, $filePathArray);
-        //        $content = <<<'BLADE'
-        //        @extends('admin.layouts.app')
-        //
-        //        @section('admin_title')
-        //            admin panel
-        //        @endsection
-        //
-        //        @section('main_content')
-        //            main content panel
-        //        @endsection
-        //        BLADE;
-
-        // $pattern1 = "/s*@extends+\('([^)]+)'\)/";
-        // $pattern2 = '/@extends\(\s*[\'"]([^\'"]+)[\'"]\s*\)/';
-        //        print_r($this->content);
-        //        exit();
-
         $pattern3 = '/@extends\(([^)]+)\)/';
         preg_match($pattern3, $this->content, $filePathArray);
-        //$extends = trim($filePathArray[1],"'\""); // str_replace(" \' ","",$filePathArray[1]);
-        //print_r($extends);
+        
+        $clean = html_entity_decode($filePathArray[1]);
+        $extends = trim($clean, "'\"");
 
-        //        $str = "'admin.layouts.app'";
-        //        $clean = trim($str, "'\"");
-        //        echo $clean;
 
-        $str = $filePathArray[1];
-
-//        echo 'before trim '.$str;
-//        echo '<br/>';
-        $clean = trim($str, " ");
-        // $clean = str_replace("'","",$clean);
-//        echo strlen($clean);
-//        echo '<br/>';
-        // echo gettype($clean);
-        // echo '<br/>';
-        // echo '<br/>';
-//        echo 'after trim '.$clean;
-//        echo '<br/>';
-
-        $clean = html_entity_decode($clean);
-        $clean = trim($clean, "'\"");
-        echo $clean;
-        echo '<br/>';
-        //$extends =  $clean;
-        // return trim($filePathArray[1]) ?? false;
-        // return trim($filePathArray[1],"'\"") ?? false;
         return $extends ?? false;
     }
 
