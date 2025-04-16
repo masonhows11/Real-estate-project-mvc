@@ -84,10 +84,16 @@ trait ExtendContent
         $str = $filePathArray[1];
         echo 'before trim '.$str;
         echo '<br/>';
-        $clean = trim($str, "'\"");
-        $clean = str_replace("'","",$clean);
+        $clean = trim($str, " ");
+        // $clean = str_replace("'","",$clean);
+        echo strlen($clean);
+        echo '<br/>';
+        // echo gettype($clean);
+        // echo '<br/>';
+        // echo '<br/>';
         echo 'after trim '.$clean;
         echo '<br/>';
+        //$extends =  $clean;
         // return trim($filePathArray[1]) ?? false;
         // return trim($filePathArray[1],"'\"") ?? false;
         return $extends ?? false;
