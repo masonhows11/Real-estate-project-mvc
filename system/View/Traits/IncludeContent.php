@@ -30,15 +30,28 @@ trait IncludeContent
 
 
     // find @includes in child view
-    private function findIncludesNames(): null|false
+    private function findIncludesNames(): false|array
     {
         $includesNamesArray = [];
+        $includeArray = [];
         // to use extends method or not
         // find @include in child view
         // $this->content is content of child view
-        preg_match("/@include+\('([^)]+)'\)/", $this->content, $includesNamesArray);
+        // preg_match("/@include+\('([^)]+)'\)/", $this->content, $includesNamesArray);
+
+        preg_match_all("/@include\(([^)]+)\)/", $this->content, $includesNamesArray);
+
+        foreach ($includesNamesArray[1] as $include)
+        {
+            $include = html_entity_decode($include);
+            $includeArray[] = trim($include, "'\"");
+        }
+        echo 'findIncludesNames';
+        //var_dump($includeArray);
+        //exit();
         // return isset($includesNamesArray[1]) ? $includesNamesArray[1] : false;
-        return $includesNamesArray[1] ?? false;
+        // return $includeArray[1] ?? false;
+        return $includeArray ?? false;
     }
 
 
@@ -48,6 +61,7 @@ trait IncludeContent
      */
     private function initialIncludes($includeName): array|string
     {
+        echo 'initialIncludes';
         // @include('views.404')
         // $this->content is content of child view
         // add view define in @include with viewLoader() method

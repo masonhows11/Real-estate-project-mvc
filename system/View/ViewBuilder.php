@@ -27,6 +27,7 @@ class ViewBuilder
         // var_dump($this->content);
         $this->checkExtendsContent();
 
+
         $this->checkIncludesContent();
 
         // setViews is call static method

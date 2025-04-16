@@ -7,6 +7,8 @@
 function view($dir, $vars = []): void
 {
 
+    //    echo 'hi in view helper';
+    //    exit();
     $viewBuilder = new \System\View\ViewBuilder();
     $viewBuilder->run($dir);
     // var_dump($dir);

@@ -38,7 +38,7 @@ trait ExtendContent
     }
 
 
-    private function findExtends(): false|string
+    private function findExtends()
     {
         $filePathArray = [];
         $pattern3 = '/@extends\(([^)]+)\)/';
@@ -51,7 +51,7 @@ trait ExtendContent
         return $extends ?? false;
     }
 
-    private function findYieldsNames()
+    private function findYieldsNames(): false|array
     {
         $yieldsNamesArray = [];
         $yieldArray = [];
@@ -71,7 +71,7 @@ trait ExtendContent
             $yieldArray[] = trim($yield, "'\"");
         }
         
-        return isset($yieldArray) ? $yieldArray : false;
+        return $yieldArray ?? false;
     }
 
 
@@ -103,6 +103,7 @@ trait ExtendContent
             return $this->extendsContent = str_replace("@yield('$yieldsName')", "", $this->extendsContent);
         }
 
+        echo 'initialYields';
         // fill between section/yield
         $length = $endPos - $startPos;
         $sectionContent = substr($string, $startPos, $length);
