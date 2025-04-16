@@ -9,7 +9,7 @@ function view($dir, $vars = []): void
 
     $viewBuilder = new \System\View\ViewBuilder();
     $viewBuilder->run($dir);
-
+    // var_dump($dir);
     // vars are data variables sent to view with composer
     $viewVars = $viewBuilder->vars; // this vars from composer
     $content = $viewBuilder->content;

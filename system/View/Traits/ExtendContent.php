@@ -20,8 +20,6 @@ trait ExtendContent
     private function checkExtendsContent(): void
     {
         $layoutsFilePath = $this->findExtends();
-
-
         if($layoutsFilePath){
 
             $this->extendsContent = $this->viewLoader($layoutsFilePath);
@@ -41,7 +39,7 @@ trait ExtendContent
     }
 
 
-    private function findExtends()
+    private function findExtends(): false|string
     {
         $filePathArray = [];
         // check exists @extends('') string in view contents/child view
@@ -51,13 +49,51 @@ trait ExtendContent
         // preg_match("/s*@extends+\('([^)]+)'\)/", $this->content, $filePathArray);
 
         // below pattern worked but not correctly
-        preg_match("/@extends\(([^)]+)\)/",$this->content,$filePathArray);
+        // preg_match("/@extends\(([^)]+)\)/",$this->content,$filePathArray);
+        // preg_match("/@extends\(\s*['"][^'"]+['"]\s*\)/",$this->content,$filePathArray);
 
-        var_dump($filePathArray);
-        return isset($filePathArray[1]) ? $filePathArray[1] : false;
+        // $line = "@extends('layouts.app')";
+        // $pattern = '/@extends\(\s*[\'"]([^\'"]+)[\'"]\s*\)/';
+        // preg_match($pattern, $this->content, $filePathArray);
+        //        $content = <<<'BLADE'
+        //        @extends('admin.layouts.app')
+        //
+        //        @section('admin_title')
+        //            admin panel
+        //        @endsection
+        //
+        //        @section('main_content')
+        //            main content panel
+        //        @endsection
+        //        BLADE;
+
+        // $pattern1 = "/s*@extends+\('([^)]+)'\)/";
+        // $pattern2 = '/@extends\(\s*[\'"]([^\'"]+)[\'"]\s*\)/';
+        //        print_r($this->content);
+        //        exit();
+
+        $pattern3 = '/@extends\(([^)]+)\)/';
+        preg_match($pattern3, $this->content, $filePathArray);
+        //$extends = trim($filePathArray[1],"'\""); // str_replace(" \' ","",$filePathArray[1]);
+        //print_r($extends);
+
+        //        $str = "'admin.layouts.app'";
+        //        $clean = trim($str, "'\"");
+        //        echo $clean;
+
+        $str = $filePathArray[1];
+        echo 'before trim '.$str;
+        echo '<br/>';
+        $clean = trim($str, "'\"");
+        $clean = str_replace("'","",$clean);
+        echo 'after trim '.$clean;
+        echo '<br/>';
+        // return trim($filePathArray[1]) ?? false;
+        // return trim($filePathArray[1],"'\"") ?? false;
+        return $extends ?? false;
     }
 
-    private function findYieldsNames(): null|false
+    private function findYieldsNames()
     {
         $yieldsNamesArray = [];
 
