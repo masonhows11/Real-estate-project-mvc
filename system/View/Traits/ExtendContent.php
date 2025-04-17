@@ -96,14 +96,14 @@ trait ExtendContent
 
         //// check/find close @endsection
         // if close section not found remove yield parent is define in extends/master view
-        $startPos += strlen($startWord); // @section('content')
-        $endPos = strpos($string, $endWord, $startWord);  // @endsection('content')
+        $startPos += strlen($startWord);  //@section('content')
+        $endPos = strpos($string, $endWord, $startPos);  // @endsection('content')
         if ($endPos === false) {
             // remove @yield from extends/master view
             return $this->extendsContent = str_replace("@yield('$yieldsName')", "", $this->extendsContent);
         }
 
-        echo 'initialYields';
+        // echo 'initialYields';
         // fill between section/yield
         $length = $endPos - $startPos;
         $sectionContent = substr($string, $startPos, $length);

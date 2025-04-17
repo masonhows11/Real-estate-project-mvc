@@ -36,8 +36,8 @@ trait ViewLoader
 
             // htmlentities Convert all applicable characters to HTML entities
             // below code get html tags & put them into $viewContents
-            $content = htmlentities(file_get_contents(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php"));
-            return $content;
+            return htmlentities(file_get_contents(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php"),ENT_COMPAT,'UTF-8',true);
+            
         } else {
 
             throw new Exception('view not found! 404');
