@@ -24,9 +24,12 @@ class ViewBuilder
 
         // get all html content from viewLoader trait
         $this->content = $this->viewLoader($path);
-        // var_dump($this->content);
+
+
+        // here ok
         $this->checkExtendsContent();
 
+        // here ok
         // var_dump('checkIncludesContent');
        
         $this->checkIncludesContent();

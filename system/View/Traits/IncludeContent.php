@@ -17,8 +17,9 @@ trait IncludeContent
         // then find all &  put them into $includesNamesArray
         // this while(1) for while we have nested includes
 
+        // here ok
         // $includesNamesArray = $this->findIncludesNames();
-        // print_r($includesNamesArray);
+        // var_dump($includesNamesArray);
         // exit();
 
         while (1) {
@@ -53,7 +54,7 @@ trait IncludeContent
             $includeArray[] = trim($include, "'\"");
         }
 
-        var_dump($includeArray);
+        // var_dump($includeArray);
         //exit();
         // return isset($includesNamesArray[1]) ? $includesNamesArray[1] : false;
         // return $includeArray[1] ?? false;
