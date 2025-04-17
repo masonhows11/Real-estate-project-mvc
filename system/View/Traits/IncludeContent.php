@@ -35,13 +35,16 @@ trait IncludeContent
         //            }
         //        }
 
+        $includesNamesArray = $this->findIncludesNames();
+        var_dump($includesNamesArray);
+        exit();
+        
         do {
             $includesNamesArray = $this->findIncludesNames();
 
             foreach ($includesNamesArray as $includeName) {
                 $this->initialIncludes($includeName);
             }
-
         } while (!empty($includesNamesArray));
     }
 

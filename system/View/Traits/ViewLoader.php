@@ -26,7 +26,8 @@ trait ViewLoader
         //  echo '<br/>';
        
         // to check files/directories is exits
-        if (file_exists(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php")) {
+        if (file_exists(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php")) 
+        {
             // in $dir last file like (create.php) is view must be rendered or display
 
             // register view means save views name or path of views like admin.category.create
@@ -35,8 +36,8 @@ trait ViewLoader
 
             // htmlentities Convert all applicable characters to HTML entities
             // below code get html tags & put them into $viewContents
-            return htmlentities(file_get_contents(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php"));
-
+            $content = htmlentities(file_get_contents(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php"));
+            return $content;
         } else {
 
             throw new Exception('view not found! 404');
@@ -46,7 +47,8 @@ trait ViewLoader
 
     private function registerView($view): void
     {
-        $this->viewNameArray[] = $view;
+        // $this->viewNameArray[] = $view;
+        array_push($this->viewNameArray,$$view);
     }
 
 
