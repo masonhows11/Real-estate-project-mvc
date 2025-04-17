@@ -22,18 +22,27 @@ trait IncludeContent
         // var_dump($includesNamesArray);
         // exit();
 
-        while (1) {
+        //        while (1) {
+        //
+        //            $includesNamesArray = $this->findIncludesNames();
+        //
+        //            if (!empty($includesNamesArray)) {
+        //                foreach ($includesNamesArray as $includeName) {
+        //                    $this->initialIncludes($includeName);
+        //                }
+        //            } else {
+        //                break;
+        //            }
+        //        }
 
+        do {
             $includesNamesArray = $this->findIncludesNames();
 
-            if (!empty($includesNamesArray)) {
-                foreach ($includesNamesArray as $includeName) {
-                    $this->initialIncludes($includeName);
-                }
-            } else {
-                break;
+            foreach ($includesNamesArray as $includeName) {
+                $this->initialIncludes($includeName);
             }
-        }
+
+        } while (!empty($includesNamesArray));
     }
 
 
