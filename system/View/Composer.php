@@ -66,7 +66,7 @@ class Composer
     }
 
     // singleton method
-    private static function getInstance(): Composer
+    private static function getInstance()
     {
         if(empty(self::$instance))
             self::$instance = new self;

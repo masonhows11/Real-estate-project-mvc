@@ -12,6 +12,7 @@ class AdminController extends Controller
 
     public function index()
     {
+        
         // $migrate = new DbBuilder();
         //        echo 'hi';
         //        exit();

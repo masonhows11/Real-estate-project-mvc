@@ -21,22 +21,14 @@ class ViewBuilder
      */
     public function run($path): void
     {
-
+        // var_dump('checkIncludesContent');
         // get all html content from viewLoader trait
         $this->content = $this->viewLoader($path);
 
-        // here ok
-        // dd($this->content);
-        // here ok
         $this->checkExtendsContent();
-
-        // here ok
-        // var_dump('checkIncludesContent');
-       
         $this->checkIncludesContent();
 
-       
-
+    
         // setViews is call static method
         Composer::setViews($this->viewNameArray);
 

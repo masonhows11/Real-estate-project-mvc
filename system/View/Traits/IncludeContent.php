@@ -17,11 +17,6 @@ trait IncludeContent
         // then find all &  put them into $includesNamesArray
         // this while(1) for while we have nested includes
 
-        // here ok
-        // $includesNamesArray = $this->findIncludesNames();
-        // var_dump($includesNamesArray);
-        // exit();
-
         //        while (1) {
         //
         //            $includesNamesArray = $this->findIncludesNames();
@@ -35,17 +30,18 @@ trait IncludeContent
         //            }
         //        }
 
-        $includesNamesArray = $this->findIncludesNames();
-        var_dump($includesNamesArray);
-        exit();
+        
         
         do {
             $includesNamesArray = $this->findIncludesNames();
 
-            foreach ($includesNamesArray as $includeName) {
+            foreach ($includesNamesArray as $includeName) 
+            {
                 $this->initialIncludes($includeName);
             }
         } while (!empty($includesNamesArray));
+
+      
     }
 
 
@@ -59,7 +55,7 @@ trait IncludeContent
         // $this->content is content of child view
         // preg_match("/@include+\('([^)]+)'\)/", $this->content, $includesNamesArray);
 
-        preg_match_all("/@include\(([^)]+)\)/", $this->content, $includesNamesArray);
+        preg_match_all("/@include\(([^)]+)\)/", $this->content, $includesNamesArray,PREG_UNMATCHED_AS_NULL);
 
         foreach ($includesNamesArray[1] as $include) {
             $include = html_entity_decode($include);
@@ -67,7 +63,7 @@ trait IncludeContent
         }
 
         // var_dump($includeArray);
-        //exit();
+        // exit();
         // return isset($includesNamesArray[1]) ? $includesNamesArray[1] : false;
         // return $includeArray[1] ?? false;
         return $includeArray ?? false;

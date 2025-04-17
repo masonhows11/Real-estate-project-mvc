@@ -18,7 +18,7 @@ trait ViewLoader
      */
     private function viewLoader($path): string
     {
-        $dir = trim($path, " .");
+        $dir = trim($path," .");
         // replace / with .
         $dir = str_replace(".", "/", $dir);
 
@@ -48,7 +48,7 @@ trait ViewLoader
     private function registerView($view): void
     {
         // $this->viewNameArray[] = $view;
-        array_push($this->viewNameArray,$$view);
+        array_push($this->viewNameArray,$view);
     }
 
 
