@@ -53,7 +53,7 @@ trait IncludeContent
             $includeArray[] = trim($include, "'\"");
         }
 
-        //var_dump($includeArray);
+        var_dump($includeArray);
         //exit();
         // return isset($includesNamesArray[1]) ? $includesNamesArray[1] : false;
         // return $includeArray[1] ?? false;
@@ -65,7 +65,7 @@ trait IncludeContent
      * @throws Exception
      * fill @include in child view
      */
-    private function initialIncludes($includeName)
+    private function initialIncludes($includeName): void
     {
 
         // @include('views.404')

@@ -27,7 +27,7 @@ class ViewBuilder
         // var_dump($this->content);
         $this->checkExtendsContent();
 
-        var_dump('checkIncludesContent');
+        // var_dump('checkIncludesContent');
        
         $this->checkIncludesContent();
 
