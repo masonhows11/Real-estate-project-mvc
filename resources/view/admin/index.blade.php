@@ -7,3 +7,8 @@
 @section('main_content')
     main content panel
 @endsection
+
+
+@section('scripts')
+    main content panel
+@endsection

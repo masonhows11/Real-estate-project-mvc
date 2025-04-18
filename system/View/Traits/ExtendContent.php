@@ -25,6 +25,7 @@ trait ExtendContent
 
             // get extends view/master view content
             $this->extendsContent = $this->viewLoader($layoutsFilePath);
+            print_r($this->extendsContent);
             // find yields sections in extendsContent
             $yieldsNamesArray = $this->findYieldsNames();
 
@@ -36,6 +37,12 @@ trait ExtendContent
             }
             // this line make final view
             $this->content = $this->extendsContent;
+
+
+//            print_r($this->extendsContent);
+//            print_r('---------------------------------');
+//            print_r(PHP_EOL);
+//            print_r($this->content);
         }
     }
 
@@ -48,7 +55,7 @@ trait ExtendContent
         $filePathArray = [];
         $pattern3 = '/s*@extends\(([^)]+)\)/';
         preg_match($pattern3, $this->content, $filePathArray);
-
+        var_dump($this->content);
         $clean = html_entity_decode($filePathArray[1]);
         $extends = trim($clean, "'\"");
 
@@ -91,6 +98,8 @@ trait ExtendContent
         // if yield parent is define in extends/master view
         // example @yield('content') -> @section('content')
         $startPos = strpos($string, $startWord);
+
+        // var_dump($this->content);
         if ($startPos === false) {
             // remove @yield from extends/master view
             // in $this->extendsContent @yield save as string & find easily

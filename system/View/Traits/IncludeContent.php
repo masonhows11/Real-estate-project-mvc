@@ -16,22 +16,6 @@ trait IncludeContent
         // $includesNamesArray -> there may be multiple @include in view
         // then find all &  put them into $includesNamesArray
         // this while(1) for while we have nested includes
-
-        //        while (1) {
-        //
-        //            $includesNamesArray = $this->findIncludesNames();
-        //
-        //            if (!empty($includesNamesArray)) {
-        //                foreach ($includesNamesArray as $includeName) {
-        //                    $this->initialIncludes($includeName);
-        //                }
-        //            } else {
-        //                break;
-        //            }
-        //        }
-
-        
-        
         do {
             $includesNamesArray = $this->findIncludesNames();
 
