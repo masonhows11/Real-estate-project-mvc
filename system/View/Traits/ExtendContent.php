@@ -10,7 +10,7 @@ trait ExtendContent
 {
 
 
-    // محتوای اکستند شده
+    // content of extends_view/master_page
     private string $extendsContent;
 
 
@@ -23,13 +23,14 @@ trait ExtendContent
         $layoutsFilePath = $this->findExtends();
         if ($layoutsFilePath) {
 
+            // get extends view/master view content
             $this->extendsContent = $this->viewLoader($layoutsFilePath);
-
+            // find yields section in extendsContent
             $yieldsNamesArray = $this->findYieldsNames();
 
             if ($yieldsNamesArray) {
                 foreach ($yieldsNamesArray as $yieldName) {
-                    // run yields or set value for section in child view
+                    // run yields & set value for section in child view
                     $this->initialYields($yieldName);
                 }
             }
@@ -41,11 +42,11 @@ trait ExtendContent
 
     private function findExtends(): false|string
     {
-        // first find @extends in our view
         // @extends define in master page -> layouts/app.blade.php
+        // first find @extends in our view
         // which view -> admin.index
         $filePathArray = [];
-        $pattern3 = '/@extends\(([^)]+)\)/';
+        $pattern3 = '/s*@extends\(([^)]+)\)/';
         preg_match($pattern3, $this->content, $filePathArray);
 
         $clean = html_entity_decode($filePathArray[1]);
@@ -59,12 +60,12 @@ trait ExtendContent
         $yieldsNamesArray = [];
         $yieldArray = [];
 
-        // check exists @yields('') string in view extendsContent/master view
+        // check exists @yields('') string in view extendsContent/master view/page
         // There may be multiple yields on the view & we should use  preg_match_all()
         // to use extends method or not
         // preg_match_all("/@yield+\('([^)]+)'\)/", $this->extendsContent, $yieldsNamesArray, PREG_UNMATCHED_AS_NULL);
 
-        preg_match_all("/@yield\(([^)]+)\)/", $this->extendsContent, $yieldsNamesArray, PREG_UNMATCHED_AS_NULL);
+        preg_match_all("/s*@yield\(([^)]+)\)/", $this->extendsContent, $yieldsNamesArray, PREG_UNMATCHED_AS_NULL);
 
         // print_r($yieldsNamesArray);
         // return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
