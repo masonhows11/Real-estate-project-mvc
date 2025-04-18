@@ -32,6 +32,8 @@ trait ViewLoader
 
             // register view means save views name or path of views like admin.category.create
             // into $viewNameArray array
+            // example we include some view in one view
+            // these  some  views  names saved in to viewNameArray[] array with  registerView($dir) method
             $this->registerView($dir);
 
             // htmlentities Convert all applicable characters to HTML entities
