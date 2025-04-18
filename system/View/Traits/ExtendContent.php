@@ -25,7 +25,18 @@ trait ExtendContent
 
             // get extends view/master view content
             $this->extendsContent = $this->viewLoader($layoutsFilePath);
-            print_r($this->extendsContent);
+
+            // print content of master page -> app.blade.php
+//            print_r($this->extendsContent);
+//            print_r('---------------------------------');
+//            print_r(PHP_EOL);
+//            print_r('---------------------------------');
+//            print_r(PHP_EOL);
+//            print_r(PHP_EOL);
+//            // print content of child page -> like admin.index.blade.php
+//            print_r($this->content);
+//            print_r(PHP_EOL);
+
             // find yields sections in extendsContent
             $yieldsNamesArray = $this->findYieldsNames();
 
@@ -42,6 +53,9 @@ trait ExtendContent
 //            print_r($this->extendsContent);
 //            print_r('---------------------------------');
 //            print_r(PHP_EOL);
+//            print_r('---------------------------------');
+//            print_r(PHP_EOL);
+//            print_r(PHP_EOL);
 //            print_r($this->content);
         }
     }
@@ -55,7 +69,6 @@ trait ExtendContent
         $filePathArray = [];
         $pattern3 = '/s*@extends\(([^)]+)\)/';
         preg_match($pattern3, $this->content, $filePathArray);
-        var_dump($this->content);
         $clean = html_entity_decode($filePathArray[1]);
         $extends = trim($clean, "'\"");
 
