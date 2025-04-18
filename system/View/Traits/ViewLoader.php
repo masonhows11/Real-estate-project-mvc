@@ -47,8 +47,8 @@ trait ViewLoader
 
     private function registerView($view): void
     {
-        // $this->viewNameArray[] = $view;
-        array_push($this->viewNameArray,$view);
+        $this->viewNameArray[] = $view;
+        // array_push($this->viewNameArray,$view);
     }
 
 
