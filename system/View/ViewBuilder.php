@@ -21,7 +21,7 @@ class ViewBuilder
      */
     public function run($path): void
     {
-        // var_dump('checkIncludesContent');
+
         // get all html content from viewLoader trait
         $this->content = $this->viewLoader($path);
 

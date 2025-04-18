@@ -22,8 +22,8 @@ trait ViewLoader
         // replace / with .
         $dir = str_replace(".", "/", $dir);
 
-        //  echo $dir;
-        //  echo '<br/>';
+
+
        
         // to check files/directories is exits
         if (file_exists(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php")) 

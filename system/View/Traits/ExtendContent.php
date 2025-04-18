@@ -10,6 +10,7 @@ trait ExtendContent
 {
 
 
+    // محتوای اکستند شده
     private string $extendsContent;
 
 
@@ -38,15 +39,17 @@ trait ExtendContent
     }
 
 
-    private function findExtends()
+    private function findExtends(): false|string
     {
+        // first find @extends in our view
+        // @extends define in master page -> layouts/app.blade.php
+        // which view -> admin.index
         $filePathArray = [];
         $pattern3 = '/@extends\(([^)]+)\)/';
         preg_match($pattern3, $this->content, $filePathArray);
 
         $clean = html_entity_decode($filePathArray[1]);
         $extends = trim($clean, "'\"");
-
 
         return $extends ?? false;
     }
@@ -55,6 +58,7 @@ trait ExtendContent
     {
         $yieldsNamesArray = [];
         $yieldArray = [];
+
         // check exists @yields('') string in view extendsContent/master view
         // There may be multiple yields on the view & we should use  preg_match_all()
         // to use extends method or not
@@ -65,12 +69,10 @@ trait ExtendContent
         // print_r($yieldsNamesArray);
         // return isset($yieldsNamesArray[1]) ? $yieldsNamesArray[1] : false;
 
-
         foreach ($yieldsNamesArray[1] as $yield) {
             $yield = html_entity_decode($yield);
             $yieldArray[] = trim($yield, "'\"");
         }
-        
         return $yieldArray ?? false;
     }
 
