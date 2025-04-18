@@ -3,7 +3,7 @@
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Page Vendor JS-->
-{{--<script src="<?= asset('admin_assets/vendors/js/charts/apexcharts.min.js') ?>"></script>--}}
+<!--<script src="<?= asset('admin_assets/vendors/js/charts/apexcharts.min.js') ?>"></script>-->
 <script src="<?= asset('admin_assets/vendors/js/extensions/toastr.min.js') ?>"></script>
 <!-- END: Page Vendor JS-->
 
@@ -13,7 +13,7 @@
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
-<script src="<?= asset('admin_assets/js/scripts/pages/dashboard-ecommerce.js') ?>"></script>
+<!-- <script src="<?= asset('admin_assets/js/scripts/pages/dashboard-ecommerce.js') ?>"></script> -->
 <!-- END: Page JS-->
 
 <script>
