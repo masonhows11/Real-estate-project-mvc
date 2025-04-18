@@ -28,13 +28,12 @@
    <link rel="stylesheet" type="text/css" href="<?= asset('admin_assets/css-rtl/core/menu/menu-types/vertical-menu.css') ?>">
    <link rel="stylesheet" type="text/css" href="<?= asset('admin_assets/css-rtl/pages/dashboard-ecommerce.css') ?>">
    <link rel="stylesheet" type="text/css" href="<?= asset('admin_assets/css-rtl/plugins/charts/chart-apex.css') ?>">
-   <link rel="stylesheet" type="text/css"
-         href="<?= asset('admin_assets/css-rtl/plugins/extensions/ext-component-toastr.css') ?>">
+   <link rel="stylesheet" type="text/css" href="<?= asset('admin_assets/css-rtl/plugins/extensions/ext-component-toastr.css') ?>">
    <!-- END: Page CSS-->
 
    <!-- BEGIN: Custom CSS-->
    <link rel="stylesheet" type="text/css" href="<?= asset('admin_assets/css-rtl/custom-rtl.css') ?>">
-   <link rel="stylesheet" type="text/css" href="<?= asset('admin_assets/assets/css/style-rtl.css') ?>">
+   <link rel="stylesheet" type="text/css" href="<?= asset('admin_assets/style-rtl.css') ?>">
     <!-- END: Custom CSS-->
 
 
