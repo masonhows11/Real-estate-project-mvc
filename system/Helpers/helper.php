@@ -23,7 +23,7 @@ function view($dir, $vars = []): void
 
     // to run php code & variables in html document
     // by eval()
-    eval(" ?>" . html_entity_decode($content));
+    eval(" ?> " . html_entity_decode($content));
 
 }
 
