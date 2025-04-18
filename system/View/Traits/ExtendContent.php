@@ -27,15 +27,15 @@ trait ExtendContent
             $this->extendsContent = $this->viewLoader($layoutsFilePath);
 
             // print content of master page -> app.blade.php
-//            print_r($this->extendsContent);
-//            print_r('---------------------------------');
-//            print_r(PHP_EOL);
-//            print_r('---------------------------------');
-//            print_r(PHP_EOL);
-//            print_r(PHP_EOL);
-//            // print content of child page -> like admin.index.blade.php
-//            print_r($this->content);
-//            print_r(PHP_EOL);
+            //            print_r($this->extendsContent);
+            //            print_r('---------------------------------');
+            //            print_r(PHP_EOL);
+            //            print_r('---------------------------------');
+            //            print_r(PHP_EOL);
+            //            print_r(PHP_EOL);
+            //            // print content of child page -> like admin.index.blade.php
+            //            print_r($this->content);
+            //            print_r(PHP_EOL);
 
             // find yields sections in extendsContent
             $yieldsNamesArray = $this->findYieldsNames();
@@ -50,13 +50,13 @@ trait ExtendContent
             $this->content = $this->extendsContent;
 
 
-//            print_r($this->extendsContent);
-//            print_r('---------------------------------');
-//            print_r(PHP_EOL);
-//            print_r('---------------------------------');
-//            print_r(PHP_EOL);
-//            print_r(PHP_EOL);
-//            print_r($this->content);
+            //            print_r($this->extendsContent);
+            //            print_r('---------------------------------');
+            //            print_r(PHP_EOL);
+            //            print_r('---------------------------------');
+            //            print_r(PHP_EOL);
+            //            print_r(PHP_EOL);
+            //            print_r($this->content);
         }
     }
 
@@ -102,7 +102,7 @@ trait ExtendContent
     {
         // $this->content is child view contents
         $string = $this->content;
-        $startWord = "@section('" . $yieldsName . "')";
+        $startWord = "@section('".$yieldsName."')";
         $endWord = "@endsection";
 
 
@@ -111,8 +111,6 @@ trait ExtendContent
         // if yield parent is define in extends/master view
         // example @yield('content') -> @section('content')
         $startPos = strpos($string, $startWord);
-
-        // var_dump($this->content);
         if ($startPos === false) {
             // remove @yield from extends/master view
             // in $this->extendsContent @yield save as string & find easily
@@ -133,6 +131,7 @@ trait ExtendContent
         //// final step
         // fill between section/yield
         $length = $endPos - $startPos;
+        //var_dump($length);
         // $string is child content
         $sectionContent = substr($string, $startPos, $length);
         // put content between section & endsection in child view
