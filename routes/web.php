@@ -5,14 +5,16 @@ use System\Router\Web\Route;
 // this sample routes
 Route::get('', 'HomeController@index','home');
 
-Route::get('create', 'HomeController@create','userCreate');
-Route::post('store', 'HomeController@store','userStore');
+//Route::get('create', 'HomeController@create','userCreate');
+//Route::post('store', 'HomeController@store','userStore');
+//
+//Route::get('edit/{id}', 'HomeController@edit','userEdit');
+//Route::put('/update/{id}', 'HomeController@update','userUpdate');
+//
+//Route::delete('/delete/{id}', 'HomeController@delete','userDelete');
 
-Route::get('edit/{id}', 'HomeController@edit','userEdit');
-Route::put('/update/{id}', 'HomeController@update','userUpdate');
-
-Route::delete('/delete/{id}', 'HomeController@delete','userDelete');
-
+// auth routes
+Route::get('/login', 'LoginController@login','login');
 
 // admin routes
 Route::get('admin/index', 'Admin\AdminController@index','admin.index');
