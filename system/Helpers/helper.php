@@ -25,7 +25,7 @@ function view($dir, $vars = []): void
     // by eval()
 
     eval(" ?> " . html_entity_decode($content));
-    dd('last step render');
+
 
 }
 
