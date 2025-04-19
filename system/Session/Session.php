@@ -6,19 +6,20 @@ class Session
 {
 
 
-    public function set($name, $value): void
+    public static function set($name, $value): void
     {
         $_SESSION[$name] = $value;
     }
 
 
-    public function get($name)
+    public static function get($name)
     {
-        // isset($_SESSION[$name]) ? $_SESSION[$name] : false ;
         return $_SESSION[$name] ?? false;
     }
 
-    public function remove($name): void
+    // isset($_SESSION[$name]) ? $_SESSION[$name] : false ;
+
+    public static function remove($name): void
     {
         if (isset($_SESSION[$name])) {
             unset($_SESSION[$name]);
@@ -30,8 +31,10 @@ class Session
     // like Session::set() , Session::get()
     public static function __callStatic(string $name, array $arguments)
     {
-       $instance = new self();
-       return call_user_func_array([$instance,$name],$arguments);
+        // return call_user_func_array(self::{$name},$arguments);
+        // return self::{$name}($arguments);
+        $instance = new self();
+        return call_user_func_array([$instance, $name], $arguments);
     }
 
 }

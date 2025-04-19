@@ -19,9 +19,7 @@ class Auth
         {
             return redirect($this->redirectTo);
         }
-
         $user = User::find(Session::get('user'));
-
         if (empty($user))
         {
             Session::remove('user');
@@ -31,8 +29,6 @@ class Auth
 
             return $user;
         }
-
-
     }
 
     private function checkMethod(): ?true
