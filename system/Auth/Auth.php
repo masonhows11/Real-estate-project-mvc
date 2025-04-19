@@ -96,7 +96,7 @@ class Auth
     }
 
     // login by id and create session by user id
-    private function loginByIdMethod($id): bool
+    private function loginByIdMethod($id)
     {
         $user = User::where('id',$id)->get();
 
@@ -107,7 +107,7 @@ class Auth
 
         }else {
 
-            Session::set("user",$user->id);
+            Session::set("user",$user[0]->id);
             return  true;
 
         }

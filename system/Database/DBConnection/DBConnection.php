@@ -36,6 +36,7 @@ class DBConnection
 
             return  new \PDO("mysql:host=".Config::get('database.DBHOST').";dbname=".Config::get('database.DBNAME'),Config::get('database.DBUSERNAME'),Config::get('database.DBPASSWORD'),$options);
 
+           // echo 'connection established';
         }catch (\PDOException $exception){
 
             echo "error in database connection: ".$exception->getMessage();
