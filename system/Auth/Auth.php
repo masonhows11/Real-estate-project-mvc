@@ -15,13 +15,15 @@ class Auth
 
     private function userMethod()
     {
-        if (!Session::get('user')) {
+        if (!Session::get('user'))
+        {
             return redirect($this->redirectTo);
         }
 
         $user = User::find(Session::get('user'));
 
-        if (empty($user)) {
+        if (empty($user))
+        {
             Session::remove('user');
             return redirect($this->redirectTo);
 
@@ -33,10 +35,11 @@ class Auth
 
     }
 
-    private function checkMethod()
+    private function checkMethod(): ?true
     {
 
-        if (!Session::get('user')) {
+        if (!Session::get('user'))
+        {
             return redirect($this->redirectTo);
         }
 
@@ -115,7 +118,7 @@ class Auth
 
     }
 
-    private function logOut()
+    private function logOutMethod()
     {
         Session::remove('user');
         return redirect($this->redirectTo);
@@ -138,7 +141,7 @@ class Auth
         return $instance->methodCaller($name, $arguments);
     }
 
-    protected function methodCaller($method, $args)
+    private function methodCaller($method, $args)
     {
         $suffix = 'Method';
         $methodName = $method . $suffix;
