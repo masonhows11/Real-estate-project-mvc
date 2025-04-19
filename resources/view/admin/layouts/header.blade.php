@@ -202,7 +202,7 @@
                     <!-- start user section -->
                     <div class="user-nav d-sm-flex d-none">
                        <span class="user-name fw-bolder">
-                        <?=  \System\Auth\Auth::user()->firstname.' '.\System\Auth\Auth::user()->lastname ?>
+                        <?=  \System\Auth\Auth::user()->first_name.' '.\System\Auth\Auth::user()->last_name ?>
                        </span>
                         <span class="user-status">Admin</span>
                     </div>
