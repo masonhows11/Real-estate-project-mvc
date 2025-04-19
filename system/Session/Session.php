@@ -29,12 +29,12 @@ class Session
 
     // call session method as static
     // like Session::set() , Session::get()
-    public static function __callStatic(string $name, array $arguments)
-    {
-        // return call_user_func_array(self::{$name},$arguments);
-        // return self::{$name}($arguments);
-        $instance = new self();
-        return call_user_func_array([$instance, $name], $arguments);
-    }
+//    public static function __callStatic(string $name, array $arguments)
+//    {
+//        // return call_user_func_array(self::{$name},$arguments);
+//        // return self::{$name}($arguments);
+//        $instance = new self();
+//        return call_user_func_array([$instance, $name], $arguments);
+//    }
 
 }
