@@ -2,8 +2,13 @@
 
 namespace System\Application;
 
+use ReflectionException;
+
 class Application{
 
+    /**
+     * @throws ReflectionException
+     */
     public function __construct()
     {
         $this->loadProviders();
@@ -14,7 +19,7 @@ class Application{
 
     private function loadProviders(): void
     {
-        $appConfigs = require dirname(dirname(__DIR__)).'/config/app.php';
+        $appConfigs = require dirname(__DIR__, 2) .'/config/app.php';
         $providers = $appConfigs['providers'];
         // call & run each provider -> make obj from provider item array
         // & call boot method
@@ -30,8 +35,8 @@ class Application{
         // load default helpers with require_once
         require_once(dirname(__DIR__).'/Helpers/helper.php');
         // to add & load custom helper do this
-        if(file_exists(dirname(dirname(__DIR__)).'/app/Http/Helpers.php')){
-            require_once(dirname(dirname(__DIR__)).'/app/Http/Helpers.php');
+        if(file_exists(dirname(__DIR__, 2) .'/app/Http/Helpers.php')){
+            require_once(dirname(__DIR__, 2) .'/app/Http/Helpers.php');
         }
     }
 
@@ -44,10 +49,13 @@ class Application{
             'put' => [],
             'delete' => [],
         ];
-        require_once(dirname(dirname(__DIR__)).'/routes/web.php');
-        require_once(dirname(dirname(__DIR__)).'/routes/api.php');
+        require_once(dirname(__DIR__, 2) .'/routes/web.php');
+        require_once(dirname(__DIR__, 2) .'/routes/api.php');
     }
 
+    /**
+     * @throws ReflectionException
+     */
     private function routing(): void
     {
         // run routing sys
