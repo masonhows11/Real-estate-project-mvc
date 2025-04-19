@@ -207,7 +207,11 @@
                         <span class="user-status">Admin</span>
                     </div>
                     <span class="avatar">
-                        <img class="round" src="" alt="avatar" height="40" width="40">
+                          <?php if(\System\Auth\Auth::user()->avatar != null): ?>
+                          <img class="round" src="<?= asset(\System\Auth\Auth::user()->avatar) ?>" alt="avatar" height="40" width="40">
+                           <?php else: ?>
+                          <img class="round" src="<?=   asset('admin_assets/images/avatars/1.png') ?>" alt="avatar" height="40" width="40">
+                          <?php endif; ?>
                         <span class="avatar-status-online"></span>
                     </span>
                     <!-- end user section -->
