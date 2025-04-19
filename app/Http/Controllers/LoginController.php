@@ -11,4 +11,10 @@ class LoginController extends Controller
         dd('login view');
     }
 
+
+    public function logout()
+    {
+        redirect('/login');
+    }
+
 }

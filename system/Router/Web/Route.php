@@ -16,7 +16,7 @@ class Route
 
         // below line put all get routes in routes['get'] array
         global $routes;
-        array_push($routes['get'], array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
+        $routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 
@@ -30,7 +30,7 @@ class Route
 
         // below line put all post routes in routes['get'] array
         global $routes;
-        array_push($routes['get'], array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
+        $routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 
@@ -45,7 +45,7 @@ class Route
 
         // below line put all put routes in routes['get'] array
         global $routes;
-        array_push($routes['get'], array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
+        $routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 

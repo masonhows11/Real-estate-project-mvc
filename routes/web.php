@@ -16,6 +16,7 @@ Route::get('', 'HomeController@index','home');
 // auth routes
 Route::get('/login', 'LoginController@login','login');
 
+Route::get('/logout', 'LoginController@login','logout');
 // admin routes
 Route::get('admin/index', 'Admin\AdminController@index','admin.index');
 

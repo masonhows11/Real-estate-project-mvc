@@ -171,9 +171,11 @@ function findRouteByName($name)
     global $routes;
 
     $allRoutes = array_merge($routes['get'], $routes['post'], $routes['put'], $routes['delete']);
-    $route = '';
-    foreach ($allRoutes as $item) {
-        if ($route['name'] == $name && $item['name'] !== null) {
+
+    $route = null;
+    foreach ($allRoutes as $item)
+    {
+        if ($item['name'] == $name && $item['name'] !== null) {
             $route = $item['url'];
             break;
         }
@@ -204,7 +206,8 @@ function route($name, $params = []): string
     $routesParamsMatch = [];
     // put all match into $routesParamsMatch array
     preg_match_all("/{[^}.]*/", $route, $routesParamsMatch);
-    if (count($routesParamsMatch[0]) > count($params)) {
+    if ( count($routesParamsMatch[0]) > count($params) )
+    {
         throw new Exception("route params not enough!");
     }
 
