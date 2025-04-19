@@ -131,7 +131,6 @@ trait ExtendContent
         //// final step
         // fill between section/yield
         $length = $endPos - $startPos;
-        //var_dump($length);
         // $string is child content
         $sectionContent = substr($string, $startPos, $length);
         // put content between section & endsection in child view
