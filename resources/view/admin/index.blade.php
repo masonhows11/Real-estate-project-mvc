@@ -10,5 +10,4 @@
 
 
 @section('scripts')
-    main content panel
 @endsection
