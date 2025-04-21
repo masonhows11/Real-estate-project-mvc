@@ -11,7 +11,6 @@ class CategoryController extends Controller{
     public function index()
     {
         return view('admin.category.index');
-      
     }
 
 
@@ -23,24 +22,19 @@ class CategoryController extends Controller{
 
     public function store()
     {
-        # code...
     }
 
 
     public function edit(){
-
     }
 
 
     public function update(){
-
-
     }
 
 
     public function delete()
     {
-        # code...
     }
 
 }
