@@ -5,7 +5,7 @@
 @endsection
 
 @section('main_content')
-category
+    category edit
 @endsection
 
 
