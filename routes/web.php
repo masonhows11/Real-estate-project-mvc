@@ -17,8 +17,23 @@ Route::get('', 'HomeController@index','home');
 Route::get('/login', 'LoginController@login','login');
 
 Route::get('/logout', 'LoginController@login','logout');
+
 // admin routes
 Route::get('admin/index', 'Admin\AdminController@index','admin.index');
+
+
+// admin category routes
+Route::get('admin/category/index','Admin\CategoryController@index','admin.category.index');
+
+Route::get('admin/category/create','Admin\CategoryController@create','admin.category.create');
+
+Route::post('admin/category/store','Admin\CategoryController@store','admin.category.store');
+
+Route::get('admin/category/edit','Admin\CategoryController@edit','admin.category.edit');
+
+Route::post('admin/category/update/{id}','Admin\CategoryController@update','admin.category.update');
+
+Route::get('admin/category/delete/{id}','Admin\CategoryController@delete','admin.category.delete');
 
 
 //Route::get('create', 'UserController@create','userCreate');
