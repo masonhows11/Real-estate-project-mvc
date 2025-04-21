@@ -5,8 +5,6 @@ namespace System\Database\Traits;
 trait HasSoftDelete
 {
 
-
-
     protected function deleteModel($id = null)
     {
         $object = $this; // refer to current model -> user / category / product

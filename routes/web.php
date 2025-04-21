@@ -29,7 +29,7 @@ Route::get('admin/category/create','Admin\CategoryController@create','admin.cate
 
 Route::post('admin/category/store','Admin\CategoryController@store','admin.category.store');
 
-Route::get('admin/category/edit','Admin\CategoryController@edit','admin.category.edit');
+Route::get('admin/category/edit/{id}','Admin\CategoryController@edit','admin.category.edit');
 
 Route::post('admin/category/update/{id}','Admin\CategoryController@update','admin.category.update');
 

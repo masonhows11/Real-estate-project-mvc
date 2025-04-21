@@ -4,15 +4,19 @@ namespace App\Models;
 
 
 use System\Database\ORM\Model;
+use System\Database\Traits\HasSoftDelete;
 
 
 class Category extends Model
 {
 
+    use HasSoftDelete;
+
     protected string $table = 'categories';
 
     protected array $fillable = ['title'];
 
+    protected string|null $deletedAt = 'deleted_at';
     protected array $casts = [];
 
 
