@@ -99,17 +99,21 @@ class Routing
     public function compare($reservedRouteUrl): ?bool
     {
 
+        //// part 1
         // check / after domain name
         if (trim($reservedRouteUrl, '/') === '') {
             return trim($this->current_route[0], '/') === '';
         }
 
+
+        //// part 2
         // compare to route with by array & size array items
         $reservedRouteUrlArray = explode('/', $reservedRouteUrl);
         if (sizeof($this->current_route) != sizeof($reservedRouteUrlArray)) {
             return false;
         }
 
+        //// part 3
         // compare current route & reservedRoute every item must be equal
         foreach ($this->current_route as $key => $currentRouteElement) {
             $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
