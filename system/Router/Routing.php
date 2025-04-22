@@ -55,6 +55,7 @@ class Routing
     public function match(): array
     {
 
+        // dd($this->methodField());
         // read all get method , for example
         // means route start with get method type
         // & we get all routes start with Route::get()
@@ -120,7 +121,7 @@ class Routing
 
     }
 
-    public function error404()
+    #[NoReturn] public function error404(): void
     {
         // __DIR__ -> return current directory path
         http_response_code(404);
