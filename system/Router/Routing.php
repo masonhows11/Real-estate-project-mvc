@@ -19,6 +19,7 @@ class Routing
     {
 
 
+
         $this->current_route = explode('/', Config::get('app.CURRENT_ROUTE'));
         $this->method_field = $this->methodField();
         // get global routes value in config/app file
@@ -82,7 +83,7 @@ class Routing
 
         foreach ($reservedRoutes as $reservedRoute) {
 
-            if ($this->compare($reservedRoute['url']) == true) {
+            if ($this->compare($reservedRoute['url'])) {
 
                 // get controller & method name from route reserved
                 return ["class" => $reservedRoute["class"], "method" => $reservedRoute["method"]];
@@ -100,7 +101,7 @@ class Routing
     {
 
         //// part 1
-        // check / after domain name
+        // check / after domain name between current url & reserved url
         if (trim($reservedRouteUrl, '/') === '') {
             return trim($this->current_route[0], '/') === '';
         }
@@ -120,7 +121,8 @@ class Routing
             // to findOut is there any variable in current route ? like {id} / {name}
             // for check first & last character in each item is "{}"
             // -1 in second substr in last character
-            if (str_starts_with($reservedRouteUrlElement, "{") && substr($reservedRouteUrlElement, 0, -1) == "}") {
+            if (str_starts_with($reservedRouteUrlElement, "{") && substr($reservedRouteUrlElement, 0, -1) == "}")
+            {
                 // push value in route variable in values array
                 // array_push($this->values, $currentRouteElement);
                 $this->values[] = $currentRouteElement;

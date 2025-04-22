@@ -70,6 +70,7 @@ class Config
         $temporary === "/" ? $temporary = "" : $temporary = substr($temporary, 1);
         // make current_route & add dynamically into app file in array
         $this->config_nested_array['app']['CURRENT_ROUTE'] = $temporary;
+
     }
 
 
