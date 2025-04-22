@@ -127,8 +127,8 @@ class Routing
                 // array_push($this->values, $currentRouteElement);
                 $this->values[] = $currentRouteElement;
 
-            } elseif ($reservedRouteUrlElement != $currentRouteElement)
-            {
+            } elseif ($reservedRouteUrlElement != $currentRouteElement) {
+
                 return false;
             }
         }
