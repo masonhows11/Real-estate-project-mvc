@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('admin_title')
-   دسته بندی جدید
+    دسته بندی جدید
 @endsection
 
 @section('main_content')
@@ -14,4 +14,5 @@
 
 
 @section('scripts')
+
 @endsection

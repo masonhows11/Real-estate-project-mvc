@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 
 class CategoryController extends AdminController {
 
@@ -10,12 +9,14 @@ class CategoryController extends AdminController {
 
     public function index()
     {
+        dd('index route');
         return view('admin.category.index');
     }
 
 
     public function create()
     {
+        dd('create route');
         return view('admin.category.create');
     }
 
