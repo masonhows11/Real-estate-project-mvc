@@ -2,6 +2,7 @@
 
 namespace System\Router;
 
+use Exception;
 use JetBrains\PhpStorm\NoReturn;
 use ReflectionException;
 use ReflectionMethod;
@@ -31,6 +32,7 @@ class Routing
 
     /**
      * @throws ReflectionException
+     * @throws Exception
      */
     public function run(): void
     {
@@ -78,7 +80,8 @@ class Routing
         // read all get method , for example
         // means route start with get method type
         // & we get all routes start with Route::get()
-
+        // $this->routes is array that contain routes
+        // with http verb like get post
         $reservedRoutes = $this->routes[$this->method_field];
 
         foreach ($reservedRoutes as $reservedRoute) {
@@ -152,9 +155,7 @@ class Routing
 
                     $method = 'delete';
                 }
-
             }
-
         }
         return $method;
     }
@@ -169,9 +170,7 @@ class Routing
 
     }
 
-    /**
-     * @throws ReflectionException
-     */
+
 
 
 }
