@@ -46,8 +46,8 @@
   --bs-white-rgb : 255, 255, 255;
   --bs-black-rgb : 34, 41, 47;
   --bs-body-rgb : 110, 107, 123;
-  --bs-font-sans-serif : 'Montserrat', Helvetica, Arial, serif;
-  --bs-font-monospace : 'Montserrat', Helvetica, Arial, serif;
+  /*--bs-font-sans-serif : 'Montserrat', Helvetica, Arial, serif;*/
+  /*--bs-font-monospace : 'Montserrat', Helvetica, Arial, serif;*/
   --bs-gradient : linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family : var(--bs-font-sans-serif);
   --bs-body-font-size : 1rem;
@@ -69,7 +69,7 @@
 
 body {
   margin : 0;
-  font-family : var(--bs-body-font-family);
+  /*font-family : var(--bs-body-font-family);*/
   font-size : var(--bs-body-font-size);
   font-weight : var(--bs-body-font-weight);
   line-height : var(--bs-body-line-height);
