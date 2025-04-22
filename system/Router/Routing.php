@@ -84,7 +84,7 @@ class Routing
         // check / after domain name
         if (trim($reservedRouteUrl, '/') === '') {
 
-            return trim($this->current_route[0], '/') === '' ? true : false;
+            return trim($this->current_route[0], '/') === '';
 
         }
 
