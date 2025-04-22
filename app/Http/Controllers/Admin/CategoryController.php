@@ -12,8 +12,7 @@ class CategoryController extends AdminController {
     public function index()
     {
         $categories = Category::all();
-        dd($categories);
-        return view('admin.category.index');
+        return view('admin.category.index',['categories' => $categories]);
     }
 
 

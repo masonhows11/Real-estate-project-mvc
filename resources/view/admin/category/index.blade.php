@@ -9,6 +9,17 @@
 
         <h1 class="my-4">دسته بندی ها</h1>
 
+        <!--<ul>
+            <?php foreach ($categories as $category): ?>
+            <li>
+                <?= $category->name ?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+        -->
+
+
+
     </div>
 @endsection
 
