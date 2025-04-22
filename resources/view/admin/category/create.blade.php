@@ -1,11 +1,15 @@
 @extends('admin.layouts.app')
 
 @section('admin_title')
-    category create
+   دسته بندی جدید
 @endsection
 
 @section('main_content')
-    category create
+    <div class="container border-2 rounded border-primary">
+
+        <h1 class="my-4"> دسته بندی جدید </h1>
+
+    </div>
 @endsection
 
 
