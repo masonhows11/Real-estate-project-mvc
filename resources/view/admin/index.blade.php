@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('admin_title')
-    admin panel
+   پنل مدیریت
 @endsection
 
 @section('main_content')

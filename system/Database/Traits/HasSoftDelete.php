@@ -32,7 +32,7 @@ trait HasSoftDelete
         // for soft delete we determine if deleted_at is not null
         // it means that record is not physically deleted
         $this->setSql("SELECT ".$this->getTableName().".* FROM ".$this->getTableName());
-        $this->setWhere("AND",$this->getAttributeName($this->deleteAt)." IS NULL ");
+        $this->setWhere("AND",$this->getAttributeName($this->deletedAt)." IS NULL ");
         $statement = $this->executeQuery();
         $data = $statement->fetchAll();
         if ($data) {
@@ -62,7 +62,7 @@ trait HasSoftDelete
         return null;
     }
 
-    protected function getMethod($array = [])
+    protected function getMethod($array = []): array
     {
         // $array = []; determine specifics column
         if ($this->sql == '')

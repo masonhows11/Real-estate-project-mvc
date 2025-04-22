@@ -8,6 +8,7 @@ trait HasQueryBuilder
 
 
     private string $sql = '';
+
     protected array $where = [];
 
     private array $orderBy = [];
