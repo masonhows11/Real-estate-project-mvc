@@ -1,4 +1,4 @@
-<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" style="font-family: iransansdn,sans-serif" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item me-auto"><a class="navbar-brand" href="#"><span class="brand-logo">
@@ -41,8 +41,10 @@
                     </li>
                 </ul>
             </li> -->
-            <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i></li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="<?= route('admin.index') ?>"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="home">خانه</span></a></li>
+            <li class="navigation-header font-large-1 "><span data-i18n="Apps&amp;Pages">پنل مدیریت</span><i data-feather="more-horizontal"></i></li>
+            <li class="nav-item"><a class="d-flex align-items-center" href="<?= route('admin.index') ?>">
+                    <i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="home">خانه</span></a>
+            </li>
 
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">دسته بندی ها</span></a>
                 <ul class="menu-content">

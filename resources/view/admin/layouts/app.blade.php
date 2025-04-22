@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="rtl">
+<html class="loading" lang="fa" data-textdirection="rtl">
 
 <!-- BEGIN: Head-->
 <head>
 @include('admin.layouts.head')
+<style>
+    body
+    {
+        font-family: iransansdn,"sans-serif" !important;
+    }
+</style>
 <title>@yield('admin_title')</title>
 </head>
 <!-- END: Head-->
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="">
 
 <!-- BEGIN: Header-->
 @include('admin.layouts.header')

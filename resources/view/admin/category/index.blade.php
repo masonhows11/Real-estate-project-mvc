@@ -5,7 +5,11 @@
 @endsection
 
 @section('main_content')
-   category index
+<div class="container border-2 rounded border-primary">
+
+
+
+</div>
 @endsection
 
 
