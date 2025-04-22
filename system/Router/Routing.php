@@ -105,18 +105,21 @@ class Routing
             // to findOut is there any variable in current route ? like {id} / {name}
             // for check first & last character in each item is "{}"
             // -1 in second substr in last character
-            if (substr($reservedRouteUrlElement, 0, 1) == "{" && substr($reservedRouteUrlElement, 0, -1) == "}") {
+            if (str_starts_with($reservedRouteUrlElement, "{") && substr($reservedRouteUrlElement, 0, -1) == "}") {
                 // push value in route variable in values array
                 // array_push($this->values, $currentRouteElement);
                 $this->values[] = $currentRouteElement;
 
-            } elseif ($reservedRouteUrlElement != $currentRouteElement) {
+            } elseif ($reservedRouteUrlElement != $currentRouteElement)
+            {
                 return false;
             }
 
             return true;
 
         }
+
+        return null;
 
 
     }
