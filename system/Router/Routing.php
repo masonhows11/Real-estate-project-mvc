@@ -82,26 +82,21 @@ class Routing
     public function compare($reservedRouteUrl)
     {
         // check / after domain name
-        if (trim($reservedRouteUrl, '/') === '') {
-
+        if (trim($reservedRouteUrl, '/') === '')
+        {
             return trim($this->current_route[0], '/') === '';
-
         }
 
         // compare to route with by array & size array items
         $reservedRouteUrlArray = explode('/', $reservedRouteUrl);
-        if (sizeof($this->current_route) != sizeof($reservedRouteUrlArray)) {
-
+        if (sizeof($this->current_route) != sizeof($reservedRouteUrlArray))
+        {
             return false;
-
         }
-
 
         // compare current route & reservedRoute every item must be equal
         foreach ($this->current_route as $key => $currentRouteElement) {
-
             $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
-
             // to findOut is there any variable in current route ? like {id} / {name}
             // for check first & last character in each item is "{}"
             // -1 in second substr in last character
@@ -114,14 +109,9 @@ class Routing
             {
                 return false;
             }
-
             return true;
-
         }
-
         return null;
-
-
     }
 
     #[NoReturn] public function error404(): void
