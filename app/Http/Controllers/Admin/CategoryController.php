@@ -28,7 +28,9 @@ class CategoryController extends AdminController {
     }
 
 
-    public function edit(){
+    public function edit($id)
+    {
+        dd($id);
     }
 
 
@@ -36,8 +38,9 @@ class CategoryController extends AdminController {
     }
 
 
-    public function delete()
+    public function delete($id)
     {
+        dd($id);
     }
 
 }
