@@ -205,7 +205,9 @@ function route($name, $params = []): string
     // example edit/{id}
     $routesParamsMatch = [];
     // put all match into $routesParamsMatch array
-    preg_match_all("/{[^}.]*/", $route, $routesParamsMatch);
+    // preg_match_all("/{[^}.]*/", $route, $routesParamsMatch);
+    $pattern = "/\{[a-zA-Z0-9_]+\}/";
+    preg_match_all($pattern,$route, $routesParamsMatch);
     if ( count($routesParamsMatch[0]) > count($params) )
     {
         throw new Exception("route params not enough!");
