@@ -5,14 +5,17 @@
 @endsection
 
 @section('main_content')
-    <div class="border-2 rounded border-primary">
+    <div class="border-2 rounded border-primary overflow-x-auto">
 
-        <div class="row">
-            <div class="col-6">
-                <h1 class="my-1">دسته بندی ها</h1>
-            </div>            
-            <div class="col-6">
-                <a class="btn btn-success" href="<?= route('admin.category.create') ?>">ایجاد</a>
+        <div class="row px-2 ">
+
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h1 class="my-1">دسته بندی ها</h1>
+                </div>
+                <div>
+                    <a class="btn btn-success mt-2" href="<?= route('admin.category.create') ?>">ایجاد</a>
+                </div>
             </div>
         </div>
       
@@ -29,9 +32,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row overflow-auto ">
                 <div class="container">
-                    <table class="table table-responsive">
+                    <table class="table table-sm table-responsive">
                         <thead class="">
                           <tr>
                             <th>#</th>
@@ -47,8 +50,8 @@
                                 <td><?= $category->name ?></td>
                                 <td><?= $category->name ?></td>
                                 <td>
-                                    <a class="btn btn-danger" href="">حذف</a>
-                                    <a class="btn btn-success" href="">ویرایش</a>
+                                    <a class="btn btn-danger btn-sm" href="">حذف</a>
+                                    <a class="btn btn-primary btn-sm" href="">ویرایش</a>
                                 </td>
                               </tr>
                             <?php endforeach; ?>
