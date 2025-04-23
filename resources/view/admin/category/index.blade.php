@@ -50,8 +50,8 @@
                                 <td><?= $category->name ?></td>
                                 <td><?= $category->name ?></td>
                                 <td>
-                                    <a class="btn btn-danger btn-sm" href="">حذف</a>
-                                    <a class="btn btn-primary btn-sm" href="">ویرایش</a>
+                                    <a class="btn btn-danger btn-sm" href="<?= route('admin.category.delete',[$category->id] ) ?>">حذف</a>
+                                    <a class="btn btn-primary btn-sm" href="<?= route('admin.category.edit', [$category->id] ) ?>">ویرایش</a>
                                 </td>
                               </tr>
                             <?php endforeach; ?>
