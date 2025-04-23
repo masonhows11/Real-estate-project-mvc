@@ -5,11 +5,18 @@
 @endsection
 
 @section('main_content')
-    <div class="container border-2 rounded border-primary">
+    <div class="border-2 rounded border-primary">
 
-        <h1 class="my-1">دسته بندی ها</h1>
+        <div class="row">
+            <div class="col-6">
+                <h1 class="my-1">دسته بندی ها</h1>
+            </div>            
+            <div class="col-6">
+                <a class="btn btn-success" href="<?= route('admin.category.create') ?>">ایجاد</a>
+            </div>
+        </div>
+      
         <div class="my-2">
-            <a class="btn btn-success" href="<?= route('admin.category.create') ?>">ایجاد</a>
             <div class="row">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-column p-1">
@@ -22,21 +29,37 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="container">
+                    <table class="table table-responsive">
+                        <thead class="">
+                          <tr>
+                            <th>#</th>
+                            <th>نام</th>
+                            <th>دسته والد</th>
+                            <th>عملیات</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($categories as $category): ?>
+                            <tr>
+                                <td><?= $category->id ?></td>
+                                <td><?= $category->name ?></td>
+                                <td><?= $category->name ?></td>
+                                <td>
+                                    <a class="btn btn-danger" href="">حذف</a>
+                                    <a class="btn btn-success" href="">ویرایش</a>
+                                </td>
+                              </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
         </div>
 
-        <!--<ul>
-            <?php foreach ($categories as $category): ?>
-            <li>
-                <?= $category->name ?>
-            </li>
-            <?php endforeach; ?>
-        </ul>
-        -->
-        
-
-
-
+       
+    
     </div>
 @endsection
 
