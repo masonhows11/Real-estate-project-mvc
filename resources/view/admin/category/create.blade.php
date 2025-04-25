@@ -13,7 +13,7 @@
                     <h1 class="my-1">دسته بندی جدید</h1>
                 </div>
                 <div>
-                   <h4 class="" style="margin-top: 16px"><a class="" href="<?= route('admin.category.index') ?>">دسته بندی ها</a></h4>
+                   <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.category.index') ?>">دسته بندی ها</a></h4>
                 </div>
             </div>
         </div>
