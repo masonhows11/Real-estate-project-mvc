@@ -19,12 +19,14 @@ class CategoryController extends AdminController {
     public function create()
     {
 
-        return view('admin.category.create');
+        $categories = Category::all();
+        return view('admin.category.create',compact('categories'));
     }
 
 
     public function store()
     {
+        dd($_POST);
     }
 
 

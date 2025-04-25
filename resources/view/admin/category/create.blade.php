@@ -18,8 +18,23 @@
             </div>
         </div>
 
-        <div class="row px-2">
+        <div class="row my-2">
+            <form action="<?= route('admin.category.store') ?>" method="post">
+                <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">نام:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="parent" class="form-label">والد:</label>
+                    <select id="parent" class="form-select">
+                        <?php foreach ($categories as $category); ?>
+                        <option value="<?= $category->id ?>"><?= $category->name ?></option>
+                        <?php endforech: ?>
+                    </select>
+                </div>
 
+                <button type="submit" class="btn btn-primary">ذخیره</button>
+            </form>
         </div>
 
 
