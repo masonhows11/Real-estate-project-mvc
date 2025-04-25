@@ -15,9 +15,8 @@ class Category extends Model
     protected string $table = 'categories';
 
     protected array $fillable = ['title'];
-
     protected ?string $deletedAt = 'deleted_at';
-    protected array $casts = [];
+    // protected array $casts = [];
 
 
 

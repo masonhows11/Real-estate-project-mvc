@@ -18,7 +18,7 @@ trait HasSoftDelete
         if($object)
         {
             $object->resetQuery();
-            $object->setSql("UPDATE ".$object->getTableName()." SET ".$this->getAttributeName($this->deleteAt)." = NOW()");
+            $object->setSql("UPDATE ".$object->getTableName()." SET ".$this->getAttributeName($this->deletedAt)." = NOW()");
             $object->setWhere("AND", $this->getAttributeName($object->primaryKey)." = ? ");
             $object->addValue($object->primaryKey,$object->{$object->primaryKey});
             return $object->executeQuery();
@@ -51,7 +51,7 @@ trait HasSoftDelete
         $this->setWhere("AND",$this->getAttributeName($this->primaryKey)." = ? ");
         $this->addValue($this->primaryKey, $id);
 
-        $this->setWhere("AND",$this->getAttributeName($this->deleteAt)." IS NULL ");
+        $this->setWhere("AND",$this->getAttributeName($this->deletedAt)." IS NULL ");
 
         $statement = $this->executeQuery();
         $data = $statement->fetch();
@@ -79,7 +79,7 @@ trait HasSoftDelete
             }
             $this->setSql("SELECT $fields FROM".$this->getTableName());
         }
-        $this->setWhere("AND",$this->getAttributeName($this->deleteAt)." IS NULL ");
+        $this->setWhere("AND",$this->getAttributeName($this->deletedAt)." IS NULL ");
 
 
         $statement = $this->executeQuery();
@@ -93,7 +93,7 @@ trait HasSoftDelete
 
     protected function paginateMethod(int $perPage = null): array
     {
-        $this->setWhere("AND",$this->getAttributeName($this->deleteAt)." IS NULL ");
+        $this->setWhere("AND",$this->getAttributeName($this->deletedAt)." IS NULL ");
         //
         $totalRows = $this->getCount();
         //

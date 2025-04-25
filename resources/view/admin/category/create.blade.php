@@ -22,11 +22,11 @@
             <form action="<?= route('admin.category.store') ?>" method="post">
                 <div class="mb-3 mt-3">
                     <label for="email" class="form-label">نام:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="name">
                 </div>
                 <div class="mb-3">
                     <label for="parent" class="form-label">والد:</label>
-                    <select id="parent" class="form-select">
+                    <select id="parent" class="form-select" name="parent">
                         <?php foreach ($categories as $category); ?>
                         <option value="<?= $category->id ?>"><?= $category->name ?></option>
                         <?php endforech: ?>
