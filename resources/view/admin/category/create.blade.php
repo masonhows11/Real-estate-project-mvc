@@ -29,7 +29,7 @@
                     <select id="parent" class="form-select" name="parent">
                         <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
                         <?php foreach ($categories as $category){ ?>
-                        <option <?= old('parent_id') == $category->id 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
+                        <option <?= old('parent_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
                         <?php } ?>
                     </select>
                 </div>
