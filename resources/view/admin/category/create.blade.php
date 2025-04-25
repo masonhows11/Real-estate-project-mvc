@@ -21,15 +21,16 @@
         <div class="row my-2">
             <form action="<?= route('admin.category.store') ?>" method="post">
                 <div class="mb-3 mt-3">
-                    <label for="email" class="form-label">نام:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="name">
+                    <label for="category" class="form-label">نام:</label>
+                    <input type="text" class="form-control" id="category" placeholder="نام دسته بندی را وارد کنید" name="name" value="<?= old('name') ?>">
                 </div>
                 <div class="mb-3">
                     <label for="parent" class="form-label">والد:</label>
                     <select id="parent" class="form-select" name="parent">
-                        <?php foreach ($categories as $category); ?>
-                        <option value="<?= $category->id ?>"><?= $category->name ?></option>
-                        <?php endforech: ?>
+                        <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
+                        <?php foreach ($categories as $category){ ?>
+                        <option <?= old('parent_id') == $category->id 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
+                        <?php } ?>
                     </select>
                 </div>
 
