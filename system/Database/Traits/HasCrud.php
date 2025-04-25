@@ -251,7 +251,8 @@ trait HasCrud
     protected function getMethod($array = []): array
     {
         // $array = []; determine specifics column
-        if ($this->sql == '') {
+        if ($this->sql == '')
+        {
             if (empty($array)) {
                 $fields = $this->getTableName() . '.*';
             } else {
@@ -264,12 +265,15 @@ trait HasCrud
             }
             $this->setSql("SELECT $fields FROM".$this->getTableName());
         }
+
         $statement = $this->executeQuery();
         $data = $statement->fetchAll();
+
         if ($data) {
             $this->arrayToObjects($data);
             return $this->collection;
         }
+
         return [];
     }
 

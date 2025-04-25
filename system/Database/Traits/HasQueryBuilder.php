@@ -7,7 +7,9 @@ trait HasQueryBuilder
 {
 
 
-    private string $sql = '';
+    // private string $sql = '';
+
+    public string $sql = '';
 
     protected array $where = [];
 

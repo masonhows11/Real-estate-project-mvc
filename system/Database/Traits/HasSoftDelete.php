@@ -15,7 +15,7 @@ trait HasSoftDelete
             $object = $this->findMethod($id);
 
         }
-        if($object)
+        if($object) // object means current model
         {
             $object->resetQuery();
             $object->setSql("UPDATE ".$object->getTableName()." SET ".$this->getAttributeName($this->deletedAt)." = NOW()");
@@ -56,7 +56,9 @@ trait HasSoftDelete
         $statement = $this->executeQuery();
         $data = $statement->fetch();
         $this->setAllowedMethods(['update', 'delete', 'find']);
+
         if ($data) {
+
             return $this->arrayToAttributes($data);
         }
         return null;
