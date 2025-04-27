@@ -27,6 +27,7 @@ class Routing
         // and put into this $routes variable
         global $routes;
         $this->routes = $routes;
+        dd(json_encode($this->routes));
 
     }
 

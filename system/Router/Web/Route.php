@@ -6,7 +6,7 @@ namespace System\Router\Web;
 class Route
 {
 
-    public static function get($url, $controller, $name = null)
+    public static function get($url, $controller, $name = null): void
     {
 
 
@@ -20,7 +20,7 @@ class Route
 
     }
 
-    public static function post($url,$controller, $name = null)
+    public static function post($url,$controller, $name = null): void
     {
 
 
@@ -34,7 +34,7 @@ class Route
 
     }
 
-    public static function put($url, $controller, $name = null)
+    public static function put($url, $controller, $name = null): void
     {
 
 
@@ -50,7 +50,7 @@ class Route
     }
 
 
-    public static function delete($url, $controller, $name = null)
+    public static function delete($url, $controller, $name = null): void
     {
 
 
@@ -59,8 +59,9 @@ class Route
         $method = $handler[1];
 
         // below line put all delete routes in routes['get'] array
+        // array_push($routes['get'], array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
         global $routes;
-        array_push($routes['get'], array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
+        $routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 
