@@ -27,7 +27,6 @@ class Routing
         // and put into this $routes variable
         global $routes;
         $this->routes = $routes;
-       // dd(json_encode($this->routes));
 
     }
 
@@ -41,7 +40,7 @@ class Routing
 
         $match = $this->match();
         if (empty($match)) {
-             dd('hi oops');
+
             $this->error404();
         }
 
@@ -51,7 +50,7 @@ class Routing
         $path = Config::get('app.BASE_DIR') . "/app/Http/Controllers/" . $controllerPath . ".php";
         // if don't exists
         if (!file_exists($path)) {
-            dd('in file exists');
+
             $this->error404();
         }
 
@@ -68,13 +67,13 @@ class Routing
             if ($parameterCount <= count($this->values)) {
                 call_user_func_array(array($obj, $match["method"]), $this->values);
             } else {
-                dd('in file exists 2');
+
                 $this->error404();
             }
 
         } else {
 
-            dd('in file exists 3');
+
             $this->error404();
 
         };
