@@ -10,14 +10,14 @@ trait HasCrud
     {
         $values = $this->arrayToCastEncodeValue($values);
         $this->arrayToAttributes($values,$this);
-         return $this->save();
+         return $this->saveMethod();
     }
 
     protected function updateMethod($values): \System\Database\ORM\Model
     {
         $values = $this->arrayToCastEncodeValue($values);
         $this->arrayToAttributes($values,$this);
-        return $this->save();
+        return $this->saveMethod();
     }
 
     // space in query string is very, very important
@@ -36,6 +36,7 @@ trait HasCrud
                     $this->addValue($attribute, $this->$attribute);
             }
         }
+
         return implode(', ', $fillArray);
     }
 
@@ -43,14 +44,16 @@ trait HasCrud
     protected function saveMethod(): \System\Database\ORM\Model
     {
         $fillString = $this->fill();
+
         // how find out we use this method
         // for save new model or update current model
-        if (!isset($this->{$this->primaryKey})) {
-            $this->setSql("INSERT INTO" . $this->getTableName() . " SET $fillString, " . $this->getAttributeName($this->createdAt) . "=Now()");
+        if (!isset($this->{$this->primaryKey}))
+        {
+            $this->setSql("INSERT INTO ".$this->getTableName() ." SET $fillString, ".$this->getAttributeName($this->createdAt) ."=Now()");
 
         } else {
 
-            $this->setSql("UPDATE INTO" . $this->getTableName() . " SET $fillString, " . $this->getAttributeName($this->updatedAt) . "=Now()");
+            $this->setSql("UPDATE ".$this->getTableName() ." SET $fillString, ".$this->getAttributeName($this->updatedAt) ."=Now()");
             $this->setWhere("AND", $this->getAttributeName($this->primaryKey) . " = ?");
             $this->addValue($this->primaryKey, $this->{$this->primaryKey});
             //  $this->primaryKey,$this->{$this->primaryKey}

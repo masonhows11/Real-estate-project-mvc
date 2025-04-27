@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="parent" class="form-label">والد:</label>
-                    <select id="parent" class="form-select" name="parent">
+                    <select id="parent" class="form-select" name="parent_id">
                         <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
                         <?php foreach ($categories as $category){ ?>
                         <option <?= old('parent_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
