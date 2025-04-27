@@ -40,6 +40,7 @@ class Routing
 
         $match = $this->match();
         if (empty($match)) {
+             dd('hi oops');
             $this->error404();
         }
 
@@ -49,12 +50,14 @@ class Routing
         $path = Config::get('app.BASE_DIR') . "/app/Http/Controllers/" . $controllerPath . ".php";
         // if don't exists
         if (!file_exists($path)) {
+            dd('in file exists');
             $this->error404();
         }
 
         // create instance from founded class controller
         // then get method & execute method
         $class = "\App\Http\Controllers\\" . $match["class"];
+
         $obj = new $class();
         if (method_exists($obj, $match['method'])) {
 
@@ -64,11 +67,13 @@ class Routing
             if ($parameterCount <= count($this->values)) {
                 call_user_func_array(array($obj, $match["method"]), $this->values);
             } else {
+                dd('in file exists 2');
                 $this->error404();
             }
 
         } else {
 
+            dd('in file exists 3');
             $this->error404();
 
         };
@@ -82,7 +87,9 @@ class Routing
         // & we get all routes start with Route::get()
         // $this->routes is array that contain routes
         // with http verb like get post
+
         $reservedRoutes = $this->routes[$this->method_field];
+
 
         foreach ($reservedRoutes as $reservedRoute) {
 
@@ -119,19 +126,33 @@ class Routing
 
         //// part 3
         // compare current route & reservedRoute every item must be equal
+        //        foreach ($this->current_route as $key => $currentRouteElement) {
+        //            $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
+        //            // to findOut is there any variable in current route ? like {id} / {name}
+        //            // for check first & last character in each item is "{}"
+        //            // -1 in second substr in last character
+        //            if (str_starts_with($reservedRouteUrlElement, "{") && substr($reservedRouteUrlElement, 0, -1) == "}")
+        //            {
+        //                // push value in route variable in values array
+        //                // array_push($this->values, $currentRouteElement);
+        //                $this->values[] = $currentRouteElement;
+        //
+        //            } elseif ($reservedRouteUrlElement != $currentRouteElement) {
+        //
+        //                return false;
+        //            }
+        //        }
+        //        return true;
+
+        //part3
         foreach ($this->current_route as $key => $currentRouteElement) {
             $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
-            // to findOut is there any variable in current route ? like {id} / {name}
-            // for check first & last character in each item is "{}"
-            // -1 in second substr in last character
-            if (str_starts_with($reservedRouteUrlElement, "{") && substr($reservedRouteUrlElement, 0, -1) == "}")
+            if(substr($reservedRouteUrlElement, 0, 1) == "{" && substr($reservedRouteUrlElement, -1) == "}")
             {
-                // push value in route variable in values array
-                // array_push($this->values, $currentRouteElement);
-                $this->values[] = $currentRouteElement;
-
-            } elseif ($reservedRouteUrlElement != $currentRouteElement) {
-
+                array_push($this->values, $currentRouteElement);
+            }
+            elseif($reservedRouteUrlElement != $currentRouteElement)
+            {
                 return false;
             }
         }

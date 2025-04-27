@@ -6,11 +6,11 @@ namespace System\Router\Web;
 class Route
 {
 
-    public static function get($url, $executeMethod, $name = null)
+    public static function get($url, $controller, $name = null)
     {
 
 
-        $handler = explode('@', $executeMethod);
+        $handler = explode('@', $controller);
         $controller = $handler[0];
         $method = $handler[1];
 
@@ -20,11 +20,11 @@ class Route
 
     }
 
-    public static function post($url,$executeMethod, $name = null)
+    public static function post($url,$controller, $name = null)
     {
 
 
-        $handler = explode('@', $executeMethod);
+        $handler = explode('@', $controller);
         $controller = $handler[0];
         $method = $handler[1];
 
@@ -34,12 +34,12 @@ class Route
 
     }
 
-    public static function put($url, $executeMethod, $name = null)
+    public static function put($url, $controller, $name = null)
     {
 
 
 
-        $handler = explode('@', $executeMethod);
+        $handler = explode('@', $controller);
         $controller = $handler[0];
         $method = $handler[1];
 
@@ -50,11 +50,11 @@ class Route
     }
 
 
-    public static function delete($url, $executeMethod, $name = null)
+    public static function delete($url, $controller, $name = null)
     {
 
 
-        $handler = explode('@', $executeMethod);
+        $handler = explode('@', $controller);
         $controller = $handler[0];
         $method = $handler[1];
 
