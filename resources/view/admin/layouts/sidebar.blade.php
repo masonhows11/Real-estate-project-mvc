@@ -49,8 +49,8 @@
 
             <li class=" nav-item"><a class="d-flex align-items-center " href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">دسته بندی ها</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center <?= sidebarActive(route('admin.index'),false) ?>" href="<?= route('admin.category.index') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">دسته بندی ها</span></a></li>
-                    <li><a class="d-flex align-items-center <?= sidebarActive(route('admin.index'),false) ?>" href="<?= route('admin.category.create') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">جدید</span></a></li>
+                    <li><a class="d-flex align-items-center <?= sidebarActive(route('admin.category.index'),false) ?>" href="<?= route('admin.category.index') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">دسته بندی ها</span></a></li>
+                    <li><a class="d-flex align-items-center <?= sidebarActive(route('admin.category.create'),false) ?>" href="<?= route('admin.category.create') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">جدید</span></a></li>
                 </ul>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">اخبار</span></a>
