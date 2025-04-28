@@ -20,3 +20,14 @@ function sidebarHasSub($url): string
 {
     return $url === currentUrl() ? 'open' : '';
 }
+
+
+function errorClass($name): string
+{
+    return errorExists($name) ? 'is-invalid' : '';
+}
+
+function errorText($name): string
+{
+    return errorExists($name) ? '<div><small class="text-danger">'. error($name) .'</small></div>' : '';
+}
