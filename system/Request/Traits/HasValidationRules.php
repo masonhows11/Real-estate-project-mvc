@@ -89,6 +89,7 @@ trait HasValidationRules
         // like name title age phone
         if ((!isset($this->request[$name]) or $this->request[$name] === '') && $this->checkFirstError($name)) {
 
+            // to show error message
             $this->setError($name, "$name is required");
         }
     }
