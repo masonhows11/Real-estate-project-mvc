@@ -23,17 +23,19 @@
 
                 <div class="mb-3 mt-3">
                     <label for="category" class="form-label">نام:</label>
-                    <input type="text" class="form-control" id="category" placeholder="نام دسته بندی را وارد کنید" name="name" value="<?= old('name') ?>">
+                    <input type="text" class="form-control <?= errorClass('name') ?> " id="category" placeholder="نام دسته بندی را وارد کنید" name="name" value="<?= old('name') ?>">
+                    <?= errorText('name')  ?>
                 </div>
 
                 <div class="mb-3">
                     <label for="parent" class="form-label">والد:</label>
-                    <select id="parent" class="form-select" name="parent_id">
+                    <select id="parent" class="form-select <?= errorClass('parent_id') ?>" name="parent_id">
                         <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
                         <?php foreach ($categories as $category){ ?>
                         <option <?= old('parent_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
                         <?php } ?>
                     </select>
+                    <?= errorText('name')  ?>
                 </div>
 
                 <button type="submit" class="btn btn-primary">ذخیره</button>
