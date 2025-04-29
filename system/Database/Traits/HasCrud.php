@@ -9,14 +9,14 @@ trait HasCrud
     protected function createMethod($values): \System\Database\ORM\Model
     {
         $values = $this->arrayToCastEncodeValue($values);
-        $this->arrayToAttributes($values,$this);
-         return $this->saveMethod();
+        $this->arrayToAttributes($values, $this);
+        return $this->saveMethod();
     }
 
     protected function updateMethod($values): \System\Database\ORM\Model
     {
         $values = $this->arrayToCastEncodeValue($values);
-        $this->arrayToAttributes($values,$this);
+        $this->arrayToAttributes($values, $this);
         return $this->saveMethod();
     }
 
@@ -28,6 +28,12 @@ trait HasCrud
         $fillArray = array();
         foreach ($this->fillable as $attribute) {
             if (isset($this->$attribute)) {
+
+                if ($this->$attribute === '')
+                {
+                    $this->$attribute = null;
+                }
+
                 $fillArray[] = $this->getAttributeName($attribute) . " = ?";
                 // array_push($fillArray,$this->getAttributeName($attribute) . " = ?");
                 //$this->inCastAttributes($attribute) == true
@@ -47,13 +53,11 @@ trait HasCrud
 
         // how find out we use this method
         // for save new model or update current model
-        if (!isset($this->{$this->primaryKey}))
-        {
-            $this->setSql("INSERT INTO ".$this->getTableName() ." SET $fillString, ".$this->getAttributeName($this->createdAt) ."=Now()");
-
+        if (!isset($this->{$this->primaryKey})) {
+            $this->setSql("INSERT INTO " . $this->getTableName() . " SET $fillString, " . $this->getAttributeName($this->createdAt) . "=Now()");
         } else {
 
-            $this->setSql("UPDATE ".$this->getTableName() ." SET $fillString, ".$this->getAttributeName($this->updatedAt) ."=Now()");
+            $this->setSql("UPDATE " . $this->getTableName() . " SET $fillString, " . $this->getAttributeName($this->updatedAt) . "=Now()");
             $this->setWhere("AND", $this->getAttributeName($this->primaryKey) . " = ?");
             $this->addValue($this->primaryKey, $this->{$this->primaryKey});
             //  $this->primaryKey,$this->{$this->primaryKey}
@@ -81,14 +85,12 @@ trait HasCrud
                     $this->registerAttribute($this, $attribute, $this->castEncodeValue($attribute, $object->$attribute)) :
                     $this->registerAttribute($this, $attribute, $object->$attribute);
             }
-
         }
 
         $this->resetQuery();
         $this->setAllowedMethods(['update', 'delete', 'find']);
 
         return $this;
-
     }
 
     protected function allMethod(): array
@@ -102,7 +104,6 @@ trait HasCrud
             return $this->collection;
         }
         return [];
-
     }
 
     protected function findMethod($id)
@@ -135,7 +136,6 @@ trait HasCrud
         $object->addValue($object->primaryKey, $object->{$object->primaryKey});
 
         return $object->executeQuery();
-
     }
 
 
@@ -145,7 +145,6 @@ trait HasCrud
             $condition = $this->getAttributeName($attr) . ' = ?';
             // `users.id` = ?
             $this->addValue($attr, $firstValue);
-
         } else {
 
             $condition = $this->getAttributeName($attr) . ' ' . $firstValue . ' ?';
@@ -156,9 +155,19 @@ trait HasCrud
         $operator = 'AND';
         $this->setWhere($operator, $condition);
         // this methods like laravel us method chaining
-        $this->setAllowedMethods(['get', 'where', 'whereOr',
-            'whereIn', 'whereNull', 'whereNotNull', 'limit',
-            'orderBy', 'get', 'paginate', 'find']);
+        $this->setAllowedMethods([
+            'get',
+            'where',
+            'whereOr',
+            'whereIn',
+            'whereNull',
+            'whereNotNull',
+            'limit',
+            'orderBy',
+            'get',
+            'paginate',
+            'find'
+        ]);
 
         // find out what is $this on return
         return $this;
@@ -170,7 +179,6 @@ trait HasCrud
             $condition = $this->getAttributeName($attr) . ' = ?';
             // `users.id` = ?
             $this->addValue($attr, $firstValue);
-
         } else {
 
             $condition = $this->getAttributeName($attr) . ' ' . $firstValue . ' ?';
@@ -180,9 +188,19 @@ trait HasCrud
 
         $operator = 'OR';
         $this->setWhere($operator, $condition);
-        $this->setAllowedMethods(['get', 'where', 'whereOr',
-            'whereIn', 'whereNull', 'whereNotNull',
-            'limit', 'orderBy', 'get', 'paginate', 'find']);
+        $this->setAllowedMethods([
+            'get',
+            'where',
+            'whereOr',
+            'whereIn',
+            'whereNull',
+            'whereNotNull',
+            'limit',
+            'orderBy',
+            'get',
+            'paginate',
+            'find'
+        ]);
         return $this;
     }
 
@@ -223,9 +241,19 @@ trait HasCrud
             $condition = $this->getAttributeName($attr) . ' IN (' . implode(' , ', $valuesArray) . ')';
             $operator = 'AND';
             $this->setWhere($operator, $condition);
-            $this->setAllowedMethods(['get', 'where', 'whereOr',
-                'whereIn', 'whereNull', 'whereNotNull',
-                'limit', 'orderBy', 'get', 'paginate', 'find']);
+            $this->setAllowedMethods([
+                'get',
+                'where',
+                'whereOr',
+                'whereIn',
+                'whereNull',
+                'whereNotNull',
+                'limit',
+                'orderBy',
+                'get',
+                'paginate',
+                'find'
+            ]);
             // because method chaining we return result
             // this method for use for other method
             return $this;
@@ -239,7 +267,6 @@ trait HasCrud
         // because method chaining we return result
         // this method for use for other method
         return $this;
-
     }
 
     protected function limitMethod($from, $number): static
@@ -254,8 +281,7 @@ trait HasCrud
     protected function getMethod($array = []): array
     {
         // $array = []; determine specifics column
-        if ($this->sql == '')
-        {
+        if ($this->sql == '') {
             if (empty($array)) {
                 $fields = $this->getTableName() . '.*';
             } else {
@@ -263,10 +289,10 @@ trait HasCrud
                     $array[$key] = $this->getAttributeName($value);
                     // users.email
                 }
-                $fields = implode(' , ',$array);
+                $fields = implode(' , ', $array);
                 // select email,first_name,age from users
             }
-            $this->setSql("SELECT $fields FROM".$this->getTableName());
+            $this->setSql("SELECT $fields FROM" . $this->getTableName());
         }
 
         $statement = $this->executeQuery();
@@ -286,14 +312,13 @@ trait HasCrud
         $totalRows = $this->getCount();
         $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $totalPages = ceil($totalRows / $perPage);
-        $currentPage = min($currentPage,$totalPages);
-        $currentPage = max($currentPage,1);
+        $currentPage = min($currentPage, $totalPages);
+        $currentPage = max($currentPage, 1);
         $currentRow = ($currentPage - 1) * $perPage;
-        $this->limitMethod($currentRow,$perPage);
+        $this->limitMethod($currentRow, $perPage);
 
-        if($this->sql == '')
-        {
-            $this->setSql("SELECT ".$this->getTableName().".* FROM ".$this->getTableName());
+        if ($this->sql == '') {
+            $this->setSql("SELECT " . $this->getTableName() . ".* FROM " . $this->getTableName());
         }
 
         $statement = $this->executeQuery();
@@ -304,7 +329,4 @@ trait HasCrud
         }
         return [];
     }
-
-
-
 }

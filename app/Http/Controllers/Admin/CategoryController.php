@@ -55,7 +55,7 @@ class CategoryController extends AdminController {
         $req = new CategoryRequest();
         $inputs = $req->all();
 
-        if(empty($req->parent_id)) unset($inputs['parent_id']);
+        // if(empty($req->parent_id)) unset($inputs['parent_id']);
 
         Category::update(array_merge($inputs,['id' => $id]));
 
