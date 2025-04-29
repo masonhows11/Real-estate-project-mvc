@@ -34,10 +34,12 @@
                 <div class="mb-3">
                     <label for="parent" class="form-label">والد:</label>
                     <select id="parent" class="form-select <?= errorClass('parent_id') ?>" name="parent_id">
+
                         <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
 
-                        <?php foreach ($categories as $category){ ?>
-                        <option <?=  oldOrValue('parent_id',$category->parent_id)  == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
+                        <?php foreach ($categories as $categorySelect){ ?>
+                        <option <?=  oldOrValue('parent_id',$category->parent_id)  == $categorySelect->id ? 'selected' : '' ?> 
+                         value="<?= $categorySelect->id ?>"> <?= $categorySelect->name ?> </option>
                         <?php } ?>
 
 
