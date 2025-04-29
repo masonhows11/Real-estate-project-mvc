@@ -7,7 +7,7 @@ trait HasSoftDelete
 
     protected function deleteModel($id = null)
     {
-        dd('hi in sofr delete trait');
+        dd('hi in soft delete trait');
         $object = $this; // refer to current model -> user / category / product
 
         if ($id) {
