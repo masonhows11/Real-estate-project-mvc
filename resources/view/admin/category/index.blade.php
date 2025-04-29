@@ -48,10 +48,10 @@
                             <tr>
                                 <td><?= $category->id ?></td>
                                 <td><?= $category->name ?></td>
-                                <td><?= $category->name ?></td>
+                                <td><?= $category->parent_id ?></td>
                                 <td>
-                                    <a class="btn btn-danger btn-sm" href="<?= route('admin.category.delete',[$category->id] ) ?>">حذف</a>
                                     <a class="btn btn-primary btn-sm" href="<?= route('admin.category.edit', [$category->id] ) ?>">ویرایش</a>
+                                    <a class="btn btn-danger btn-sm" href="<?= route('admin.category.delete',[$category->id] ) ?>">حذف</a>
                                 </td>
                               </tr>
                             <?php endforeach; ?>
