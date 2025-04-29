@@ -41,11 +41,16 @@ class CategoryController extends AdminController {
 
     public function edit($id)
     {
-        dd($id);
+
+        $category = Category::find($id);
+        $categories = Category::all();
+
+        return view('admin.category.edit',compact('category','categories'));
+
     }
 
 
-    public function update(){
+    public function update($id){
     }
 
 
