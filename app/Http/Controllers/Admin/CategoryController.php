@@ -50,7 +50,16 @@ class CategoryController extends AdminController {
     }
 
 
-    public function update($id){
+    public function update($id)
+    {
+        $req = new CategoryRequest();
+        $inputs = $req->all();
+
+        if(empty($req->parent_id)) unset($inputs['parent_id']);
+
+        Category::update(array_merge($inputs,['id' => $id]));
+
+        return redirect('admin/category/index');
     }
 
 

@@ -29,5 +29,10 @@ function errorClass($name): string
 
 function errorText($name): string
 {
-    return errorExists($name) ? '<div><small class="text-danger">'. error($name) .'</small></div>' : '';
+    return errorExists($name) ? '<div><small class="text-danger">' . error($name) . '</small></div>' : '';
+}
+
+function oldOrValue($name, $value)
+{
+    return empty(old($name)) ? $value : old($name);
 }

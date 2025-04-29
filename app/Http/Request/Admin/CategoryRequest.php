@@ -11,7 +11,7 @@ class CategoryRequest extends Request
     {
         return[
 
-            'name' => "required|min:10|max:30",
+            'name' => "required|min:5|max:30",
             'parent_id' => "exists:categories,id"
 
         ];
