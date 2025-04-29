@@ -48,7 +48,8 @@
                             <tr>
                                 <td><?= $category->id ?></td>
                                 <td><?= $category->name ?></td>
-                                <td><?= $category->parent_id ?></td>
+
+                                <td><?= empty($category->parent_id) ? '' : $category->parent()->name ?></td>
                                 <td>
                                     <a class="btn btn-primary btn-sm" href="<?= route('admin.category.edit', [$category->id] ) ?>">ویرایش</a>
                                     <a class="btn btn-danger btn-sm" href="<?= route('admin.category.delete',[$category->id] ) ?>">حذف</a>
