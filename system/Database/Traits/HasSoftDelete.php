@@ -6,14 +6,14 @@ trait HasSoftDelete
 {
 
 
-    protected function test()
+    protected function testMethod()
     {
         dd('test soft delete');
     }
 
-    protected function deleteModel($id = null)
+    protected function deleteMethod($id = null)
     {
-        dd('hi in soft delete trait');
+       
         $object = $this; // refer to current model -> user / category / product
 
         if ($id) {

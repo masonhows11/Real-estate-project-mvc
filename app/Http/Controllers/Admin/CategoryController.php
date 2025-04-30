@@ -65,8 +65,7 @@ class CategoryController extends AdminController {
 
     public function delete($id)
     {
-        Category::test();
-        exit();
+
         Category::delete($id);
 
         return redirect('admin/category/index');
