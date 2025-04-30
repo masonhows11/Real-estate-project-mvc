@@ -6,10 +6,15 @@ class PostRequest
 {
     public function rules(): array
     {
-        return[
+        return [
 
-            'name' => "required|min:5|max:30",
-            'parent_id' => "exists:categories,id"
+            'title' => "required|min:5|max:30",
+            'body' => "",
+            'user_id' => "",
+            'cat_id' => "",
+            'image' => "",
+            'status' => "",
+            'published_at' => "",
 
         ];
     }

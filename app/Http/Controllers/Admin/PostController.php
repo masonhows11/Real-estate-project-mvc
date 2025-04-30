@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Request\Admin\PostRequest;
+use App\Models\Category;
 use App\Models\Post;
 
 class PostController extends AdminController
