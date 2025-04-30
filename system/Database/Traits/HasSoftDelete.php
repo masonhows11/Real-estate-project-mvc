@@ -13,7 +13,7 @@ trait HasSoftDelete
 
     protected function deleteMethod($id = null)
     {
-       
+
         $object = $this; // refer to current model -> user / category / product
 
         if ($id) {
