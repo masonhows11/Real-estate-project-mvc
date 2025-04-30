@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('admin_title')
-    دسته بندی ها
+    اخبار
 @endsection
 
 @section('main_content')
@@ -11,7 +11,7 @@
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <h1 class="my-1">دسته بندی ها</h1>
+                    <h1 class="my-1">اخبار</h1>
                 </div>
                 <div>
                     <a class="btn btn-success mt-2" href="<?= route('admin.category.create') ?>">ایجاد</a>

@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('admin_title')
-    دسته بندی جدید
+    خبر جدید
 @endsection
 
 @section('main_content')
@@ -10,7 +10,7 @@
         <div class="row px-2">
             <div class="d-flex justify-content-between">
                 <div>
-                    <h1 class="my-1">دسته بندی جدید</h1>
+                    <h1 class="my-1">خبر جدید</h1>
                 </div>
                 <div>
                    <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.category.index') ?>">دسته بندی ها</a></h4>

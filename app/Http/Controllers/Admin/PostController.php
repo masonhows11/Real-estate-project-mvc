@@ -11,6 +11,7 @@ class PostController extends AdminController
 
     public function index()
     {
+
         $categories = Post::all();
         return view('admin.post.index',['categories' => $categories]);
     }
@@ -58,7 +59,7 @@ class PostController extends AdminController
 
         Post::update(array_merge($inputs,['id' => $id]));
 
-        return redirect('admin/category/index');
+        return redirect('admin/post/index');
     }
 
 
