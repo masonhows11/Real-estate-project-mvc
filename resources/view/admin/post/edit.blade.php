@@ -10,16 +10,16 @@
         <div class="row px-2">
             <div class="d-flex justify-content-between">
                 <div>
-                    <h1 class="my-1"> ویرایش <?= $category->name ?></h1>
+                    <h1 class="my-1"> ویرایش <?= $post->name ?></h1>
                 </div>
                 <div>
-                    <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">دسته بندی ها</a></h4>
+                    <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست اخبار</a></h4>
                 </div>
             </div>
         </div>
 
         <div class="row my-2">
-            <form action="<?= route('admin.category.update',[$category->id]) ?>" method="post">
+            <form action="<?= route('admin.post.update',[$post->id]) ?>" method="post">
 
 
                 <div class="mb-3 mt-3">

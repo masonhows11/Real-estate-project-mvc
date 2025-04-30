@@ -13,13 +13,13 @@
                     <h1 class="my-1">خبر جدید</h1>
                 </div>
                 <div>
-                   <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.category.index') ?>">دسته بندی ها</a></h4>
+                   <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست اخبار</a></h4>
                 </div>
             </div>
         </div>
 
         <div class="row my-2">
-            <form action="<?= route('admin.category.store') ?>" method="post">
+            <form action="<?= route('admin.post.store') ?>" method="post">
 
                 <div class="mb-3 mt-3">
                     <label for="category" class="form-label">نام:</label>
