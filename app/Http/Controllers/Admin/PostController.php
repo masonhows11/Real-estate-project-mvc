@@ -12,8 +12,8 @@ class PostController extends AdminController
     public function index()
     {
 
-        $categories = Post::all();
-        return view('admin.post.index',['categories' => $categories]);
+        $posts = Post::all();
+        return view('admin.post.index',['posts' => $posts]);
     }
 
 
@@ -42,10 +42,10 @@ class PostController extends AdminController
     public function edit($id)
     {
 
-        $category = Post::find($id);
+        $post = Post::find($id);
         $categories = Category::all();
 
-        return view('admin.post.edit',compact('category','categories'));
+        return view('admin.post.edit',compact('post','categories'));
 
     }
 
