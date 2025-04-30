@@ -5,6 +5,12 @@ namespace System\Database\Traits;
 trait HasSoftDelete
 {
 
+
+    protected function test()
+    {
+        dd('test soft delete');
+    }
+
     protected function deleteModel($id = null)
     {
         dd('hi in soft delete trait');
