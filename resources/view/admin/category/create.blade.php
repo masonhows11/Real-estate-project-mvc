@@ -5,7 +5,7 @@
 @endsection
 
 @section('main_content')
-    <div class="container border-2 rounded border-primary">
+    <div class="border-2 rounded border-primary">
 
         <div class="row px-2">
             <div class="d-flex justify-content-between">

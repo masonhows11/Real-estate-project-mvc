@@ -5,44 +5,84 @@
 @endsection
 
 @section('main_content')
-    <div class="container border-2 rounded border-primary">
+    <div class="border-2 rounded border-primary">
 
-        <div class="row px-2">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <h1 class="my-1">خبر جدید</h1>
+
+        <div class="container">
+            <div class="row px-2">
+
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h1 class="my-1">خبر جدید</h1>
+                    </div>
+                    <div>
+                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست
+                                اخبار</a></h4>
+                    </div>
                 </div>
-                <div>
-                   <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست اخبار</a></h4>
-                </div>
+
+
             </div>
         </div>
 
-        <div class="row my-2">
-            <form action="<?= route('admin.post.store') ?>" method="post">
 
-                <div class="mb-3 mt-3">
-                    <label for="category" class="form-label">نام:</label>
-                    <input type="text" class="form-control <?= errorClass('name') ?> " id="category" placeholder="نام دسته بندی را وارد کنید" name="name" value="<?= old('name') ?>">
-                    <?= errorText('name')  ?>
+        <form action="<?= route('admin.post.store') ?>" method="post">
+
+
+                <div class="row mx-auto">
+
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="title" class="form-label">نام :</label>
+                        <input type="text" class="form-control <?= errorClass('title') ?>"
+                               id="title" placeholder="نام دسته بندی را وارد کنید" name="title" value="<?= old('title') ?>">
+                        <?= errorText('title') ?>
+                    </div>
+
+
+                    <div class="col-12 col-sm-6  mt-2">
+                        <label class="form-label">انتخاب تصویر :</label>
+                        <div class="input-group">
+                            <input type="file" name="image" class="form-control" id="input-image">
+                            <label class="input-group-text" for="input-image">Upload</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12  col-sm-6 my-2">
+                        <label for="parent" class="form-label">والد :</label>
+                        <select id="parent" class="form-select <?= errorClass('parent_id') ?>" name="parent_id">
+                            <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
+                            <?php foreach ($categories as $category){ ?>
+                            <option <?= old('parent_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
+                            <?php } ?>
+                        </select>
+                        <?= errorText('name') ?>
+                    </div>
+
+                    <div class="col-12 col-sm-6  my-2">
+                        <label class="form-label">تاریخ :</label>
+                        <input type="text" class="form-control">
+                        <input type="text" class="hidden">
+                    </div>
+
                 </div>
 
-                <div class="mb-3">
-                    <label for="parent" class="form-label">والد:</label>
-                    <select id="parent" class="form-select <?= errorClass('parent_id') ?>" name="parent_id">
-                        <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
-                        <?php foreach ($categories as $category){ ?>
-                        <option <?= old('parent_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
-                        <?php } ?>
-                    </select>
-                    <?= errorText('name')  ?>
+                <div class="row mx-auto">
+
+                    <div>
+                        <label class="form-label" for="body">توضیحات :</label>
+                        <textarea id="body" name="body" class="form-control" rows="6" cols="10"></textarea>
+                    </div>
+
+                    <div class="my-2">
+                        <button type="submit" class="btn btn-primary">ذخیره</button>
+                    </div>
+
                 </div>
 
-                <button type="submit" class="btn btn-primary">ذخیره</button>
-            </form>
-        </div>
 
 
+        </form>
 
 
     </div>
