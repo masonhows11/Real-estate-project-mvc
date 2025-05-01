@@ -45,14 +45,14 @@
                 </div>
 
                 <div class="col-12  col-sm-6 my-2">
-                    <label for="parent" class="form-label">والد :</label>
-                    <select id="parent" class="form-select <?= errorClass('parent_id') ?>" name="parent_id">
+                    <label for="cat_id" class="form-label">والد :</label>
+                    <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
                         <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
                         <?php foreach ($categories as $category){ ?>
-                        <option <?= old('parent_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
+                        <option <?= old('cat_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>"><?= $category->name ?></option>
                         <?php } ?>
                     </select>
-                    <?= errorText('name') ?>
+                    <?= errorText('cat_id') ?>
                 </div>
 
                 <div class="col-12 col-sm-6  my-2">

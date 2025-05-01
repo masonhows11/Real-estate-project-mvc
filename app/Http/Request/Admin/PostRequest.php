@@ -2,7 +2,9 @@
 
 namespace App\Http\Request\Admin;
 
-class PostRequest
+use System\Request\Request;
+
+class PostRequest extends  Request
 {
     public function rules(): array
     {
