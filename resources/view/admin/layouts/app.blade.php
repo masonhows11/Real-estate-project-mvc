@@ -10,6 +10,7 @@
         font-family: iransansdn,"sans-serif" !important;
     }
 </style>
+@yield('custom_styles')
 <title>@yield('admin_title')</title>
 </head>
 <!-- END: Head-->

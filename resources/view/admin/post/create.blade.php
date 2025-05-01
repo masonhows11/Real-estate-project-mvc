@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('custom_styles')
+
+@endsection
+
 @section('admin_title')
     خبر جدید
 @endsection
@@ -10,17 +14,14 @@
 
         <div class="container">
             <div class="row px-2">
-
                 <div class="d-flex justify-content-between">
                     <div>
                         <h1 class="my-1">خبر جدید</h1>
                     </div>
                     <div>
-                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست
-                                اخبار</a></h4>
+                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست اخبار</a></h4>
                     </div>
                 </div>
-
 
             </div>
         </div>
@@ -28,9 +29,7 @@
 
         <form action="<?= route('admin.post.store') ?>" method="post">
 
-
                 <div class="row mx-auto">
-
 
                     <div class="col-12 col-sm-6   my-2">
                         <label for="title" class="form-label">نام :</label>
@@ -38,7 +37,6 @@
                                id="title" placeholder="نام دسته بندی را وارد کنید" name="title" value="<?= old('title') ?>">
                         <?= errorText('title') ?>
                     </div>
-
 
                     <div class="col-12 col-sm-6  mt-2">
                         <label class="form-label">انتخاب تصویر :</label>
@@ -80,15 +78,16 @@
 
                 </div>
 
-
-
         </form>
-
-
     </div>
 @endsection
 
 
 @section('scripts')
-
+<script src="<?= asset('admin_assets/vendors/ckeditor/ckeditor.js') ?>"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('body',{
+            language: 'fa',
+        })
+    </script>
 @endsection
