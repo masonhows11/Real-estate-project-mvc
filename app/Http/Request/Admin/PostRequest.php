@@ -10,13 +10,11 @@ class PostRequest extends  Request
     {
         return [
 
-            'title' => "required|min:5|max:30",
-            'body' => "",
-            'user_id' => "",
-            'cat_id' => "",
-            'image' => "",
-            'status' => "",
-            'published_at' => "",
+            'title' => "required|min:5|max:127",
+            'body' => "required",
+            'cat_id' => "required|exists:categories,id",
+            'image' => "required|file|mimes:jpeg,jpg,png,gif",
+            'published_at' => "required|date",
 
         ];
     }
