@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Request\Admin\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use System\Auth\Auth;
 
 class PostController extends AdminController
 {
@@ -30,6 +31,9 @@ class PostController extends AdminController
     {
         $req = new PostRequest();
         $inputs = $req->all();
+        
+        $inputs['user_id'] = Auth::user()->id;
+        $inputs['status'] = 0;
 
         if(empty($req->parent_id)) unset($inputs['parent_id']);
 
