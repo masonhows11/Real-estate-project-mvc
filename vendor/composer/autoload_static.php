@@ -11,6 +11,11 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         array (
             'System\\' => 7,
         ),
+        'I' => 
+        array (
+            'Intervention\\Image\\' => 19,
+            'Intervention\\Gif\\' => 17,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -21,6 +26,14 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'System\\' => 
         array (
             0 => __DIR__ . '/../..' . '/system',
+        ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src',
+        ),
+        'Intervention\\Gif\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/gif/src',
         ),
         'App\\' => 
         array (
