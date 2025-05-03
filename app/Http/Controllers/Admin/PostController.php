@@ -31,8 +31,9 @@ class PostController extends AdminController
     public function store()
     {
         $req = new PostRequest();
+
         $inputs = $req->all();
-        
+        dd($req->file('image'));
         $inputs['user_id'] = Auth::user()->id;
         $inputs['status'] = 0;
 

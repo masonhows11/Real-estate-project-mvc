@@ -27,7 +27,7 @@
         </div>
 
 
-        <form action="<?= route('admin.post.store') ?>" method="post">
+        <form action="<?= route('admin.post.store') ?>" method="post" enctype="multipart/form-data">
 
 
 
@@ -54,7 +54,8 @@
                         <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
                             <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
                             <?php foreach ($categories as $categorySelect){ ?>
-                            <option <?= !empty(old('parent_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?> value="<?= $categorySelect->id ?>"> <?= $categorySelect->name ?></option>
+                            <option <?= !empty(old('cat_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?>
+                                    value="<?= $categorySelect->id ?>"> <?= $categorySelect->name ?></option>
                             <?php } ?>
                         </select>
                         <?= errorText('cat_id') ?>
