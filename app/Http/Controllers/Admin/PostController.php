@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Request\Admin\PostRequest;
+use App\Http\Services\ImageUpload;
 use App\Models\Category;
 use App\Models\Post;
 use System\Auth\Auth;
@@ -38,7 +39,7 @@ class PostController extends AdminController
         // save image implements
         $path = 'images/posts'.date('Y/M/d');
         $image_name = date('Y_m_d_H_i_s_').rand(10,99);
-        $inputs['image'] = imageUpload::uploadAndFitImage($req->file('image'),$path,$image_name,800,499);
+        $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'),$path,$image_name,800,499);
 
         Post::create($inputs);
 
