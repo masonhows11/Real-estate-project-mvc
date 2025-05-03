@@ -24,6 +24,7 @@
 
         <form action="<?= route('admin.post.update') ?>" method="post">
 
+            <input type="hidden" name="_method" value="put">
 
             <div class="row mx-auto">
 

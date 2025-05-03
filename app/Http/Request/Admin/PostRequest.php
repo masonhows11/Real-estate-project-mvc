@@ -19,6 +19,7 @@ class PostRequest extends Request
                 'image' => "file|mimes:jpeg,jpg,png,gif",
                 'published_at' => "required|date",
 
+
             ];
         } else {
             // for new post
@@ -28,7 +29,8 @@ class PostRequest extends Request
                 'body' => "required",
                 'cat_id' => "required|exists:categories,id",
                 'image' => "required|file|mimes:jpeg,jpg,png,gif",
-                'published_at' => "required|date",
+                'published_at' => "date",
+                //'published_at' => "required|date",
 
             ];
         }

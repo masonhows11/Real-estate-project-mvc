@@ -29,12 +29,14 @@
 
         <form action="<?= route('admin.post.store') ?>" method="post">
 
+
+
                 <div class="row mx-auto">
 
                     <div class="col-12 col-sm-6   my-2">
                         <label for="title" class="form-label">نام :</label>
                         <input type="text" class="form-control <?= errorClass('title') ?>"
-                               id="title" placeholder="نام دسته بندی را وارد کنید" name="title" value="<?= old('title') ?>">
+                               id="title" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= old('title') ?>">
                         <?= errorText('title') ?>
                     </div>
 
@@ -44,6 +46,7 @@
                             <input type="file" name="image" class="form-control" id="input-image">
                             <label class="input-group-text" for="input-image">Upload</label>
                         </div>
+                        <?= errorText('image') ?>
                     </div>
 
                     <div class="col-12  col-sm-6 my-2">
@@ -54,13 +57,14 @@
                             <option <?= !empty(old('parent_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?> value="<?= $categorySelect->id ?>"> <?= $categorySelect->name ?></option>
                             <?php } ?>
                         </select>
-                        <?= errorText('name') ?>
+                        <?= errorText('cat_id') ?>
                     </div>
 
                     <div class="col-12 col-sm-6  my-2">
                         <label class="form-label">تاریخ :</label>
                         <input type="text" class="form-control">
                         <input type="text" class="hidden">
+                        <?= errorText('published_at') ?>
                     </div>
 
                 </div>
@@ -69,8 +73,9 @@
 
                     <div>
                         <label class="form-label" for="body">توضیحات :</label>
-                        <textarea id="body" name="body" class="form-control" rows="6" cols="10"></textarea>
+                        <textarea id="body" name="body" class="form-control" rows="6" cols="10"><?= old('body') ?></textarea>
                     </div>
+                    <?= errorText('body') ?>
 
                     <div class="my-2">
                         <button type="submit" class="btn btn-primary">ذخیره</button>
