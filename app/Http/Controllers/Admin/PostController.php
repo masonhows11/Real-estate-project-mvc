@@ -35,7 +35,10 @@ class PostController extends AdminController
         $inputs['user_id'] = Auth::user()->id;
         $inputs['status'] = 0;
 
-        if(empty($req->parent_id)) unset($inputs['parent_id']);
+        // save image implements
+        $path = 'images/posts'.date('Y/M/d');
+        $image_name = date('Y_m_d_H_i_s_').rand(10,99);
+        $inputs['image'] = imageUpload::uploadAndFitImage($req->file('image'),$path,$image_name,800,499);
 
         Post::create($inputs);
 
