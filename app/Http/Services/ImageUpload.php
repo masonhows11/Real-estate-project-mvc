@@ -27,7 +27,9 @@ class ImageUpload
         is_writable($path);
 
             $manager  = new ImageManager(new Driver);
-            $image = $manager->make($file['tmp_name'])->fit($width,$height);
+
+            $image = $manager->read($file['tmp_name']);
+            $image = $image->scale($width,$height);
             $image->save($path.$image_name);
             return '/'.$path.$image_name;
 
