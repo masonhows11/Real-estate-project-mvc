@@ -49,7 +49,6 @@ trait HasFileValidationRules
     {
         if ($this->checkFirstError($name) && $this->checkFileExists($name)) {
 
-          
             $string_ext = $this->files[$name]['type'];
             $array_type = explode('/', $string_ext);
             $currentFileType = $array_type[1];

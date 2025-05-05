@@ -62,9 +62,9 @@
                     </div>
 
                     <div class="col-12 col-sm-6  my-2">
-                        <label class="form-label">تاریخ :</label>
-                        <input type="text" class="form-control">
-                        <input type="text" class="hidden">
+                        <label class="form-label" for="published_at">تاریخ :</label>
+                        <input type="date" name="published_at" id="published_at" class="form-control"
+                               value="<?= empty(old('published_at')) ? '' : old('published_at') ?>">
                         <?= errorText('published_at') ?>
                     </div>
 
