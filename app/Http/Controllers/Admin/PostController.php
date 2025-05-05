@@ -33,7 +33,7 @@ class PostController extends AdminController
         $req = new PostRequest();
 
         $inputs = $req->all();
-        dd($req->file('image'));
+        //dd($req->file('image'));
         $inputs['user_id'] = Auth::user()->id;
         $inputs['status'] = 0;
 

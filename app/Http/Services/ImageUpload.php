@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
 
 class ImageUpload
@@ -10,9 +11,11 @@ class ImageUpload
     public static function uploadAndFitImage(mixed $file, string $path, string $image_name, int $width, int $height)
     {
 
+       
 
-        $path = trim('\/') . "/";
-        $image_name = trim('\/') . '.' . pathinfo($file['name'], PATHINFO_EXTENSION);
+        $path = trim($path,'\/') . "/";
+        $image_name = trim($image_name,'\/') . '.' . pathinfo($file['name'], PATHINFO_EXTENSION);
+      
 
         if (!is_dir($path))
         {
@@ -23,7 +26,7 @@ class ImageUpload
         }
         is_writable($path);
 
-            $manager  = new ImageManager(array('driver' => 'GD'));
+            $manager  = new ImageManager(new Driver);
             $image = $manager->make($file['tmp_name'])->fit($width,$height);
             $image->save($path.$image_name);
             return '/'.$path.$image_name;
