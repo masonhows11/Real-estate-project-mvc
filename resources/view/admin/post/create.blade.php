@@ -54,8 +54,10 @@
                         <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
                             <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
                             <?php foreach ($categories as $categorySelect){ ?>
-                            <option <?= !empty(old('cat_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?>
-                                    value="<?= $categorySelect->id ?>"> <?= $categorySelect->name ?></option>
+                            <option value="<?= $categorySelect->id ?>"
+                                    <?= !empty(old('cat_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?>>
+                                    <?= $categorySelect->name ?>
+                            </option>
                             <?php } ?>
                         </select>
                         <?= errorText('cat_id') ?>
