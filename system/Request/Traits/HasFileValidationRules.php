@@ -45,44 +45,43 @@ trait HasFileValidationRules
         }
     }
 
-    protected function fileType($name,$typesArray): void
+    protected function fileType($name, $typesArray): void
     {
-        if($this->checkFirstError($name) && $this->checkFileExists($name)){
+        if ($this->checkFirstError($name) && $this->checkFileExists($name)) {
 
-            $currentFileType = explode('/',$this->files[$name]['type'][1]);
-
-            if(!in_array($currentFileType,$typesArray))
-            {
-                $this->setError($name, "$name type must be".implode(',',$typesArray));
+          
+            $string_ext = $this->files[$name]['type'];
+            $array_type = explode('/', $string_ext);
+            $currentFileType = $array_type[1];
+            if (!in_array($currentFileType, $typesArray)) {
+                $this->setError($name, "$name type must be " . implode(', ', $typesArray));
             }
         }
     }
 
-    protected function MaxFile($name,$size): void
+    protected function MaxFile($name, $size): void
     {
         // size as byte
         // kb to byte
         $size = $size * 1024;
-        if($this->checkFirstError($name) && $this->checkFileExists($name)){
+        if ($this->checkFirstError($name) && $this->checkFileExists($name)) {
 
-            if($this->files[$name]['size'] > $size)
-            {
-                $this->setError($name, "$name size must be lower than ".($size / 1024)." Kb ");
+            if ($this->files[$name]['size'] > $size) {
+                $this->setError($name, "$name size must be lower than " . ($size / 1024) . " Kb ");
             }
         }
 
 
     }
 
-    protected function minFile($name,$size): void
+    protected function minFile($name, $size): void
     {
         $size = $size * 1024;
 
-        if($this->checkFirstError($name) && $this->checkFileExists($name)){
+        if ($this->checkFirstError($name) && $this->checkFileExists($name)) {
 
-            if($this->files[$name]['size'] < $size)
-            {
-                $this->setError($name, "$name size must be bigger than ".($size / 1024)." Kb ");
+            if ($this->files[$name]['size'] < $size) {
+                $this->setError($name, "$name size must be bigger than " . ($size / 1024) . " Kb ");
             }
         }
     }
