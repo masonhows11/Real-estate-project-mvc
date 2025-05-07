@@ -48,7 +48,7 @@
                 <div class="col-12  col-sm-6 my-2">
                     <label for="cat_id" class="form-label">والد :</label>
                     <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
-                        <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
+                       
                         <?php foreach ($categories as $categorySelect){ ?>
                         <option value="<?= $categorySelect->id ?>"
                                 <?= !empty(old('cat_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?>>
@@ -69,8 +69,11 @@
             </div>
 
             <div class="row mx-auto">
+                <div class="col-sm-6 mt-2">
+                    <img class="img-thumbnail img-fluid" style="height: 400px" src="<?= $post->image ?  asset($post->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>" alt="post-image">
+                </div>
 
-                <div>
+                <div class="col-sm-6">
                     <label class="form-label" for="body">توضیحات :</label>
                     <textarea id="body" name="body" class="form-control" rows="6" cols="10"><?= $post->body ?></textarea>
                 </div>
