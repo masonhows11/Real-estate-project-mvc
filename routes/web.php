@@ -46,7 +46,8 @@ Route::post('/admin/post/store','Admin\PostController@store','admin.post.store')
 
 Route::get('/admin/post/edit/{id}','Admin\PostController@edit','admin.post.edit');
 
-Route::post('/admin/post/update/{id}','Admin\PostController@update','admin.post.update');
+// Route::post('/admin/post/update/{id}','Admin\PostController@update','admin.post.update');
+Route::put('/admin/post/update/{id}','Admin\PostController@update','admin.post.update');
 
 Route::get('/admin/post/delete/{id}','Admin\PostController@delete','admin.post.delete');
 
