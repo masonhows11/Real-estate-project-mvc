@@ -61,6 +61,7 @@ class PostController extends AdminController
 
     public function update($id)
     {
+        // dd(Post::find($id));
         $req = new PostUpdateRequest();
         $inputs = $req->all();
 

@@ -22,9 +22,9 @@
 
 
 
-        <form action="<?= route('admin.post.update',['id' => $post->id]) ?>" method="post">
+        <form action="<?= route("admin.post.update",['id' => $post->id]) ?>" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="_method" value="put">
+           <!-- <input type="hidden" name="_method" value="put">-->
 
 
             <div class="row mx-auto">
@@ -82,7 +82,7 @@
                 <?= errorText('body') ?>
 
                 <div class="my-2">
-                    <button type="submit" class="btn btn-primary">ذخیره</button>
+                    <button type="submit" class="btn btn-primary">بروز رسانی</button>
                 </div>
 
             </div>

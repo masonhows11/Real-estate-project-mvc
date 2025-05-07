@@ -54,10 +54,6 @@
                             <td><?= $post->user()->first_name. ' '.$post->user()->last_name ?></td>
 
                             <td><img class="img-thumbnail mx-auto d-block" width="200" height="200" src="<?= $post->image ?  asset($post->image) : asset('admin_assets/default/no-image-icon-23494.png')  ?>" alt="post-image"></td>
-
-
-
-
                             <td>
                                 <a class="btn btn-primary btn-sm"
                                    href="<?= route('admin.post.edit', [$post->id] ) ?>">ویرایش</a>

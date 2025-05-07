@@ -88,7 +88,9 @@ class Routing
         // $this->routes is array that contain routes
         // with http verb like get post
 
+
         $reservedRoutes = $this->routes[$this->method_field];
+
 
 
         foreach ($reservedRoutes as $reservedRoute) {
@@ -164,6 +166,7 @@ class Routing
     {
         $method = strtolower($_SERVER['REQUEST_METHOD']);
 
+
         if ($method == 'post') {
 
             if (isset($_POST['_method'])) {
@@ -178,6 +181,7 @@ class Routing
                 }
             }
         }
+        // dd($method);
         return $method;
     }
 

@@ -18,7 +18,10 @@
             </div>
         </div>
 
-        <div class="row my-2">
+
+
+        <div class="row my-2 mx-auto">
+
             <form action="<?= route('admin.category.update',[$category->id]) ?>" method="post">
 
 
@@ -38,7 +41,7 @@
                         <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
 
                         <?php foreach ($categories as $categorySelect){ ?>
-                        <option <?=  oldOrValue('parent_id',$category->parent_id)  == $categorySelect->id ? 'selected' : '' ?> 
+                        <option <?=  oldOrValue('parent_id',$category->parent_id)  == $categorySelect->id ? 'selected' : '' ?>
                          value="<?= $categorySelect->id ?>"> <?= $categorySelect->name ?> </option>
                         <?php } ?>
 

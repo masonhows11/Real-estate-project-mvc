@@ -38,17 +38,17 @@ Route::post('admin/category/update/{id}','Admin\CategoryController@update','admi
 Route::get('admin/category/delete/{id}','Admin\CategoryController@delete','admin.category.delete');
 
 // post
-Route::get('admin/post/index','Admin\PostController@index','admin.post.index');
+Route::get('/admin/post/index','Admin\PostController@index','admin.post.index');
 
-Route::get('admin/post/create','Admin\PostController@create','admin.post.create');
+Route::get('/admin/post/create','Admin\PostController@create','admin.post.create');
 
-Route::post('admin/post/store','Admin\PostController@store','admin.post.store');
+Route::post('/admin/post/store','Admin\PostController@store','admin.post.store');
 
-Route::get('admin/post/edit/{id}','Admin\PostController@edit','admin.post.edit');
+Route::get('/admin/post/edit/{id}','Admin\PostController@edit','admin.post.edit');
 
-Route::post('admin/post/update/{id}','Admin\PostController@update','admin.post.update');
+Route::post('/admin/post/update/{id}','Admin\PostController@update','admin.post.update');
 
-Route::get('admin/post/delete/{id}','Admin\PostController@delete','admin.post.delete');
+Route::get('/admin/post/delete/{id}','Admin\PostController@delete','admin.post.delete');
 
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
