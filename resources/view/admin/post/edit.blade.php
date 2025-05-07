@@ -32,7 +32,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="title" class="form-label">نام :</label>
                     <input type="text" class="form-control <?= errorClass('title') ?>"
-                           id="title" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= $post->title ?>">
+                           id="title" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= oldOrValue('title',$post->title) ?>">
                     <?= errorText('title') ?>
                 </div>
 
@@ -48,10 +48,10 @@
                 <div class="col-12  col-sm-6 my-2">
                     <label for="cat_id" class="form-label">والد :</label>
                     <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
-                       
+                        <!-- <option value="">در صورت نیاز دسته والد را انتخاب کنید</option> -->
                         <?php foreach ($categories as $categorySelect){ ?>
                         <option value="<?= $categorySelect->id ?>"
-                                <?= !empty(old('cat_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?>>
+                                <?= !empty(old('cat_id')) &&  $categorySelect->id === oldOrValue('cat_id',$post->cat_id) ? 'selected' : '' ?>>
                                 <?= $categorySelect->name ?>
                         </option>
                         <?php } ?>
@@ -62,7 +62,7 @@
                 <div class="col-12 col-sm-6  my-2">
                     <label class="form-label" for="published_at">تاریخ :</label>
                     <input type="date" name="published_at" id="published_at" class="form-control"
-                           value="<?= $post->published_at ?>">
+                           value="<?= oldOrValue('published_at',date('Y-m-d',strtotime($post->published_at))) ?>">
                     <?= errorText('published_at') ?>
                 </div>
 
@@ -70,12 +70,14 @@
 
             <div class="row mx-auto">
                 <div class="col-sm-6 mt-2">
-                    <img class="img-thumbnail img-fluid" style="height: 400px" src="<?= $post->image ?  asset($post->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>" alt="post-image">
+                    <img class="img-thumbnail img-fluid" style="height: 400px"
+                         src="<?= $post->image ?  asset($post->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
+                         alt="post-image">
                 </div>
 
                 <div class="col-sm-6">
                     <label class="form-label" for="body">توضیحات :</label>
-                    <textarea id="body" name="body" class="form-control" rows="6" cols="10"><?= $post->body ?></textarea>
+                    <textarea id="body" name="body" class="form-control" rows="6" cols="10"><?= oldOrValue('body',$post->body) ?></textarea>
                 </div>
                 <?= errorText('body') ?>
 
