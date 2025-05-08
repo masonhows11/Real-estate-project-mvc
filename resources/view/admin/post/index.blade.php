@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('admin_title')
+-@section('admin_title')
     اخبار
 @endsection
 
@@ -59,6 +59,8 @@
                                    href="<?= route('admin.post.edit', [$post->id] ) ?>">ویرایش</a>
                                 <a class="btn btn-danger btn-sm"
                                    href="<?= route('admin.post.delete',[$post->id] ) ?>">حذف</a>
+                                <a class="btn <?= $post->status == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"
+                                   href="<?= route('admin.post.change.Status',[$post->id]) ?>"><?= $post->status == 1 ? 'فعال' : 'غیر قعال' ?></a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

@@ -51,6 +51,8 @@ Route::put('/admin/post/update/{id}','Admin\PostController@update','admin.post.u
 
 Route::get('/admin/post/delete/{id}','Admin\PostController@delete','admin.post.delete');
 
+Route::get('/admin/post/change_status/{id}','Admin\PostController@changeStatus','admin.post.change.Status');
+
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
 //

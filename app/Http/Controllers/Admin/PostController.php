@@ -84,12 +84,41 @@ class PostController extends AdminController
     }
 
 
-    public function delete($id)
+    public function delete($id): null
     {
 
         Post::delete($id);
+
         return back();
-        
+
         //return redirect('admin/post/index');
+    }
+
+
+    public function changeStatus($id): null
+    {
+
+        // dd($id);
+
+
+        $post = Post::find($id);
+
+        $inputs = [];
+
+        if ($post->status == 0) {
+
+            $inputs['id'] = $id;
+            $inputs['status'] = 1;
+            Post::update($inputs);
+        } else {
+
+            $inputs['id'] = $id;
+            $inputs['status'] = 0;
+
+            Post::update($inputs);
+        }
+
+
+        return back();
     }
 }
