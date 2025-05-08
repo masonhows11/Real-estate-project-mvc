@@ -53,6 +53,23 @@ Route::get('/admin/post/delete/{id}','Admin\PostController@delete','admin.post.d
 
 Route::get('/admin/post/change_status/{id}','Admin\PostController@changeStatus','admin.post.change.Status');
 
+// ads 
+
+Route::get('/admin/ads/index','Admin\AdsController@index','admin.ads.index');
+
+Route::get('/admin/ads/create','Admin\AdsController@create','admin.ads.create');
+
+Route::post('/admin/ads/store','Admin\AdsController@store','admin.ads.store');
+
+Route::get('/admin/ads/edit/{id}','Admin\AdsController@edit','admin.ads.edit');
+
+Route::put('/admin/ads/update/{id}','Admin\AdsController@update','admin.ads.update');
+
+Route::get('/admin/ads/delete/{id}','Admin\AdsController@delete','admin.ads.delete');
+
+Route::get('/admin/ads/change_status/{id}','Admin\AdsController@changeStatus','admin.ads.change.Status');
+
+
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
 //
