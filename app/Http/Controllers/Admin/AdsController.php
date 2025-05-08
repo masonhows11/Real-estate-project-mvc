@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-class AdsController{
+class AdsController extends AdminController{
 
 
 
