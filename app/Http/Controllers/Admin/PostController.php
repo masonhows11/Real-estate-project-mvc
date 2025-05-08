@@ -34,7 +34,7 @@ class PostController extends AdminController
         $req = new PostRequest();
 
         $inputs = $req->all();
-        //dd($req->file('image'));
+     
         $inputs['user_id'] = Auth::user()->id;
         $inputs['status'] = 0;
 
@@ -98,9 +98,7 @@ class PostController extends AdminController
     public function changeStatus($id): null
     {
 
-        // dd($id);
-
-
+    
         $post = Post::find($id);
 
         $inputs = [];
@@ -110,6 +108,7 @@ class PostController extends AdminController
             $inputs['id'] = $id;
             $inputs['status'] = 1;
             Post::update($inputs);
+
         } else {
 
             $inputs['id'] = $id;
