@@ -16,10 +16,10 @@
             <div class="row px-2">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <h1 class="my-1">خبر جدید</h1>
+                        <h1 class="my-1">آگهی جدید</h1>
                     </div>
                     <div>
-                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست اخبار</a></h4>
+                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.ads.index') ?>">لیست اگهی ها</a></h4>
                     </div>
                 </div>
 
@@ -27,7 +27,7 @@
         </div>
 
 
-        <form action="<?= route('admin.post.store') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= route('admin.ads.store') ?>" method="post" enctype="multipart/form-data">
 
 
 
@@ -50,9 +50,9 @@
                     </div>
 
                     <div class="col-12  col-sm-6 my-2">
-                        <label for="cat_id" class="form-label">والد :</label>
+                        <label for="cat_id" class="form-label">دسته بندی :</label>
                         <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
-                            <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
+                            <option value="">دسته بندی را انتخاب کنید</option>
                             <?php foreach ($categories as $categorySelect){ ?>
                             <option value="<?= $categorySelect->id ?>"
                                     <?= !empty(old('cat_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?>>
@@ -63,20 +63,20 @@
                         <?= errorText('cat_id') ?>
                     </div>
 
-                    <div class="col-12 col-sm-6  my-2">
+                    <!--<div class="col-12 col-sm-6  my-2">
                         <label class="form-label" for="published_at">تاریخ :</label>
                         <input type="date" name="published_at" id="published_at" class="form-control"
                                value="<?= empty(old('published_at')) ? '' : old('published_at') ?>">
                         <?= errorText('published_at') ?>
-                    </div>
+                    </div> -->
 
                 </div>
 
                 <div class="row mx-auto">
 
                     <div>
-                        <label class="form-label" for="body">توضیحات :</label>
-                        <textarea id="body" name="body" class="form-control" rows="6" cols="10"><?= old('body') ?></textarea>
+                        <label class="form-label" for="description">توضیحات :</label>
+                        <textarea id="description" name="description" class="form-control" rows="6" cols="10"><?= old('description') ?></textarea>
                     </div>
                     <?= errorText('body') ?>
 

@@ -50,9 +50,9 @@
                     </div>
 
                     <div class="col-12  col-sm-6 my-2">
-                        <label for="cat_id" class="form-label">والد :</label>
+                        <label for="cat_id" class="form-label">دسته بندی:</label>
                         <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
-                            <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
+                            <option value="">دسته بندی را انتخاب کنید</option>
                             <?php foreach ($categories as $categorySelect){ ?>
                             <option value="<?= $categorySelect->id ?>"
                                     <?= !empty(old('cat_id')) &&  $categorySelect->id === old('cat_id') ? 'selected' : '' ?>>

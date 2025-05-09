@@ -80,6 +80,8 @@
                                     href="<?= route('admin.ads.edit', ['id' => $advertise->id]) ?>">ویرایش</a>
                                 <a class="btn btn-danger btn-sm"
                                     href="<?= route('admin.ads.delete', ['id' => $advertise->id]) ?>">حذف</a>
+                                <a class="btn btn-danger btn-sm"
+                                    href="<?= route('admin.ads.gallery', ['id' => $advertise->id]) ?>">گالری</a>
                                 <a class="btn <?= $advertise->status == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"
                                     href="<?= route('admin.ads.change.Status', ['id' => $advertise->id]) ?>"><?= $advertise->status == 1 ? 'فعال' : 'غیر قعال' ?></a>
                                 </td>

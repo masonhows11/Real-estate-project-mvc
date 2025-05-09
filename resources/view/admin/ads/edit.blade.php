@@ -22,7 +22,7 @@
 
 
 
-        <form action="<?= route("admin.post.update",['id' => $post->id]) ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= route("admin.ads.update",['id' => $post->id]) ?>" method="post" enctype="multipart/form-data">
 
             <input type="hidden" name="_method" value="put">
 

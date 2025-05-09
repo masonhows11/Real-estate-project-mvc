@@ -23,7 +23,8 @@ class AdsController extends AdminController{
      public function create()
     {
        
-        return view('admin.ads.create');
+        $categories = Category::all();
+        return view('admin.ads.create',compact('categories'));
     }
 
      public function store()
