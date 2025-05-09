@@ -9,12 +9,14 @@ class AdsController extends AdminController{
 
     public function index()
     {
-        # code...
+        
+        return view('admin.ads.index');
     }
 
      public function create()
     {
-        # code...
+       
+        return view('admin.ads.create');
     }
 
      public function store()
@@ -25,7 +27,7 @@ class AdsController extends AdminController{
 
      public function edit($id)
     {
-        # code...
+         return view('admin.ads.edit');
     }
 
      public function update($id)
