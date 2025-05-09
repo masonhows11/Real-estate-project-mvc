@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('admin_title')
-    اخبار
+    آگهی ها
 @endsection
 
 @section('main_content')
@@ -36,34 +36,55 @@
                 <div class="container">
                     <table class="table table-sm table-responsive">
                         <thead class="">
-                        <tr>
-                            <th>#</th>
-                            <th>نام</th>
-                            <th>دسته</th>
-                            <th>نویسنده</th>
-                            <th>تصویر</th>
-                            <th>عملیات</th>
-                        </tr>
+                            <tr>
+                                <th>#</th>
+                                <th>عنوان</th>
+                                <th>دسته</th>
+                                <th>آدرس</th>
+                                <th>تصویر</th>
+                                <th>مشخصات</th>
+                                <th>تگ</th>
+                                <th>کاربر</th>
+                                <th>عملیات</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($posts as $post): ?>
-                        <tr>
-                            <td><?= $post->id ?></td>
-                            <td><?= $post->title ?></td>
-                            <td><?= $post->category()->name ?></td>
-                            <td><?= $post->user()->first_name. ' '.$post->user()->last_name ?></td>
+                            <?php foreach ($ads as $advertise): ?>
+                            <tr>
+                                <td><?= $advertise->id ?></td>
+                                <td><?= $advertise->title ?></td>
+                                <td><?= $advertise->category()->name ?></td>
+                                <td><?= $advertise->address ?></td>
+                                <td><img class="img-thumbnail mx-auto d-block" width="200" height="200"
+                                        src="<?= $advertise->image ? asset($advertise->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
+                                        alt="advertise-image"></td>
+                                <td>
+                                <td>
+                                    <ul>
+                                        <li>floor : <?= $advertise->floor ?></li>
+                                        <li>year :<?= $advertise->year ?></li>
+                                        <li>storeroom :<?= $advertise->storeroom ?></li>
+                                        <li>balcony :<?= $advertise->balcony ?></li>
+                                        <li>area : <?= $advertise->area ?></li>
+                                        <li>room :<?= $advertise->room ?></li>
+                                        <li>toilet :<?= $advertise->toilet ?></li>
+                                        <li>parking :<?= $advertise->parking ?></li>
+                                    </ul>
+                                </td>
+                                <td><?= $advertise->tag ?></td>
 
-                            <td><img class="img-thumbnail mx-auto d-block" width="200" height="200" src="<?= $post->image ?  asset($post->image) : asset('admin_assets/default/no-image-icon-23494.png')  ?>" alt="post-image"></td>
-                            <td>
+                                <td><?= $advertise->user()->first_name . ' ' . $advertise->user()->last_name ?></td>
+
+
                                 <a class="btn btn-primary btn-sm"
-                                   href="<?= route('admin.post.edit', [$post->id] ) ?>">ویرایش</a>
+                                    href="<?= route('admin.ads.edit', ['id' => $advertise->id]) ?>">ویرایش</a>
                                 <a class="btn btn-danger btn-sm"
-                                   href="<?= route('admin.post.delete',[$post->id] ) ?>">حذف</a>
-                                <a class="btn <?= $post->status == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"
-                                   href="<?= route('admin.post.change.Status',[$post->id]) ?>"><?= $post->status == 1 ? 'فعال' : 'غیر قعال' ?></a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
+                                    href="<?= route('admin.ads.delete', ['id' => $advertise->id]) ?>">حذف</a>
+                                <a class="btn <?= $advertise->status == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"
+                                    href="<?= route('admin.ads.change.Status', ['id' => $advertise->id]) ?>"><?= $advertise->status == 1 ? 'فعال' : 'غیر قعال' ?></a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -76,5 +97,4 @@
 
 
 @section('scripts')
-
 @endsection
