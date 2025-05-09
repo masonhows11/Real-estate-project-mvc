@@ -2,6 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Ads;
+use App\Models\Category;
+use App\Models\Gallery;
+use App\Http\Request\Admin\AdsRequest;
+use App\Http\Services\ImageUpload;
+use System\Auth\Auth;
+
 class AdsController extends AdminController{
 
 
@@ -9,8 +16,8 @@ class AdsController extends AdminController{
 
     public function index()
     {
-        
-        return view('admin.ads.index');
+        $ads = Ads::all();
+        return view('admin.ads.index',compact('ads'));
     }
 
      public function create()
@@ -43,6 +50,11 @@ class AdsController extends AdminController{
      public function changeStatus($id)
     {
         # code...
+    }
+
+    public function gallery($id): null
+    {
+        return view('admin.ads.gallery');
     }
 
 

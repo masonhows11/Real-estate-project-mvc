@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
--@section('admin_title')
+@section('admin_title')
     اخبار
 @endsection
 
@@ -11,10 +11,10 @@
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <h1 class="my-1">اخبار</h1>
+                    <h1 class="my-1">آگهی ها</h1>
                 </div>
                 <div>
-                    <a class="btn btn-success mt-2" href="<?= route('admin.post.create') ?>">ایجاد</a>
+                    <a class="btn btn-success mt-2" href="<?= route('admin.ads.create') ?>">ایجاد</a>
                 </div>
             </div>
         </div>

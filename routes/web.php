@@ -69,6 +69,8 @@ Route::get('/admin/ads/delete/{id}','Admin\AdsController@delete','admin.ads.dele
 
 Route::get('/admin/ads/change_status/{id}','Admin\AdsController@changeStatus','admin.ads.change.Status');
 
+Route::get('/admin/ads/gallery/{id}','Admin\AdsController@gallery','admin.ads.gallery');
+
 
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
