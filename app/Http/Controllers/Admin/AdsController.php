@@ -57,6 +57,16 @@ class AdsController extends AdminController{
         return view('admin.ads.gallery');
     }
 
+    public function storeGallery($id)
+    {
+
+    }
+
+    public function deleteGallery($gallery_id)
+    {
+
+    }
+
 
 
 }

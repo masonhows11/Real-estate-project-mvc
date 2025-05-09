@@ -22,9 +22,9 @@ Route::get('/logout', 'LoginController@login','logout');
 Route::get('admin/index', 'Admin\AdminController@index','admin.index');
 
 
-//// admin routes
+////// admin routes
 
-//  category
+////  category
 Route::get('admin/category/index','Admin\CategoryController@index','admin.category.index');
 
 Route::get('admin/category/create','Admin\CategoryController@create','admin.category.create');
@@ -37,7 +37,7 @@ Route::post('admin/category/update/{id}','Admin\CategoryController@update','admi
 
 Route::get('admin/category/delete/{id}','Admin\CategoryController@delete','admin.category.delete');
 
-// post
+//// post
 Route::get('/admin/post/index','Admin\PostController@index','admin.post.index');
 
 Route::get('/admin/post/create','Admin\PostController@create','admin.post.create');
@@ -53,8 +53,8 @@ Route::get('/admin/post/delete/{id}','Admin\PostController@delete','admin.post.d
 
 Route::get('/admin/post/change_status/{id}','Admin\PostController@changeStatus','admin.post.change.Status');
 
-// ads 
 
+//// ads
 Route::get('/admin/ads/index','Admin\AdsController@index','admin.ads.index');
 
 Route::get('/admin/ads/create','Admin\AdsController@create','admin.ads.create');
@@ -71,6 +71,9 @@ Route::get('/admin/ads/change_status/{id}','Admin\AdsController@changeStatus','a
 
 Route::get('/admin/ads/gallery/{id}','Admin\AdsController@gallery','admin.ads.gallery');
 
+Route::post('/admin/ads/store-gallery-image','Admin\AdsController@storeGallery','admin.ads.store.gallery');
+
+Route::delete('/admin/ads/delete-gallery-image/{gallery_id}','Admin\AdsController@deleteGallery','admin.ads.delete.gallery');
 
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
