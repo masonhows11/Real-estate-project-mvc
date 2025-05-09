@@ -73,7 +73,7 @@ Route::get('/admin/ads/gallery/{id}','Admin\AdsController@gallery','admin.ads.ga
 
 Route::post('/admin/ads/store-gallery-image','Admin\AdsController@storeGallery','admin.ads.store.gallery');
 
-Route::delete('/admin/ads/delete-gallery-image/{gallery_id}','Admin\AdsController@deleteGallery','admin.ads.delete.gallery');
+Route::get('/admin/ads/delete-gallery-image/{gallery_id}','Admin\AdsController@deleteGallery','admin.ads.delete.gallery');
 
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
