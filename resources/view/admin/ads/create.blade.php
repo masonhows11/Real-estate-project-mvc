@@ -74,6 +74,71 @@
 
                 <div class="row mx-auto">
 
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="address" class="form-label">آدرس :</label>
+                        <input type="text" class="form-control <?= errorClass('address') ?>"
+                               id="address" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= old('address') ?>">
+                        <?= errorText('address') ?>
+                    </div>
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="year" class="form-label">سال ساخت :</label>
+                        <input type="text" class="form-control <?= errorClass('year') ?>"
+                               id="year" placeholder="عنوان خبر را وارد کنید" name="year" value="<?= old('year') ?>">
+                        <?= errorText('year') ?>
+                    </div>
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="area" class="form-label">متراژ :</label>
+                        <input type="text" class="form-control <?= errorClass('area') ?>"
+                               id="area" placeholder="عنوان خبر را وارد کنید" name="area" value="<?= old('area') ?>">
+                        <?= errorText('area') ?>
+                    </div>
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="floor" class="form-label">کف :</label>
+                        <input type="text" class="form-control <?= errorClass('floor') ?>"
+                               id="floor" placeholder="عنوان خبر را وارد کنید" name="floor" value="<?= old('floor') ?>">
+                        <?= errorText('floor') ?>
+                    </div>
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="room" class="form-label">اتاق :</label>
+                        <input type="text" class="form-control <?= errorClass('room') ?>"
+                               id="room" placeholder="عنوان خبر را وارد کنید" name="room" value="<?= old('room') ?>">
+                        <?= errorText('room') ?>
+                    </div>
+
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="tag" class="form-label">تگ :</label>
+                        <input type="text" class="form-control <?= errorClass('tag') ?>"
+                               id="tag" placeholder="عنوان خبر را وارد کنید" name="tag" value="<?= old('tag') ?>">
+                        <?= errorText('tag') ?>
+                    </div>
+
+                </div>
+
+                <div class="row mx-auto">
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="storeroom" class="form-label">انبار :</label>
+                        <input type="text" class="form-control <?= errorClass('storeroom') ?>"
+                               id="storeroom" placeholder="عنوان خبر را وارد کنید" name="storeroom" value="<?= old('storeroom') ?>">
+                        <?= errorText('storeroom') ?>
+                    </div>
+
+                    <div class="col-12 col-sm-6   my-2">
+                        <label for="balcony" class="form-label">بالکن :</label>
+                        <input type="text" class="form-control <?= errorClass('balcony') ?>"
+                               id="balcony" placeholder="عنوان خبر را وارد کنید" name="balcony" value="<?= old('balcony') ?>">
+                        <?= errorText('balcony') ?>
+                    </div>
+                    
+                </div>
+
+                <div class="row mx-auto">
+
                     <div>
                         <label class="form-label" for="description">توضیحات :</label>
                         <textarea id="description" name="description" class="form-control" rows="6" cols="10"><?= old('description') ?></textarea>
@@ -94,7 +159,7 @@
 @section('scripts')
 <script src="<?= asset('admin_assets/vendors/ckeditor/ckeditor.js') ?>"></script>
     <script type="text/javascript">
-        CKEDITOR.replace('body',{
+        CKEDITOR.replace('description',{
             language: 'fa',
         })
     </script>
