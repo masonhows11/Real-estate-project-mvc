@@ -35,7 +35,9 @@ class AdsController extends AdminController{
 
      public function edit($id)
     {
-         return view('admin.ads.edit');
+         $ads = Ads::find($id);
+         $categories = Category::all();
+         return view('admin.ads.edit',compact('ads','categories'));
     }
 
      public function update($id)
