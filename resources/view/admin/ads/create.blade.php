@@ -138,7 +138,7 @@
                         <option value="0">ندارد</option>
                         <option value="1">دارد</option>
                     </select>
-                    <?= errorText('storeroom') ?>
+                    <?= errorText('parking') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
