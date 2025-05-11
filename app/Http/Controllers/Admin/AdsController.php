@@ -34,6 +34,16 @@ class AdsController extends AdminController{
         $req = new AdsRequest();
         $inputs = $req->all();
         dd($inputs);
+        $inputs['user_id'] = Auth::user()->id;
+        $inputs['status'] = 0;
+        $inputs['view'] = 0;
+
+        $path = 'images/ads/'.date('Y/m/d');
+        $name = date('Y_m_d_H_i_s').rand(10,99);
+        $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'),$path,$name,800,532);
+        Ads::creat($inputs);
+
+        return redirect("admin/index/ads");
 
     }
 
