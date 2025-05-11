@@ -29,7 +29,12 @@ class AdsController extends AdminController{
 
      public function store()
     {
+
         # code...
+        $req = new AdsRequest();
+        $inputs = $req->all();
+        dd($inputs);
+
     }
 
 

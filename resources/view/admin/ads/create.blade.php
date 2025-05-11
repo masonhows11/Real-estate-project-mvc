@@ -132,8 +132,9 @@
             <div class="row mx-auto">
 
                 <div class="col-12 col-sm-6   my-2">
-                    <label for="parking" class="form-label">انبار :</label>
+                    <label for="parking" class="form-label">پارکینگ :</label>
                     <select type="text" class="form-control <?= errorClass('parking') ?>" id="parking"  name="parking">
+                        <option value="">انتخاب کنید</option>
                         <option value="0">ندارد</option>
                         <option value="1">دارد</option>
                     </select>
@@ -143,6 +144,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="storeroom" class="form-label">انبار :</label>
                     <select type="text" class="form-control <?= errorClass('storeroom') ?>" id="storeroom"  name="storeroom">
+                        <option value="">انتخاب کنید</option>
                         <option value="0">ندارد</option>
                         <option value="1">دارد</option>
                     </select>
@@ -152,6 +154,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="balcony" class="form-label">بالکن :</label>
                     <select type="text" class="form-control <?= errorClass('balcony') ?>" id="balcony"  name="balcony">
+                        <option value="">انتخاب کنید</option>
                         <option value="0">ندارد</option>
                         <option value="1">دارد</option>
                     </select>
@@ -161,6 +164,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="toilet" class="form-label">توالت :</label>
                     <select type="text" class="form-control <?= errorClass('toilet') ?>" id="toilet"  name="toilet">
+                        <option value="">انتخاب کنید</option>
                         <option value="ابرانی">ایرانی</option>
                         <option value="فرنگی">فرنگی</option>
                         <option value="ایرانی و فرنگی">ایرانی و فرنگی</option>
@@ -169,18 +173,20 @@
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
-                    <label for="type" class="form-label">نوع آگهی :</label>
-                    <select type="text" class="form-control <?= errorClass('type') ?>" id="balcony"  name="type">
+                    <label for="sell_status" class="form-label">نوع آگهی :</label>
+                    <select type="text" class="form-control <?= errorClass('sell_status') ?>" id="sell_status"  name="sell_status">
+                        <option value="">انتخاب کنید</option>
                         <option value="1">خرید</option>
                         <option value="2">فروش</option>
                         <option value="3">اجاره</option>
                     </select>
-                    <?= errorText('type') ?>
+                    <?= errorText('sell_status') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="type" class="form-label">نوع ملک :</label>
-                    <select type="text" class="form-control <?= errorClass('type') ?>" id="balcony"  name="type">
+                    <select type="text" class="form-control <?= errorClass('type') ?>" id="type"  name="type">
+                        <option value="">انتخاب کنید</option>
                         <option value="1">زمین</option>
                         <option value="2">ویلایی</option>
                         <option value="3">اپارتمان</option>
