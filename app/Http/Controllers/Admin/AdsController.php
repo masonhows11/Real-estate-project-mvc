@@ -33,7 +33,6 @@ class AdsController extends AdminController{
         # code...
         $req = new AdsRequest();
         $inputs = $req->all();
-        dd($inputs);
         $inputs['user_id'] = Auth::user()->id;
         $inputs['status'] = 0;
         $inputs['view'] = 0;
