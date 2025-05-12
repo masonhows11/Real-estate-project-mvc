@@ -63,6 +63,13 @@
                     <?= errorText('cat_id') ?>
                 </div>
 
+                <div class="col-12  col-sm-6 my-2">
+                    <label for="amount" class="form-label">قیمت :</label>
+                    <input type="text" class="form-control <?= errorClass('amount') ?>"
+                           id="title" placeholder="عنوان خبر را وارد کنید" name="amount" value="<?= old('amount') ?>">
+                    <?= errorText('amount') ?>
+                </div>
+
                 <!--<div class="col-12 col-sm-6  my-2">
                         <label class="form-label" for="published_at">تاریخ :</label>
                         <input type="date" name="published_at" id="published_at" class="form-control"

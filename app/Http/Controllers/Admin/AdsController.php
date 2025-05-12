@@ -40,6 +40,7 @@ class AdsController extends AdminController{
         $path = 'images/ads/'.date('Y/m/d');
         $name = date('Y_m_d_H_i_s').rand(10,99);
         $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'),$path,$name,800,532);
+
         Ads::creat($inputs);
 
         return redirect("admin/index/ads");
