@@ -172,9 +172,9 @@
                     <label for="toilet" class="form-label">توالت :</label>
                     <select type="text" class="form-control <?= errorClass('toilet') ?>" id="toilet"  name="toilet">
                         <option value="">انتخاب کنید</option>
-                        <option value="ابرانی">ایرانی</option>
-                        <option value="فرنگی">فرنگی</option>
-                        <option value="ایرانی و فرنگی">ایرانی و فرنگی</option>
+                        <option value="1">ایرانی</option>
+                        <option value="2">فرنگی</option>
+                        <option value="3">ایرانی و فرنگی</option>
                     </select>
                     <?= errorText('toilet') ?>
                 </div>

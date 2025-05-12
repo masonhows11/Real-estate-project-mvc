@@ -13,7 +13,7 @@ class AdsRequest extends Request
             'title' => "required|min:5|max:127",
             'description' => "required|min:10|max:1000",
             'address' => "required|min:10|max:250",
-            'amount' => "required",
+            'amount' => "required|max:191",
             'cat_id' => "required|exists:categories,id",
             'image' => "required|file|mimes:jpeg,jpg,png,gif",
             'floor' => "required|max:127",
@@ -25,9 +25,8 @@ class AdsRequest extends Request
             'toilet' => "required|number",
             'parking' => "required|number",
             'tag' => "required|max:191",
-            'status' => "required",
             'sell_status' => "required|number",
-            'type' => "required|type",
+            'type' => "required|number",
         ];
 
         //        if (methodField() == 'put') {
