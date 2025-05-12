@@ -81,7 +81,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="address" class="form-label">آدرس :</label>
                     <input type="text" class="form-control <?= errorClass('address') ?>"
-                           id="address" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= old('address') ?>">
+                           id="address" placeholder="عنوان خبر را وارد کنید" name="address" value="<?= old('address') ?>">
                     <?= errorText('address') ?>
                 </div>
 
