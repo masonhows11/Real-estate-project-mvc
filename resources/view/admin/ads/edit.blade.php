@@ -62,7 +62,7 @@
                 <div class="col-12  col-sm-6 my-2">
                     <label for="amount" class="form-label">قیمت :</label>
                     <input type="text" class="form-control <?= errorClass('amount') ?>"
-                           id="title" placeholder="عنوان خبر را وارد کنید" name="amount" value="<?= old('amount') ?>">
+                           id="title" placeholder="عنوان خبر را وارد کنید" name="amount" value="<?= oldOrValue('amount',$ads->amount) ?>">
                     <?= errorText('amount') ?>
                 </div>
 
@@ -80,35 +80,35 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="address" class="form-label">آدرس :</label>
                     <input type="text" class="form-control <?= errorClass('address') ?>"
-                           id="address" placeholder="عنوان خبر را وارد کنید" name="address" value="<?= old('address') ?>">
+                           id="address" placeholder="عنوان خبر را وارد کنید" name="address" value="<?= oldOrValue('address',$ads->address) ?>">
                     <?= errorText('address') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="year" class="form-label">سال ساخت :</label>
                     <input type="text" class="form-control <?= errorClass('year') ?>"
-                           id="year" placeholder="عنوان خبر را وارد کنید" name="year" value="<?= old('year') ?>">
+                           id="year" placeholder="عنوان خبر را وارد کنید" name="year" value="<?= oldOrValue('year',$ads->year) ?>">
                     <?= errorText('year') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="area" class="form-label">متراژ :</label>
                     <input type="text" class="form-control <?= errorClass('area') ?>"
-                           id="area" placeholder="عنوان خبر را وارد کنید" name="area" value="<?= old('area') ?>">
+                           id="area" placeholder="عنوان خبر را وارد کنید" name="area" value="<?= oldOrValue('area',$ads->year) ?>">
                     <?= errorText('area') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="floor" class="form-label">کف :</label>
                     <input type="text" class="form-control <?= errorClass('floor') ?>"
-                           id="floor" placeholder="عنوان خبر را وارد کنید" name="floor" value="<?= old('floor') ?>">
+                           id="floor" placeholder="عنوان خبر را وارد کنید" name="floor" value="<?= oldOrValue('floor',$ads->floor) ?>">
                     <?= errorText('floor') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="room" class="form-label">اتاق :</label>
                     <input type="text" class="form-control <?= errorClass('room') ?>"
-                           id="room" placeholder="عنوان خبر را وارد کنید" name="room" value="<?= old('room') ?>">
+                           id="room" placeholder="عنوان خبر را وارد کنید" name="room" value="<?= oldOrValue('room',$ads->room) ?>">
                     <?= errorText('room') ?>
                 </div>
 
@@ -116,7 +116,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="tag" class="form-label">تگ :</label>
                     <input type="text" class="form-control <?= errorClass('tag') ?>"
-                           id="tag" placeholder="عنوان خبر را وارد کنید" name="tag" value="<?= old('tag') ?>">
+                           id="tag" placeholder="عنوان خبر را وارد کنید" name="tag" value="<?= oldOrValue('tag',$ads->tag) ?>">
                     <?= errorText('tag') ?>
                 </div>
 
@@ -127,7 +127,7 @@
                 <div>
                     <label class="form-label" for="description">توضیحات :</label>
                     <textarea id="description" name="description" class="form-control" rows="6"
-                              cols="10"><?= old('description') ?></textarea>
+                              cols="10"><?= oldOrValue('description',$ads->description) ?></textarea>
                 </div>
                 <?= errorText('description') ?>
             </div>
@@ -137,7 +137,6 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="parking" class="form-label">پارکینگ :</label>
                     <select type="text" class="form-control <?= errorClass('parking') ?>" id="parking"  name="parking">
-                        <option value="">انتخاب کنید</option>
                         <option value="0">ندارد</option>
                         <option value="1">دارد</option>
                     </select>
@@ -147,7 +146,6 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="storeroom" class="form-label">انبار :</label>
                     <select type="text" class="form-control <?= errorClass('storeroom') ?>" id="storeroom"  name="storeroom">
-                        <option value="">انتخاب کنید</option>
                         <option value="0">ندارد</option>
                         <option value="1">دارد</option>
                     </select>
@@ -157,7 +155,6 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="balcony" class="form-label">بالکن :</label>
                     <select type="text" class="form-control <?= errorClass('balcony') ?>" id="balcony"  name="balcony">
-                        <option value="">انتخاب کنید</option>
                         <option value="0">ندارد</option>
                         <option value="1">دارد</option>
                     </select>
@@ -167,7 +164,6 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="toilet" class="form-label">توالت :</label>
                     <select type="text" class="form-control <?= errorClass('toilet') ?>" id="toilet"  name="toilet">
-                        <option value="">انتخاب کنید</option>
                         <option value="1">ایرانی</option>
                         <option value="2">فرنگی</option>
                         <option value="3">ایرانی و فرنگی</option>
@@ -178,7 +174,6 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="sell_status" class="form-label">نوع آگهی :</label>
                     <select type="text" class="form-control <?= errorClass('sell_status') ?>" id="sell_status"  name="sell_status">
-                        <option value="">انتخاب کنید</option>
                         <option value="1">خرید</option>
                         <option value="2">فروش</option>
                         <option value="3">اجاره</option>
@@ -189,7 +184,6 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="type" class="form-label">نوع ملک :</label>
                     <select type="text" class="form-control <?= errorClass('type') ?>" id="type"  name="type">
-                        <option value="">انتخاب کنید</option>
                         <option value="1">زمین</option>
                         <option value="2">ویلایی</option>
                         <option value="3">اپارتمان</option>
@@ -220,7 +214,7 @@
 @section('scripts')
     <script src="<?= asset('admin_assets/vendors/ckeditor/ckeditor.js') ?>"></script>
     <script type="text/javascript">
-        CKEDITOR.replace('body',{
+        CKEDITOR.replace('description',{
             language: 'fa',
         })
     </script>

@@ -50,7 +50,7 @@
                     <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
                         <?php foreach ($categories as $categorySelect){ ?>
                         <option value="<?= $categorySelect->id ?>"
-                                <?= 
+                                <?=
                                 $categorySelect->id === oldOrValue('cat_id',$post->cat_id) ? 'selected' : '' ?>>
                                 <?= $categorySelect->name ?>
                         </option>
