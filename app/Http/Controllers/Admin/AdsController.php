@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Request\Admin\AdsUpdateRequest;
 use App\Models\Ads;
 use App\Models\Category;
 use App\Models\Gallery;
@@ -59,13 +60,31 @@ class AdsController extends AdminController{
      public function update($id)
     {
         # code...
+        $req = new AdsUpdateRequest();
+        $inputs = $req->all();
+
+        $inputs['id'] = $id;
+        $inputs['user_id'] = Auth::user()->id;
+        $inputs['status'] = 0;
+        
+        $file = $req->file('image');
+        if(!empty($file['tmp_name'])){
+            $path = 'images/ads/'.date('Y/m/d');
+            $name = date('Y_m_d_H_i_s').rand(10,99);
+            $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'),$path,$name,800,532);
+
+        }
+
+        Ads::update($inputs);
+
+        return redirect("/admin/ads/index");
+
     }
 
      public function delete($id)
     {
         # code...
         Ads::delete($id);
-
         return redirect("/admin/ads/index");
 
     }

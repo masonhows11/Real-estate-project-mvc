@@ -32,7 +32,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="title" class="form-label">نام :</label>
                     <input type="text" class="form-control <?= errorClass('title') ?>"
-                           id="title" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= old('title') ?>">
+                           id="title" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= oldOrValue('title',$ads->title) ?>">
                     <?= errorText('title') ?>
                 </div>
 
@@ -48,10 +48,9 @@
                 <div class="col-12  col-sm-6 my-2">
                     <label for="cat_id" class="form-label">دسته بندی :</label>
                     <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
-                        <option value="">دسته بندی را انتخاب کنید</option>
                         <?php foreach ($categories as $categorySelect){ ?>
                         <option value="<?= $categorySelect->id ?>"
-                                <?= !empty(old('cat_id')) && $categorySelect->id === old('cat_id') ? 'selected' : '' ?>>
+                                <?= !empty(old('cat_id')) && $categorySelect->id === oldOrValue('cat_id',$ads->cat_id) ? 'selected' : '' ?>>
                                 <?= $categorySelect->name ?>
                         </option>
                         <?php } ?>
