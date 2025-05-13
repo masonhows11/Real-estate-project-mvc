@@ -36,57 +36,58 @@
                 <div class="container">
                     <table class="table table-sm table-responsive">
                         <thead class="">
-                            <tr>
-                                <th>#</th>
-                                <th>عنوان</th>
-                                <th>دسته</th>
-                                <th>آدرس</th>
-                                <th>تصویر</th>
-                                <th>مشخصات</th>
-                                <th>تگ</th>
-                                <th>کاربر</th>
-                                <th>عملیات</th>
-                            </tr>
+                        <tr class="text-center">
+                            <th>#</th>
+                            <th>عنوان</th>
+                            <th>دسته</th>
+                            <th>آدرس</th>
+                            <th>تصویر</th>
+                            <th>مشخصات</th>
+                            <th>تگ</th>
+                            <th>کاربر</th>
+                            <th>عملیات</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($ads as $advertise): ?>
-                            <tr>
-                                <td><?= $advertise->id ?></td>
-                                <td><?= $advertise->title ?></td>
-                                <td><?= $advertise->category()->name ?></td>
-                                <td><?= $advertise->address ?></td>
-                                <td><img class="img-thumbnail mx-auto d-block" width="200" height="200"
-                                        src="<?= $advertise->image ? asset($advertise->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
-                                        alt="advertise-image"></td>
-                                <td>
-                                <td>
-                                    <ul>
-                                        <li>floor : <?= $advertise->floor ?></li>
-                                        <li>year :<?= $advertise->year ?></li>
-                                        <li>storeroom :<?= $advertise->storeroom ?></li>
-                                        <li>balcony :<?= $advertise->balcony ?></li>
-                                        <li>area : <?= $advertise->area ?></li>
-                                        <li>room :<?= $advertise->room ?></li>
-                                        <li>toilet :<?= $advertise->toilet ?></li>
-                                        <li>parking :<?= $advertise->parking ?></li>
-                                    </ul>
-                                </td>
-                                <td><?= $advertise->tag ?></td>
+                        <?php foreach ($ads as $advertise): ?>
+                        <tr class="text-center">
+                            <td><?= $advertise->id ?></td>
+                            <td><?= $advertise->title ?></td>
+                            <td><?= $advertise->category()->name ?></td>
+                            <td><?= $advertise->address ?></td>
+                            <td>
+                                <img class="img-thumbnail mx-auto d-block" width="200" height="200"
+                                     src="<?= $advertise->image ? asset($advertise->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
+                                     alt="advertise-image">
+                            </td>
+                            <td>
+                                <ul class="list-item ">
+                                    <li>floor : <?= $advertise->floor ?></li>
+                                    <li>year :<?= $advertise->year ?></li>
+                                    <li>storeroom :<?= $advertise->storeroom ?></li>
+                                    <li>balcony :<?= $advertise->balcony ?></li>
+                                    <li>area : <?= $advertise->area ?></li>
+                                    <li>room :<?= $advertise->room ?></li>
+                                    <li>toilet :<?= $advertise->toilet ?></li>
+                                    <li>parking :<?= $advertise->parking ?></li>
+                                </ul>
+                            </td>
+                            <td><?= $advertise->tag ?></td>
 
-                                <td><?= $advertise->user()->first_name . ' ' . $advertise->user()->last_name ?></td>
+                            <td><?= $advertise->user()->first_name . ' ' . $advertise->user()->last_name ?></td>
 
-
+                            <td>
                                 <a class="btn btn-primary btn-sm"
-                                    href="<?= route('admin.ads.edit', ['id' => $advertise->id]) ?>">ویرایش</a>
+                                   href="<?= route('admin.ads.edit', ['id' => $advertise->id]) ?>">ویرایش</a>
                                 <a class="btn btn-danger btn-sm"
-                                    href="<?= route('admin.ads.delete', ['id' => $advertise->id]) ?>">حذف</a>
+                                   href="<?= route('admin.ads.delete', ['id' => $advertise->id]) ?>">حذف</a>
                                 <a class="btn btn-danger btn-sm"
-                                    href="<?= route('admin.ads.gallery', ['id' => $advertise->id]) ?>">گالری</a>
+                                   href="<?= route('admin.ads.gallery', ['id' => $advertise->id]) ?>">گالری</a>
                                 <a class="btn <?= $advertise->status == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"
-                                    href="<?= route('admin.ads.change.Status', ['id' => $advertise->id]) ?>"><?= $advertise->status == 1 ? 'فعال' : 'غیر قعال' ?></a>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
+                                   href="<?= route('admin.ads.change.Status', ['id' => $advertise->id]) ?>"><?= $advertise->status == 1 ? 'فعال' : 'غیر قعال' ?></a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
