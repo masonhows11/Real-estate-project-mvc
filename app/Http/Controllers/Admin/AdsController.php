@@ -64,6 +64,10 @@ class AdsController extends AdminController{
      public function delete($id)
     {
         # code...
+        Ads::delete($id);
+
+        return redirect("/admin/ads/index");
+
     }
 
      public function changeStatus($id)
