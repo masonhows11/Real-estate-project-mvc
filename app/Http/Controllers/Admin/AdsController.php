@@ -66,8 +66,8 @@ class AdsController extends AdminController{
         $inputs['id'] = $id;
         $inputs['user_id'] = Auth::user()->id;
         $inputs['status'] = 0;
-        
         $file = $req->file('image');
+
         if(!empty($file['tmp_name'])){
             $path = 'images/ads/'.date('Y/m/d');
             $name = date('Y_m_d_H_i_s').rand(10,99);
@@ -76,7 +76,6 @@ class AdsController extends AdminController{
         }
 
         Ads::update($inputs);
-
         return redirect("/admin/ads/index");
 
     }

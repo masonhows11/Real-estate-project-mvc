@@ -46,11 +46,12 @@
                 </div>
 
                 <div class="col-12  col-sm-6 my-2">
-                    <label for="cat_id" class="form-label">دسته بندی:</label>
+                    <label for="cat_id" class="form-label">دسته بندی :</label>
                     <select id="cat_id" class="form-select <?= errorClass('cat_id') ?>" name="cat_id">
                         <?php foreach ($categories as $categorySelect){ ?>
                         <option value="<?= $categorySelect->id ?>"
-                                <?= !empty(old('cat_id')) &&  $categorySelect->id === oldOrValue('cat_id',$post->cat_id) ? 'selected' : '' ?>>
+                                <?= 
+                                $categorySelect->id === oldOrValue('cat_id',$post->cat_id) ? 'selected' : '' ?>>
                                 <?= $categorySelect->name ?>
                         </option>
                         <?php } ?>
