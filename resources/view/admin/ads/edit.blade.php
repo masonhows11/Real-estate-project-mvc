@@ -14,12 +14,12 @@
                         <h1 class="my-1"> ویرایش <?= $ads->title ?></h1>
                     </div>
                     <div>
-                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.ads.index') ?>">لیست اخبار</a></h4>
+                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.ads.index') ?>">لیست
+                                اخبار</a></h4>
                     </div>
                 </div>
             </div>
         </div>
-
 
 
         <form action="<?= route("admin.ads.update",['id' => $ads->id]) ?>" method="post" enctype="multipart/form-data">
@@ -32,7 +32,8 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="title" class="form-label">نام :</label>
                     <input type="text" class="form-control <?= errorClass('title') ?>"
-                           id="title" placeholder="عنوان خبر را وارد کنید" name="title" value="<?= oldOrValue('title',$ads->title) ?>">
+                           id="title" placeholder="عنوان خبر را وارد کنید" name="title"
+                           value="<?= oldOrValue('title',$ads->title) ?>">
                     <?= errorText('title') ?>
                 </div>
 
@@ -51,7 +52,7 @@
                         <?php foreach ($categories as $categorySelect){ ?>
                         <option value="<?= $categorySelect->id ?>"
                                 <?=
-                                $categorySelect->id === oldOrValue('cat_id',$ads->cat_id) ? 'selected' : '' ?>>
+                            $categorySelect->id === oldOrValue('cat_id', $ads->cat_id) ? 'selected' : '' ?>>
                                 <?= $categorySelect->name ?>
                         </option>
                         <?php } ?>
@@ -62,7 +63,8 @@
                 <div class="col-12  col-sm-6 my-2">
                     <label for="amount" class="form-label">قیمت :</label>
                     <input type="text" class="form-control <?= errorClass('amount') ?>"
-                           id="title" placeholder="عنوان خبر را وارد کنید" name="amount" value="<?= oldOrValue('amount',$ads->amount) ?>">
+                           id="title" placeholder="عنوان خبر را وارد کنید" name="amount"
+                           value="<?= oldOrValue('amount',$ads->amount) ?>">
                     <?= errorText('amount') ?>
                 </div>
 
@@ -80,35 +82,40 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="address" class="form-label">آدرس :</label>
                     <input type="text" class="form-control <?= errorClass('address') ?>"
-                           id="address" placeholder="عنوان خبر را وارد کنید" name="address" value="<?= oldOrValue('address',$ads->address) ?>">
+                           id="address" placeholder="عنوان خبر را وارد کنید" name="address"
+                           value="<?= oldOrValue('address',$ads->address) ?>">
                     <?= errorText('address') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="year" class="form-label">سال ساخت :</label>
                     <input type="text" class="form-control <?= errorClass('year') ?>"
-                           id="year" placeholder="عنوان خبر را وارد کنید" name="year" value="<?= oldOrValue('year',$ads->year) ?>">
+                           id="year" placeholder="عنوان خبر را وارد کنید" name="year"
+                           value="<?= oldOrValue('year',$ads->year) ?>">
                     <?= errorText('year') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="area" class="form-label">متراژ :</label>
                     <input type="text" class="form-control <?= errorClass('area') ?>"
-                           id="area" placeholder="عنوان خبر را وارد کنید" name="area" value="<?= oldOrValue('area',$ads->year) ?>">
+                           id="area" placeholder="عنوان خبر را وارد کنید" name="area"
+                           value="<?= oldOrValue('area',$ads->year) ?>">
                     <?= errorText('area') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="floor" class="form-label">کف :</label>
                     <input type="text" class="form-control <?= errorClass('floor') ?>"
-                           id="floor" placeholder="عنوان خبر را وارد کنید" name="floor" value="<?= oldOrValue('floor',$ads->floor) ?>">
+                           id="floor" placeholder="عنوان خبر را وارد کنید" name="floor"
+                           value="<?= oldOrValue('floor',$ads->floor) ?>">
                     <?= errorText('floor') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="room" class="form-label">اتاق :</label>
                     <input type="text" class="form-control <?= errorClass('room') ?>"
-                           id="room" placeholder="عنوان خبر را وارد کنید" name="room" value="<?= oldOrValue('room',$ads->room) ?>">
+                           id="room" placeholder="عنوان خبر را وارد کنید" name="room"
+                           value="<?= oldOrValue('room',$ads->room) ?>">
                     <?= errorText('room') ?>
                 </div>
 
@@ -116,7 +123,8 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="tag" class="form-label">تگ :</label>
                     <input type="text" class="form-control <?= errorClass('tag') ?>"
-                           id="tag" placeholder="عنوان خبر را وارد کنید" name="tag" value="<?= oldOrValue('tag',$ads->tag) ?>">
+                           id="tag" placeholder="عنوان خبر را وارد کنید" name="tag"
+                           value="<?= oldOrValue('tag',$ads->tag) ?>">
                     <?= errorText('tag') ?>
                 </div>
 
@@ -127,7 +135,7 @@
                 <div>
                     <label class="form-label" for="description">توضیحات :</label>
                     <textarea id="description" name="description" class="form-control" rows="6"
-                              cols="10"><?= oldOrValue('description',$ads->description) ?></textarea>
+                              cols="10"><?= oldOrValue('description', $ads->description) ?></textarea>
                 </div>
                 <?= errorText('description') ?>
             </div>
@@ -136,58 +144,60 @@
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="parking" class="form-label">پارکینگ :</label>
-                    <select type="text" class="form-control <?= errorClass('parking') ?>" id="parking"  name="parking">
-                        <option value="0">ندارد</option>
-                        <option value="1">دارد</option>
+                    <select type="text" class="form-control <?= errorClass('parking') ?>" id="parking" name="parking">
+                        <option <?= oldOrValue('parking',$ads->parking) === 0 ? 'selected' : '' ?> value="0">ندارد</option>
+                        <option <?= oldOrValue('parking',$ads->parking) === 1 ? 'selected' : '' ?> value="1">دارد</option>
                     </select>
                     <?= errorText('parking') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="storeroom" class="form-label">انبار :</label>
-                    <select type="text" class="form-control <?= errorClass('storeroom') ?>" id="storeroom"  name="storeroom">
-                        <option value="0">ندارد</option>
-                        <option value="1">دارد</option>
+                    <select type="text" class="form-control <?= errorClass('storeroom') ?>" id="storeroom"
+                            name="storeroom">
+                        <option <?= oldOrValue('storeroom',$ads->storeroom) === 0 ? 'selected' : '' ?> value="0">ندارد</option>
+                        <option <?= oldOrValue('storeroom',$ads->storeroom) === 1 ? 'selected' : '' ?> value="1">دارد</option>
                     </select>
                     <?= errorText('storeroom') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="balcony" class="form-label">بالکن :</label>
-                    <select type="text" class="form-control <?= errorClass('balcony') ?>" id="balcony"  name="balcony">
-                        <option value="0">ندارد</option>
-                        <option value="1">دارد</option>
+                    <select type="text" class="form-control <?= errorClass('balcony') ?>" id="balcony" name="balcony">
+                        <option <?= oldOrValue('balcony',$ads->balcony) === 0 ? 'selected' : '' ?> value="0">ندارد</option>
+                        <option <?= oldOrValue('balcony',$ads->balcony) === 1 ? 'selected' : '' ?> value="1">دارد</option>
                     </select>
                     <?= errorText('balcony') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="toilet" class="form-label">توالت :</label>
-                    <select type="text" class="form-control <?= errorClass('toilet') ?>" id="toilet"  name="toilet">
-                        <option value="1">ایرانی</option>
-                        <option value="2">فرنگی</option>
-                        <option value="3">ایرانی و فرنگی</option>
+                    <select type="text" class="form-control <?= errorClass('toilet') ?>" id="toilet" name="toilet">
+                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 1 ? 'selected' : '' ?> value="1">ایرانی</option>
+                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 2 ? 'selected' : '' ?> value="2">فرنگی</option>
+                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 3 ? 'selected' : '' ?> value="3">ایرانی و فرنگی</option>
                     </select>
                     <?= errorText('toilet') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="sell_status" class="form-label">نوع آگهی :</label>
-                    <select type="text" class="form-control <?= errorClass('sell_status') ?>" id="sell_status"  name="sell_status">
-                        <option value="1">خرید</option>
-                        <option value="2">فروش</option>
-                        <option value="3">اجاره</option>
+                    <select type="text" class="form-control <?= errorClass('sell_status') ?>" id="sell_status"
+                            name="sell_status">
+                        <option  <?= oldOrValue('sell_status',$ads) === 1 ? 'selected' : '' ?> value="1">خرید</option>
+                        <option  <?= oldOrValue('sell_status',$ads) === 2 ? 'selected' : '' ?> value="2">فروش</option>
+                        <option  <?= oldOrValue('sell_status',$ads) === 3 ? 'selected' : '' ?> value="3">اجاره</option>
                     </select>
                     <?= errorText('sell_status') ?>
                 </div>
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="type" class="form-label">نوع ملک :</label>
-                    <select type="text" class="form-control <?= errorClass('type') ?>" id="type"  name="type">
-                        <option value="1">زمین</option>
-                        <option value="2">ویلایی</option>
-                        <option value="3">اپارتمان</option>
-                        <option value="4">سوله</option>
+                    <select type="text" class="form-control <?= errorClass('type') ?>" id="type" name="type">
+                        <option <?= oldOrValue('type', $ads) === 1 ? 'selected' : '' ?> value="1">زمین</option>
+                        <option <?= oldOrValue('type', $ads) === 2 ? 'selected' : '' ?>value="2">ویلایی</option>
+                        <option <?= oldOrValue('type', $ads) === 3 ? 'selected' : '' ?> value="3">اپارتمان</option>
+                        <option <?= oldOrValue('type', $ads) === 4 ? 'selected' : '' ?> value="4">سوله</option>
                     </select>
                     <?= errorText('type') ?>
                 </div>
@@ -201,10 +211,7 @@
             </div>
 
 
-
         </form>
-
-
 
 
     </div>
