@@ -25,7 +25,7 @@
                     <div class="col-12 col-sm-6  mt-2">
                         <label class="form-label">انتخاب تصویر :</label>
                         <div class="input-group">
-                            <input type="file" name="image" class="form-control" id="input-image">
+                            <input type="file" name="image" class="form-control <?= errorClass('image') ?>" id="input-image">
                             <label class="input-group-text" for="input-image">Upload</label>
                         </div>
                         <?= errorText('image') ?>
@@ -50,12 +50,20 @@
                         <thead class="">
                         <tr>
                             <th>#</th>
+                            <th>تصویر</th>
+                            <th>حذف</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php foreach ($galleries as $gallery): ?>
                         <tr>
                             <td><?= $gallery->id ?></td>
+                            <td>
+                                <img class="img-thumbnail mx-auto d-block" width="200" height="200"
+                                     src="<?= $gallery->image ? asset($gallery->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
+                                     alt="advertise-image">
+                            </td>
+                            <td> <a class="btn btn-danger btn-sm" href="<?= route('admin.ads.delete.gallery', ['id' => $advertise->id]) ?>">حذف</a></td>
                         </tr>
                         <?php endforeach; ?>
                         </tbody>

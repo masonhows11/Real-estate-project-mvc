@@ -149,7 +149,7 @@ function redirect($url): void
 
 function back(): void
 {
-    $http_refer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
+    $http_refer = $_SERVER['HTTP_REFERER'] ?? null;
     redirect($http_refer);
 }
 

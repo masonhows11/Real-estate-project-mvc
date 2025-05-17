@@ -11,25 +11,24 @@ use App\Http\Request\Admin\AdsRequest;
 use App\Http\Services\ImageUpload;
 use System\Auth\Auth;
 
-class AdsController extends AdminController{
-
-
+class AdsController extends AdminController
+{
 
 
     public function index()
     {
         $ads = Ads::all();
-        return view('admin.ads.index',compact('ads'));
+        return view('admin.ads.index', compact('ads'));
     }
 
-     public function create()
+    public function create()
     {
-       
+
         $categories = Category::all();
-        return view('admin.ads.create',compact('categories'));
+        return view('admin.ads.create', compact('categories'));
     }
 
-     public function store()
+    public function store()
     {
 
         # code...
@@ -40,9 +39,9 @@ class AdsController extends AdminController{
         $inputs['status'] = 0;
         $inputs['view'] = 0;
 
-        $path = 'images/ads/'.date('Y/m/d');
-        $name = date('Y_m_d_H_i_s').rand(10,99);
-        $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'),$path,$name,800,532);
+        $path = 'images/ads/' . date('Y/m/d');
+        $name = date('Y_m_d_H_i_s') . rand(10, 99);
+        $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 800, 532);
 
         Ads::create($inputs);
 
@@ -51,14 +50,14 @@ class AdsController extends AdminController{
     }
 
 
-     public function edit($id)
+    public function edit($id)
     {
-         $ads = Ads::find($id);
-         $categories = Category::all();
-         return view('admin.ads.edit',compact('ads','categories'));
+        $ads = Ads::find($id);
+        $categories = Category::all();
+        return view('admin.ads.edit', compact('ads', 'categories'));
     }
 
-     public function update($id)
+    public function update($id)
     {
         # code...
         $req = new AdsUpdateRequest();
@@ -68,10 +67,10 @@ class AdsController extends AdminController{
         $inputs['user_id'] = Auth::user()->id;
         $file = $req->file('image');
 
-        if(!empty($file['tmp_name'])){
-            $path = 'images/ads/'.date('Y/m/d');
-            $name = date('Y_m_d_H_i_s').rand(10,99);
-            $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'),$path,$name,800,532);
+        if (!empty($file['tmp_name'])) {
+            $path = 'images/ads/' . date('Y/m/d');
+            $name = date('Y_m_d_H_i_s') . rand(10, 99);
+            $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 800, 532);
 
         }
 
@@ -80,7 +79,7 @@ class AdsController extends AdminController{
 
     }
 
-     public function delete($id)
+    public function delete($id)
     {
         # code...
         Ads::delete($id);
@@ -88,7 +87,7 @@ class AdsController extends AdminController{
 
     }
 
-     public function changeStatus($id)
+    public function changeStatus($id)
     {
         $post = Ads::find($id);
 
@@ -115,22 +114,32 @@ class AdsController extends AdminController{
     public function gallery($id): null
     {
         $adv = Ads::find($id);
-        $galleries = Gallery::where('advertise_id',$adv->id)->get();
-        return view('admin.ads.gallery',compact('adv','galleries'));
+        $galleries = Gallery::where('advertise_id', $adv->id)->get();
+        return view('admin.ads.gallery', compact('adv', 'galleries'));
     }
 
     public function storeGallery($id)
     {
         $req = new GalleryRequest();
-        $inputs = $req->all();
-        dd($inputs);
+        $inputs = [];
+        ////
+        $inputs['advertise_id'] = $id;
+        ////
+        $path = 'images/galleries/' . date('Y/m/d');
+        $name = date('Y_m_d_H_i_s') . rand(10, 99);
+        $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 730, 400);
+
+        Gallery::create($inputs);
+
+        return back();
     }
 
     public function deleteGallery($gallery_id)
     {
+        Ads::delete($gallery_id);
 
+        return back();
     }
-
 
 
 }
