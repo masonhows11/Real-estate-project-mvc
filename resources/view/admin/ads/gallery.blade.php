@@ -26,7 +26,7 @@
                         <label class="form-label">انتخاب تصویر :</label>
                         <div class="input-group">
                             <input type="file" name="image" class="form-control <?= errorClass('image') ?>" id="input-image">
-                            <label class="input-group-text" for="input-image">Upload</label>
+                            <label class="input-group-text" for="input-image">آپلود</label>
                         </div>
                         <?= errorText('image') ?>
                     </div>
@@ -63,7 +63,9 @@
                                      src="<?= $gallery->image ? asset($gallery->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
                                      alt="advertise-image">
                             </td>
-                            <td> <a class="btn btn-danger btn-sm" href="<?= route('admin.ads.delete.gallery', ['id' => $advertise->id]) ?>">حذف</a></td>
+                            <td>
+                                <a class="btn btn-danger btn-sm" href="<?= route('admin.ads.delete.gallery', ['id'=>$gallery->id]) ?>">حذف</a>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                         </tbody>

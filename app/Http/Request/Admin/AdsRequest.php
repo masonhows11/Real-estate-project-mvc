@@ -8,7 +8,6 @@ class AdsRequest extends Request
 {
     public function rules(): array
     {
-
         return [
             'title' => "required|min:5|max:127",
             'description' => "required|min:10|max:1000",

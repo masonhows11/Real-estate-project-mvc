@@ -16,7 +16,7 @@ class Request
 
     protected bool $errorExist = false;
 
-    protected array $request;
+    protected  $request;
 
     protected array $files;
 

@@ -135,7 +135,7 @@ class AdsController extends AdminController
 
     public function deleteGallery($gallery_id)
     {
-        Ads::delete($gallery_id);
+        Gallery::delete($gallery_id);
         return back();
     }
 
