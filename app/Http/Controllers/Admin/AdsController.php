@@ -65,7 +65,6 @@ class AdsController extends AdminController{
 
         $inputs['id'] = $id;
         $inputs['user_id'] = Auth::user()->id;
-        $inputs['status'] = 0;
         $file = $req->file('image');
 
         if(!empty($file['tmp_name'])){
@@ -114,8 +113,9 @@ class AdsController extends AdminController{
 
     public function gallery($id): null
     {
-        $galleries = Gallery::where('advertise_id',$id)->get();
-        return view('admin.ads.gallery');
+        $adv = Ads::find($id);
+        $galleries = Gallery::where('advertise_id',$adv->id)->get();
+        return view('admin.ads.gallery',compact('adv','galleries'));
     }
 
     public function storeGallery($id)
