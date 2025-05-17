@@ -90,7 +90,26 @@ class AdsController extends AdminController{
 
      public function changeStatus($id)
     {
-        # code...
+        $post = Ads::find($id);
+
+        $inputs = [];
+
+        if ($post->status == 0) {
+
+            $inputs['id'] = $id;
+            $inputs['status'] = 1;
+            Ads::update($inputs);
+
+        } else {
+
+            $inputs['id'] = $id;
+            $inputs['status'] = 0;
+
+            Ads::update($inputs);
+        }
+
+
+        return back();
     }
 
     public function gallery($id): null
