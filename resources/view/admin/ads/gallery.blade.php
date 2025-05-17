@@ -17,8 +17,8 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
+        <div class="row mx-auto">
+            <div class="container">
 
                 <form action="<?= route('admin.ads.store.gallery',['id' => $adv->id]) ?>" method="post" enctype="multipart/form-data">
 
@@ -31,7 +31,7 @@
                         <?= errorText('image') ?>
                     </div>
 
-                    <div class="row mx-auto">
+                    <div class="mx-auto">
                         <div class="my-2">
                             <button type="submit" class="btn btn-primary">ذخیره</button>
                         </div>
