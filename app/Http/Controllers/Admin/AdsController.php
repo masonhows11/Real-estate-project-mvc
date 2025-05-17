@@ -130,14 +130,12 @@ class AdsController extends AdminController
         $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 730, 400);
 
         Gallery::create($inputs);
-
         return back();
     }
 
     public function deleteGallery($gallery_id)
     {
         Ads::delete($gallery_id);
-
         return back();
     }
 
