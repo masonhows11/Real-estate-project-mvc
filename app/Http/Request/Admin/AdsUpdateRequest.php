@@ -22,7 +22,7 @@ class AdsUpdateRequest extends Request
             'balcony' => "required|number",
             'area' => "required|number",
             'room' => "required|number",
-            'toilet' => "required|number",
+            'toilet' => "required",
             'parking' => "required|number",
             'tag' => "required|max:191",
             'sell_status' => "required|number",

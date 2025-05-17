@@ -15,7 +15,7 @@
                     </div>
                     <div>
                         <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.ads.index') ?>">لیست
-                                اخبار</a></h4>
+                                آگهی ها</a></h4>
                     </div>
                 </div>
             </div>
@@ -173,9 +173,9 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="toilet" class="form-label">توالت :</label>
                     <select type="text" class="form-control <?= errorClass('toilet') ?>" id="toilet" name="toilet">
-                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 1 ? 'selected' : '' ?> value="1">ایرانی</option>
-                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 2 ? 'selected' : '' ?> value="2">فرنگی</option>
-                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 3 ? 'selected' : '' ?> value="3">ایرانی و فرنگی</option>
+                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 'ایرانی' ? 'selected' : '' ?> value="ایرانی">ایرانی</option>
+                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 'فرنگی' ? 'selected' : '' ?> value="فرنگی">فرنگی</option>
+                        <option  <?= oldOrValue('toilet',$ads->toilet ) === 'ایرانی و فرنگی' ? 'selected' : '' ?> value="ایرانی و فرنگی">ایرانی و فرنگی</option>
                     </select>
                     <?= errorText('toilet') ?>
                 </div>
@@ -184,9 +184,9 @@
                     <label for="sell_status" class="form-label">نوع آگهی :</label>
                     <select type="text" class="form-control <?= errorClass('sell_status') ?>" id="sell_status"
                             name="sell_status">
-                        <option  <?= oldOrValue('sell_status',$ads) === 1 ? 'selected' : '' ?> value="1">خرید</option>
-                        <option  <?= oldOrValue('sell_status',$ads) === 2 ? 'selected' : '' ?> value="2">فروش</option>
-                        <option  <?= oldOrValue('sell_status',$ads) === 3 ? 'selected' : '' ?> value="3">اجاره</option>
+                        <option  <?= oldOrValue('sell_status',$ads->sell_status) === 1 ? 'selected' : '' ?> value="1">خرید</option>
+                        <option  <?= oldOrValue('sell_status',$ads->sell_status) === 2 ? 'selected' : '' ?> value="2">فروش</option>
+                        <option  <?= oldOrValue('sell_status',$ads->sell_status) === 3 ? 'selected' : '' ?> value="3">اجاره</option>
                     </select>
                     <?= errorText('sell_status') ?>
                 </div>
@@ -194,10 +194,10 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="type" class="form-label">نوع ملک :</label>
                     <select type="text" class="form-control <?= errorClass('type') ?>" id="type" name="type">
-                        <option <?= oldOrValue('type', $ads) === 1 ? 'selected' : '' ?> value="1">زمین</option>
-                        <option <?= oldOrValue('type', $ads) === 2 ? 'selected' : '' ?>value="2">ویلایی</option>
-                        <option <?= oldOrValue('type', $ads) === 3 ? 'selected' : '' ?> value="3">اپارتمان</option>
-                        <option <?= oldOrValue('type', $ads) === 4 ? 'selected' : '' ?> value="4">سوله</option>
+                        <option <?= oldOrValue('type', $ads->type) === 1 ? 'selected' : '' ?> value="1">زمین</option>
+                        <option <?= oldOrValue('type', $ads->type) === 2 ? 'selected' : '' ?>value="2">ویلایی</option>
+                        <option <?= oldOrValue('type', $ads->type) === 3 ? 'selected' : '' ?> value="3">اپارتمان</option>
+                        <option <?= oldOrValue('type', $ads->type) === 4 ? 'selected' : '' ?> value="4">سوله</option>
                     </select>
                     <?= errorText('type') ?>
                 </div>
