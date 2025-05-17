@@ -11,6 +11,7 @@ class GalleryRequest extends Request
     {
 
         return [
+
             'image' => "required|file|mimes:jpeg,jpg,png,gif",
         ];
     }

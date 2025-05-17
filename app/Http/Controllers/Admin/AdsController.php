@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Request\Admin\AdsUpdateRequest;
+use App\Http\Request\Admin\GalleryRequest;
 use App\Models\Ads;
 use App\Models\Category;
 use App\Models\Gallery;
@@ -120,7 +121,9 @@ class AdsController extends AdminController{
 
     public function storeGallery($id)
     {
-
+        $req = new GalleryRequest();
+        $inputs = $req->all();
+        dd($inputs);
     }
 
     public function deleteGallery($gallery_id)
