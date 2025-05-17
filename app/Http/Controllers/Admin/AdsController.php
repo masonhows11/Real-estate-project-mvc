@@ -114,6 +114,7 @@ class AdsController extends AdminController{
 
     public function gallery($id): null
     {
+        $galleries = Gallery::where('advertise_id',$id)->get();
         return view('admin.ads.gallery');
     }
 
