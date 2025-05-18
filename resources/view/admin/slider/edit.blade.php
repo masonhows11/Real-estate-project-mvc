@@ -26,7 +26,7 @@
         </div>
 
 
-        <form action="<?= route('admin.slider.store') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= route('admin.slider.update') ?>" method="post" enctype="multipart/form-data">
 
 
             <div class="row mx-auto">
