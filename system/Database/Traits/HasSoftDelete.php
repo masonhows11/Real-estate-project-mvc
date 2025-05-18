@@ -6,10 +6,7 @@ trait HasSoftDelete
 {
 
 
-    protected function testMethod()
-    {
-        dd('test soft delete');
-    }
+
 
     protected function deleteMethod($id = null)
     {

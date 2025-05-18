@@ -12,13 +12,13 @@ class SliderController extends AdminController
     public function index()
     {
         $sliders = Slider::all();
-        return view('admin.ads.index', compact('sliders'));
+        return view('admin.slider.index', compact('sliders'));
     }
 
     public function create()
     {
 
-        return view('admin.ads.create');
+        return view('admin.slider.create');
     }
 
     public function store()
