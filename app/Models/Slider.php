@@ -9,7 +9,9 @@ class Slider extends Model
 {
     use HasSoftDelete;
 
-    protected string $table = "slides";
+    protected string $table = 'slider';
+
+    protected  $deletedAt = 'deleted_at';
 
     protected array $fillable = [
         'title',

@@ -48,7 +48,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($slider as $slide): ?>
+                        <?php foreach ($sliders as $slide): ?>
                         <tr class="text-center">
                             <td><?= $slide->id ?></td>
                             <td><?= $slide->title ?></td>

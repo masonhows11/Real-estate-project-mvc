@@ -151,6 +151,7 @@ trait HasQueryBuilder
         // ready for execute
         $query .= ' ;';
 
+
         // echo $query.'<hr/>';
 
         // run query on database
