@@ -66,10 +66,10 @@
                 </ul>
             </li>
 
-            <li class="nav-item" <?= sidebarHasSub(route('admin.ads.create')) ?>><a class="d-flex align-items-center <?= sidebarActive(route('admin.ads.index')) ?>" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">اگهی ها</span></a>
+            <li class="nav-item" <?= sidebarHasSub(route('admin.slider.create')) ?>><a class="d-flex align-items-center <?= sidebarActive(route('admin.slider.index')) ?>" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">اسلایدر</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="<?= route('admin.ads.index') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">اگهی ها</span></a></li>
-                    <li><a class="d-flex align-items-center <?= sidebarActive(route('admin.ads.create')) ?>" href="<?= route('admin.ads.create') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">جدید</span></a></li>
+                    <li><a class="d-flex align-items-center" href="<?= route('admin.slider.index') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">اسلایدر</span></a></li>
+                    <li><a class="d-flex align-items-center <?= sidebarActive(route('admin.slider.create')) ?>" href="<?= route('admin.slider.create') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">جدید</span></a></li>
                 </ul>
             </li>
 
