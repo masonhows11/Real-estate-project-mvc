@@ -63,7 +63,7 @@
                             </td>
                             <td>
                                 <a class="btn btn-danger btn-sm"
-                                   href="<?= route('admin.ads.delete', ['id' => $advertise->id]) ?>">حذف</a>
+                                   href="<?= route('admin.slider.delete', ['id' => $advertise->id]) ?>">حذف</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
