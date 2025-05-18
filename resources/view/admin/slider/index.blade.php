@@ -62,8 +62,10 @@
                                      alt="slide-image">
                             </td>
                             <td>
+                                <a class="btn btn-primary btn-sm"
+                                   href="<?= route('admin.slider.edit', ['id' => $slide->id]) ?>">ویرایش</a>
                                 <a class="btn btn-danger btn-sm"
-                                   href="<?= route('admin.slider.delete', ['id' => $advertise->id]) ?>">حذف</a>
+                                   href="<?= route('admin.slider.delete', ['id' => $slide->id]) ?>">حذف</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

@@ -38,6 +38,31 @@ class SliderController extends AdminController
 
     }
 
+    public function edit($id)
+    {
+        $slider = Slider::find($id);
+        return view('admin.slider.edit', compact('slider'));
+    }
+
+    public function update($id)
+    {
+        # code...
+        $req = new SliderRequest();
+        $inputs = $req->all();
+        $file = $req->file('image');
+
+        if (!empty($file['tmp_name'])) {
+            $path = 'images/slider/' . date('Y/m/d');
+            $name = date('Y_m_d_H_i_s') . rand(10, 99);
+            $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 800, 532);
+
+        }
+
+        Slider::update($inputs);
+        return redirect("/admin/slider/index");
+
+    }
+
     public function delete($id)
     {
         # code...

@@ -83,6 +83,10 @@ Route::get('/admin/slider/create','Admin\SliderController@create','admin.slider.
 
 Route::post('/admin/slider/store','Admin\SliderController@store','admin.slider.store');
 
+Route::get('/admin/slider/edit/{id}','Admin\SliderController@edit','admin.slider.edit');
+
+Route::post('/admin/slider/update/{id}','Admin\SliderController@update','admin.slider.update');
+
 Route::get('/admin/slider/delete/{id}','Admin\SliderController@delete','admin.slider.delete');
 
 //Route::get('create', 'UserController@create','userCreate');
