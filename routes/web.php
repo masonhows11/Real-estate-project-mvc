@@ -70,12 +70,20 @@ Route::get('/admin/ads/delete/{id}','Admin\AdsController@delete','admin.ads.dele
 Route::get('/admin/ads/change_status/{id}','Admin\AdsController@changeStatus','admin.ads.change.Status');
 
 //// ads gallery
-///
 Route::get('/admin/ads/gallery/{id}','Admin\AdsController@gallery','admin.ads.gallery');
 
 Route::post('/admin/ads/store-gallery-image/{id}','Admin\AdsController@storeGallery','admin.ads.store.gallery');
 
 Route::get('/admin/ads/delete-gallery-image/{gallery_id}','Admin\AdsController@deleteGallery','admin.ads.delete.gallery');
+
+/// slider
+Route::get('/admin/slider/index','Admin\SliderController@index','admin.slider.index');
+
+Route::get('/admin/slider/create','Admin\SliderController@create','admin.slider.create');
+
+Route::post('/admin/slider/store','Admin\SliderController@store','admin.slider.store');
+
+Route::get('/admin/slider/delete/{id}','Admin\SliderController@delete','admin.slider.delete');
 
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
