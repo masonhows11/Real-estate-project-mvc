@@ -85,7 +85,7 @@ Route::post('/admin/slider/store','Admin\SliderController@store','admin.slider.s
 
 Route::get('/admin/slider/edit/{id}','Admin\SliderController@edit','admin.slider.edit');
 
-Route::post('/admin/slider/update/{id}','Admin\SliderController@update','admin.slider.update');
+Route::put('/admin/slider/update/{id}','Admin\SliderController@update','admin.slider.update');
 
 Route::get('/admin/slider/delete/{id}','Admin\SliderController@delete','admin.slider.delete');
 

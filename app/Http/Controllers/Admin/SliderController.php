@@ -24,7 +24,7 @@ class SliderController extends AdminController
     public function store()
     {
 
-       
+
         $req = new SliderRequest();
         $inputs = $req->all();
 
@@ -48,7 +48,6 @@ class SliderController extends AdminController
     {
 
         $req = new SliderRequest();
-       // dd($req);
         $inputs = $req->all();
         $file = $req->file('image');
         $inputs['id'] = $id;
@@ -63,6 +62,7 @@ class SliderController extends AdminController
         return redirect("/admin/slider/index");
 
     }
+
 
     public function delete($id)
     {
