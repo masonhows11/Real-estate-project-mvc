@@ -30,7 +30,7 @@ class SliderController extends AdminController
 
         $path = 'images/slider/' . date('Y/m/d');
         $name = date('Y_m_d_H_i_s') . rand(10, 99);
-        $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 800, 532);
+        $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 1500, 900);
 
         Slider::create($inputs);
 
@@ -40,8 +40,8 @@ class SliderController extends AdminController
 
     public function edit($id)
     {
-        $slider = Slider::find($id);
-        return view('admin.slider.edit', compact('slider'));
+        $slide = Slider::find($id);
+        return view('admin.slider.edit', compact('slide'));
     }
 
     public function update($id)
