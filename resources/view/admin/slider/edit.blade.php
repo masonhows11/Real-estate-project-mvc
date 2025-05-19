@@ -5,7 +5,7 @@
 @endsection
 
 @section('admin_title')
-    اسلاید جدید
+    ویرایش اسلاید
 @endsection
 
 @section('main_content')
@@ -26,8 +26,10 @@
         </div>
 
 
-        <form action="<?= route('admin.slider.update') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= route("admin.slider.update",['id' => $slide->id]) ?>" method="post" enctype="multipart/form-data">
 
+
+            <input type="hidden" name="_method" value="put">
 
             <div class="row mx-auto">
 
@@ -38,6 +40,8 @@
                     <?= errorText('title') ?>
                 </div>
 
+
+
                 <div class="col-12 col-sm-6  mt-2">
                     <label class="form-label">انتخاب تصویر :</label>
                     <div class="input-group">
@@ -47,11 +51,7 @@
                     <?= errorText('image') ?>
                 </div>
 
-                <div class="col-12 col-sm-6 mt-2">
-                    <img class="img-thumbnail mx-auto d-block" width="200" height="200"
-                         src="<?= $gallery->image ? asset($gallery->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
-                         alt="advertise-image">
-                </div>
+
 
 
 
@@ -60,6 +60,12 @@
                     <input type="text" class="form-control <?= errorClass('amount') ?>"
                            id="title" placeholder="عنوان خبر را وارد کنید" name="amount" value="<?= oldOrValue('amount',$slide->amount) ?>">
                     <?= errorText('amount') ?>
+                </div>
+
+                <div class="col-12 col-sm-6 mt-2">
+                    <img class="img-thumbnail mx-auto d-block" width="200" height="200"
+                         src="<?= $slide->image ? asset($slide->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
+                         alt="advertise-image">
                 </div>
 
 

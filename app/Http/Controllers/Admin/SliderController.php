@@ -48,13 +48,14 @@ class SliderController extends AdminController
     {
         # code...
         $req = new SliderRequest();
+       // dd($req);
         $inputs = $req->all();
         $file = $req->file('image');
-
+        $inputs['id'] = $id;
         if (!empty($file['tmp_name'])) {
             $path = 'images/slider/' . date('Y/m/d');
             $name = date('Y_m_d_H_i_s') . rand(10, 99);
-            $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 800, 532);
+            $inputs['image'] = ImageUpload::uploadAndFitImage($req->file('image'), $path, $name, 1500, 900);
 
         }
 
