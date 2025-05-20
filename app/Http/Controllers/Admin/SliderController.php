@@ -51,6 +51,7 @@ class SliderController extends AdminController
         $inputs = $req->all();
         $file = $req->file('image');
         $inputs['id'] = $id;
+        
         if (!empty($file['tmp_name']))
         {
             $path = 'images/slider/' . date('Y/m/d');

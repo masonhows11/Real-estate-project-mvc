@@ -32,7 +32,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row overflow-auto ">
+            <!-- overflow table fixed -->
+            <div class="row mx-auto overflow-auto ">
                 <div class="container">
                     <table class="table table-sm table-responsive">
                         <thead class="">
@@ -54,7 +55,7 @@
                             <td><?= $slide->title ?></td>
                             <td><?= $slide->address ?></td>
                             <td><?= $slide->url ?></td>
-                            <td><?= $slide->body ?></td>
+                            <td><?php echo html_entity_decode($slide->body) ?></td>
                             <td><?= $slide->amount ?></td>
                             <td>
                                 <img class="img-thumbnail mx-auto d-block" width="200" height="200"
