@@ -37,7 +37,7 @@ function oldOrValue($name, $value)
     return empty(old($name)) ? $value : old($name);
 }
 
-function echoHtml($data)
+function echoHtml($data): string
 {
     return html_entity_decode($data);
 }
