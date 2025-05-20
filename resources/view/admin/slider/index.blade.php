@@ -35,7 +35,7 @@
             <!-- overflow table fixed -->
             <div class="row mx-auto overflow-auto ">
                 <div class="container">
-                    <table class="table table-sm table-responsive">
+                    <table class="table table-sm">
                         <thead class="">
                         <tr class="text-center">
                             <th>#</th>
@@ -55,7 +55,7 @@
                             <td><?= $slide->title ?></td>
                             <td><?= $slide->address ?></td>
                             <td><?= $slide->url ?></td>
-                            <td><?php echo html_entity_decode($slide->body) ?></td>
+                            <td><?=  substr(echoHtml($slide->body),0,60)  ?></td>
                             <td><?= $slide->amount ?></td>
                             <td>
                                 <img class="img-thumbnail mx-auto d-block" width="200" height="200"

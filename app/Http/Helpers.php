@@ -36,3 +36,8 @@ function oldOrValue($name, $value)
 {
     return empty(old($name)) ? $value : old($name);
 }
+
+function echoHtml($data)
+{
+    return html_entity_decode($data);
+}
