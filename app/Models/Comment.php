@@ -9,7 +9,6 @@ class Comment extends Model
     protected string $table = 'comments';
 
     protected array $fillable = [
-        'title',
         'comment',
         'user_id',
         'post_id',
@@ -20,10 +19,14 @@ class Comment extends Model
 
 
 
+    public function child()
+    {
+        return $this->hasMany('App\Models\Comment','parent_id','id');
+    }
 
     public function user()
     {
-        return $this->hasOne('App\Models\Comment','user_id','id');
+        return $this->belongsTo('App\Models\Comment','user_id','id');
     }
 
 
