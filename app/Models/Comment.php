@@ -4,7 +4,7 @@ namespace App\Models;
 
 use System\Database\ORM\Model;
 
-class Comments extends Model
+class Comment extends Model
 {
     protected string $table = 'comments';
 
@@ -17,4 +17,18 @@ class Comments extends Model
         'status',
         'approved'
     ];
+
+
+
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\Comment','user_id','id');
+    }
+
+
+    public function post()
+    {
+        return $this->belongsTo('App\Models\Post','post_id','id');
+    }
 }

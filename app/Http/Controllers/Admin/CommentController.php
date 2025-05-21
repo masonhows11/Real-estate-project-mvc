@@ -1,13 +1,18 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+namespace App\Http\Controllers\Admin;
+
+use App\Models\Comment;
+
+
 
 class CommentController extends AdminController{
 
 
     public function index()
     {
-        # code...
+       $comments = Comment::all();
+       return view('admin.comments.index',compact('comments'));
     }
 
 

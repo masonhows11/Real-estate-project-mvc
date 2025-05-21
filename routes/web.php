@@ -90,7 +90,7 @@ Route::put('/admin/slider/update/{id}', 'Admin\SliderController@update', 'admin.
 Route::get('/admin/slider/delete/{id}', 'Admin\SliderController@delete', 'admin.slider.delete');
 
 /// comments
-Route::get('/admin/comments/index', 'Admin\CommentController@index', 'admin.comments.create');
+Route::get('/admin/comments/index', 'Admin\CommentController@index', 'admin.comments.index');
 
 Route::get('/admin/comments/changeStatus/{id}', 'Admin\CommentController@changeStatus', 'admin.comments.changeStatus');
 
