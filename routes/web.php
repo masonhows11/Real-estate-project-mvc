@@ -96,6 +96,8 @@ Route::get('/admin/comments/changeStatus/{id}', 'Admin\CommentController@changeS
 
 Route::post('/admin/comments/approved/{id}', 'Admin\CommentController@approved', 'admin.comments.approved');
 
+Route::post('/admin/comments/answer/{id}', 'Admin\CommentController@answer', 'admin.comments.answer');
+
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
 //
