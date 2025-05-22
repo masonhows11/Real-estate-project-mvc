@@ -46,18 +46,18 @@
                         <tr class="text-center">
                             <td><?= $comment->id ?></td>
                             <td><?= $comment->user()->first_name . ' ' . $comment->user()->last_name ?></td>
-                            <td><?= $comment->comment ?></td>
-                            <td class="<?= $comment->status != 0  ? 'text-success' : 'text-danger' ?>" > 
-                                <?= $comment->status != 0  ? 'تایید شده' : 'تایید نشده' ?>
+                            <td><?= substr($comment->comment, 0, 60) ?></td>
+                            <td class="<?= $comment->approved == 0  ? 'text-danger' : 'text-success' ?>" > 
+                                <?= $comment->approved == 0  ? 'در انتظار تایید' : 'تایید شده' ?>
                             </td>
 
                             <td>
                                 <a class="btn btn-primary btn-sm"
                                    href="<?= route('admin.comments.show', ['id' => $comment->id]) ?>">نمایش</a>
 
-                                <a class="btn  <?= $comment->approved != 0  ? 'btn-success' : 'btn-danger' ?>  btn-sm"
+                                <a class="btn  <?= $comment->approved != 0  ? 'btn-warning' : 'btn-danger' ?>  btn-sm"
                                    href="<?= route('admin.comments.approved', ['id' => $comment->id]) ?>">
-                                       <?= $comment->approved != 0  ? 'تایید شده' : 'لغو تایید' ?>
+                                       <?= $comment->approved == 0  ? 'تایید' : ' لغو تایید' ?>
                                 </a>
                             </td>
                         </tr>

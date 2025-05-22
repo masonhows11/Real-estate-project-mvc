@@ -37,7 +37,7 @@ class CommentController extends AdminController{
         $inputs['approved'] = 1;
 
         Comment::update($inputs);
-        return back();
+        return redirect('/admin/comments/index');
     }
     public function changeStatus($id): null
     {
