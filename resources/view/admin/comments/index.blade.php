@@ -47,13 +47,17 @@
                             <td><?= $comment->id ?></td>
                             <td><?= $comment->user()->first_name . ' ' . $comment->user()->last_name ?></td>
                             <td><?= $comment->comment ?></td>
-                            <td><?= $comment->status ?></td>
+                            <td class="<?= $comment->status != 0  ? 'text-success' : 'text-danger' ?>" > 
+                                <?= $comment->status != 0  ? 'تایید شده' : 'تایید نشده' ?>
+                            </td>
 
                             <td>
                                 <a class="btn btn-primary btn-sm"
                                    href="<?= route('admin.comments.changeStatus', ['id' => $comment->id]) ?>">نمایش</a>
-                                <a class="btn btn-danger btn-sm"
-                                   href="<?= route('admin.comments.approved', ['id' => $comment->id]) ?>">تایید</a>
+                                <a class="btn  <?= $comment->status != 0  ? 'btn-success' : 'btn-danger' ?>  btn-sm"
+                                   href="<?= route('admin.comments.approved', ['id' => $comment->id]) ?>">
+                                       <?= $comment->status != 0  ? 'تایید شده' : 'لغو تایید' ?>
+                                </a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
