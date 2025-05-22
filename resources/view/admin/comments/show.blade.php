@@ -20,9 +20,9 @@
                         <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.comments.index') ?>">لیست دیدگاه ها</a></h4>
                     </div>
                 </div>
-                <div class="d-flex">
-                    <h2><?= $comment->user()->first_name .' '.$comment->user()->last_name ?></h2>
-                    <p><?= $comment->comment ?></p>
+                <div class="d-flex flex-column">
+                    <h4><?='نویسنده : ' . $comment->user()->first_name .' '.$comment->user()->last_name ?></h4>
+                    <p class="mt-2" style="font-size: 1.2rem"><?= 'دیدگاه : ' . $comment->comment ?></p>
                 </div>
 
             </div>
@@ -34,7 +34,7 @@
 
             <div class="row mx-auto">
                 <div>
-                    <label class="form-label" for="comment">دیدگاه :</label>
+                    <label class="form-label font-medium-3" for="comment"> پاسخ : </label>
                     <textarea id="comment" name="comment" class="form-control" rows="6"
                               cols="10"><?= old('comment') ?></textarea>
                 </div>

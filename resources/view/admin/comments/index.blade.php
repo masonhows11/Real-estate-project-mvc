@@ -53,7 +53,7 @@
 
                             <td>
                                 <a class="btn btn-primary btn-sm"
-                                   href="<?= route('admin.comments.changeStatus', ['id' => $comment->id]) ?>">نمایش</a>
+                                   href="<?= route('admin.comments.show', ['id' => $comment->id]) ?>">نمایش</a>
 
                                 <a class="btn  <?= $comment->approved != 0  ? 'btn-success' : 'btn-danger' ?>  btn-sm"
                                    href="<?= route('admin.comments.approved', ['id' => $comment->id]) ?>">
