@@ -67,6 +67,7 @@ class CommentController extends AdminController{
     {
         $comment = Comment::find($id);
 
+    
         $inputs = [];
 
         if ($comment->approved == 0) {
