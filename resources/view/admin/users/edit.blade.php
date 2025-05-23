@@ -11,10 +11,10 @@
             <div class="row px-2">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <h1 class="my-1"> ویرایش <?= $user->title ?></h1>
+                        <h1 class="my-1"> ویرایش <?= $user->first_name .' '.$user->last_name ?></h1>
                     </div>
                     <div>
-                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.post.index') ?>">لیست اخبار</a></h4>
+                        <h4 class="" style="margin-top: 18px"><a class="" href="<?= route('admin.users.index') ?>">لیست کاریران</a></h4>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="first_name" class="form-label">نام :</label>
                     <input type="text" class="form-control <?= errorClass('first_name') ?>"
-                           id="first_name" placeholder="عنوان خبر را وارد کنید" name="first_name" value="<?= oldOrValue('first_name',$user->title) ?>">
+                           id="first_name" placeholder="عنوان خبر را وارد کنید" name="first_name" value="<?= oldOrValue('first_name',$user->first_name) ?>">
                     <?= errorText('first_name') ?>
                 </div>
 
@@ -40,8 +40,15 @@
                 <div class="col-12 col-sm-6   my-2">
                     <label for="last_name" class="form-label">نام خانوادگی :</label>
                     <input type="text" class="form-control <?= errorClass('last_name') ?>"
-                           id="last_name" placeholder="عنوان خبر را وارد کنید" name="last_name" value="<?= oldOrValue('last_name',$user->title) ?>">
+                           id="last_name" placeholder="عنوان خبر را وارد کنید" name="last_name" value="<?= oldOrValue('last_name',$user->last_name) ?>">
                     <?= errorText('last_name') ?>
+                </div>
+
+                <div class="col-12 col-sm-6   my-2">
+                    <label for="email" class="form-label">ایمیل :</label>
+                    <input type="text" class="form-control <?= errorClass('email') ?>"
+                           id="email" placeholder="عنوان خبر را وارد کنید" name="email" value="<?= oldOrValue('email',$user->email) ?>">
+                    <?= errorText('email') ?>
                 </div>
 
                 <div class="col-12 col-sm-6  mt-2">
@@ -60,7 +67,7 @@
 
                 <div class="col-sm-6 mt-2">
                     <img class="img-thumbnail img-fluid" style="height: 400px"
-                         src="<?= $user->image ?  asset($user->image) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
+                         src="<?= $user->avatar ?  asset($user->avatar) : asset('admin_assets/default/no-image-icon-23494.png') ?>"
                          alt="post-image">
                 </div>
 

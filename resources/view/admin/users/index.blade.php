@@ -59,7 +59,7 @@
                                      alt="post-image"></td>
                             <td>
                                 <a class="btn btn-primary btn-sm"
-                                   href="<?= route('admin.post.edit', [$user->id] ) ?>">ویرایش</a>
+                                   href="<?= route('admin.users.edit', [$user->id] ) ?>">ویرایش</a>
                                 <a class="btn btn-danger btn-sm"
                                    href="<?= route('admin.post.delete',[$user->id] ) ?>">حذف</a>
                                 <a class="btn <?= $user->is_active == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"

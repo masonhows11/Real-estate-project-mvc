@@ -104,7 +104,7 @@ Route::get('/admin/users/index', 'Admin\UserController@index', 'admin.users.inde
 
 Route::get('/admin/users/edit/{id}', 'Admin\UserController@edit', 'admin.users.edit');
 
-Route::put('/admin/users/update/{id}', 'Admin\UserController@update', 'admin.users.updated');
+Route::put('/admin/users/update/{id}', 'Admin\UserController@update', 'admin.users.update');
 
 Route::get('/admin/users/change_status/{id}', 'Admin\UserController@changeStatus', 'admin.users.changeStatus');
 
