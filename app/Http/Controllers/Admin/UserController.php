@@ -33,7 +33,26 @@ class UserController extends AdminController
 
     public function changeStatus($id)
     {
+        $user = User::find($id);
 
+        $inputs = [];
+
+        if ($user->is_active == 0) {
+
+            $inputs['id'] = $id;
+            $inputs['is_active'] = 1;
+            User::update($inputs);
+
+        } else {
+
+            $inputs['id'] = $id;
+            $inputs['is_active'] = 0;
+
+            User::update($inputs);
+        }
+
+
+        return back();
     }
 
 }
