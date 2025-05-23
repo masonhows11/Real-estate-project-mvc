@@ -90,15 +90,23 @@ Route::put('/admin/slider/update/{id}', 'Admin\SliderController@update', 'admin.
 Route::get('/admin/slider/delete/{id}', 'Admin\SliderController@delete', 'admin.slider.delete');
 
 /// comments
-Route::get('/admin/comments/index', 'Admin\CommentController@index', 'admin.comments.index');
-
 // Route::get('/admin/comments/changeStatus/{id}', 'Admin\CommentController@changeStatus', 'admin.comments.changeStatus');
+Route::get('/admin/comments/index', 'Admin\CommentController@index', 'admin.comments.index');
 
 Route::get('/admin/comments/show/{id}', 'Admin\CommentController@show', 'admin.comments.show');
 
 Route::get('/admin/comments/approved/{id}', 'Admin\CommentController@approved', 'admin.comments.approved');
 
 Route::post('/admin/comments/answer/{id}', 'Admin\CommentController@answer', 'admin.comments.answer');
+
+/// user
+Route::get('/admin/users/index', 'Admin\UserController@index', 'admin.users.index');
+
+Route::get('/admin/users/edit/{id}', 'Admin\UserController@edit', 'admin.users.edit');
+
+Route::put('/admin/users/update/{id}', 'Admin\UserController@update', 'admin.users.updated');
+
+Route::get('/admin/users/change_status/{id}', 'Admin\UserController@changeStatus', 'admin.users.changeStatus');
 
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
