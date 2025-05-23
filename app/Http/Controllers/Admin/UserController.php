@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Models\User;
+use System\Auth\Auth;
+use App\Http\Services\ImageUpload;
 
 class UserController extends AdminController
 {

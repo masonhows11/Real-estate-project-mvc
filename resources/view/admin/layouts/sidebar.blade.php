@@ -79,6 +79,12 @@
                 </ul>
             </li>
 
+            <li class="nav-item"><a class="d-flex align-items-center <?= sidebarActive(route('admin.users.index')) ?>" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">کاربران</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="<?= route('admin.users.index') ?>"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">کاربران</span></a></li>
+                </ul>
+            </li>
+
            <!-- <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a></li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a></li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a></li>

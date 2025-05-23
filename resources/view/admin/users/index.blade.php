@@ -33,31 +33,37 @@
                 <div class="container">
                     <table class="table table-sm table-responsive">
                         <thead class="">
-                        <tr>
+                        <tr class="text-center">
                             <th>#</th>
                             <th>نام</th>
-                            <th>دسته</th>
-                            <th>نویسنده</th>
+                            <th>نام خانوادگی</th>
+                            <th>ایمیل</th>
+                            <th>وضعیت</th>
                             <th>تصویر</th>
                             <th>عملیات</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($posts as $post): ?>
+                        <?php foreach ($users as $user): ?>
                         <tr>
-                            <td><?= $post->id ?></td>
-                            <td><?= $post->title ?></td>
-                            <td><?= $post->category()->name ?></td>
-                            <td><?= $post->user()->first_name. ' '.$post->user()->last_name ?></td>
+                            <td><?= $user->id ?></td>
+                            <td><?= $user->first_name ?></td>
+                            <td><?= $user->last_name ?></td>
+                            <td><?= $user->email ?></td>
+                            <td class="<?= $user->is_active == 0  ? 'text-danger' : 'text-success' ?>">
+                                    <?= $user->is_active == 0 ? 'غیر فعال' : 'فعال' ?>
+                            </td>
 
-                            <td><img class="img-thumbnail mx-auto d-block" width="200" height="200" src="<?= $post->image ?  asset($post->image) : asset('admin_assets/default/no-image-icon-23494.png')  ?>" alt="post-image"></td>
+                            <td><img class="img-thumbnail mx-auto d-block" width="200" height="200"
+                                     src="<?= $user->avatar ?  asset($user->avatar) : asset('admin_assets/default/no-image-icon-23494.png')  ?>"
+                                     alt="post-image"></td>
                             <td>
                                 <a class="btn btn-primary btn-sm"
-                                   href="<?= route('admin.post.edit', [$post->id] ) ?>">ویرایش</a>
+                                   href="<?= route('admin.post.edit', [$user->id] ) ?>">ویرایش</a>
                                 <a class="btn btn-danger btn-sm"
-                                   href="<?= route('admin.post.delete',[$post->id] ) ?>">حذف</a>
-                                <a class="btn <?= $post->status == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"
-                                   href="<?= route('admin.post.change.Status',[$post->id]) ?>"><?= $post->status == 1 ? 'فعال' : 'غیر قعال' ?></a>
+                                   href="<?= route('admin.post.delete',[$user->id] ) ?>">حذف</a>
+                                <a class="btn <?= $user->is_active == 0 ? 'btn-warning' : 'btn-success' ?>  btn-sm"
+                                   href="<?= route('admin.users.changeStatus',[$user->id]) ?>"><?= $user->is_active == 1 ? 'فعال' : 'غیر قعال' ?></a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
