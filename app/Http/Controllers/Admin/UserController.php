@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Request\Admin\UserRequest;
 use App\Models\User;
 use System\Auth\Auth;
 use App\Http\Services\ImageUpload;
@@ -27,7 +28,13 @@ class UserController extends AdminController
 
     public function update($id)
     {
+        $req = new UserRequest();
+        $inputs = $req->all();
 
+        $inputs['id'] = $id;
+
+        User::update($inputs);
+        return redirect("/admin/users/index");
     }
 
 

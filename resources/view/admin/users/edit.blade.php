@@ -46,7 +46,7 @@
 
                 <div class="col-12 col-sm-6   my-2">
                     <label for="email" class="form-label">ایمیل :</label>
-                    <input type="text" class="form-control <?= errorClass('email') ?>"
+                    <input type="text" style="direction: ltr" class="text-left form-control <?= errorClass('email') ?>"
                            id="email" placeholder="عنوان خبر را وارد کنید" name="email" value="<?= oldOrValue('email',$user->email) ?>">
                     <?= errorText('email') ?>
                 </div>
