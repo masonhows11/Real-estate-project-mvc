@@ -52,21 +52,15 @@ class UserController extends AdminController
 
         $inputs = [];
 
-        if ($user->is_active == 0) {
-
-            $inputs['id'] = $id;
-            $inputs['is_active'] = 1;
-            User::update($inputs);
-
+        if ($user->is_active == 0)
+        {
+            $user->is_active = 1;
         } else {
+            $user->is_active = 0;
 
-            $inputs['id'] = $id;
-            $inputs['is_active'] = 0;
-
-            User::update($inputs);
         }
 
-
+        $user->save();
         return back();
     }
 
