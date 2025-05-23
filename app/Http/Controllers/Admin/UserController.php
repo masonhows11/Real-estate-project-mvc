@@ -23,7 +23,7 @@ class UserController extends AdminController
     public function edit($id)
     {
         $user = User::find($id);
-        return view('admin.users.edit',compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     public function update($id)
@@ -32,6 +32,14 @@ class UserController extends AdminController
         $inputs = $req->all();
 
         $inputs['id'] = $id;
+        $file = $req->file('avatar');
+
+        if (!empty($file['tmp_name'])) {
+            $path = 'images/users/' . date('Y/m/d');
+            $name = date('Y_m_d_H_i_s') . rand(10, 99);
+            $inputs['avatar'] = ImageUpload::uploadAndFitImage($req->file('avatar'), $path, $name, 100, 100);
+
+        }
 
         User::update($inputs);
         return redirect("/admin/users/index");
