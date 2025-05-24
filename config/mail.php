@@ -9,8 +9,8 @@ return [
         'Password' => '',
         'Port' => '2525',
         'setFrom' => [
-            'mail' => 'support@gmail.com',
-            'name' => 'test'
+            'mail' => 'support@real_estate.com',
+            'name' => 'real_estate'
         ]
     ]
 
