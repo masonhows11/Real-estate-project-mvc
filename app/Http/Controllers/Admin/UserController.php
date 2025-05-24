@@ -48,18 +48,19 @@ class UserController extends AdminController
 
     public function changeStatus($id)
     {
+        // $user is instance of user class
         $user = User::find($id);
-
-        $inputs = [];
 
         if ($user->is_active == 0)
         {
             $user->is_active = 1;
+
         } else {
+
             $user->is_active = 0;
 
         }
-
+        // then use save method on user obj
         $user->save();
         return back();
     }
