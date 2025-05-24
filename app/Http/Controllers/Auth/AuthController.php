@@ -8,6 +8,17 @@ class AuthController extends Controller
 {
 
 
+    public function registerForm()
+    {
+
+    }
+
+
+    public function register()
+    {
+
+    }
+
     public function loginForm()
     {
         dd('login view');
@@ -19,16 +30,7 @@ class AuthController extends Controller
     }
 
 
-    public function registerForm()
-    {
-        
-    }
 
-
-    public function register()
-    {
-
-    }
 
     public function logout()
     {
