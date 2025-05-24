@@ -2,8 +2,9 @@
 
 return [
 
-    'SMTP'=>[
-        'host' => 'smtp.mailtrap.io',
+    'SMTP' => [
+        //'host' => 'smtp.mailtrap.io',
+        'host' => 'sandbox.smtp.mailtrap.io',
         'SMTPAuth' => true,
         'Username' => '',
         'Password' => '',
