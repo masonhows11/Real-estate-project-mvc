@@ -11,6 +11,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         array (
             'System\\' => 7,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
@@ -26,6 +30,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'System\\' => 
         array (
             0 => __DIR__ . '/../..' . '/system',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Intervention\\Image\\' => 
         array (
