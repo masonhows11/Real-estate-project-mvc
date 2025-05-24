@@ -17,7 +17,7 @@ trait HasMethodCaller
         'limit', 'limit', 'orderBy', 'get', 'paginate'];
 
 
-    //// use magic method for call / execute doesn't exist method
+    //// use magic method for call & execute doesn't exist method
     public function __call(string $method, array $arguments)
     {
         return $this->methodCaller($this, $method, $arguments);
@@ -25,7 +25,11 @@ trait HasMethodCaller
 
     public static function __callStatic(string $method, array $arguments)
     {
+        // for example
         // use like this user::find(1)
+        // user is class
+        // find is static method
+        // get_called_class return user class name
         $className = get_called_class();
         $instance = new $className;
         return $instance->methodCaller($instance, $method, $arguments);
