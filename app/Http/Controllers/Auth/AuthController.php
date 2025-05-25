@@ -53,6 +53,11 @@ class AuthController
         ';
 
 
+        $mail = new MailService();
+        $subject = 'ایمیل فعال سازی';
+        $mail->send($inputs['email'],$subject,$message);
+
+        return redirect($this->redirectTo);
     }
 
     public function loginForm()
