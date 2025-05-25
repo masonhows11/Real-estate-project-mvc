@@ -10,7 +10,7 @@ return [
         'Password' => '',
         'Port' => '2525',
         'setFrom' => [
-            'mail' => 'support@real_estate.com',
+            'mail' => 'support_real_estate@gmail.com',
             'name' => 'real_estate'
         ]
     ]
