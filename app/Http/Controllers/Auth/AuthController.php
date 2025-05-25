@@ -12,7 +12,7 @@ class AuthController
 {
 
 
-    private string $redirectTo = '/login';
+    private string $redirectTo = '/login_form';
 
     public function registerForm()
     {
