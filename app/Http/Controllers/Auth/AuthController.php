@@ -62,8 +62,9 @@ class AuthController
 
         $mail = new MailService();
         $subject = 'ایمیل فعال سازی';
-        $mail->send($inputs['email'], $subject, $message);
-
+        $send_result = $mail->send($inputs['email'], $subject, $message);
+        // $send_result =
+        // dd($send_result);
         return redirect($this->redirectTo);
     }
 
