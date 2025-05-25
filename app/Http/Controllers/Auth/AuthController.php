@@ -26,7 +26,7 @@ class AuthController
         $inputs = $req->all();
 
         // $file = $req->file('avatar');
-        $path = 'images/users/' . date('Y/m/d');
+        $path = 'images/avatar/' . date('Y/m/d');
         $name = date('Y_m_d_H_i_s') . rand(10, 99);
         $inputs['avatar'] = ImageUpload::uploadAndFitImage($req->file('avatar'), $path, $name, 100, 100);
 
