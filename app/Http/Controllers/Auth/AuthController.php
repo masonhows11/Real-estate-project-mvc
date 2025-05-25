@@ -56,15 +56,12 @@ class AuthController
         <p style="text-align: center">
         <a href="' . route('auth.activation', [$inputs['verify_token']]) . '">لینک فعال سازی</a>
         </p>
-        </div>
-        ';
+        </div>';
 
 
         $mail = new MailService();
         $subject = 'ایمیل فعال سازی';
-        $send_result = $mail->send($inputs['email'], $subject, $message);
-        // $send_result =
-        // dd($send_result);
+        $mail->send($inputs['email'], $subject, $message);
         return redirect($this->redirectTo);
     }
 
@@ -81,13 +78,20 @@ class AuthController
 
     public function activation($token)
     {
-        dd($token);
+        $user = User::where('verify_token', $token)->get();
+        if (empty($user)) {
+            die('مد فعال سازی معتبر نمی باشد');
+        }
+        $user = $user[0];
+        $user->is_active = 1;
+        $user->save();
+        die('حساب کاربری فال شد');
     }
 
     public function logout()
     {
 
-        redirect('/login_form');
+       return redirect('/login_form');
     }
 
 }
