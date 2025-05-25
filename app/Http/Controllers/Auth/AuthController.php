@@ -22,7 +22,7 @@ class AuthController
 
     public function register()
     {
-
+        dd('jo');
     }
 
     public function loginForm()
@@ -32,7 +32,7 @@ class AuthController
 
     public function login()
     {
-
+        dd('jo');
     }
 
 

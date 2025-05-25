@@ -11,7 +11,7 @@
                         <div class="ecom-wc__form-inner">
                             <h3 class="ecom-wc__form-title ecom-wc__form-title__one">ایجاد حساب کاربری <span>آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی مشخص شده اند *</span></h3>
 
-                            <form class="ecom-wc__form-main p-0" action="" method="post">
+                            <form class="ecom-wc__form-main p-0" action="<?= route('auth.register') ?>" method="post">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group homec-form-input">
@@ -67,7 +67,7 @@
                                     <div class="ecom-wc__button ecom-wc__button--bottom">
                                         <button class="homec-btn homec-btn__second" type="submit"><span>ثبت نام</span></button>
                                         <button class="homec-btn homec-btn__second homec-btn__social" type="submit">
-                                            <span class="ntfmax-wc__btn-icon"><img src="app_assets/img/google.svg" alt="#" /></span><span>با گوگل وارد شوید</span>
+                                            <span class="ntfmax-wc__btn-icon"><img src="<?= asset('app_assets/img/google.svg') ?>" alt="#" /></span><span>با گوگل وارد شوید</span>
                                         </button>
                                     </div>
                                 </div>
@@ -84,11 +84,11 @@
                 <div class="col-lg-6 col-12 d-none d-lg-block">
                     <div class="ecom-wc__inner homec-bg-cover" style="background-image: url('app_assets/img/welcome-bg.svg');">
                         <div class="ecom-wc__logo">
-                            <a href="index.html"><img src="app_assets/img/welcome-logo.png" alt="#" /></a>
+                            <a href="#"><img src="<?= asset('app_assets/img/welcome-logo.png') ?>" alt="#" /></a>
                         </div>
                         <div class="ecom-wc__inside">
                             <div class="ecom-wc__middle">
-                                <a href="#"><img src="app_assets/img/welcome-inner.png" alt="#" /></a>
+                                <a href="#"><img src="<?= asset('app_assets/img/welcome-inner.png') ?>" alt="#" /></a>
                                 <div class="ecom-wc__countdown--title">120<span>مشاور</span></div>
                                 <div class="ecom-wc__countdown--title ecom-wc__countdown--title--v2">150k<span>خانه ساخته شده</span></div>
                             </div>
