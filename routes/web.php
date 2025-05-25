@@ -109,12 +109,12 @@ Route::put('/admin/users/update/{id}', 'Admin\UserController@update', 'admin.use
 Route::get('/admin/users/change_status/{id}', 'Admin\UserController@changeStatus', 'admin.users.changeStatus');
 
 //// auth routes
-Route::get('/register', 'Auth\AuthController@registerForm', 'auth.register.form');
+Route::get('/register_form', 'Auth\AuthController@registerForm', 'auth.register.form');
 
 Route::post('/register', 'Auth\AuthController@register', 'auth.register');
 
 
-Route::get('/login', 'Auth\AuthController@loginForm', 'auth.login.form');
+Route::get('/login_form', 'Auth\AuthController@loginForm', 'auth.login.form');
 
 Route::post('/login', 'Auth\AuthController@login', 'auth.login');
 
