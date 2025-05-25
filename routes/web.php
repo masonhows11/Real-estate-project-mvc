@@ -121,6 +121,8 @@ Route::post('/login', 'Auth\AuthController@login', 'auth.login');
 
 Route::get('/logout', 'Auth\AuthController@logout', 'auth.logout');
 
+Route::get('/auth/activation/{token}','Auth\AuthController@activation','auth.activation');
+
 //Route::get('create', 'UserController@create','userCreate');
 //Route::post('store', 'UserController@store','userStore');
 //

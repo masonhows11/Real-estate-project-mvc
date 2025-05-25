@@ -61,13 +61,6 @@
                                     <li><a href="#">سیاست حفظ حریم خصوصی</a></li>
                                     <li><a href="#">پشتیبانی</a></li>
                                 </ul>
-                                <div class="ecom-wc__footer--languages">
-                                    <select class="ecom-wc__footer--language">
-                                        <option data-display="فارسی">فارسی</option>
-                                        <option value="2">انگلیسی</option>
-                                        <option value="3">آلمانی</option>
-                                    </select>
-                                </div>
                             </div>
                             <p class="ecom-wc__footer--text">© 1404 mason. تمام حقوق محفوظ است.</p>
                         </div>

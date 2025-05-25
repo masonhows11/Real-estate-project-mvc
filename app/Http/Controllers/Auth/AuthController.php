@@ -22,12 +22,42 @@ class AuthController
 
     public function register()
     {
-        dd('jo');
+        $req = new RegisterRequest();
+        $inputs = $req->all();
+
+        // $file = $req->file('avatar');
+        $path = 'images/users/' . date('Y/m/d');
+        $name = date('Y_m_d_H_i_s') . rand(10, 99);
+        $inputs['avatar'] = ImageUpload::uploadAndFitImage($req->file('avatar'), $path, $name, 100, 100);
+
+        // make random & unique token for register new user
+        // mak token with generateToken() helper method
+        $inputs['verify_token'] = generateToken();
+        $inputs['is_active'] = 0;
+        $inputs['user_type'] = 'user';
+        $inputs['status']  = 0;
+        $inputs['remember_token'] = null;
+        $inputs['remember_token_expire'] = null;
+        $inputs['password'] = password_hash($req->password,PASSWORD_DEFAULT);
+
+        User::create($inputs);
+
+        $message = '
+        <div>
+        <h2 style="text-align: center">ایمیل فعال سازی</h2>
+        <p style="text-align: center">کاربر گرامی ثبت نام شما با موفقیت انجام شد ، برای فعال سازی حساب کاربری روی لینک زیر کلیک کنید</p>
+        <p style="text-align: center">
+        <a href="'.route('auth.activation',[$inputs['verify_token']]).'">لینک فعال سازی</a>
+        </p>
+        </div>
+        ';
+
+
     }
 
     public function loginForm()
     {
-       return view('auth.login');
+        return view('auth.login');
     }
 
     public function login()
@@ -35,6 +65,11 @@ class AuthController
         dd('jo');
     }
 
+
+    public function activation($token)
+    {
+        dd($token);
+    }
 
     public function logout()
     {

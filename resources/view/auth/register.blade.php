@@ -17,7 +17,7 @@
                                         <div class="form-group homec-form-input">
                                             <label class="ecom-wc__form-label mg-btm-10">نام*</label>
                                             <div class="form-group__input">
-                                                <input class="ecom-wc__form-input" type="text" name="f_name" placeholder="نام" required="required" />
+                                                <input class="ecom-wc__form-input" type="text" name="first_name" placeholder="نام" required="required" />
                                             </div>
                                         </div>
                                     </div>
@@ -25,15 +25,15 @@
                                         <div class="form-group homec-form-input">
                                             <label class="ecom-wc__form-label mg-btm-10">نام خانوادگی*</label>
                                             <div class="form-group__input">
-                                                <input class="ecom-wc__form-input" type="text" name="l_name" placeholder="نام خانوادگی" required="required" />
+                                                <input class="ecom-wc__form-input" type="text" name="last_name" placeholder="نام خانوادگی" required="required" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xxl-12 col-lg-6 col-12">
                                         <div class="form-group homec-form-input">
-                                            <label class="ecom-wc__form-label mg-btm-10">شماره تلفن*</label>
+                                            <label class="ecom-wc__form-label mg-btm-10">آواتار</label>
                                             <div class="form-group__input">
-                                                <input class="ecom-wc__form-input" type="text" name="f_number" placeholder="شماره تلفن" required="required" />
+                                                <input class="ecom-wc__form-input pt-2" type="file" name="avatar"  required="required" />
                                             </div>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@
                                         <div class="form-group homec-form-input">
                                             <label class="ecom-wc__form-label mg-btm-10">آدرس ایمیل*</label>
                                             <div class="form-group__input">
-                                                <input class="ecom-wc__form-input" type="email" name="l_name" placeholder="آدرس ایمیل" required="required" />
+                                                <input class="ecom-wc__form-input" type="email" name="email" placeholder="آدرس ایمیل" required="required" />
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                         <div class="form-group homec-form-input">
                                             <label class="ecom-wc__form-label mg-btm-10">تکرار رمز عبور*</label>
                                             <div class="form-group__input">
-                                                <input class="ecom-wc__form-input" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" id="confirm-password-field" type="password" name="password" maxlength="8" required="required" />
+                                                <input class="ecom-wc__form-input" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" id="confirm-password-field" type="password" name="confirmed_password" maxlength="8" required="required" />
                                             </div>
                                         </div>
                                     </div>
@@ -98,13 +98,6 @@
                                     <li><a href="#">سیاست حفظ حریم خصوصی</a></li>
                                     <li><a href="#">پشتیبانی</a></li>
                                 </ul>
-                                <div class="ecom-wc__footer--languages">
-                                    <select class="ecom-wc__footer--language">
-                                        <option data-display="فارسی">فارسی</option>
-                                        <option value="2">انگلیسی</option>
-                                        <option value="3">آلمانی</option>
-                                    </select>
-                                </div>
                             </div>
                             <p class="ecom-wc__footer--text">© 1404 mason. تمام حقوق محفوظ است.</p>
                         </div>
