@@ -13,13 +13,13 @@
 
                             <form class="ecom-wc__form-main p-0" action="<?= route('auth.login') ?>" method="post">
 
-                                <div class="row">
+                              <!--  <div class="row">
                                     <div class="alert alert-danger">
                                         <ul>
                                             <li>خطاها</li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group homec-form-input">
                                     <label class="ecom-wc__form-label mg-btm-10">شماره تلفن*</label>
                                     <div class="form-group__input">

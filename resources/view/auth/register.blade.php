@@ -13,13 +13,13 @@
 
                             <form class="ecom-wc__form-main p-0" action="<?= route('auth.register') ?>" method="post"
                                   enctype="multipart/form-data">
-                                <div class="row">
+                               <!-- <div class="row">
                                     <div class="alert alert-danger">
                                         <ul>
                                             <li>خطاها</li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group homec-form-input">
