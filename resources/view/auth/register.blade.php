@@ -78,7 +78,7 @@
                                             <div class="form-group__input">
                                                 <input class="ecom-wc__form-input"
                                                        placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-                                                       id="confirm-password-field" type="password"
+                                                       id="confirmed-password-field" type="password"
                                                        name="confirmed_password"/>
                                             </div>
                                         </div>

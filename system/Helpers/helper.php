@@ -113,9 +113,14 @@ function error($name, $message = null)
     }
 }
 
-function errorExists($name): bool
+function errorExists($name = null)
 {
-    return isset($_SESSION["temporary_error"][$name]) === true ? true : false;
+    if ($name == null) {
+        return isset($_SESSION['temporary_error']) === true ? count($_SESSION['temporary_error']) : false;
+    } else {
+        return isset($_SESSION['temporary_error'][$name]) === true ? true : false;
+
+    }
 }
 
 // get all errors messages
@@ -173,8 +178,7 @@ function findRouteByName($name)
     $allRoutes = array_merge($routes['get'], $routes['post'], $routes['put'], $routes['delete']);
 
     $route = null;
-    foreach ($allRoutes as $item)
-    {
+    foreach ($allRoutes as $item) {
         if ($item['name'] == $name && $item['name'] !== null) {
             $route = $item['url'];
             break;
@@ -208,10 +212,9 @@ function route($name, $params = []): string
     // preg_match_all("/{[^}.]*/", $route, $routesParamsMatch);
     $pattern = "/\{[a-zA-Z0-9_]+\}/";
     // $pattern = "/{[^}.]*/";
-    preg_match_all($pattern,$route, $routesParamsMatch);
+    preg_match_all($pattern, $route, $routesParamsMatch);
 
-    if ( count($routesParamsMatch[0]) > count($params) )
-    {
+    if (count($routesParamsMatch[0]) > count($params)) {
         throw new Exception("route params not enough!");
     }
 
@@ -252,24 +255,23 @@ function array_dot($array, $return_array = array(), $return_key = ''): array
 {
     // make config item with dot like
     // app.app_title or mail.SMTP.host
-    foreach ($array as $key => $value){
-        if(is_array($value))
-        {
+    foreach ($array as $key => $value) {
+        if (is_array($value)) {
             // if we have nested array
             // we call array_dot like recursive method
-            $return_array = array_merge($return_array,array_dot($value,$return_array,$return_key.$key.'.'));
-        }else{
+            $return_array = array_merge($return_array, array_dot($value, $return_array, $return_key . $key . '.'));
+        } else {
             // example  ['APP_TITLE'] => 'mvc project',
             $return_array[$return_key . $key] = $value;
         }
     }
-    return  $return_array;
+    return $return_array;
 }
 
 
 function currentUrl(): string
 {
-  return currentDomain().$_SERVER['REQUEST_URI'];
+    return currentDomain() . $_SERVER['REQUEST_URI'];
 }
 
 
