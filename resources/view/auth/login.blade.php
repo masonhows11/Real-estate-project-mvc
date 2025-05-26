@@ -25,7 +25,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="form-group homec-form-input">
-                                    <label class="ecom-wc__form-label mg-btm-10">شماره تلفن*</label>
+                                    <label class="ecom-wc__form-label mg-btm-10">ایمیل</label>
                                     <div class="form-group__input">
                                         <input class="ecom-wc__form-input" type="email" name="email" />
                                     </div>
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="ecom-wc__bottom mt-2">
                                         <p class="ecom-wc__text">
-                                            <a style="font-size: medium"  href="#">رمز عبور خود را فراموش کردم</a></p>
+                                            <a style="font-size: medium"  href="<?= route('auth.forgot.view') ?>">رمز عبور خود را فراموش کردم</a></p>
                                     </div>
                                 </div>
                             </form>

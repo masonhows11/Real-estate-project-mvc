@@ -112,3 +112,6 @@ Route::get('/logout', 'Auth\AuthController@logout', 'auth.logout');
 
 Route::get('/auth/activation/{token}','Auth\AuthController@activation','auth.activation');
 
+
+Route::get('/forgot_view', 'Auth\ForgotPasswordController@forgotView', 'auth.forgot.view');
+Route::post('/auth_forgot', 'Auth\ForgotPasswordController@forgotPassword', 'auth.forgot');
