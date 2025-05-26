@@ -15,9 +15,10 @@ use System\Auth\Auth;
 class AuthController
 {
 
-    private const string redirectTo = '/login';
+    private const string redirectTo = '/login_form';
     private const string redirectToAdmin = '/admin/index';
     private const string home = '/home';
+
     public function registerForm()
     {
         return view('auth.register');
@@ -78,11 +79,17 @@ class AuthController
 
         Auth::logOut();
         $req = new LoginRequest();
-        if(Auth::loginByEmail($req->email,$req->password))
-        {
-            $user = User::where('email',$req->email)->get();
+        if (Auth::loginByEmail($req->email, $req->password)) {
+            $user = User::where('email', $req->email)->get();
+            dd($user);
             $user = $user[0];
-        }
+            if ($user->user_type = 'admin') {
+                return redirect(self::redirectToAdmin);
+            }
+            return redirect(self::home);
+        } else
+
+            return back();
 
     }
 
@@ -102,7 +109,7 @@ class AuthController
     public function logout(): null
     {
 
-       return redirect('/login_form');
+        return redirect('/login_form');
     }
 
 }

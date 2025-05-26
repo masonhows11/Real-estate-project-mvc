@@ -10,7 +10,7 @@ class Auth
 {
 
 
-    private string $redirectTo = '/login';
+    private string $redirectTo = '/login_form';
 
 
     private function userMethod()
@@ -117,7 +117,7 @@ class Auth
     private function logOutMethod()
     {
         Session::remove('user');
-        return redirect($this->redirectTo);
+        // return redirect($this->redirectTo);
     }
 
     //    private function idMethod()
