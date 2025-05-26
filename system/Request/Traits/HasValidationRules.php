@@ -33,8 +33,7 @@ trait HasValidationRules
                 $key = isset($rule[1]) == false ? null : $rule[1];
                 $this->existsIn($name, $rule[0], $key);
 
-            }  elseif (strpos($rule, "unique:") === 0)
-            {
+            } elseif (strpos($rule, "unique:") === 0) {
                 $rule = str_replace('unique:', "", $rule);
                 $rule = explode(',', $rule);
                 $key = isset($rule[1]) == false ? null : $rule[1];
@@ -218,9 +217,11 @@ trait HasValidationRules
             $field_name = "confirmed_" . $name;
 
             // first check for there is confirmed input in form request
-            if (!isset($field_name)) {
+            if (!isset($this->$field_name))
+            {
                 $this->setError($name, "$name $field_name not exists");
-            } elseif ($field_name != $name)
+
+            } elseif ($this->$field_name != $this->$name)
             {
                 $this->setError($name, "$name confirmation does not match");
             }
