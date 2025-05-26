@@ -9,11 +9,14 @@ use App\Http\Services\MailService;
 use App\Models\User;
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
+use System\Auth\Auth;
 
 class AuthController
 {
-    private string $redirectTo = '/login';
 
+    private const string redirectTo = '/login';
+    private const string redirectToAdmin = '/admin/index';
+    private const string home = '/home';
     public function registerForm()
     {
         return view('auth.register');
@@ -61,7 +64,7 @@ class AuthController
         $mail = new MailService();
         $subject = 'ایمیل فعال سازی';
         $mail->send($inputs['email'], $subject, $message);
-        return redirect($this->redirectTo);
+        return redirect(self::redirectTo);
     }
 
     public function loginForm()
@@ -71,7 +74,9 @@ class AuthController
 
     public function login()
     {
-        dd('jo');
+
+
+
     }
 
 

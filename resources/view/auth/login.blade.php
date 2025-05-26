@@ -23,14 +23,14 @@
                                 <div class="form-group homec-form-input">
                                     <label class="ecom-wc__form-label mg-btm-10">شماره تلفن*</label>
                                     <div class="form-group__input">
-                                        <input class="ecom-wc__form-input" type="email" name="email" placeholder="demo3243@gmail.com" required="required" />
+                                        <input class="ecom-wc__form-input" type="email" name="email" />
                                     </div>
                                 </div>
 
                                 <div class="form-group homec-form-input">
                                     <label class="ecom-wc__form-label mg-btm-10">رمز عبور*</label>
                                     <div class="form-group__input">
-                                        <input class="ecom-wc__form-input" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" id="password-field" type="password" name="password" maxlength="8" required="required" />
+                                        <input class="ecom-wc__form-input"  id="password-field" type="password" name="password"  />
                                     </div>
                                 </div>
 
