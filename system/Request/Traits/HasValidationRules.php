@@ -33,13 +33,25 @@ trait HasValidationRules
                 $key = isset($rule[1]) == false ? null : $rule[1];
                 $this->existsIn($name, $rule[0], $key);
 
-            } elseif ($rule == 'email') {
+            }  elseif (strpos($rule, "unique:") === 0) {
+                $rule = str_replace('"unique:', "", $rule);
+                $rule = explode(',', $rule);
+                $key = isset($rule[1]) == false ? null : $rule[1];
+                $this->unique($name, $rule[0], $key);
 
+            } elseif ($rule == 'email')
+            {
                 $this->email($name);
 
-            } elseif ($rule == 'date') {
+            } elseif ($rule == 'date')
+            {
 
                 $this->date($name);
+
+            } elseif ($rule == 'confirmed')
+            {
+
+                $this->confirmed($name);
 
             }
 
@@ -178,12 +190,44 @@ trait HasValidationRules
                 $statement = DBConnection::getDbConnectionInstance()->prepare($sql);
                 $statement->execute([$value]);
                 $result = $statement->fetchColumn();
-                if($result == 0 or $result === false)
-                {
+                if ($result == 0 or $result === false) {
                     $this->setError($name, "$name does not exists");
                 }
 
             }
+        }
+    }
+
+    protected function unique($name, $table, $field_id = "id"): void
+    {
+        if ($this->checkFieldExists($name)) {
+            if ($this->checkFirstError($name)) {
+
+                $value = $this->$name;
+                $sql = "SELECT COUNT(*) FROM $table WHERE $field_id = ? ";
+                $statement = DBConnection::getDbConnectionInstance()->prepare($sql);
+                $statement->execute([$value]);
+                $result = $statement->fetchColumn();
+                if ($result != 0) {
+                    $this->setError($name, "$name should be unique");
+                }
+
+            }
+        }
+    }
+
+    protected function confirmed($name): void
+    {
+        if ($this->checkFieldExists($name)) {
+            $field_name = "confirmed_" . $name;
+            // first check for there is confirmed input in form request
+            if (!isset($field_name)) {
+                $this->setError($name, "$field_name not exists");
+            } elseif ($field_name != $name)
+            {
+                $this->setError($name, "$name confirmation does not match");
+            }
+
         }
     }
 }
