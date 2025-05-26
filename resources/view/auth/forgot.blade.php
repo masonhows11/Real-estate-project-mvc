@@ -25,9 +25,9 @@
                                 </div>
 
                                 <div class="form-group homec-form-input">
-                                    <label class="ecom-wc__form-label mg-btm-10">ایمیل</label>
+                                    <label for="email" class="ecom-wc__form-label mg-btm-10">ایمیل</label>
                                     <div class="form-group__input">
-                                        <input class="ecom-wc__form-input"  id="password-field" type="password" name="password"  />
+                                        <input class="ecom-wc__form-input"  id="email" type="email" name="email"  />
                                     </div>
                                 </div>
 
@@ -40,6 +40,7 @@
                                 <div class="form-group mg-top-20">
                                     <div class="ecom-wc__bottom">
                                         <p class="ecom-wc__text">حساب کاربری ندارید؟ <a href="<?= route('auth.register.form') ?>">ایجاد حساب کاربری</a></p>
+                                        <p class="ecom-wc__text"><a href="<?= route('auth.login.form') ?>">ورود</a></p>
                                     </div>
                                 </div>
                             </form>
