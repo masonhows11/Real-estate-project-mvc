@@ -81,12 +81,14 @@ class AuthController
         $req = new LoginRequest();
         if (Auth::loginByEmail($req->email, $req->password)) {
             $user = User::where('email', $req->email)->get();
-            dd($user);
+
             $user = $user[0];
             if ($user->user_type = 'admin') {
                 return redirect(self::redirectToAdmin);
+            } else {
+                return redirect(self::home);
             }
-            return redirect(self::home);
+
         } else
 
             return back();
