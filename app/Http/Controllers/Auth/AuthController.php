@@ -8,12 +8,11 @@ use App\Http\Request\RegisterRequest;
 use App\Http\Services\MailService;
 use App\Models\User;
 use Exception;
+use JetBrains\PhpStorm\NoReturn;
 
 class AuthController
 {
-
-
-    private string $redirectTo = '/login_form';
+    private string $redirectTo = '/login';
 
     public function registerForm()
     {
@@ -76,7 +75,7 @@ class AuthController
     }
 
 
-    public function activation($token)
+    #[NoReturn] public function activation($token): void
     {
         $user = User::where('verify_token', $token)->get();
         if (empty($user)) {
@@ -88,7 +87,7 @@ class AuthController
         die('حساب کاربری فال شد');
     }
 
-    public function logout()
+    public function logout(): null
     {
 
        return redirect('/login_form');
