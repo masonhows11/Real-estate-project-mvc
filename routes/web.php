@@ -2,16 +2,16 @@
 
 use System\Router\Web\Route;
 
-// this sample routes
-Route::get('', 'HomeController@index', 'home');
 
+// Route::get('', 'HomeController@index', 'home');
 
+Route::get('/home', 'HomeController@index', 'home');
 
 // admin routes
 Route::get('/admin/index', 'Admin\AdminController@index', 'admin.index');
 
 
-////// admin routes
+// admin routes //
 
 ////  category
 Route::get('admin/category/index', 'Admin\CategoryController@index', 'admin.category.index');

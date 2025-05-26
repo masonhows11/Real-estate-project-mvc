@@ -83,9 +83,10 @@ class AuthController
             $user = User::where('email', $req->email)->get();
 
             $user = $user[0];
-            if ($user->user_type = 'admin') {
+            if ($user->user_type == 'admin') {
                 return redirect(self::redirectToAdmin);
             } else {
+
                 return redirect(self::home);
             }
 
