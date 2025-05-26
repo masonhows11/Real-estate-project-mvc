@@ -47,6 +47,10 @@
                                     <div class="ecom-wc__bottom">
                                         <p class="ecom-wc__text">حساب کاربری ندارید؟ <a href="<?= route('auth.register.form') ?>">ایجاد حساب کاربری</a></p>
                                     </div>
+                                    <div class="ecom-wc__bottom mt-2">
+                                        <p class="ecom-wc__text">
+                                            <a style="font-size: medium"  href="#">رمز عبور خود را فراموش کردم</a></p>
+                                    </div>
                                 </div>
                             </form>
                         </div>

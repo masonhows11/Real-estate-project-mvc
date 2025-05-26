@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Request\LoginRequest;
 use App\Http\Services\ImageUpload;
 use App\Http\Request\RegisterRequest;
 use App\Http\Services\MailService;
@@ -75,7 +76,13 @@ class AuthController
     public function login()
     {
 
-
+        Auth::logOut();
+        $req = new LoginRequest();
+        if(Auth::loginByEmail($req->email,$req->password))
+        {
+            $user = User::where('email',$req->email)->get();
+            $user = $user[0];
+        }
 
     }
 
