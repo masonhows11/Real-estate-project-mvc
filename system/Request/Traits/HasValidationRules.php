@@ -217,6 +217,7 @@ trait HasValidationRules
             $field_name = "confirmed_" . $name;
 
             // first check for there is confirmed input in form request
+            // $this->$field_name to access value in variable
             if (!isset($this->$field_name))
             {
                 $this->setError($name, "$name $field_name not exists");
