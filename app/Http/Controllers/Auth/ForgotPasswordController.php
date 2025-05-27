@@ -68,15 +68,7 @@ class ForgotPasswordController
         return redirect('/login_form');
     }
 
-    public function resetPasswordView()
-    {
 
-    }
-
-    public function resetPassword()
-    {
-        
-    }
 
 
 }
