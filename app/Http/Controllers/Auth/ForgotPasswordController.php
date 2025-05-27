@@ -12,7 +12,7 @@ class ForgotPasswordController
 {
 
 
-    private const string home = '/home';
+    private const string home = '/';
 
     public function forgotView()
     {
@@ -47,8 +47,30 @@ class ForgotPasswordController
             $user->remember_token_expire = date("Y-m-d H-i-s", strtotime('+ 10 min'));
             $user->save();
 
-            // dd($user);
+            $message = '
+            <div>
+            <h2 style="text-align: center">ایمیل بازیابی رمز عبور</h2>
+            <p style="text-align: center">کاربر گرامی برای بازیابی رمز عبور روی لینک زیر کلیک کنید</p>
+            <p style="text-align: center">
+            <a href="' . route('auth.reset_password.view', [$user->remember_token]) . '">بازیابی رمز عبور</a>
+            </p>
+            </div>';
+
+
+            $mail = new MailService();
+            $subject = "بازیابی رمز عبور";
+            $mail->send($inputs['email'], $subject, $message);
+
+            flash('forgot','ایمیل بازیابی رمز عبور با موفقیت ارسال شد');
+
+            return redirect(self::home);
         }
+        return redirect('/login_form');
+    }
+
+    public function resetPasswordView()
+    {
+
     }
 
 
