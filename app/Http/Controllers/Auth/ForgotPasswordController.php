@@ -73,5 +73,10 @@ class ForgotPasswordController
 
     }
 
+    public function resetPassword()
+    {
+        
+    }
+
 
 }
