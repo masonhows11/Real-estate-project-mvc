@@ -27,7 +27,6 @@ class ResetPasswordController
     public function resetPassword($token)
     {
         $req = new ResetPasswordRequest();
-
         $inputs = $req->all();
 
         $user = User::where('remember_token' ,$token)->where('remember_token_expire','>=',date('Y-m-d H:i:s'))->get();
@@ -49,8 +48,6 @@ class ResetPasswordController
         $user->save();
 
         return  redirect(self::redirectTo);
-
-
 
     }
 }
