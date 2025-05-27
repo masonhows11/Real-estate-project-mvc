@@ -110,10 +110,8 @@ class AuthController
 
     public function logout(): null
     {
-
     
         Auth::logout();   
-
         return redirect(self::home);
     }
 
