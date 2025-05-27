@@ -29,7 +29,7 @@ class ForgotPasswordController
         if (Session::get('forgot.time') && Session::get('forgot.time') > time()) {
 
             error('forgot_pass_token', 'please wait for 2 min then try again');
-
+            return back();
         } else {
 
             Session::set('forgot.time', time() + 120);
@@ -44,7 +44,7 @@ class ForgotPasswordController
             }
             $user = $user[0];
             $user->remember_token = generateToken();
-            $user->remember_token_expire = date("Y-m-d H-i-s", strtotime('+ 10 min'));
+            $user->remember_token_expire = date("Y-m-d H:i:s", strtotime('+ 10 min'));
             $user->save();
 
             $message = '

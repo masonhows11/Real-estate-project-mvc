@@ -17,7 +17,7 @@ class AuthController
 
     private const string redirectTo = '/login_form';
     private const string redirectToAdmin = '/admin/index';
-    private const string home = '/home';
+    private const string home = '/';
 
     public function registerForm()
     {
