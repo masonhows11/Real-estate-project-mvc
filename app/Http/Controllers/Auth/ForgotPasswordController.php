@@ -35,6 +35,15 @@ class ForgotPasswordController
             $inputs = $req->all();
 
             $user = User::where('email',$inputs['email'])->get();
+            if(empty($user))
+            {
+                error('forgot_pass_token', 'کاربر وجود ندارد');
+                return back();
+            }
+            $user = $user[0];
+            $user->remember_token = generateToken();
+            $user->remember_token_expire = date("Y-m-d H-i-s",strtotime('+ 10 min'));
+            $user->save();
 
         }
     }
