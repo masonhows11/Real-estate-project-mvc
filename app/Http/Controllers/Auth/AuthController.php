@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Http\Request\LoginRequest;
 use App\Http\Services\ImageUpload;
 use App\Http\Request\RegisterRequest;
@@ -112,7 +111,10 @@ class AuthController
     public function logout(): null
     {
 
-        return redirect('/login_form');
+    
+        Auth::logout();   
+
+        return redirect(self::home);
     }
 
 }

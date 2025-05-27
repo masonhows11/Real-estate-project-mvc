@@ -8,6 +8,7 @@ class HomeController extends Controller
 
     public function index()
     {
+        // dd($_SESSION);
         echo "index method in HomeController";
     }
 
