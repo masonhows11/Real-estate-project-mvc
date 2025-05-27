@@ -29,6 +29,7 @@
                                     <div class="form-group__input">
                                         <input class="ecom-wc__form-input"  id="email" type="email" name="email"  />
                                     </div>
+                                    <?= errorText('email') ?>
                                 </div>
 
                                 <div class="form-group form-mg-top-30">

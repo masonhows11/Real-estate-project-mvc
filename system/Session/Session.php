@@ -26,6 +26,11 @@ class Session
         }
     }
 
+    public static function clearSession()
+    {
+
+    }
+
 
     // call session method as static
     // like Session::set() , Session::get()
