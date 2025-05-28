@@ -1,6 +1,6 @@
 <footer class="footer-area p-relative">
     <div class="homec-shape">
-        <div class="homec-shape-single homec-shape-10"><img src="assets/img/anim-shape-6.svg" alt="#" /></div>
+        <div class="homec-shape-single homec-shape-10"><img src="app_assets/img/anim-shape-6.svg" alt="#" /></div>
     </div>
     <div class="container">
         <div class="row">
@@ -8,7 +8,7 @@
                 <div class="homec-form mg-top-100">
                     <div class="homec-form__content">
                         <span class="homec-form__label">پیشنهادها برای اجاره خانه </span>
-                        <h3 class="homec-form__title">به هوم کو بپیوندید</h3>
+                        <h3 class="homec-form__title">به خانه ما بپیوندید</h3>
                     </div>
                     <form class="homec-form__form">
                         <input type="email" name="Email" placeholder="آدرس ایمیل" required />
@@ -24,7 +24,7 @@
                         <div class="col-lg-4 col-md-3 col-12">
                             <div class="footer-about-widget">
                                 <div class="footer-logo homec-header__logo">
-                                    <a class="logo" href="index.html"><img src="assets/img/logo-footer.png" alt="#" /></a>
+                                    <a class="logo" href="index.html"><img src="app_assets/img/default/no-picture-available.jpg" alt="#" /></a>
                                 </div>
                                 <p class="footer-about-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
 
@@ -143,16 +143,16 @@
                                         <h3 class="widget-title">تماس با ما</h3>
                                         <div class="f-contact__form-top">
                                             <ul class="f-contact-list list-none">
-                                                <li><img src="assets/img/footer-phone.svg" alt="#" /><a href="tel:0212134567">0212134567</a></li>
+                                                <li><img src="app_assets/img/footer-phone.svg" alt="#" /><a href="tel:0212134567">0212134567</a></li>
                                                 <li>
-                                                    <img src="assets/img/footer-message.png" alt="#" />
+                                                    <img src="app_assets/img/footer-message.png" alt="#" />
                                                     <a href="#">
                                                         <span class="__cf_email__">ایمیل</span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <img src="assets/img/footer-location.png" alt="#" />
-                                                    <p>تهران ، زعفرانیه ، خیابان مهر</p>
+                                                    <img src="app_assets/img/footer-location.png" alt="#" />
+                                                    <p>ایران املاک خانه ما</p>
                                                 </li>
                                             </ul>
                                         </div>
@@ -170,7 +170,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <p class="copyright-text">© 1403 هوم کو تمامی حقوق محفوظ است. راستچین شده توسط<a href="#" target="_blank"> داود </a></p>
+                    <p class="copyright-text">© 1404 ایران خانه ما<a href="#" target="_blank"> داود </a></p>
                 </div>
                 <div class="col-lg-6 col-12">
                     <ul class="footer-pages list-none">

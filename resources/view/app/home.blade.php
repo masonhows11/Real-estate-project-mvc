@@ -3,13 +3,13 @@
     املاک خانه ما
 @endsection
 @section('main_content')
-    <section id="hero" class="homec-hero homec-hero__v2 p-relative" style="background-image: url('assets/img/map.svg');">
+    <section id="hero" class="homec-hero homec-hero__v2 p-relative" style="background-image: url('app_assets/img/map.svg');">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
                     <div class="homec-hero__inner homec-hero__inner--v2">
                         <div class="homec-hero__content homec-hero__content--v2">
-                            <h1 class="homec-hero__title">ملک خود را <span class="homec-hero__title--focus" style="background-image: url('assets/img/shape-2.svg');">با مشاوران</span> دریافت کنید</h1>
+                            <h1 class="homec-hero__title">ملک خود را <span class="homec-hero__title--focus" style="background-image: url('app_assets/img/shape-2.svg');">با مشاوران</span> دریافت کنید</h1>
                             <ul class="homec-iconic-list homec-iconic-list__v2 homec-iconic-list__white list-none mg-top-30">
                                 <li><i class="fa-solid fa-check"></i>لورم ایپسوم متن ساختگی با تولید سادگی</li>
                                 <li><i class="fa-solid fa-check"></i>فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف</li>
@@ -25,7 +25,7 @@
                                         <a href="property-single.html" class="homec-property homec-property__card">
                                             <div class="homec-property__head">
                                                 <div class="homec-overlay"></div>
-                                                <img src="assets/img/property-featured.jpg" alt="#" />
+                                                <img src="app_assets/img/property-featured.jpg" alt="#" />
                                             </div>
 
                                             <div class="homec-property__body">
@@ -33,14 +33,14 @@
                                                     <div class="homec-property__price">3,976 تومان<span>/ماهانه</span></div>
                                                     <h3 class="homec-property__title">خانه مدرن با استخر</h3>
                                                     <div class="homec-property__text">
-                                                        <img src="assets/img/location-icon2.svg" alt="#" />
+                                                        <img src="app_assets/img/location-icon2.svg" alt="#" />
                                                         <p>تهران ، زعفرانیه ، خیابان مهر</p>
                                                     </div>
 
                                                     <ul class="homec-property__list homec-border-top list-none">
-                                                        <li><img src="assets/img/room-icon2.svg" alt="#" />3 خواب</li>
-                                                        <li><img src="assets/img/bath-icon2.svg" alt="#" />2 حمام</li>
-                                                        <li><img src="assets/img/size-icon2.svg" alt="#" />5x9 m2</li>
+                                                        <li><img src="app_assets/img/room-icon2.svg" alt="#" />3 خواب</li>
+                                                        <li><img src="app_assets/img/bath-icon2.svg" alt="#" />2 حمام</li>
+                                                        <li><img src="app_assets/img/size-icon2.svg" alt="#" />5x9 m2</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -50,7 +50,7 @@
                                         <a href="property-single.html" class="homec-property homec-property__card">
                                             <div class="homec-property__head">
                                                 <div class="homec-overlay"></div>
-                                                <img src="assets/img/property-featured2.jpg" alt="#" />
+                                                <img src="app_assets/img/property-featured2.jpg" alt="#" />
                                             </div>
 
                                             <div class="homec-property__body">
@@ -58,14 +58,14 @@
                                                     <div class="homec-property__price">3,976 تومان<span>/ماهانه</span></div>
                                                     <h3 class="homec-property__title">آپارتمان الماس منگنز</h3>
                                                     <div class="homec-property__text">
-                                                        <img src="assets/img/location-icon2.svg" alt="#" />
+                                                        <img src="app_assets/img/location-icon2.svg" alt="#" />
                                                         <p>تهران ، زعفرانیه ، خیابان مهر</p>
                                                     </div>
 
                                                     <ul class="homec-property__list homec-border-top list-none">
-                                                        <li><img src="assets/img/room-icon2.svg" alt="#" />3 خواب</li>
-                                                        <li><img src="assets/img/bath-icon2.svg" alt="#" />2 حمام</li>
-                                                        <li><img src="assets/img/size-icon2.svg" alt="#" />5x9 m2</li>
+                                                        <li><img src="app_assets/img/room-icon2.svg" alt="#" />3 خواب</li>
+                                                        <li><img src="app_assets/img/bath-icon2.svg" alt="#" />2 حمام</li>
+                                                        <li><img src="app_assets/img/size-icon2.svg" alt="#" />5x9 m2</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -75,7 +75,7 @@
                                         <a href="property-single.html" class="homec-property homec-property__card">
                                             <div class="homec-property__head">
                                                 <div class="homec-overlay"></div>
-                                                <img src="assets/img/property-featured2.jpg" alt="#" />
+                                                <img src="app_assets/img/property-featured2.jpg" alt="#" />
                                             </div>
 
                                             <div class="homec-property__body">
@@ -83,14 +83,14 @@
                                                     <div class="homec-property__price">3,976 تومان<span>/ماهانه</span></div>
                                                     <h3 class="homec-property__title">فضای اداری شمال غربی</h3>
                                                     <div class="homec-property__text">
-                                                        <img src="assets/img/location-icon2.svg" alt="#" />
+                                                        <img src="app_assets/img/location-icon2.svg" alt="#" />
                                                         <p>تهران ، زعفرانیه ، خیابان مهر</p>
                                                     </div>
 
                                                     <ul class="homec-property__list homec-border-top list-none">
-                                                        <li><img src="assets/img/room-icon2.svg" alt="#" />3 خواب</li>
-                                                        <li><img src="assets/img/bath-icon2.svg" alt="#" />2 حمام</li>
-                                                        <li><img src="assets/img/size-icon2.svg" alt="#" />5x9 m2</li>
+                                                        <li><img src="app_assets/img/room-icon2.svg" alt="#" />3 خواب</li>
+                                                        <li><img src="app_assets/img/bath-icon2.svg" alt="#" />2 حمام</li>
+                                                        <li><img src="app_assets/img/size-icon2.svg" alt="#" />5x9 m2</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -142,9 +142,9 @@
                                 <div class="form-group">
                                     <select>
                                         <option data-display="Apartment">مکان را انتخاب کنید</option>
-                                        <option value="1">تهران</option>
-                                        <option value="2">کرج</option>
-                                        <option value="3">تبریز</option>
+                                        <option value="1">کرمان</option>
+                                        <option value="2">شیراز</option>
+                                        <option value="3">بندرعباس</option>
                                     </select>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                         <div class="homec-listing__single">
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img1.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img1.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>تهران</h4>
                                 </a>
@@ -178,14 +178,14 @@
                         <div class="homec-listing__single">
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img2.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img2.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>کرج</h4>
                                 </a>
                             </div>
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img3.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img3.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>تبریز</h4>
                                 </a>
@@ -195,7 +195,7 @@
                         <div class="homec-listing__single">
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img4.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img4.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>اصفهان</h4>
                                 </a>
@@ -205,14 +205,14 @@
                         <div class="homec-listing__single">
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img5.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img5.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>مشهد</h4>
                                 </a>
                             </div>
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img6.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img6.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>سمنان</h4>
                                 </a>
@@ -222,14 +222,14 @@
                         <div class="homec-listing__single">
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img7.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img7.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>شیراز</h4>
                                 </a>
                             </div>
                             <div class="homec-listing__inner">
                                 <a href="property-grid.html">
-                                    <img src="assets/img/listing-img8.jpg" alt="#" />
+                                    <img src="app_assets/img/listing-img8.jpg" alt="#" />
                                     <div class="homec-overlay homec-listing__overlay"></div>
                                     <h4 class="homec-listing__title"><span>4+ ملک</span>کیش</h4>
                                 </a>
@@ -248,19 +248,19 @@
 
     <section class="homec-about homec-bg-third-color pd-top-90 pd-btm-120">
         <div class="homec-shape">
-            <div class="homec-shape-single homec-shape-1"><img src="assets/img/anim-shape-1.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-2"><img src="assets/img/anim-shape-2.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-3"><img src="assets/img/anim-shape-3.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-4"><img src="assets/img/anim-shape-1.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-5"><img src="assets/img/anim-shape-2.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-6"><img src="assets/img/anim-shape-3.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-1"><img src="app_assets/img/anim-shape-1.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-2"><img src="app_assets/img/anim-shape-2.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-3"><img src="app_assets/img/anim-shape-3.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-4"><img src="app_assets/img/anim-shape-1.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-5"><img src="app_assets/img/anim-shape-2.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-6"><img src="app_assets/img/anim-shape-3.svg" alt="#" /></div>
         </div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 offset-lg-0 col-md-10 offset-md-1 col-12 mg-top-30" data-aos="fade-left" data-aos-delay="400">
                     <div class="homec-image-group homec-image-group--v2">
                         <div class="homec-image-group__main">
-                            <img src="assets/img/about-3.jpg" alt="#" />
+                            <img src="app_assets/img/about-3.jpg" alt="#" />
                             <div class="homec-experiences">
                                 <h4 class="homec-experiences__title">12 سال <span>تجربه ما</span></h4>
                             </div>
@@ -268,7 +268,7 @@
                         <div class="homec-ceo-quote">
                             <div class="homec-ceo-quote__img">
                                 <div class="homec-overlay"></div>
-                                <img src="assets/img/ceo-img.png" alt="#" />
+                                <img src="app_assets/img/ceo-img.png" alt="#" />
                             </div>
                             <h4 class="homec-ceo-quote__title">وید دی وارن<span>مدیرعامل و موسس هوم کو</span></h4>
                         </div>
@@ -278,7 +278,7 @@
                     <div class="homec-about-content homec-about-content--v2">
                         <div class="homec-section__head">
                             <div class="homec-section__shape">
-                                <span class="homec-section__badge homec-section__badge--shape" style="background-image: url('assets/img/section-shape.svg');">درباره هوم کو</span>
+                                <span class="homec-section__badge homec-section__badge--shape" style="background-image: url('app_assets/img/section-shape.svg');">درباره هوم کو</span>
                             </div>
                             <h2 class="homec-section__title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</h2>
                         </div>
@@ -292,14 +292,14 @@
                             <div class="homec-dflex-space">
                                 <div class="homec-funfact__single homec-funfact__single--v2">
                                     <div class="homec-funfact__icon">
-                                        <img src="assets/img/count-icon1.svg" alt="#" />
+                                        <img src="app_assets/img/count-icon1.svg" alt="#" />
                                     </div>
                                     <h3 class="homec-funfact__number"><span class="counter">90</span>k+ اجاره کنندگان</h3>
                                     <p class="homec-funfact__text">به خدمات و مراقبت ما ایمان داشته باشید</p>
                                 </div>
                                 <div class="homec-funfact__single homec-funfact__single--v2">
                                     <div class="homec-funfact__icon">
-                                        <img src="assets/img/count-icon2.svg" alt="#" />
+                                        <img src="app_assets/img/count-icon2.svg" alt="#" />
                                     </div>
                                     <h3 class="homec-funfact__number"><span class="counter">120</span>k+ اجاره کنندگان</h3>
                                     <p class="homec-funfact__text">خانه آماده برای سکونت</p>
@@ -312,10 +312,10 @@
         </div>
     </section>
 
-    <section class="homec-properties homec-bg-cover pd-top-120 pd-btm-120" style="background-image: url('assets/img/bg-shape-four.svg');">
+    <section class="homec-properties homec-bg-cover pd-top-120 pd-btm-120" style="background-image: url('app_assets/img/bg-shape-four.svg');">
         <div class="homec-shape">
-            <div class="homec-shape-single homec-shape-7"><img src="assets/img/anim-shape-4.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-8"><img src="assets/img/anim-shape-5.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-7"><img src="app_assets/img/anim-shape-4.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-8"><img src="app_assets/img/anim-shape-5.svg" alt="#" /></div>
         </div>
         <div class="container">
             <div class="row">
@@ -330,7 +330,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="400">
                     <div class="homec-property">
                         <div class="homec-property__head">
-                            <img src="assets/img/property-img11.png" alt="#" />
+                            <img src="app_assets/img/property-img11.png" alt="#" />
 
                             <div class="homec-property__hsticky">
                                 <a href="#" class="homec-heart">
@@ -342,7 +342,7 @@
                                     </svg>
                                 </a>
                                 <a href="agent-detail.html" class="homec-property__asticky">
-                                    <img src="assets/img/agent-1.jpg" alt="#" />
+                                    <img src="app_assets/img/agent-1.jpg" alt="#" />
                                     <h4 class="homec-property__asticky--label">وید وایرن<span>مشاور</span></h4>
                                 </a>
                             </div>
@@ -355,14 +355,14 @@
                             </div>
                             <h3 class="homec-property__title"><a href="property-single.html">فضای اداری شمال غربی</a></h3>
                             <div class="homec-property__text">
-                                <img src="assets/img/location-icon.svg" alt="#" />
+                                <img src="app_assets/img/location-icon.svg" alt="#" />
                                 <p>تهران ، زعفرانیه ، خیابان مهر</p>
                             </div>
 
                             <ul class="homec-property__list homec-border-top list-none">
-                                <li><img src="assets/img/room-icon.svg" alt="#" />3 خواب</li>
-                                <li><img src="assets/img/bath-icon.svg" alt="#" />2 حمام</li>
-                                <li><img src="assets/img/size-icon.svg" alt="#" />120 متری</li>
+                                <li><img src="app_assets/img/room-icon.svg" alt="#" />3 خواب</li>
+                                <li><img src="app_assets/img/bath-icon.svg" alt="#" />2 حمام</li>
+                                <li><img src="app_assets/img/size-icon.svg" alt="#" />120 متری</li>
                             </ul>
                         </div>
                     </div>
@@ -370,7 +370,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="600">
                     <div class="homec-property">
                         <div class="homec-property__head">
-                            <img src="assets/img/property-img12.png" alt="#" />
+                            <img src="app_assets/img/property-img12.png" alt="#" />
 
                             <div class="homec-property__hsticky">
                                 <a href="#" class="homec-heart">
@@ -382,7 +382,7 @@
                                     </svg>
                                 </a>
                                 <a href="agent-detail.html" class="homec-property__asticky">
-                                    <img src="assets/img/agent-2.jpg" alt="#" />
+                                    <img src="app_assets/img/agent-2.jpg" alt="#" />
                                     <h4 class="homec-property__asticky--label">وید وایرن<span>مشاور</span></h4>
                                 </a>
                             </div>
@@ -395,14 +395,14 @@
                             </div>
                             <h3 class="homec-property__title"><a href="property-single.html">نمای دریاچه حومه شهر...</a></h3>
                             <div class="homec-property__text">
-                                <img src="assets/img/location-icon.svg" alt="#" />
+                                <img src="app_assets/img/location-icon.svg" alt="#" />
                                 <p>تهران ، زعفرانیه ، خیابان مهر</p>
                             </div>
 
                             <ul class="homec-property__list homec-border-top list-none">
-                                <li><img src="assets/img/room-icon.svg" alt="#" />3 خواب</li>
-                                <li><img src="assets/img/bath-icon.svg" alt="#" />2 حمام</li>
-                                <li><img src="assets/img/size-icon.svg" alt="#" />120 متری</li>
+                                <li><img src="app_assets/img/room-icon.svg" alt="#" />3 خواب</li>
+                                <li><img src="app_assets/img/bath-icon.svg" alt="#" />2 حمام</li>
+                                <li><img src="app_assets/img/size-icon.svg" alt="#" />120 متری</li>
                             </ul>
                         </div>
                     </div>
@@ -410,7 +410,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="800">
                     <div class="homec-property">
                         <div class="homec-property__head">
-                            <img src="assets/img/property-img13.png" alt="#" />
+                            <img src="app_assets/img/property-img13.png" alt="#" />
 
                             <div class="homec-property__hsticky">
                                 <a href="#" class="homec-heart">
@@ -422,7 +422,7 @@
                                     </svg>
                                 </a>
                                 <a href="agent-detail.html" class="homec-property__asticky">
-                                    <img src="assets/img/agent-3.jpg" alt="#" />
+                                    <img src="app_assets/img/agent-3.jpg" alt="#" />
                                     <h4 class="homec-property__asticky--label">وید وایرن<span>مشاور</span></h4>
                                 </a>
                             </div>
@@ -435,14 +435,14 @@
                             </div>
                             <h3 class="homec-property__title"><a href="property-single.html">مرکز خرید سنتر</a></h3>
                             <div class="homec-property__text">
-                                <img src="assets/img/location-icon.svg" alt="#" />
+                                <img src="app_assets/img/location-icon.svg" alt="#" />
                                 <p>تهران ، زعفرانیه ، خیابان مهر</p>
                             </div>
 
                             <ul class="homec-property__list homec-border-top list-none">
-                                <li><img src="assets/img/room-icon.svg" alt="#" />3 خواب</li>
-                                <li><img src="assets/img/bath-icon.svg" alt="#" />2 حمام</li>
-                                <li><img src="assets/img/size-icon.svg" alt="#" />120 متری</li>
+                                <li><img src="app_assets/img/room-icon.svg" alt="#" />3 خواب</li>
+                                <li><img src="app_assets/img/bath-icon.svg" alt="#" />2 حمام</li>
+                                <li><img src="app_assets/img/size-icon.svg" alt="#" />120 متری</li>
                             </ul>
                         </div>
                     </div>
@@ -450,7 +450,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="400">
                     <div class="homec-property">
                         <div class="homec-property__head">
-                            <img src="assets/img/property-img14.png" alt="#" />
+                            <img src="app_assets/img/property-img14.png" alt="#" />
 
                             <div class="homec-property__hsticky">
                                 <a href="#" class="homec-heart">
@@ -462,7 +462,7 @@
                                     </svg>
                                 </a>
                                 <a href="agent-detail.html" class="homec-property__asticky">
-                                    <img src="assets/img/agent-4.jpg" alt="#" />
+                                    <img src="app_assets/img/agent-4.jpg" alt="#" />
                                     <h4 class="homec-property__asticky--label">وید وایرن<span>مشاور</span></h4>
                                 </a>
                             </div>
@@ -475,14 +475,14 @@
                             </div>
                             <h3 class="homec-property__title"><a href="property-single.html">خانه ویلایی سرسبز</a></h3>
                             <div class="homec-property__text">
-                                <img src="assets/img/location-icon.svg" alt="#" />
+                                <img src="app_assets/img/location-icon.svg" alt="#" />
                                 <p>تهران ، زعفرانیه ، خیابان مهر</p>
                             </div>
 
                             <ul class="homec-property__list homec-border-top list-none">
-                                <li><img src="assets/img/room-icon.svg" alt="#" />3 خواب</li>
-                                <li><img src="assets/img/bath-icon.svg" alt="#" />2 حمام</li>
-                                <li><img src="assets/img/size-icon.svg" alt="#" />120 متری</li>
+                                <li><img src="app_assets/img/room-icon.svg" alt="#" />3 خواب</li>
+                                <li><img src="app_assets/img/bath-icon.svg" alt="#" />2 حمام</li>
+                                <li><img src="app_assets/img/size-icon.svg" alt="#" />120 متری</li>
                             </ul>
                         </div>
                     </div>
@@ -490,7 +490,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="600">
                     <div class="homec-property">
                         <div class="homec-property__head">
-                            <img src="assets/img/property-img15.png" alt="#" />
+                            <img src="app_assets/img/property-img15.png" alt="#" />
 
                             <div class="homec-property__hsticky">
                                 <a href="#" class="homec-heart">
@@ -502,7 +502,7 @@
                                     </svg>
                                 </a>
                                 <a href="agent-detail.html" class="homec-property__asticky">
-                                    <img src="assets/img/agent-5.jpg" alt="#" />
+                                    <img src="app_assets/img/agent-5.jpg" alt="#" />
                                     <h4 class="homec-property__asticky--label">وید وایرن<span>مشاور</span></h4>
                                 </a>
                             </div>
@@ -515,14 +515,14 @@
                             </div>
                             <h3 class="homec-property__title"><a href="property-single.html">آپارتمان الماس مانکو</a></h3>
                             <div class="homec-property__text">
-                                <img src="assets/img/location-icon.svg" alt="#" />
+                                <img src="app_assets/img/location-icon.svg" alt="#" />
                                 <p>تهران ، زعفرانیه ، خیابان مهر</p>
                             </div>
 
                             <ul class="homec-property__list homec-border-top list-none">
-                                <li><img src="assets/img/room-icon.svg" alt="#" />3 خواب</li>
-                                <li><img src="assets/img/bath-icon.svg" alt="#" />2 حمام</li>
-                                <li><img src="assets/img/size-icon.svg" alt="#" />120 متری</li>
+                                <li><img src="app_assets/img/room-icon.svg" alt="#" />3 خواب</li>
+                                <li><img src="app_assets/img/bath-icon.svg" alt="#" />2 حمام</li>
+                                <li><img src="app_assets/img/size-icon.svg" alt="#" />120 متری</li>
                             </ul>
                         </div>
                     </div>
@@ -530,7 +530,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="800">
                     <div class="homec-property">
                         <div class="homec-property__head">
-                            <img src="assets/img/property-img16.png" alt="#" />
+                            <img src="app_assets/img/property-img16.png" alt="#" />
 
                             <div class="homec-property__hsticky">
                                 <a href="#" class="homec-heart">
@@ -542,7 +542,7 @@
                                     </svg>
                                 </a>
                                 <a href="agent-detail.html" class="homec-property__asticky">
-                                    <img src="assets/img/agent-6.jpg" alt="#" />
+                                    <img src="app_assets/img/agent-6.jpg" alt="#" />
                                     <h4 class="homec-property__asticky--label">وید وایرن<span>مشاور</span></h4>
                                 </a>
                             </div>
@@ -555,14 +555,14 @@
                             </div>
                             <h3 class="homec-property__title"><a href="property-single.html">ویلای حومه شهر</a></h3>
                             <div class="homec-property__text">
-                                <img src="assets/img/location-icon.svg" alt="#" />
+                                <img src="app_assets/img/location-icon.svg" alt="#" />
                                 <p>تهران ، زعفرانیه ، خیابان مهر</p>
                             </div>
 
                             <ul class="homec-property__list homec-border-top list-none">
-                                <li><img src="assets/img/room-icon.svg" alt="#" />3 خواب</li>
-                                <li><img src="assets/img/bath-icon.svg" alt="#" />2 حمام</li>
-                                <li><img src="assets/img/size-icon.svg" alt="#" />120 متری</li>
+                                <li><img src="app_assets/img/room-icon.svg" alt="#" />3 خواب</li>
+                                <li><img src="app_assets/img/bath-icon.svg" alt="#" />2 حمام</li>
+                                <li><img src="app_assets/img/size-icon.svg" alt="#" />120 متری</li>
                             </ul>
                         </div>
                     </div>
@@ -577,7 +577,7 @@
     </section>
 
     <section class="homec-bg-primary-color pd-top-110 pd-btm-110">
-        <div class="homec-bg homec-bg__opacity" style="background-image: url(assets/img/features-list-bg.svg);"></div>
+        <div class="homec-bg homec-bg__opacity" style="background-image: url(app_assets/img/features-list-bg.svg);"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-12 mg-btm-40">
@@ -594,12 +594,12 @@
                             <div class="homec-features-list__head">
                                 <div class="homec-features-list__first">
                                     <div class="homec-features-list__icon">
-                                        <img src="assets/img/hand-icon.svg" alt="#" />
+                                        <img src="app_assets/img/hand-icon.svg" alt="#" />
                                         <h4 class="homec-features-list__number">1</h4>
                                     </div>
                                 </div>
                                 <div class="homec-features-list__arrow homec-features-list__arrow--one">
-                                    <img src="assets/img/arrow-icon.svg" alt="#" />
+                                    <img src="app_assets/img/arrow-icon.svg" alt="#" />
                                 </div>
                             </div>
                             <div class="homec-features-list__body">
@@ -612,12 +612,12 @@
                             <div class="homec-features-list__head">
                                 <div class="homec-features-list__first">
                                     <div class="homec-features-list__icon">
-                                        <img src="assets/img/support-icon.svg" alt="#" />
+                                        <img src="app_assets/img/support-icon.svg" alt="#" />
                                     </div>
                                     <h4 class="homec-features-list__number">2</h4>
                                 </div>
                                 <div class="homec-features-list__arrow homec-features-list__arrow--two">
-                                    <img src="assets/img/arrow-icon.svg" alt="#" />
+                                    <img src="app_assets/img/arrow-icon.svg" alt="#" />
                                 </div>
                             </div>
                             <div class="homec-features-list__body">
@@ -630,12 +630,12 @@
                             <div class="homec-features-list__head">
                                 <div class="homec-features-list__first">
                                     <div class="homec-features-list__icon">
-                                        <img src="assets/img/finance-icon.svg" alt="#" />
+                                        <img src="app_assets/img/finance-icon.svg" alt="#" />
                                     </div>
                                     <h4 class="homec-features-list__number">3</h4>
                                 </div>
                                 <div class="homec-features-list__arrow homec-features-list__arrow--three">
-                                    <img src="assets/img/arrow-icon.svg" alt="#" />
+                                    <img src="app_assets/img/arrow-icon.svg" alt="#" />
                                 </div>
                             </div>
                             <div class="homec-features-list__body">
@@ -648,7 +648,7 @@
                             <div class="homec-features-list__head">
                                 <div class="homec-features-list__first">
                                     <div class="homec-features-list__icon">
-                                        <img src="assets/img/wide-house-icon.svg" alt="#" />
+                                        <img src="app_assets/img/wide-house-icon.svg" alt="#" />
                                     </div>
                                     <h4 class="homec-features-list__number">4</h4>
                                 </div>
@@ -666,12 +666,12 @@
 
     <section class="homec-about homec-bg-third-color pd-top-120 pd-btm-120">
         <div class="homec-shape">
-            <div class="homec-shape-single homec-shape-1"><img src="assets/img/anim-shape-1.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-2"><img src="assets/img/anim-shape-2.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-3"><img src="assets/img/anim-shape-3.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-4"><img src="assets/img/anim-shape-1.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-5"><img src="assets/img/anim-shape-2.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-6"><img src="assets/img/anim-shape-3.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-1"><img src="app_assets/img/anim-shape-1.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-2"><img src="app_assets/img/anim-shape-2.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-3"><img src="app_assets/img/anim-shape-3.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-4"><img src="app_assets/img/anim-shape-1.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-5"><img src="app_assets/img/anim-shape-2.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-6"><img src="app_assets/img/anim-shape-3.svg" alt="#" /></div>
         </div>
         <div class="container">
             <div class="row">
@@ -686,7 +686,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="400">
                     <div class="homec-agent homec-agent__v2">
                         <div class="homec-agent__head">
-                            <img src="assets/img/agent-9.jpg" alt="#" />
+                            <img src="app_assets/img/agent-9.jpg" alt="#" />
                         </div>
 
                         <div class="homec-agent__body">
@@ -754,7 +754,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="500">
                     <div class="homec-agent homec-agent__v2">
                         <div class="homec-agent__head">
-                            <img src="assets/img/agent-10.jpg" alt="#" />
+                            <img src="app_assets/img/agent-10.jpg" alt="#" />
                         </div>
 
                         <div class="homec-agent__body">
@@ -822,7 +822,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="600">
                     <div class="homec-agent homec-agent__v2">
                         <div class="homec-agent__head">
-                            <img src="assets/img/agent-11.jpg" alt="#" />
+                            <img src="app_assets/img/agent-11.jpg" alt="#" />
                         </div>
 
                         <div class="homec-agent__body">
@@ -890,7 +890,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="700">
                     <div class="homec-agent homec-agent__v2">
                         <div class="homec-agent__head">
-                            <img src="assets/img/agent-12.jpg" alt="#" />
+                            <img src="app_assets/img/agent-12.jpg" alt="#" />
                         </div>
 
                         <div class="homec-agent__body">
@@ -958,7 +958,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="800">
                     <div class="homec-agent homec-agent__v2">
                         <div class="homec-agent__head">
-                            <img src="assets/img/agent-13.jpg" alt="#" />
+                            <img src="app_assets/img/agent-13.jpg" alt="#" />
                         </div>
 
                         <div class="homec-agent__body">
@@ -1026,7 +1026,7 @@
                 <div class="col-lg-4 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="900">
                     <div class="homec-agent homec-agent__v2">
                         <div class="homec-agent__head">
-                            <img src="assets/img/agent-5.jpg" alt="#" />
+                            <img src="app_assets/img/agent-5.jpg" alt="#" />
                         </div>
 
                         <div class="homec-agent__body">
@@ -1095,13 +1095,13 @@
         </div>
     </section>
 
-    <section class="homec-bg-cover pd-top-90 pd-btm-120" style="background-image: url('assets/img/bg-shape-five.svg');">
+    <section class="homec-bg-cover pd-top-90 pd-btm-120" style="background-image: url('app_assets/img/bg-shape-five.svg');">
         <div class="container homec-container-medium">
             <div class="row homec-container-medium__row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12 mg-top-30">
                     <div class="homec-section__head">
                         <div class="homec-section__shape">
-                            <span class="homec-section__badge homec-section__badge--shape homec-section__badge--shape--v2" style="background-image: url('assets/img/shape-3.svg');">سوالات</span>
+                            <span class="homec-section__badge homec-section__badge--shape homec-section__badge--shape--v2" style="background-image: url('app_assets/img/shape-3.svg');">سوالات</span>
                         </div>
                         <h2 class="homec-section__title">اگر می خواهید سوالات متداول را بدانید</h2>
                     </div>
@@ -1155,9 +1155,9 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12 mg-top-30">
                     <div class="homec-support-img">
-                        <img src="assets/img/support-img.png" alt="#" />
+                        <img src="app_assets/img/support-img.png" alt="#" />
                         <div class="homec-support-img__content">
-                            <img src="assets/img/support-icon-white.svg" alt="#" />
+                            <img src="app_assets/img/support-icon-white.svg" alt="#" />
                             <h4 class="homec-support-img__title">پشتیبانی 24 ساعته <span>سوالی دارید با ما تماس بگیرید؟</span></h4>
                         </div>
                     </div>
@@ -1166,11 +1166,11 @@
         </div>
     </section>
 
-    <section class="download-app homec-bg-cover homec-bg-primary-color pd-top-15 pd-btm-15" style="background-image: url('assets/img/download-vector.svg');">
+    <section class="download-app homec-bg-cover homec-bg-primary-color pd-top-15 pd-btm-15" style="background-image: url('app_assets/img/download-vector.svg');">
         <div class="homec-shape">
-            <div class="homec-shape-single homec-shape-11"><img src="assets/img/anim-shape-10.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-12"><img src="assets/img/anim-shape-10.svg" alt="#" /></div>
-            <div class="homec-shape-single homec-shape-13"><img src="assets/img/anim-shape-10.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-11"><img src="app_assets/img/anim-shape-10.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-12"><img src="app_assets/img/anim-shape-10.svg" alt="#" /></div>
+            <div class="homec-shape-single homec-shape-13"><img src="app_assets/img/anim-shape-10.svg" alt="#" /></div>
         </div>
         <div class="container">
             <div class="row">
@@ -1205,7 +1205,7 @@
                         </div>
 
                         <div class="download-app__img">
-                            <img src="assets/img/app-screen.png" alt="#" />
+                            <img src="app_assets/img/app-screen.png" alt="#" />
                         </div>
                     </div>
                 </div>
@@ -1213,7 +1213,7 @@
         </div>
     </section>
 
-    <section id="blog" class="blog-area homec-bg-cover section-padding" style="background-image: url('assets/img/bg-shape-two.html');">
+    <section id="blog" class="blog-area homec-bg-cover section-padding" style="background-image: url('app_assets/img/bg-shape-two.html');">
         <div class="blog-bg-pattern">
             <div class="container">
                 <div class="row">
@@ -1229,7 +1229,7 @@
                         <div class="homec-blog">
                             <div class="homec-blog__head">
                                 <div class="homec-overlay homec-blog__overlay"></div>
-                                <a href="blog-single.html"><img src="assets/img/blog-1.jpg" alt="#" /></a>
+                                <a href="blog-single.html"><img src="app_assets/img/blog-1.jpg" alt="#" /></a>
 
                                 <div class="homec-blog__content">
                                     <ul class="homec-blog__meta list-none">
@@ -1287,7 +1287,7 @@
                         <div class="homec-blog">
                             <div class="homec-blog__head">
                                 <div class="homec-overlay homec-blog__overlay"></div>
-                                <a href="blog-single.html"><img src="assets/img/blog-2.jpg" alt="#" /></a>
+                                <a href="blog-single.html"><img src="app_assets/img/blog-2.jpg" alt="#" /></a>
 
                                 <div class="homec-blog__content">
                                     <ul class="homec-blog__meta list-none">
@@ -1345,7 +1345,7 @@
                         <div class="homec-blog">
                             <div class="homec-blog__head">
                                 <div class="homec-overlay homec-blog__overlay"></div>
-                                <a href="blog-single.html"><img src="assets/img/blog-3.jpg" alt="#" /></a>
+                                <a href="blog-single.html"><img src="app_assets/img/blog-3.jpg" alt="#" /></a>
 
                                 <div class="homec-blog__content">
                                     <ul class="homec-blog__meta list-none">

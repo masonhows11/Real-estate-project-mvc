@@ -7,7 +7,7 @@
 
             <div class="offcanvas-logo">
                 <div class="homec-header__logo">
-                    <a href="index.html"><img src="assets/img/logo.png" alt="لوگو" /></a>
+                    <a href="index.html"><img src="app_assets/img/default/no-picture-available.jpg" alt="لوگو" /></a>
                 </div>
             </div>
 
@@ -74,20 +74,20 @@
                         <ul class="homec-header__list">
                             <li>
                                 <a href="#">
-                                    <img src="assets/img/email-icon.svg" alt="#" />
+                                    <img src="app_assets/img/email-icon.svg" alt="#" />
                                     <span><span class="__cf_email__">ایمیل</span></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="tel:0212134567">
-                                    <img src="assets/img/phone-icon.svg" alt="#" />
-                                    <span>0212134567</span>
+                                    <img src="app_assets/img/phone-icon.svg" alt="#" />
+                                    <span>09121234567</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="assets/img/locations-icon.svg" alt="#" />
-                                    <span>تهران ، زعفرانیه ، خیابان مهر</span>
+                                    <img src="app_assets/img/locations-icon.svg" alt="#" />
+                                    <span>ایران املاک خانه ما</span>
                                 </a>
                             </li>
                         </ul>
@@ -167,7 +167,7 @@
                     <div class="homec-header__inside">
                         <div class="homec-header__group">
                             <div class="homec-header__logo">
-                                <a href="index.html"><img src="assets/img/logo.png" alt="#" /></a>
+                                <a href="index.html"><img src="app_assets/img/default/no-picture-available.jpg" alt="#" /></a>
                             </div>
                             <div class="homec-header__menu">
                                 <div class="navbar">
@@ -228,7 +228,7 @@
                             <span class="line"></span><span class="line"></span><span class="line"></span>
                         </button>
                         <div class="homec-header__button">
-                            <a href="dashboard.html" class="homec-header__icon">
+                            <a href="#" class="homec-header__icon">
                                 <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                             d="M13.9659 16.2014C18.423 16.2014 22.0666 12.5579 22.0666 8.1007C22.0666 3.64352 18.423 0 13.9659 0C9.50869 0 5.86523 3.64352 5.86523 8.1007C5.86523 12.5579 9.50876 16.2014 13.9659 16.2014Z"
@@ -238,7 +238,7 @@
                                     />
                                 </svg>
                             </a>
-                            <a href="add-property.html" class="homec-btn"><span>ثبت ملک</span></a>
+                            <a href="#" class="homec-btn"><span>ثبت ملک</span></a>
                         </div>
                     </div>
                 </div>
