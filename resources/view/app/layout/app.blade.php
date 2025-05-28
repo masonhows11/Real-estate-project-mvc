@@ -6,25 +6,26 @@
     <meta name="keywords" content="Site keywords here" />
     <meta name="description" content="#" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    @include('layouts.styles')
-    @yield('app_title')
+    @include('app.layout.styles')
+   <title> @yield('app_title')</title>
 </head>
 
 
 <body>
-<div class="preloader">
+<!-- <div class="preloader">
     <div class="preloader-inner">
         <div class="preloader-icon">
             <span></span>
             <span></span>
         </div>
     </div>
-</div>
+</div>-->
 @include('app.layout.navbar')
 
 @yield('main_content')
-
+@include('app.layout.footer')
+@include('app.layout.scripts')
 </body>
-@include('layouts.scripts')
+
 </html>
 
