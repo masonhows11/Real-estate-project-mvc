@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Ads;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -12,7 +13,9 @@ class HomeController extends Controller
     {
 
         $latestAds = Ads::orderBy('created_at','desc')->limit(0,6)->get();
-       return view('app.home');
+        $bestAds = Ads::orderBy('view','desc')->limit(0,4)->get();
+        $posts = Post::where('published_at','<=',date('Y-m-d H:i:s'))->orderBy('created_at')->limit(0,4)->get();
+       return view('app.home',compact('latestAds','bestAds','posts'));
     }
 
     public function create()
