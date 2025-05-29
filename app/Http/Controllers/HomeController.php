@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Ads;
+
 class HomeController extends Controller
 {
 
     public function index()
     {
 
+        $latestAds = Ads::orderBy('created_at','desc')->limit(0,6)->get();
        return view('app.home');
     }
 
