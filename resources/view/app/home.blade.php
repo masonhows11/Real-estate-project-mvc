@@ -171,14 +171,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
 
+                <div class="row">
                     <?php foreach ($posts as $post){ ?>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="homec-blog">
                             <div class="homec-blog__head">
                                 <div class="homec-overlay homec-blog__overlay"></div>
-                                <a href="blog-single.html"><img src="<?= $post->image ? asset($post->image) : asset('app_assets/img/default/no-picture-available.jpg')  ?>" alt="#" /></a>
+                                <a href="blog-single.html"><img  class="img-fluid" style="width: 400px;height: 300px" src="<?= $post->image ? asset($post->image) : asset('app_assets/img/default/no-picture-available.jpg')  ?>" alt="#" /></a>
 
                                 <div class="homec-blog__content">
                                     <ul class="homec-blog__meta list-none">
@@ -218,7 +218,7 @@
                                             <a href="#">توسط <?= $post->user()->first_name ?></a>
                                         </li>
                                     </ul>
-                                    <h3 class="homec-blog__title"><a href="blog-single.html"> <?= echoHtml($post->body) ?> </a></h3>
+                                    <h3 class="homec-blog__title"><a href="blog-single.html"> <?= substr(echoHtml($post->body),0,42) ?> </a></h3>
                                     <div class="home-blog__button homec-border-top">
                                         <a href="blog-single.html" class="homec-blog__btn">
                                             ادامه مطلب
@@ -234,6 +234,7 @@
                     </div>
                     <?php } ?>
                 </div>
+
             </div>
         </div>
     </section>
