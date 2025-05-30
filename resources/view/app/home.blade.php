@@ -154,10 +154,12 @@
 
     @include('app.partials.questions')
 
+
     @include('app.partials.mobile_app')
 
 
 
+     <!-- latest news / posts -->
     <section id="blog" class="blog-area homec-bg-cover section-padding" style="background-image: url('app_assets/img/bg-shape-two.html');">
         <div class="blog-bg-pattern">
             <div class="container">

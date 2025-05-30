@@ -1,4 +1,4 @@
-<section class="homec-about homec-bg-third-color pd-top-120 pd-btm-120">
+<section class="homec-about homec-bg-third-color pd-top-120 pd-btm-120 mt-4">
     <div class="homec-shape">
         <div class="homec-shape-single homec-shape-1"><img src="app_assets/img/anim-shape-1.svg" alt="#" /></div>
         <div class="homec-shape-single homec-shape-2"><img src="app_assets/img/anim-shape-2.svg" alt="#" /></div>

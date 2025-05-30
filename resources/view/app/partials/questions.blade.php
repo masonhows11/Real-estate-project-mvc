@@ -1,4 +1,4 @@
-<section class="homec-bg-cover pd-top-90 pd-btm-120" style="background-image: url('app_assets/img/bg-shape-five.svg');">
+<section class="homec-bg-cover pd-top-90 pd-btm-120 mt-4" style="background-image: url('app_assets/img/bg-shape-five.svg');">
     <div class="container homec-container-medium">
         <div class="row homec-container-medium__row align-items-center">
             <div class="col-lg-6 col-md-6 col-12 mg-top-30">

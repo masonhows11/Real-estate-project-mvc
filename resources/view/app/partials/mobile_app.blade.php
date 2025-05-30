@@ -1,4 +1,4 @@
-<section class="download-app homec-bg-cover homec-bg-primary-color pd-top-15 pd-btm-15" style="background-image: url('app_assets/img/download-vector.svg');">
+<section class="download-app homec-bg-cover homec-bg-primary-color pd-top-15 pd-btm-15 mt-4" style="background-image: url('app_assets/img/download-vector.svg');">
     <div class="homec-shape">
         <div class="homec-shape-single homec-shape-11"><img src="app_assets/img/anim-shape-10.svg" alt="#" /></div>
         <div class="homec-shape-single homec-shape-12"><img src="app_assets/img/anim-shape-10.svg" alt="#" /></div>
