@@ -5,6 +5,9 @@ namespace App\Models;
 use System\Database\ORM\Model;
 use System\Database\Traits\HasSoftDelete;
 
+/**
+ * @property $sell_status
+ */
 class Ads extends Model
 {
 
@@ -58,7 +61,12 @@ class Ads extends Model
 
     public function sellStatus(): string
     {
-        return ($this->sell_status == 0) ? 'اجاره' : 'خرید';
+      //  return ($this->sell_status == 0) ? 'اجاره' : 'خرید';
+      return match ($this->sell_status){
+          1 => 'خرید',
+          2 => 'فروش',
+          3 => 'اجاره',
+      };
     }
 
     public function type(): ?string

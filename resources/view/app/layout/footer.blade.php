@@ -182,4 +182,3 @@
         </div>
     </div>
 </footer>
-<a href="#" class="scrollToTop"><i class="fa-solid fa-angle-right"></i>برو بالا</a>

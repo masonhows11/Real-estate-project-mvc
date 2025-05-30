@@ -25,6 +25,9 @@
 @yield('main_content')
 @include('app.layout.footer')
 @include('app.layout.scripts')
+
+<!-- <a href="#" class="scrollToTop"><i class="fa-solid fa-angle-right"></i>برو بالا</a> -->
+
 </body>
 
 </html>
