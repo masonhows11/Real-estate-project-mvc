@@ -54,7 +54,7 @@
 
                         <div class="homec-property__body">
                             <div class="homec-property__topbar">
-                                <div class="homec-property__price"><?= $ads->amount ?>  تومان<span>/ماهانه</span></div>
+                                <div class="homec-property__price"><?= number_format($ads->amount) ?>  تومان<span>/ماهانه</span></div>
                                 <span class="homec-property__salebadge">برای <?= $ads->sellStatus() ?></span>
                             </div>
                             <h3 class="homec-property__title"><a href="property-single.html">فضای اداری شمال غربی</a></h3>
@@ -178,7 +178,7 @@
                         <div class="homec-blog">
                             <div class="homec-blog__head">
                                 <div class="homec-overlay homec-blog__overlay"></div>
-                                <a href="blog-single.html"><img src="<?= asset($post->image) ?>" alt="#" /></a>
+                                <a href="blog-single.html"><img src="<?= $post->image ? asset($post->image) : asset('app_assets/img/default/no-picture-available.jpg')  ?>" alt="#" /></a>
 
                                 <div class="homec-blog__content">
                                     <ul class="homec-blog__meta list-none">
