@@ -160,4 +160,6 @@
      <!-- latest news / posts -->
     @include('app.partials.last_posts')
 
+    @include('app.partials.customer_statistics')
+
 @endsection
