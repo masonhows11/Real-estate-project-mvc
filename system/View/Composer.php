@@ -53,7 +53,7 @@ class Composer
 
     }
 
-    private function getViewParams()
+    private function getViewParams(): array
     {
         // get variables wants to registered views
         // return $this->variablesData;
@@ -66,7 +66,8 @@ class Composer
                 // call & run & put function into viewVars variable
                 $viewVars = $callback();
 
-                // save all variables into variablesData property
+                // save all variables from callback into variablesData property
+                // then this variables pass to final views for render/show
                 foreach ($viewVars as $key => $value) {
                     $this->variablesData[$key] = $value;
                 }
