@@ -17,8 +17,7 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ اجاره کنندگان</h3>
-                            <p class="homec-funfact__text">خانه آماده برای سکونت</p>
+                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ متراژ کلی</h3>
                         </div>
                     </div>
 
@@ -27,8 +26,8 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ اجاره کنندگان</h3>
-                            <p class="homec-funfact__text">خانه آماده برای سکونت</p>
+                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ کاربران</h3>
+                          
                         </div>
                     </div>
 
@@ -37,8 +36,8 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ اجاره کنندگان</h3>
-                            <p class="homec-funfact__text">خانه آماده برای سکونت</p>
+                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ آگهی</h3>
+
                         </div>
                     </div>
 
@@ -47,8 +46,8 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ اجاره کنندگان</h3>
-                            <p class="homec-funfact__text">خانه آماده برای سکونت</p>
+                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ پست ها</h3>
+
                         </div>
                     </div>
 
