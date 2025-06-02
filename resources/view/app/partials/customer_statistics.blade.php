@@ -17,7 +17,7 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ متراژ کلی</h3>
+                            <h3 class="homec-funfact__number"><span class="counter"><?= $sumArea ?></span>k+ متراژ کلی</h3>
                         </div>
                     </div>
 
@@ -26,8 +26,8 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ کاربران</h3>
-                          
+                            <h3 class="homec-funfact__number"><span class="counter"><?= $usersCount ?></span>k+ کاربران</h3>
+
                         </div>
                     </div>
 
@@ -36,7 +36,7 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ آگهی</h3>
+                            <h3 class="homec-funfact__number"><span class="counter"><?= $adsCount ?></span>k+ آگهی</h3>
 
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             <div class="homec-funfact__icon">
                                 <img src="app_assets/img/count-icon2.svg" alt="#" />
                             </div>
-                            <h3 class="homec-funfact__number"><span class="counter">120</span>k+ پست ها</h3>
+                            <h3 class="homec-funfact__number"><span class="counter"><?= $postsCount ?></span>k+ پست ها</h3>
 
                         </div>
                     </div>
