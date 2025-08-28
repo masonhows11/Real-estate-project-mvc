@@ -35,6 +35,7 @@ class ViewBuilder
         //        $appServiceProvider = new AppServiceProvider();
         //        $appServiceProvider->boot();
 
+        // getParams is call static method
         $this->vars = Composer::getParams();
         
     }

@@ -13,7 +13,7 @@ function view($dir, $vars = []): void
     $viewBuilder->run($dir);
     // var_dump($dir);
     // vars are data variables sent to view with composer
-    $viewVars = $viewBuilder->vars; // this vars from composer
+    $viewVars = $viewBuilder->vars; // these vars from composer
     $content = $viewBuilder->content;
 
     // data variables with composer
