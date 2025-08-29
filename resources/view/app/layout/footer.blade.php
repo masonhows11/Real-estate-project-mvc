@@ -1,4 +1,4 @@
-<footer class="footer-area p-relative">
+<footer class="footer-area p-relative mt-5">
     <div class="homec-shape">
         <div class="homec-shape-single homec-shape-10"><img src="app_assets/img/anim-shape-6.svg" alt="#" /></div>
     </div>
