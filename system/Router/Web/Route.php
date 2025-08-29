@@ -16,11 +16,19 @@ class Route
 
         // below line put all get routes in routes['get'] array
         global $routes;
-        $routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
+        if ($url == "/")
+        {
+            $routes['get'][] = array('url' =>"/", 'class' => $controller, 'method' => $method, 'name' => $name);
+        } else {
+            $routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
+        }
+
+
+        //$routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 
-    public static function post($url,$controller, $name = null): void
+    public static function post($url, $controller, $name = null): void
     {
 
 
@@ -36,7 +44,6 @@ class Route
 
     public static function put($url, $controller, $name = null): void
     {
-
 
 
         $handler = explode('@', $controller);

@@ -54,8 +54,8 @@ class Routing
         // var_dump($controllerPath);
         $path = Config::get('app.BASE_DIR') . "/app/Http/Controllers/" . $controllerPath . ".php";
         // if don't exists
-        if (!file_exists($path)) {
-
+        if (!file_exists($path))
+        {
             $this->error404();
         }
 

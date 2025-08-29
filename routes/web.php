@@ -121,5 +121,5 @@ Route::post('/reset_password/{token}', 'Auth\ResetPasswordController@resetPasswo
 
 // front routes
 
-Route::get('/about_us','HomeController@about','about_us');
-Route::get('/contact_us','HomeController@contact','contact_us');
+Route::get('/about','HomeController@about','about_us');
+Route::get('/contact','HomeController@contact','contact_us');

@@ -179,9 +179,9 @@ function findRouteByName($name): string
 
     $allRoutes = array_merge($routes['get'], $routes['post'], $routes['put'], $routes['delete']);
 
-    dd($allRoutes);
-
     $route = null;
+
+    // dd($allRoutes);
 
     foreach ($allRoutes as $item) {
 
@@ -192,8 +192,6 @@ function findRouteByName($name): string
 
     }
 
-    // problem
-    // dd($route);
     return $route;
 }
 
