@@ -58,8 +58,8 @@
                             <li><a href="blog-single.html">جزئیات وبلاگ</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact-us.html">تماس با ما</a></li>
-                    <li><a href="contact-us.html">درباره ما</a></li>
+                    <li><a href="<?= route('contact_us') ?>">تماس با ما</a></li>
+                    <li><a href="<?= route('about_us') ?>">درباره ما</a></li>
                 </ul>
             </nav>
         </div>
@@ -222,8 +222,8 @@
                                                     <li><a href="blog-single.html">جزئیات وبلاگ</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact-us.html">تماس با ما</a></li>
-                                            <li><a href="contact-us.html">درباره ما</a></li>
+                                            <li><a href="<?= route('contact_us') ?>">تماس با ما</a></li>
+                                            <li><a href="<?= route('about_us') ?>">درباره ما</a></li>
                                         </ul>
                                     </div>
                                 </div>
