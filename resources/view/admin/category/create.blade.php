@@ -14,18 +14,21 @@
                 </div>
                 <div>
                     <h4 class="" style="margin-top: 18px"><a class=""
-                            href="<?= route('admin.category.index') ?>">دسته بندی ها</a></h4>
+                                                             href="<?= route('admin.category.index') ?>">دسته بندی
+                            ها</a></h4>
                 </div>
             </div>
         </div>
 
-        <div class="row my-2">
-            <form action="<?= route('admin.category.store') ?>" method="post" enctype="multipart/form-data">
+
+        <form action="<?= route('admin.category.store') ?>" method="post" enctype="multipart/form-data">
+
+            <div class="row mx-auto">
 
                 <div class="mb-3 mt-3">
                     <label for="category" class="form-label">نام:</label>
                     <input type="text" class="form-control <?= errorClass('name') ?> " id="category"
-                        placeholder="نام دسته بندی را وارد کنید" name="name" value="<?= old('name') ?>">
+                           placeholder="نام دسته بندی را وارد کنید" name="name" value="<?= old('name') ?>">
                     <?= errorText('name') ?>
                 </div>
 
@@ -35,17 +38,17 @@
                         <option value="">در صورت نیاز دسته والد را انتخاب کنید</option>
                         <?php foreach ($categories as $category){ ?>
                         <option <?= old('parent_id') == $category->id ? 'selected' : '' ?> value="<?= $category->id ?>">
-                            <?= $category->name ?></option>
+                                <?= $category->name ?></option>
                         <?php } ?>
                     </select>
                     <?= errorText('name') ?>
                 </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+            </div>
 
-                <button type="submit" class="btn btn-primary">ذخیره</button>
-            </form>
-        </div>
-
-
+        </form>
 
 
     </div>
