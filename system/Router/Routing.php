@@ -149,9 +149,9 @@ class Routing
         //part3
         foreach ($this->current_route as $key => $currentRouteElement) {
             $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
-            if(substr($reservedRouteUrlElement, 0, 1) == "{" && substr($reservedRouteUrlElement, -1) == "}")
+            if(str_starts_with($reservedRouteUrlElement, "{") && str_ends_with($reservedRouteUrlElement, "}"))
             {
-                array_push($this->values, $currentRouteElement);
+                $this->values[] = $currentRouteElement;
             }
             elseif($reservedRouteUrlElement != $currentRouteElement)
             {

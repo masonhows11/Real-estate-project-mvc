@@ -3,14 +3,13 @@
 use System\Router\Web\Route;
 
 
-// Route::get('', 'HomeController@index', 'home');
+//Route::get('/home', 'HomeController@index', 'home');
 
-Route::get('/', 'HomeController@index', 'index');
-Route::get('/home', 'HomeController@index', 'home');
+// Route::get('/', 'HomeController@index', 'home.index');
+Route::get('/', 'HomeController@index', 'home');
 
 // admin routes
 Route::get('/admin/index', 'Admin\AdminController@index', 'admin.index');
-
 
 // admin routes //
 
@@ -80,6 +79,7 @@ Route::put('/admin/slider/update/{id}', 'Admin\SliderController@update', 'admin.
 Route::get('/admin/slider/delete/{id}', 'Admin\SliderController@delete', 'admin.slider.delete');
 
 /// comments
+///
 // Route::get('/admin/comments/changeStatus/{id}', 'Admin\CommentController@changeStatus', 'admin.comments.changeStatus');
 Route::get('/admin/comments/index', 'Admin\CommentController@index', 'admin.comments.index');
 
@@ -116,3 +116,9 @@ Route::post('/auth_forgot', 'Auth\ForgotPasswordController@forgotPassword', 'aut
 
 Route::get('/reset_password_view/{token}', 'Auth\ResetPasswordController@resetPasswordView', 'auth.reset_password.view');
 Route::post('/reset_password/{token}', 'Auth\ResetPasswordController@resetPassword', 'auth.reset_password');
+
+
+// front routes
+
+Route::get('/about_us','HomeController@about','about_us');
+Route::get('/contact_us','HomeController@contact','contact_us');

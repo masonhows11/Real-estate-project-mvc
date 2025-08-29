@@ -59,6 +59,7 @@
                         </ul>
                     </li>
                     <li><a href="contact-us.html">تماس با ما</a></li>
+                    <li><a href="contact-us.html">درباره ما</a></li>
                 </ul>
             </nav>
         </div>
@@ -167,14 +168,16 @@
                     <div class="homec-header__inside">
                         <div class="homec-header__group">
                             <div class="homec-header__logo">
-                                <a href="index.html"><img src="app_assets/img/default/no-picture-available.jpg" alt="#" /></a>
+                                <a href="<?= route('home') ?>">
+                                    <img src="app_assets/img/default/no-picture-available.jpg" alt="#" />
+                                </a>
                             </div>
                             <div class="homec-header__menu">
                                 <div class="navbar">
                                     <div class="nav-item">
                                         <ul class="nav-menu menu navigation list-none">
                                             <li class="menu-item-has-children active">
-                                                <a href="#">صفحه اصلی </a>
+                                                <a href="">صفحه اصلی </a>
                                                 <ul class="sub-menu">
                                                     <li><a href="index.html">صفحه اصلی 1</a></li>
                                                     <li><a href="index-2.html">صفحه اصلی 2</a></li>
@@ -219,6 +222,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="contact-us.html">تماس با ما</a></li>
+                                            <li><a href="contact-us.html">درباره ما</a></li>
                                         </ul>
                                     </div>
                                 </div>
