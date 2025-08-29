@@ -45,14 +45,14 @@ class Route
 
         // below line put all put routes in routes['get'] array
         global $routes;
-        array_push($routes['get'], array('url' => "/api/".trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
+        $routes['get'][] = array('url' => "/api/" . trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 
 
     public static function delete($url, $executeMethod, $name = null)
     {
-        
+
 
         $handler = explode('@', $executeMethod);
         $controller = $handler[0];
@@ -60,7 +60,8 @@ class Route
 
         // below line put all delete routes in routes['get'] array
         global $routes;
-        array_push($routes['get'], array('url' => "/api/".trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
+        //array_push($routes['delete'], array('url' => "/api/".trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
+        $routes['delete'][] = array('url' => "/api/" . trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 

@@ -61,7 +61,7 @@ class Route
         // below line put all delete routes in routes['get'] array
         // array_push($routes['get'], array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name));
         global $routes;
-        $routes['get'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
+        $routes['delete'][] = array('url' => trim($url, "/ "), 'class' => $controller, 'method' => $method, 'name' => $name);
 
     }
 

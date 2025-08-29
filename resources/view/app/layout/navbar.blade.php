@@ -67,6 +67,7 @@
 </div>
 
 <header id="active-sticky" class="homec-header">
+
     <div class="homec-header__top">
         <div class="container">
             <div class="row">
@@ -168,7 +169,7 @@
                     <div class="homec-header__inside">
                         <div class="homec-header__group">
                             <div class="homec-header__logo">
-                                <a href="<?= route('home') ?>">
+                                <a href="<?= route('home.index') ?>">
                                     <img src="app_assets/img/default/no-picture-available.jpg" alt="#" />
                                 </a>
                             </div>
@@ -177,7 +178,7 @@
                                     <div class="nav-item">
                                         <ul class="nav-menu menu navigation list-none">
                                             <li class="menu-item-has-children active">
-                                                <a href="">صفحه اصلی </a>
+                                                <a href="<?= route('home.index') ?>">صفحه اصلی </a>
                                                 <ul class="sub-menu">
                                                     <li><a href="index.html">صفحه اصلی 1</a></li>
                                                     <li><a href="index-2.html">صفحه اصلی 2</a></li>

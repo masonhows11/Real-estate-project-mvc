@@ -16,6 +16,9 @@ class Routing
     private $routes;
     private array $values = [];
 
+    /**
+     * @throws Exception
+     */
     public function __construct()
     {
 
@@ -39,6 +42,7 @@ class Routing
 
 
         $match = $this->match();
+
         if (empty($match)) {
 
             $this->error404();
@@ -127,25 +131,7 @@ class Routing
             return false;
         }
 
-        //// part 3
-        // compare current route & reservedRoute every item must be equal
-        //        foreach ($this->current_route as $key => $currentRouteElement) {
-        //            $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
-        //            // to findOut is there any variable in current route ? like {id} / {name}
-        //            // for check first & last character in each item is "{}"
-        //            // -1 in second substr in last character
-        //            if (str_starts_with($reservedRouteUrlElement, "{") && substr($reservedRouteUrlElement, 0, -1) == "}")
-        //            {
-        //                // push value in route variable in values array
-        //                // array_push($this->values, $currentRouteElement);
-        //                $this->values[] = $currentRouteElement;
-        //
-        //            } elseif ($reservedRouteUrlElement != $currentRouteElement) {
-        //
-        //                return false;
-        //            }
-        //        }
-        //        return true;
+
 
         //part3
         foreach ($this->current_route as $key => $currentRouteElement) {

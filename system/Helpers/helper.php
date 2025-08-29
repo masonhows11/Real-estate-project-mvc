@@ -1,5 +1,7 @@
 <?php
 
+use JetBrains\PhpStorm\NoReturn;
+
 
 /**
  * @throws Exception
@@ -170,20 +172,28 @@ function url($src): string
 }
 
 
-function findRouteByName($name)
+function findRouteByName($name): string
 {
 
     global $routes;
 
     $allRoutes = array_merge($routes['get'], $routes['post'], $routes['put'], $routes['delete']);
 
+    dd($allRoutes);
+
     $route = null;
+
     foreach ($allRoutes as $item) {
+
         if ($item['name'] == $name && $item['name'] !== null) {
             $route = $item['url'];
             break;
         }
+
     }
+
+    // problem
+    // dd($route);
     return $route;
 }
 
@@ -199,7 +209,7 @@ function route($name, $params = []): string
     $route = findRouteByName($name);
 
     if ($route == null) {
-        throw new Exception("route not found!");
+        throw new Exception("fucking route not found!");
     }
 
     // params from request
@@ -210,7 +220,8 @@ function route($name, $params = []): string
     $routesParamsMatch = [];
     // put all match into $routesParamsMatch array
     // preg_match_all("/{[^}.]*/", $route, $routesParamsMatch);
-    $pattern = "/\{[a-zA-Z0-9_]+\}/";
+    $pattern = "/{[^}.]*}/";
+    // $pattern = "/\{[a-zA-Z0-9_]+\}/";
     // $pattern = "/{[^}.]*/";
     preg_match_all($pattern, $route, $routesParamsMatch);
 
