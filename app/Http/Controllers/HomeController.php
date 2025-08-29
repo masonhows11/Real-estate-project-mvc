@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function index()
     {
 
+
         $latestAds = Ads::orderBy('created_at', 'desc')->limit(0, 6)->get();
         $bestAds = Ads::orderBy('view', 'desc')->limit(0, 4)->get();
         $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0, 6)->get();

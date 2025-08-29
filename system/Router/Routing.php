@@ -44,6 +44,7 @@ class Routing
             $this->error404();
         }
 
+        // dd($match);
         // call controller class if exists
         $controllerPath = str_replace('\\', '/', $match["class"]);
         // var_dump($controllerPath);
