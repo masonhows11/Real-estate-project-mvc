@@ -7,7 +7,7 @@
 
             <div class="offcanvas-logo">
                 <div class="homec-header__logo">
-                    <a href="index.html"><img src="app_assets/img/default/no-picture-available.jpg" alt="لوگو" /></a>
+                    <a href="index.html"><img src="<?= asset('app_assets/img/default/no-picture-available.jpg') ?>" alt="لوگو" /></a>
                 </div>
             </div>
 
@@ -15,47 +15,47 @@
                 <ul class="nav-menu menu navigation list-none">
                     <li class="menu-item-has-children active">
                         <a href="#">صفحه اصلی</a>
-                        <ul class="sub-menu">
+                       <!-- <ul class="sub-menu">
                             <li><a href="index.html">صفحه اصلی 1</a></li>
                             <li><a href="index-2.html">صفحه اصلی 2</a></li>
                             <li><a href="index-3.html">صفحه اصلی 3</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">املاک</a>
                         <ul class="sub-menu">
-                            <li><a href="property-grid.html">لیست املاک</a></li>
-                            <li><a href="property-single.html">جزئیات ملک</a></li>
-                            <li><a href="add-property.html">ثبت ملک</a></li>
-                            <li><a href="dashboard.html">داشبورد</a></li>
-                            <li><a href="submit-property.html">ثبت ملک</a></li>
-                            <li><a href="edit-property.html">ویرایش ملک</a></li>
+                            <li><a href="#">لیست املاک</a></li>
+                            <li><a href="#">جزئیات ملک</a></li>
+                            <li><a href="#">ثبت ملک</a></li>
+                            <li><a href="#">داشبورد</a></li>
+                            <li><a href="#">ثبت ملک</a></li>
+                            <li><a href="#">ویرایش ملک</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">صفحات</a>
                         <ul class="sub-menu">
-                            <li><a href="about.html">درباره ما</a></li>
-                            <li><a href="pricing.html">قیمت‌گذاری</a></li>
-                            <li><a href="payment-method.html">روش‌های پرداخت</a></li>
-                            <li><a href="faq.html">سوالات متداول</a></li>
-                            <li><a href="login.html">ورود</a></li>
-                            <li><a href="signup.html">ثبت‌نام</a></li>
-                            <li><a href="404.html">صفحه خطا</a></li>
+                            <li><a href="#">درباره ما</a></li>
+                            <li><a href="#">قیمت‌گذاری</a></li>
+                            <li><a href="#">روش‌های پرداخت</a></li>
+                            <li><a href="#">سوالات متداول</a></li>
+                            <li><a href="#">ورود</a></li>
+                            <li><a href="#">ثبت‌نام</a></li>
+                            <li><a href="#">صفحه خطا</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">مشاوران</a>
                         <ul class="sub-menu">
-                            <li><a href="our-agent.html">مشاوران</a></li>
-                            <li><a href="agent-detail.html">جزئیات مشاوران</a></li>
+                            <li><a href="#">مشاوران</a></li>
+                            <li><a href="#">جزئیات مشاوران</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">وبلاگ</a>
                         <ul class="sub-menu">
-                            <li><a href="blog.html">وبلاگ</a></li>
-                            <li><a href="blog-single.html">جزئیات وبلاگ</a></li>
+                            <li><a href="#">وبلاگ</a></li>
+                            <li><a href="#">جزئیات وبلاگ</a></li>
                         </ul>
                     </li>
                     <li><a href="<?= route('contact_us') ?>">تماس با ما</a></li>
@@ -76,19 +76,19 @@
                         <ul class="homec-header__list">
                             <li>
                                 <a href="#">
-                                    <img src="app_assets/img/email-icon.svg" alt="#" />
+                                    <img src="<?= asset('app_assets/img/email-icon.svg') ?>" alt="#" />
                                     <span><span class="__cf_email__">ایمیل</span></span>
                                 </a>
                             </li>
                             <li>
                                 <a href="tel:0212134567">
-                                    <img src="app_assets/img/phone-icon.svg" alt="#" />
+                                    <img src="<?= asset('app_assets/img/phone-icon.svg') ?>" alt="#" />
                                     <span>09121234567</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="app_assets/img/locations-icon.svg" alt="#" />
+                                    <img src="<?= asset('app_assets/img/locations-icon.svg') ?>" alt="#" />
                                     <span>ایران املاک خانه ما</span>
                                 </a>
                             </li>
@@ -170,60 +170,60 @@
                         <div class="homec-header__group">
                             <div class="homec-header__logo">
                                 <a href="<?= route('home.index') ?>">
-                                    <img src="app_assets/img/default/no-picture-available.jpg" alt="#" />
+                                    <img src="<?= asset('app_assets/img/default/no-picture-available.jpg') ?>" alt="#" />
                                 </a>
                             </div>
                             <div class="homec-header__menu">
                                 <div class="navbar">
                                     <div class="nav-item">
                                         <ul class="nav-menu menu navigation list-none">
-                                            <li class="menu-item-has-children active">
+                                            <li class="menu-item-has-children <?= (currentUrl() == route('home.index')) ? 'active' : '' ?> ">
                                                 <a href="<?= route('home.index') ?>">صفحه اصلی </a>
-                                                <ul class="sub-menu">
+                                               <!-- <ul class="sub-menu">
                                                     <li><a href="index.html">صفحه اصلی 1</a></li>
                                                     <li><a href="index-2.html">صفحه اصلی 2</a></li>
                                                     <li><a href="index-3.html">صفحه اصلی 3</a></li>
-                                                </ul>
+                                                </ul> -->
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a href="#">ملک‌ها</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="property-grid.html">ملک‌ها</a></li>
-                                                    <li><a href="property-single.html">جزئیات ملک</a></li>
-                                                    <li><a href="add-property.html">ثبت ملک</a></li>
-                                                    <li><a href="dashboard.html">داشبورد</a></li>
-                                                    <li><a href="submit-property.html">ارسال ملک</a></li>
-                                                    <li><a href="edit-property.html">ویرایش ملک</a></li>
+                                                    <li><a href="#">ملک‌ها</a></li>
+                                                    <li><a href="#">جزئیات ملک</a></li>
+                                                    <li><a href="#">ثبت ملک</a></li>
+                                                    <li><a href="#">داشبورد</a></li>
+                                                    <li><a href="#">ارسال ملک</a></li>
+                                                    <li><a href="#">ویرایش ملک</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a href="#">صفحات</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="about.html">درباره ما</a></li>
-                                                    <li><a href="pricing.html">قیمت‌ها</a></li>
-                                                    <li><a href="payment-method.html">روش‌های پرداخت</a></li>
-                                                    <li><a href="faq.html">سؤالات متداول</a></li>
-                                                    <li><a href="login.html">ورود</a></li>
-                                                    <li><a href="signup.html">ثبت نام</a></li>
-                                                    <li><a href="404.html">صفحه خطا</a></li>
+                                                    <li><a href="#">درباره ما</a></li>
+                                                    <li><a href="#">قیمت‌ها</a></li>
+                                                    <li><a href="#">روش‌های پرداخت</a></li>
+                                                    <li><a href="#">سؤالات متداول</a></li>
+                                                    <li><a href="#">ورود</a></li>
+                                                    <li><a href="#">ثبت نام</a></li>
+                                                    <li><a href="#">صفحه خطا</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a href="#">مشاوران</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="our-agent.html">مشاوران</a></li>
-                                                    <li><a href="agent-detail.html">جزئیات مشاوران</a></li>
+                                                    <li><a href="#">مشاوران</a></li>
+                                                    <li><a href="#">جزئیات مشاوران</a></li>
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a href="#">وبلاگ</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="blog.html">وبلاگ</a></li>
-                                                    <li><a href="blog-single.html">جزئیات وبلاگ</a></li>
+                                                    <li><a href="#">وبلاگ</a></li>
+                                                    <li><a href="#">جزئیات وبلاگ</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?= route('contact_us') ?>">تماس با ما</a></li>
-                                            <li><a href="<?= route('about_us') ?>">درباره ما</a></li>
+                                            <li class="<?= (currentUrl() == route('contact_us')) ? 'active' : '' ?>"><a href="<?= route('contact_us') ?>" >تماس با ما</a></li>
+                                            <li class="<?= (currentUrl() == route('about_us')) ? 'active' : '' ?>"><a href="<?= route('about_us') ?>" >درباره ما</a></li>
                                         </ul>
                                     </div>
                                 </div>
