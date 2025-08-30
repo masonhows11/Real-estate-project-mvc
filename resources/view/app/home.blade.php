@@ -57,7 +57,9 @@
                                 <div class="homec-property__price"><?= number_format($ads->amount) ?>  تومان<span>/ماهانه</span></div>
                                 <span class="homec-property__salebadge">برای <?= $ads->sellStatus() ?></span>
                             </div>
-                            <h3 class="homec-property__title"><a href="property-single.html">فضای اداری شمال غربی</a></h3>
+                            <h3 class="homec-property__title">
+                                <a href="<?= route('ads',['id'=>$ads->id]) ?>"><?= $ads->title ?></a>
+                            </h3>
                             <div class="homec-property__text">
                                 <img src="app_assets/img/location-icon.svg" alt="#" />
                                 <p><?= $ads->address ?></p>
@@ -109,7 +111,7 @@
                                     </svg>
                                 </a>
                                 <a href="agent-detail.html" class="homec-property__asticky">
-                                    <img src="app_assets/img/agent-1.jpg" alt="#" />
+                                    <img src="<?= asset('app_assets/img/agent-1.jpg') ?>" alt="#" />
                                     <h4 class="homec-property__asticky--label"><?=  $ads->user()->first_name ?><span>مشاور</span></h4>
                                 </a>
                             </div>
@@ -120,9 +122,11 @@
                                 <div class="homec-property__price"><?= number_format($ads->amount) ?>  تومان<span>/ماهانه</span></div>
                                 <span class="homec-property__salebadge"> برای <?= $ads->sellStatus() ?> </span>
                             </div>
-                            <h3 class="homec-property__title"><a href="property-single.html">فضای اداری شمال غربی</a></h3>
+                            <h3 class="homec-property__title">
+                                <a href="<?= route('ads',['id'=>$ads->id]) ?>"><?= $ads->title ?></a>
+                            </h3>
                             <div class="homec-property__text">
-                                <img src="app_assets/img/location-icon.svg" alt="#" />
+                                <img src="<?= asset('app_assets/img/location-icon.svg') ?>" alt="#" />
                                 <p>تهران ، زعفرانیه ، خیابان مهر</p>
                             </div>
 

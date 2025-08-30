@@ -29,6 +29,16 @@ class HomeController extends Controller
         return view('app.contact');
     }
 
+    public function ads($id)
+    {
+        $ads = Ads::find($id);
+        $galleries = $ads->galleries()->get(); // check code galleries relation & get method
+        $posts = Post::where('published_at','<=',date('Y-m-d H:i:s'))->orderBy('created_at','desc')->limit(0,3)->get();
+        dd($posts);
+        return view('property_single');
+    }
+
+
 //    public function create()
 //    {
 //        echo "create method in HomeController";
