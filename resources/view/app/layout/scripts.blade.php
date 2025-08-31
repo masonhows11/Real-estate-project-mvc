@@ -21,7 +21,8 @@
 <script src="<?= asset('app_assets/js/easing.min.js') ?>"></script>
 
 <script src="<?= asset('app_assets/js/active.js') ?>"></script>
-<script>
+
+<script type="text/javascript">
     $(window).load(function () {
         $("#f1").flexslider({
             animation: "fade",
