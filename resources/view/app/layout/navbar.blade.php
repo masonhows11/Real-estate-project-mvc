@@ -7,7 +7,7 @@
 
             <div class="offcanvas-logo">
                 <div class="homec-header__logo">
-                    <a href="index.html"><img src="<?= asset('app_assets/img/default/no-picture-available.jpg') ?>" alt="لوگو" /></a>
+                    <a href="<?= route('home.index') ?>"><img src="<?= asset('app_assets/img/default/no-picture-available.jpg') ?>" alt="لوگو" /></a>
                 </div>
             </div>
 

@@ -4,14 +4,14 @@
 @endsection
 @section('main_content')
 
-    <section class="breadcrumbs__content" style="background-image: url(assets/img/bread-overlay.jpg);">
+    <section class="breadcrumbs__content" style="background-image: url(<?= asset('app_assets/img/bread-overlay.jpg') ?>);">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb-content">
                         <ul class="breadcrumb__menu list-none">
-                            <li><a href="index.html">صفحه اصلی</a></li>
-                            <li class="active"><a href="property-grid.html">جزئیات ملک</a></li>
+                            <li><a href="<?=  route('home.home') ?>">صفحه اصلی</a></li>
+                            <li class="active"><a href="<?= route('ads',[$ads->id]) ?>">جزئیات ملک</a></li>
                         </ul>
                         <h2 class="breadcrumb__title m-0">جزئیات ملک</h2>
                     </div>
@@ -26,212 +26,9 @@
                 <div class="col-12">
                     <div class="homec-property-slides">
                         <div class="homec-property-main">
-                            <div class="flexslider" id="f1">
-                                <ul class="slides">
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">3,976 تومان<span>ماهانه</span></h4>
-                                            </div>
 
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-1.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه مدرن با استخر</h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">5,976 تومان<span>ماهانه</span></h4>
-                                            </div>
+                            @include('app.property_partials.slider')
 
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-2.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه ویلایی سبز مقرون به صرفه
-                                                    </h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">3,976 تومان<span>ماهانه</span></h4>
-                                            </div>
-
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-1.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه مدرن با استخر</h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">5,976 تومان<span>ماهانه</span></h4>
-                                            </div>
-
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-2.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه ویلایی سبز مقرون به صرفه
-                                                    </h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">3,976 تومان<span>ماهانه</span></h4>
-                                            </div>
-
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-1.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه مدرن با استخر</h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">5,976 تومان<span>ماهانه</span></h4>
-                                            </div>
-
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-2.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه ویلایی سبز مقرون به صرفه
-                                                    </h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">3,976 تومان<span>ماهانه</span></h4>
-                                            </div>
-
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-1.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه مدرن با استخر</h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="homec-image-gallery">
-                                            <div class="homec-amount-card homec-amount-card__sticky">
-                                                <h4 class="homec-amount-card__amount">5,976 تومان<span>ماهانه</span></h4>
-                                            </div>
-
-                                            <div class="homec-overlay"></div>
-                                            <img src="assets/img/homec-gallery-2.jpg" alt="#" />
-                                            <div class="homec-image-gallery__bottom">
-                                                <div class="homec-image-gallery__content">
-                                                    <h3 class="homec-image-gallery__title">خانه ویلایی سبز مقرون به صرفه
-                                                    </h3>
-                                                    <p class="homec-image-gallery__text">
-                                                        <img src="assets/img/map-icon.svg" alt="#" />
-                                                        تهران ، زعفرانیه ، خیابان مهر
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="homec-property-thumbs mg-top-10">
-                                <div class="flexslider carousel" id="f2">
-                                    <ul class="slides">
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb1.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb2.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb3.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb1.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb2.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb3.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb1.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single-thumbs">
-                                                <img src="assets/img/homec-gallery-thumb2.jpg" alt="thumbs" />
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -240,7 +37,7 @@
     </section>
 
     <section class="pd-top-0 homec-bg-third-color pd-btm-80 homec-bg-cover"
-        style="background-image: url('assets/img/property-single-bg.svg');">
+        style="background-image: url(<?= asset('app_assets/img/property-single-bg.svg') ?>);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 ol-12">
@@ -350,7 +147,7 @@
                                                 <div
                                                     class="accordion-body homec-accordion__body homec-accordion__body--floor">
                                                     <div class="floor-plan-img">
-                                                        <img src="assets/img/floor-plane-img.png" alt="#" />
+                                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
                                                     </div>
                                                     <div class="floor-plan-content">
                                                         <p>
@@ -379,7 +176,7 @@
                                                 <div
                                                     class="accordion-body homec-accordion__body homec-accordion__body--floor">
                                                     <div class="floor-plan-img">
-                                                        <img src="assets/img/floor-plane-img.png" alt="#" />
+                                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
                                                     </div>
                                                     <div class="floor-plan-content">
                                                         <p>
@@ -408,7 +205,7 @@
                                                 <div
                                                     class="accordion-body homec-accordion__body homec-accordion__body--floor">
                                                     <div class="floor-plan-img">
-                                                        <img src="assets/img/floor-plane-img.png" alt="#" />
+                                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
                                                     </div>
                                                     <div class="floor-plan-content">
                                                         <p>
@@ -437,7 +234,7 @@
                                                 <div
                                                     class="accordion-body homec-accordion__body homec-accordion__body--floor">
                                                     <div class="floor-plan-img">
-                                                        <img src="assets/img/floor-plane-img.png" alt="#" />
+                                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
                                                     </div>
                                                     <div class="floor-plan-content">
                                                         <p>
@@ -465,7 +262,7 @@
 
                                     <div class="homec-ptdetails-video">
                                         <div class="homec-overlay"></div>
-                                        <img src="assets/img/homec-tab-video.png" alt="#" />
+                                        <img src="<?= asset('app_assets/img/homec-tab-video.png') ?>" alt="#" />
                                         <div class="homec-ptdetails-video__video">
                                             <a data-video-id="FzcfZyEhOoI"
                                                 class="js-video-btn homec-btn homec-btn__second homec-btn__video">
@@ -544,7 +341,7 @@
                                                 روزنامه”</p>
                                             <div class="homec-testimonial__bottom">
                                                 <div class="homec-testimonial__author">
-                                                    <img src="assets/img/author3.png" alt="#" />
+                                                    <img src="<?= asset('app_assets/img/author3.png') ?>" alt="#" />
                                                     <div class="homec-testimonial__author--info">
                                                         <h5 class="homec-testimonial__author--title">آرنولد برنر</h5>
                                                         <p class="homec-testimonial__author--position">طراح ارشد</p>
@@ -569,7 +366,7 @@
                                                 روزنامه”</p>
                                             <div class="homec-testimonial__bottom">
                                                 <div class="homec-testimonial__author">
-                                                    <img src="assets/img/author2.png" alt="#" />
+                                                    <img src="<?= asset('app_assets/img/author2.png') ?>" alt="#" />
                                                     <div class="homec-testimonial__author--info">
                                                         <h5 class="homec-testimonial__author--title">آرنولد برنر</h5>
                                                         <p class="homec-testimonial__author--position">طراح ارشد</p>
@@ -594,7 +391,7 @@
                                                 روزنامه”</p>
                                             <div class="homec-testimonial__bottom">
                                                 <div class="homec-testimonial__author">
-                                                    <img src="assets/img/author3.png" alt="#" />
+                                                    <img src="<?= asset('app_assets/img/author3.png') ?>" alt="#" />
                                                     <div class="homec-testimonial__author--info">
                                                         <h5 class="homec-testimonial__author--title">آرنولد برنر</h5>
                                                         <p class="homec-testimonial__author--position">طراح ارشد</p>
@@ -645,12 +442,12 @@
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="homec-property-ag homec-property-ag--side homec-bg-cover"
-                        style="background-image: url('assets/img/property-ag-bg.svg');">
+                        style="background-image: url(<?= asset('app_assets/img/property-ag-bg.svg') ?>);">
                         <h3 class="homec-property-ag__title">مشاور املاک</h3>
 
                         <div class="homec-property-ag__author">
                             <div class="homec-property-ag__author--img">
-                                <img src="assets/img/pagent.png" alt="#" />
+                                <img src="<?= asset('app_assets/img/pagent.png') ?>" alt="#" />
                             </div>
                             <div class="homec-property-ag__author--content">
                                 <h4 class="homec-property-ag__author--title">وید دی وارن<span>مشاور املاک</span></h4>
@@ -679,4 +476,5 @@
             </div>
         </div>
     </section>
+
 @endsection

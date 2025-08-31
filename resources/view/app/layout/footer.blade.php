@@ -1,6 +1,6 @@
 <footer class="footer-area p-relative mt-5">
     <div class="homec-shape">
-        <div class="homec-shape-single homec-shape-10"><img src="app_assets/img/anim-shape-6.svg" alt="#" /></div>
+        <div class="homec-shape-single homec-shape-10"><img src="<?= asset('app_assets/img/anim-shape-6.svg') ?>" alt="#" /></div>
     </div>
     <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
                         <div class="col-lg-4 col-md-3 col-12">
                             <div class="footer-about-widget">
                                 <div class="footer-logo homec-header__logo">
-                                    <a class="logo" href="index.html"><img src="app_assets/img/default/no-picture-available.jpg" alt="#" /></a>
+                                    <a class="logo" href="#"><img src="<?= asset('app_assets/img/default/no-picture-available.jpg') ?>" alt="#" /></a>
                                 </div>
                                 <p class="footer-about-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
 
@@ -99,19 +99,19 @@
                                         <h3 class="widget-title">لینک های</h3>
                                         <ul class="f-useful-links-inner list-none">
                                             <li>
-                                                <a href="property-grid.html"><i class="fa-solid fa-minus"></i>ویژگی ها</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>ویژگی ها</a>
                                             </li>
                                             <li>
-                                                <a href="add-property.html"><i class="fa-solid fa-minus"></i>افزودن ویژگی</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>افزودن ویژگی</a>
                                             </li>
                                             <li>
-                                                <a href="submit-property.html"><i class="fa-solid fa-minus"></i>ثبت ملک</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>ثبت ملک</a>
                                             </li>
                                             <li>
-                                                <a href="login.html"><i class="fa-solid fa-minus"></i>وارد</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>وارد</a>
                                             </li>
                                             <li>
-                                                <a href="signup.html"><i class="fa-solid fa-minus"></i>ثبت نام</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>ثبت نام</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -121,19 +121,19 @@
                                         <h3 class="widget-title">موارد مهم</h3>
                                         <ul class="f-need-helps-inner list-none">
                                             <li>
-                                                <a href="about.html"><i class="fa-solid fa-minus"></i>درباره ما</a>
+                                                <a href="<?= route('about_us') ?>"><i class="fa-solid fa-minus"></i>درباره ما</a>
                                             </li>
                                             <li>
-                                                <a href="pricing.html"><i class="fa-solid fa-minus"></i>قیمت ها</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>قیمت ها</a>
                                             </li>
                                             <li>
-                                                <a href="blog.html"><i class="fa-solid fa-minus"></i>وبلاگ</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>وبلاگ</a>
                                             </li>
                                             <li>
-                                                <a href="faq.html"><i class="fa-solid fa-minus"></i>سوالات متداول</a>
+                                                <a href="#"><i class="fa-solid fa-minus"></i>سوالات متداول</a>
                                             </li>
                                             <li>
-                                                <a href="contact-us.html"><i class="fa-solid fa-minus"></i>تماس با ما</a>
+                                                <a href="<?= route('contact_us') ?>"><i class="fa-solid fa-minus"></i>تماس با ما</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -143,15 +143,15 @@
                                         <h3 class="widget-title">تماس با ما</h3>
                                         <div class="f-contact__form-top">
                                             <ul class="f-contact-list list-none">
-                                                <li><img src="app_assets/img/footer-phone.svg" alt="#" /><a href="tel:0212134567">0212134567</a></li>
+                                                <li><img src="<?= asset('app_assets/img/footer-phone.svg') ?>" alt="#" /><a href="tel:0212134567">0212134567</a></li>
                                                 <li>
-                                                    <img src="app_assets/img/footer-message.png" alt="#" />
+                                                    <img src="<?= asset('app_assets/img/footer-message.png') ?>" alt="#" />
                                                     <a href="#">
                                                         <span class="__cf_email__">ایمیل</span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <img src="app_assets/img/footer-location.png" alt="#" />
+                                                    <img src="<?= asset('app_assets/img/footer-location.png') ?>" alt="#" />
                                                     <p>ایران املاک خانه ما</p>
                                                 </li>
                                             </ul>
@@ -174,8 +174,8 @@
                 </div>
                 <div class="col-lg-6 col-12">
                     <ul class="footer-pages list-none">
-                        <li><a href="about.html">درباره شرکت</a></li>
-                        <li><a href="contact-us.html">تماس با ما</a></li>
+                        <li><a href="<?= route('about_us') ?>">درباره شرکت</a></li>
+                        <li><a href="<?= route('contact_us') ?>">تماس با ما</a></li>
                     </ul>
                 </div>
             </div>

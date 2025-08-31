@@ -22,6 +22,32 @@
 
 <script src="<?= asset('app_assets/js/active.js') ?>"></script>
 <script>
+    $(window).load(function () {
+        $("#f1").flexslider({
+            animation: "fade",
+            controlNav: false,
+            directionNav: false,
+            start: function (slider) {
+                $("body").removeClass("loading");
+            },
+        });
+        $("#f2").flexslider({
+            animation: "slide",
+            animationLoop: true,
+            itemWidth: 200,
+            itemMargin: 0,
+            pausePlay: false,
+            mousewheel: true,
+            asNavFor: ".flexslider",
+            controlNav: false,
+            move: 1,
+            pauseOnAction: false,
+            slideshow: false,
+            manualControls: true,
+        });
+    });
+</script>
+<script>
     var swiper = new Swiper(".homec-slider-agent", {
         autoplay: {
             delay: 344500,
