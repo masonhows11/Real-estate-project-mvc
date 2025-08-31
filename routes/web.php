@@ -124,3 +124,4 @@ Route::post('/reset_password/{token}', 'Auth\ResetPasswordController@resetPasswo
 Route::get('/about','HomeController@about','about_us');
 Route::get('/contact','HomeController@contact','contact_us');
 Route::get('/ads/{id}','HomeController@ads','ads');
+Route::get('/ads_list','HomeController@ads_list','ads_list');

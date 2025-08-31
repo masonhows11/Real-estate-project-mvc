@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Ads;
@@ -12,8 +13,8 @@ class HomeController extends Controller
     {
 
         $latestAds = Ads::orderBy('created_at', 'desc')->limit(0, 6)->get();
-        $bestAds   = Ads::orderBy('view', 'desc')->limit(0, 4)->get();
-        $posts     = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0, 6)->get();
+        $bestAds = Ads::orderBy('view', 'desc')->limit(0, 4)->get();
+        $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0, 6)->get();
         return view('app.home', compact('latestAds', 'bestAds', 'posts'));
     }
 
@@ -27,20 +28,22 @@ class HomeController extends Controller
         return view('app.contact');
     }
 
-    public function ads($id)
+    public function ads($id): null
     {
-        $ads         = Ads::find($id);
-        $galleries   = $ads->galleries()->get(); // check code galleries relation & get method
-        $posts       = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0, 3)->get();
+        $ads = Ads::find($id);
+        $galleries = $ads->galleries()->get(); // check code galleries relation & get method
+        $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0, 3)->get();
         $related_ads = Ads::where('cat_id', $ads->cat_id)->where('id', '!=', $id)->orderBy('created_at', 'desc')->limit(0, 2)->get();
-        $categories  = Category::all();
+        $categories = Category::all();
         return view('app.property_single', compact('categories', 'ads', 'galleries', 'posts'));
     }
 
-//    public function create()
-//    {
-//        echo "create method in HomeController";
-//    }
+    public function ads_list(): null
+    {
+
+        $ads = Ads::all();
+        return view('app.ads_index', compact('ads'));
+    }
 //
 //    public function store()
 //    {

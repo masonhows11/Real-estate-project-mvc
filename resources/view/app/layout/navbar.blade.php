@@ -14,7 +14,7 @@
             <nav id="offcanvas-menu" class="offcanvas-menu">
                 <ul class="nav-menu menu navigation list-none">
                     <li class="menu-item-has-children active">
-                        <a href="#">صفحه اصلی</a>
+                        <a href="<?= route('home.index') ?>">صفحه اصلی</a>
                        <!-- <ul class="sub-menu">
                             <li><a href="index.html">صفحه اصلی 1</a></li>
                             <li><a href="index-2.html">صفحه اصلی 2</a></li>
@@ -24,7 +24,7 @@
                     <li class="menu-item-has-children">
                         <a href="#">املاک</a>
                         <ul class="sub-menu">
-                            <li><a href="#">لیست املاک</a></li>
+                            <li><a href="<?= route('ads_list') ?>">لیست املاک</a></li>
                             <li><a href="#">جزئیات ملک</a></li>
                             <li><a href="#">ثبت ملک</a></li>
                             <li><a href="#">داشبورد</a></li>
@@ -32,7 +32,7 @@
                             <li><a href="#">ویرایش ملک</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children">
+                    <!--<li class="menu-item-has-children">
                         <a href="#">صفحات</a>
                         <ul class="sub-menu">
                             <li><a href="#">درباره ما</a></li>
@@ -43,7 +43,7 @@
                             <li><a href="#">ثبت‌نام</a></li>
                             <li><a href="#">صفحه خطا</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="menu-item-has-children">
                         <a href="#">مشاوران</a>
                         <ul class="sub-menu">
@@ -188,7 +188,7 @@
                                             <li class="menu-item-has-children">
                                                 <a href="#">ملک‌ها</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="#">ملک‌ها</a></li>
+                                                    <li><a href="<?= route('ads_list') ?>">ملک‌ها</a></li>
                                                     <li><a href="#">جزئیات ملک</a></li>
                                                     <li><a href="#">ثبت ملک</a></li>
                                                     <li><a href="#">داشبورد</a></li>
