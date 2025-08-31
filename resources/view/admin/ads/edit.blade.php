@@ -195,7 +195,7 @@
                     <label for="type" class="form-label">نوع ملک :</label>
                     <select type="text" class="form-control <?= errorClass('type') ?>" id="type" name="type">
                         <option <?= oldOrValue('type', $ads->type) === 1 ? 'selected' : '' ?> value="1">زمین</option>
-                        <option <?= oldOrValue('type', $ads->type) === 2 ? 'selected' : '' ?>value="2">ویلایی</option>
+                        <option <?= oldOrValue('type', $ads->type) === 2 ? 'selected' : '' ?> value="2">ویلایی</option>
                         <option <?= oldOrValue('type', $ads->type) === 3 ? 'selected' : '' ?> value="3">اپارتمان</option>
                         <option <?= oldOrValue('type', $ads->type) === 4 ? 'selected' : '' ?> value="4">سوله</option>
                     </select>

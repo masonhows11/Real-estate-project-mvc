@@ -8,178 +8,11 @@
     </div>
     <div class="homec-pdetails-tab">
         <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="homec-pd-tab1" role="tabpanel">
-                <div class="homec-pdetails-tab__inner">
-                    <p>
-                       <?= html($ads->description) ?>
-                    </p>
-                    <div class="homec-ptdetails-features mg-top-30">
-                        <h4 class="homec-ptdetails-features__title">جزئیات اضافی</h4>
-                        <ul class="homec-ptdetails-features__list">
-                            <li><b>سال ساخت:</b> <span>2 سال</span></li>
-                            <li><b>خنک کننده:</b> <span>بله</span></li>
-                            <li><b>گاز:</b> <span>بله</span></li>
-                            <li><b>پارکینگ:</b> <span>بله</span></li>
-                            <li><b>فاضلاب:</b> <span>بله</span></li>
-                            <li><b>اتاق ورزش:</b> <span>بله</span></li>
-                            <li><b>گرمایش:</b> <span>بله</span></li>
-                            <li><b>آب:</b> <span>بله</span></li>
-                            <li><b>انبار:</b> <span>بله</span></li>
-                        </ul>
-                    </div>
 
-                    <div class="homec-ptdetails-features mg-top-30">
-                        <h4 class="homec-ptdetails-features__title">نزدیکترین مکان</h4>
-                        <ul class="homec-ptdetails-features__list">
-                            <li><b>فرودگاه:</b> <span>3 کیلومتر</span></li>
-                            <li><b>بیمارستان:</b> <span>2 کیلومتر</span></li>
-                            <li><b>فروشگاه:</b> <span>3 کیلومتر</span></li>
-                            <li><b>مدرسه:</b> <span>4 کیلومتر</span></li>
-                            <li><b>پارک:</b> <span>2 کیلومتر</span></li>
-                        </ul>
-                    </div>
+            @include('app.property_partials.facilities')
 
-                    <div class="homec-ptdetails-features mg-top-30">
-                        <h4 class="homec-ptdetails-features__title">امکانات رفاهی</h4>
-                        <ul class="homec-ptdetails-features__list">
-                            <li>
-                                <b><i class="fas fa-check"></i> آسانسور</b>
-                            </li>
-                            <li>
-                                <b><i class="fas fa-check"></i> پارکینگ</b>
-                            </li>
-                            <li>
-                                <b><i class="fas fa-check"></i> رزرواسیون</b>
-                            </li>
-                            <li>
-                                <b><i class="fas fa-check"></i> قهوه و چای رایگان</b>
-                            </li>
-                            <li>
-                                <b><i class="fas fa-check"></i> کارت های اعتباری را می پذیرد</b>
-                            </li>
-                            <li>
-                                <b><i class="fas fa-check"></i> تهویه هوا</b>
-                            </li>
-                            <li>
-                                <b><i class="fas fa-check"></i> تلویزیون</b>
-                            </li>
-                            <li>
-                                <b><i class="fas fa-check"></i> بالکن</b>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @include('app.property_partials.floor_panel')
 
-            <div class="tab-pane fade" id="homec-pd-tab2" role="tabpanel">
-                <div class="homec-pdetails-tab__inner">
-                    <div class="homec-accordion accordion accordion-flush" id="homec-accordion">
-                        <div
-                                class="accordion-item homec-accordion__single homec-accordion__single--floor mg-top-20">
-                            <h2 class="accordion-header" id="homect-1">
-                                <button
-                                        class="accordion-button collapsed homec-accordion__heading homec-accordion__heading--floor"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#ac-collapseOne">
-                                    طبقه 1
-                                </button>
-                            </h2>
-                            <div id="ac-collapseOne" class="accordion-collapse collapse"
-                                 aria-labelledby="homect-1" data-bs-parent="#homec-accordion">
-                                <div
-                                        class="accordion-body homec-accordion__body homec-accordion__body--floor">
-                                    <div class="floor-plan-img">
-                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
-                                    </div>
-                                    <div class="floor-plan-content">
-                                        <p>
-                                            <?= html($ads->description) ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                                class="accordion-item homec-accordion__single homec-accordion__single--floor active mg-top-20">
-                            <h2 class="accordion-header" id="homect-2">
-                                <button
-                                        class="accordion-button collapsed homec-accordion__heading homec-accordion__heading--floor"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#ac-collapseTwo">
-                                    طبقه 2
-                                </button>
-                            </h2>
-                            <div id="ac-collapseTwo" class="accordion-collapse collapse show"
-                                 aria-labelledby="homect-2" data-bs-parent="#homec-accordion">
-                                <div
-                                        class="accordion-body homec-accordion__body homec-accordion__body--floor">
-                                    <div class="floor-plan-img">
-                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
-                                    </div>
-                                    <div class="floor-plan-content">
-                                        <p>
-                                            <?= html($ads->description) ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                                class="accordion-item homec-accordion__single homec-accordion__single--floor mg-top-20">
-                            <h2 class="accordion-header" id="homect-3">
-                                <button
-                                        class="accordion-button collapsed homec-accordion__heading homec-accordion__heading--floor"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#ac-collapseThree">
-                                    طبقه 3
-                                </button>
-                            </h2>
-                            <div id="ac-collapseThree" class="accordion-collapse collapse"
-                                 aria-labelledby="homect-3" data-bs-parent="#homec-accordion">
-                                <div
-                                        class="accordion-body homec-accordion__body homec-accordion__body--floor">
-                                    <div class="floor-plan-img">
-                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
-                                    </div>
-                                    <div class="floor-plan-content">
-                                        <p>
-                                            <?= html($ads->description) ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                                class="accordion-item homec-accordion__single homec-accordion__single--floor mg-top-20">
-                            <h2 class="accordion-header" id="homect-4">
-                                <button
-                                        class="accordion-button collapsed homec-accordion__heading homec-accordion__heading--floor"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#ac-collapseFour">
-                                    طبقه 4
-                                </button>
-                            </h2>
-                            <div id="ac-collapseFour" class="accordion-collapse collapse"
-                                 aria-labelledby="homect-4" data-bs-parent="#homec-accordion">
-                                <div
-                                        class="accordion-body homec-accordion__body homec-accordion__body--floor">
-                                    <div class="floor-plan-img">
-                                        <img src="<?= asset('app_assets/img/floor-plane-img.png') ?>" alt="#" />
-                                    </div>
-                                    <div class="floor-plan-content">
-                                        <p>
-                                            <?= html($ads->description) ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="tab-pane fade" id="homec-pd-tab3" role="tabpanel">
                 <div class="homec-pdetails-tab__inner">
@@ -248,14 +81,9 @@
 
                 <div class="homec-pdetails-tab__inner">
                     <div class="homec-pdetails-tab--review">
-
                         @include('app.property_partials.comments')
-
                     </div>
-
-
                     @include('app.property_partials.form')
-
 
                 </div>
             </div>

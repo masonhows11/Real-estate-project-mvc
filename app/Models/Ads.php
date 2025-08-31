@@ -72,10 +72,10 @@ class Ads extends Model
     public function type(): ?string
     {
         return match ($this->type) {
-            0 => 'اپارتمان',
-            1 => 'ویلایی',
-            2 => 'زمین',
-            3 => 'سوله',
+            1 => 'زمین',
+            2 => 'ویلایی' ,
+            3 => 'اپارتمان',
+            4 => 'سوله',
             default => null,
         };
     }

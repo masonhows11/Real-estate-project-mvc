@@ -26,7 +26,7 @@ class AdsUpdateRequest extends Request
             'parking' => "required|number",
             'tag' => "required|max:191",
             'sell_status' => "required|number",
-            'type' => "required|number",
+            'type' => "required",
         ];
 
 

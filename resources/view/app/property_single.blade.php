@@ -41,12 +41,9 @@
         <div class="container">
             <div class="row">
 
-
                 @include('app.property_partials.right_side')
 
-
                 @include('app.property_partials.left_side')
-
 
             </div>
         </div>
