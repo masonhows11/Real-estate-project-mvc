@@ -21,31 +21,49 @@
 <script src="<?= asset('app_assets/js/easing.min.js') ?>"></script>
 
 <script src="<?= asset('app_assets/js/active.js') ?>"></script>
+<script type="text/javascript">
+    // $(document).ready(function(){
+    //     if (jQuery) {
+    //         // jQuery is loaded
+    //         alert("Yeah!");
+    //     } else {
+    //         // jQuery is not loaded
+    //         alert("Doesn't Work");
+    //     }
+    // });
+</script>
 
 <script type="text/javascript">
-    $(window).load(function () {
-        $("#f1").flexslider({
-            animation: "fade",
-            controlNav: false,
-            directionNav: false,
-            start: function (slider) {
-                $("body").removeClass("loading");
-            },
-        });
-        $("#f2").flexslider({
-            animation: "slide",
-            animationLoop: true,
-            itemWidth: 200,
-            itemMargin: 0,
-            pausePlay: false,
-            mousewheel: true,
-            asNavFor: ".flexslider",
-            controlNav: false,
-            move: 1,
-            pauseOnAction: false,
-            slideshow: false,
-            manualControls: true,
-        });
+    $(document).ready(function () {
+        if (jQuery) {
+            // jQuery is loaded
+            alert("Yeah!");
+        } else {
+            // jQuery is not loaded
+            alert("Doesn't Work");
+        }
+        // $("#f1").flexslider({
+        //     animation: "fade",
+        //     controlNav: false,
+        //     directionNav: false,
+        //     start: function (slider) {
+        //         $("body").removeClass("loading");
+        //     },
+        // });
+        // $("#f2").flexslider({
+        //     animation: "slide",
+        //     animationLoop: true,
+        //     itemWidth: 200,
+        //     itemMargin: 0,
+        //     pausePlay: false,
+        //     mousewheel: true,
+        //     asNavFor: ".flexslider",
+        //     controlNav: false,
+        //     move: 1,
+        //     pauseOnAction: false,
+        //     slideshow: false,
+        //     manualControls: true,
+        // });
     });
 </script>
 <script>
