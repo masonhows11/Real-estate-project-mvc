@@ -146,7 +146,7 @@ function currentDomain(): string
     return $httpProtocol . $currentUrl;
 }
 
-function redirect($url): void
+#[NoReturn] function redirect($url): void
 {
     $url = trim($url, '/ ');
     $url = strpos($url, currentDomain()) === 0 ? $url : currentDomain() . '/' . $url;
@@ -154,7 +154,7 @@ function redirect($url): void
     exit(); // its important
 }
 
-function back(): void
+#[NoReturn] function back(): void
 {
     $http_refer = $_SERVER['HTTP_REFERER'] ?? null;
     redirect($http_refer);
