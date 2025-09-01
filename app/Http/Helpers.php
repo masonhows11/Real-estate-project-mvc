@@ -58,7 +58,10 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
     // return array_slice($data, $currentRow, $per_page);
 
     $paginateView = '';
-    $paginateView .= ($currentPage != 1) ? '<li class="homec-pagination__button"><a href="#">بعدی</a></li>' : '';
+    $paginateView .= ($currentPage != 1) ? '<li class="homec-pagination__button">
+                <a href=" '.paginateUrl(1).' ">
+                بعدی
+                </a></li>' : '';
 
     $paginateView .= (($currentPage - 2) >= 1) ? '<li><a href="#">' . ($currentPag - 2) . '</a></li>' : '';
     $paginateView .= (($currentPage - 1) >= 1) ? '<li><a href="#">' . ($currentPag - 1) . '</a></li>' : '';
@@ -79,7 +82,7 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
 }
 
 
-function paginateView()
+function paginateUrl()
 {
 
 
