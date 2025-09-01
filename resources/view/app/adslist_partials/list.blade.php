@@ -3,7 +3,7 @@
     <div class="tab-pane fade show active" id="homec-grid" role="tabpanel">
         <div class="row">
 
-            <?php foreach ($ads as $ad){ ?>
+            <?php foreach (paginate($ads, 4) as $ad){ ?>
             <div class="col-md-6 col-12 mg-top-30">
                 <div class="homec-property">
 
@@ -31,7 +31,8 @@
 
                     <div class="homec-property__body">
                         <div class="homec-property__topbar">
-                            <div class="homec-property__price"><?= number_format($ad->amount) ?> تومان<span>/ماهانه</span></div>
+                            <div class="homec-property__price"><?= number_format($ad->amount) ?>
+                                تومان<span>/ماهانه</span></div>
                             <span class="homec-property__salebadge">برای <?= $ad->sellStatus() ?></span>
                         </div>
                         <h3 class="homec-property__title">
@@ -56,15 +57,7 @@
         <div class="row mg-top-40">
             <div class="homec-pagination">
                 <ul class="homec-pagination__list list-none">
-                    <li class="homec-pagination__button"><a href="#">قبلی</a></li>
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">...</a></li>
-                    <li><a href="#">24</a></li>
-                    <li class="homec-pagination__button"><a href="#">بعدی</a></li>
+                    <?= paginateView($ads, 4) ?>
                 </ul>
             </div>
         </div>

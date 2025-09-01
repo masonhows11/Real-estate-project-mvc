@@ -54,8 +54,7 @@
                     <li class="menu-item-has-children">
                         <a href="#">وبلاگ</a>
                         <ul class="sub-menu">
-                            <li><a href="#">وبلاگ</a></li>
-                            <li><a href="#">جزئیات وبلاگ</a></li>
+                            <li><a href="<?= route('all_post') ?>">وبلاگ</a></li>
                         </ul>
                     </li>
                     <li><a href="<?= route('contact_us') ?>">تماس با ما</a></li>
@@ -218,8 +217,7 @@
                                             <li class="menu-item-has-children">
                                                 <a href="#">وبلاگ</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="#">وبلاگ</a></li>
-                                                    <li><a href="#">جزئیات وبلاگ</a></li>
+                                                    <li><a href="<?= route('all_post') ?>">وبلاگ</a></li>
                                                 </ul>
                                             </li>
                                             <li class="<?= (currentUrl() == route('contact_us')) ? 'active' : '' ?>"><a href="<?= route('contact_us') ?>" >تماس با ما</a></li>

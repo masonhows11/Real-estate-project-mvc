@@ -31,7 +31,7 @@ function echoHtml($data): string
     return html_entity_decode($data);
 }
 
-function paginate($data, $per_page = 10, $page = 1, $options = []): string
+function paginate($data, $per_page = 10, $page = 1, $options = []): array
 {
 
     $totalRows = count($data);
@@ -55,7 +55,19 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
 
     // add data from start(current row) until per_page
     // 4 5 ->  2 record
-    // return array_slice($data, $currentRow, $per_page);
+     return array_slice($data, $currentRow, $per_page);
+
+}
+
+
+function paginateView($data, $per_page = 10): string
+{
+    $totalRows = count($data);
+    $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $totalPages = ceil($totalRows) / $per_page;
+    $currentPage = min($currentPage, $totalPages);
+    $currentPage = max($currentPage, 1);
+
 
     $paginateView = '';
     $paginateView .= ($currentPage != 1) ? '<li class="homec-pagination__button">
@@ -66,10 +78,10 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
     $paginateView .= (($currentPage - 2) >= 1) ? '<li><a href="' . paginateUrl($currentPage - 2) . '">' . ($currentPage - 2) . '</a></li>' : '';
     $paginateView .= (($currentPage - 1) >= 1) ? '<li><a href="' . paginateUrl($currentPage - 1) . '">' . ($currentPage - 1) . '</a></li>' : '';
 
-    $paginateView .= '<li class="active"><a href="#">' . ($currentPage) . '</a></li>';
+    $paginateView .= '<li class="active"><a href="' . paginateUrl($currentPage) . '">' . ($currentPage) . '</a></li>';
 
     $paginateView .= (($currentPage + 1) <= $totalPages) ? '<li><a href="' . paginateUrl($currentPage + 1) . '">' . ($currentPage + 1) . '</a></li>' : '';
-    $paginateView .= (($currentPage + 2) >= $totalPages) ? '<li><a href="' . paginateUrl($currentPage + 2) . '">' . ($currentPage + 2) . '</a></li>' : '';
+    $paginateView .= (($currentPage + 2) <= $totalPages) ? '<li><a href="' . paginateUrl($currentPage + 2) . '">' . ($currentPage + 2) . '</a></li>' : '';
     $paginateView .= ($currentPage != $totalPages) ? '<li class="homec-pagination__button">
              <a href=" ' . paginateUrl($totalPages) . ' ">
             قبلی
@@ -83,7 +95,6 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
             </div>
         ';
 }
-
 
 function paginateUrl($page): string
 {

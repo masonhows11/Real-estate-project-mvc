@@ -44,11 +44,16 @@ class HomeController extends Controller
         $ads = Ads::all();
         return view('app.ads_index', compact('ads'));
     }
-//
-//    public function store()
-//    {
-//        echo "store method in HomeController";
-//    }
+
+    public function all_post(): null
+    {
+
+        $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))
+            ->orderBy('created_at', 'desc')
+            ->limit(0, 3)
+            ->get();
+        return view('app.post_index', compact('posts'));
+    }
 //
 //    public function edit($id)
 //    {
