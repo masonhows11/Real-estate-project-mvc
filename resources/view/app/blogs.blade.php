@@ -1,4 +1,4 @@
-@extends( 'app.layout.app')
+@extends('app.layout.app')
 @section('app_title')
     پست ها
 @endsection
@@ -11,7 +11,7 @@
                     <div class="breadcrumb-content">
                         <ul class="breadcrumb__menu list-none">
                             <li><a href="<?= route('home.index') ?>">صفحه اصلی</a></li>
-                            <li class="active"><a href="<?= route('all_post') ?>">وبلاگ</a></li>
+                            <li class="active"><a href="<?= route('posts') ?>">وبلاگ</a></li>
                         </ul>
                         <h2 class="breadcrumb__title m-0">وبلاگ</h2>
                     </div>

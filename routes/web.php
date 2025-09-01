@@ -125,4 +125,4 @@ Route::get('/about','HomeController@about','about_us');
 Route::get('/contact','HomeController@contact','contact_us');
 Route::get('/ads/{id}','HomeController@ads','ads');
 Route::get('/ads_list','HomeController@ads_list','ads_list');
-Route::get('/all_post','HomeController@all_post','all_post');
+Route::get('/posts','HomeController@all_post','posts');

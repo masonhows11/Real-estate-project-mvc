@@ -24,7 +24,8 @@ trait ViewLoader
 
 
 
-       
+
+        // dd(file_exists(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php"));
         // to check files/directories is exits
         if (file_exists(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php")) 
         {
@@ -36,7 +37,7 @@ trait ViewLoader
             // these  some  views  names/path saved in to viewNameArray[] array with  registerView($dir) method
             $this->registerView($dir);
 
-            // htmlentities Convert all applicable characters to HTML entities
+            // html entities Convert all applicable characters to HTML entities
             // below code get html tags & put them into $viewContents
             return htmlentities(file_get_contents(dirname(__DIR__, 3) . "/resources/view/$dir.blade.php"),ENT_COMPAT,'UTF-8',true);
             

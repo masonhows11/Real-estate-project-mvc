@@ -21,7 +21,6 @@
     </div>
 </div>-->
 @include('app.layout.navbar')
-
 @yield('main_content')
 @include('app.layout.footer')
 @include('app.layout.scripts')
