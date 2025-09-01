@@ -183,7 +183,7 @@
                     <label for="sell_status" class="form-label">نوع آگهی :</label>
                     <select type="text" class="form-control <?= errorClass('sell_status') ?>" id="sell_status"  name="sell_status">
                         <option value="">انتخاب کنید</option>
-                        <option value="1">خرید</option>
+                        <option value="1">رهن</option>
                         <option value="2">فروش</option>
                         <option value="3">اجاره</option>
                     </select>

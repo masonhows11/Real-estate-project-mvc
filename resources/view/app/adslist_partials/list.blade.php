@@ -31,7 +31,7 @@
 
                     <div class="homec-property__body">
                         <div class="homec-property__topbar">
-                            <div class="homec-property__price">3,976 تومان<span>/ماهانه</span></div>
+                            <div class="homec-property__price"><?= number_format($ad->amount) ?> تومان<span>/ماهانه</span></div>
                             <span class="homec-property__salebadge">برای <?= $ad->sellStatus() ?></span>
                         </div>
                         <h3 class="homec-property__title">

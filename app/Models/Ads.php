@@ -63,7 +63,7 @@ class Ads extends Model
     {
       //  return ($this->sell_status == 0) ? 'اجاره' : 'خرید';
       return match ($this->sell_status){
-          1 => 'خرید',
+          1 => 'رهن',
           2 => 'فروش',
           3 => 'اجاره',
       };

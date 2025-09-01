@@ -184,7 +184,7 @@
                     <label for="sell_status" class="form-label">نوع آگهی :</label>
                     <select type="text" class="form-control <?= errorClass('sell_status') ?>" id="sell_status"
                             name="sell_status">
-                        <option  <?= oldOrValue('sell_status',$ads->sell_status) === 1 ? 'selected' : '' ?> value="1">خرید</option>
+                        <option  <?= oldOrValue('sell_status',$ads->sell_status) === 1 ? 'selected' : '' ?> value="1">رهن</option>
                         <option  <?= oldOrValue('sell_status',$ads->sell_status) === 2 ? 'selected' : '' ?> value="2">فروش</option>
                         <option  <?= oldOrValue('sell_status',$ads->sell_status) === 3 ? 'selected' : '' ?> value="3">اجاره</option>
                     </select>
