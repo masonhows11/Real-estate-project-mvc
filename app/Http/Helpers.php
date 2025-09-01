@@ -31,7 +31,7 @@ function echoHtml($data): string
     return html_entity_decode($data);
 }
 
-function paginate()
+function paginate($data,$per_page = 10, $page = 1, $options = [])
 {
-
+        
 }
