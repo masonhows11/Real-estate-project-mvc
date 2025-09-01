@@ -3,12 +3,12 @@
     <div class="tab-pane fade show active" id="homec-grid" role="tabpanel">
         <div class="row">
 
-            <?php foreach ($ads as $sd){ ?>
+            <?php foreach ($ads as $ad){ ?>
             <div class="col-md-6 col-12 mg-top-30">
                 <div class="homec-property">
 
                     <div class="homec-property__head">
-                        <img src="<?= $ads->image ? asset($ads->image) : asset('app_assets/img/property-img11.png') ?>"
+                        <img src="<?= $ad->image ? asset($ad->image) : asset('app_assets/img/property-img11.png') ?>"
                              alt="#"/>
 
                         <div class="homec-property__hsticky">
@@ -23,7 +23,7 @@
                             </a>
                             <a href="agent-detail.html" class="homec-property__asticky">
                                 <img src="<?=  asset('app_assets/img/agent-1.jpg') ?>" alt="#"/>
-                                <h4 class="homec-property__asticky--label"><?= $sd->user()->first_name ?>
+                                <h4 class="homec-property__asticky--label"><?= $ad->user()->first_name ?>
                                     <span>مشاور</span></h4>
                             </a>
                         </div>
@@ -32,12 +32,14 @@
                     <div class="homec-property__body">
                         <div class="homec-property__topbar">
                             <div class="homec-property__price">3,976 تومان<span>/ماهانه</span></div>
-                            <span class="homec-property__salebadge">برای <?= $sd->sellStatus() ?></span>
+                            <span class="homec-property__salebadge">برای <?= $ad->sellStatus() ?></span>
                         </div>
-                        <h3 class="homec-property__title"><a href="property-single.html"><?= $sd->title ?></a></h3>
+                        <h3 class="homec-property__title">
+                            <a href="<?= route('ads',['id'=>$ad->id]) ?>"><?= $ad->title ?></a>
+                        </h3>
                         <div class="homec-property__text">
                             <img src="<?= asset('app_assets/img/location-icon.svg') ?>" alt="#"/>
-                            <p><?= $sd->address ?></p>
+                            <p><?= $ad->address ?></p>
                         </div>
 
                         <ul class="homec-property__list homec-border-top list-none">
