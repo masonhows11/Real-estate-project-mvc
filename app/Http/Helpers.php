@@ -31,7 +31,7 @@ function echoHtml($data): string
     return html_entity_decode($data);
 }
 
-function paginate($data, $per_page = 10, $page = 1, $options = [])
+function paginate($data, $per_page = 10, $page = 1, $options = []): string
 {
 
     $totalRows = count($data);
@@ -39,7 +39,6 @@ function paginate($data, $per_page = 10, $page = 1, $options = [])
     $totalPages = ceil($totalRows) / $per_page;
     // current page shouldn't be greater than total page
     $currentPage = min($currentPage, $totalPages);
-
     $currentPage = max($currentPage, 1);
     // example
     // totalRows 6
@@ -56,7 +55,31 @@ function paginate($data, $per_page = 10, $page = 1, $options = [])
 
     // add data from start(current row) until per_page
     // 4 5 ->  2 record
-    $data = array_slice($data, $currentRow, $per_page);
-    return $data;
+    // return array_slice($data, $currentRow, $per_page);
+
+    $paginateView = '';
+    $paginateView .= ($currentPage != 1) ? '<li><a href="#">1</a></li>' : '';
+
+    $paginateView .= (($currentPage - 2) >= 1) ? '<li><a href="#">' . ($currentPag - 2) . '</a></li>' : '';
+    $paginateView .= (($currentPage - 1) >= 1) ? '<li><a href="#">' . ($currentPag - 1) . '</a></li>' : '';
+
+    $paginateView .= '<li class="active"><a href="#">' . ($currentPage) . '</a></li>';
+
+    $paginateView .= (($currentPage + 1) <= $totalPages) ? '<li><a href="#">' . ($currentPag + 1) . '</a></li>' : '';
+    $paginateView .= (($currentPage + 2) >= $totalPages) ? '<li><a href="#">' . ($currentPag - 2) . '</a></li>' : '';
+
+    return
+        ' <div class="homec-pagination">
+                <ul class="homec-pagination__list list-none">
+                   ' . $paginateView . '
+                </ul>
+            </div>
+        ';
+}
+
+
+function paginateView()
+{
+
 
 }
