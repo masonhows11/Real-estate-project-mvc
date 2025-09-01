@@ -63,14 +63,17 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
                 بعدی
                 </a></li>' : '';
 
-    $paginateView .= (($currentPage - 2) >= 1) ? '<li><a href="#">' . ($currentPag - 2) . '</a></li>' : '';
-    $paginateView .= (($currentPage - 1) >= 1) ? '<li><a href="#">' . ($currentPag - 1) . '</a></li>' : '';
+    $paginateView .= (($currentPage - 2) >= 1) ? '<li><a href="'.paginateUrl($currentPage - 2).'">' . ($currentPage - 2) . '</a></li>' : '';
+    $paginateView .= (($currentPage - 1) >= 1) ? '<li><a href="'.paginateUrl($currentPage - 1).'">' . ($currentPage - 1) . '</a></li>' : '';
 
     $paginateView .= '<li class="active"><a href="#">' . ($currentPage) . '</a></li>';
 
-    $paginateView .= (($currentPage + 1) <= $totalPages) ? '<li><a href="#">' . ($currentPag + 1) . '</a></li>' : '';
-    $paginateView .= (($currentPage + 2) >= $totalPages) ? '<li><a href="#">' . ($currentPag - 2) . '</a></li>' : '';
-    $paginateView .= ($currentPage != $totalPages) ? '<li class="homec-pagination__button"><a href="#">قبلی</a></li>';
+    $paginateView .= (($currentPage + 1) <= $totalPages) ? '<li><a href="'.paginateUrl($currentPage + 1).'">' . ($currentPage + 1) . '</a></li>' : '';
+    $paginateView .= (($currentPage + 2) >= $totalPages) ? '<li><a href="'.paginateUrl($currentPage + 2).'">' . ($currentPage + 2) . '</a></li>' : '';
+    $paginateView .= ($currentPage != $totalPages) ? '<li class="homec-pagination__button">
+             <a href=" '.paginateUrl($totalPages).' ">
+            قبلی
+            </a></li>':'';
 
     return
         ' <div class="homec-pagination">
@@ -82,7 +85,7 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
 }
 
 
-function paginateUrl()
+function paginateUrl($page)
 {
 
 
