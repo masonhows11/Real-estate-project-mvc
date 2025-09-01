@@ -59,21 +59,21 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
 
     $paginateView = '';
     $paginateView .= ($currentPage != 1) ? '<li class="homec-pagination__button">
-                <a href=" '.paginateUrl(1).' ">
+                <a href=" ' . paginateUrl(1) . ' ">
                 بعدی
                 </a></li>' : '';
 
-    $paginateView .= (($currentPage - 2) >= 1) ? '<li><a href="'.paginateUrl($currentPage - 2).'">' . ($currentPage - 2) . '</a></li>' : '';
-    $paginateView .= (($currentPage - 1) >= 1) ? '<li><a href="'.paginateUrl($currentPage - 1).'">' . ($currentPage - 1) . '</a></li>' : '';
+    $paginateView .= (($currentPage - 2) >= 1) ? '<li><a href="' . paginateUrl($currentPage - 2) . '">' . ($currentPage - 2) . '</a></li>' : '';
+    $paginateView .= (($currentPage - 1) >= 1) ? '<li><a href="' . paginateUrl($currentPage - 1) . '">' . ($currentPage - 1) . '</a></li>' : '';
 
     $paginateView .= '<li class="active"><a href="#">' . ($currentPage) . '</a></li>';
 
-    $paginateView .= (($currentPage + 1) <= $totalPages) ? '<li><a href="'.paginateUrl($currentPage + 1).'">' . ($currentPage + 1) . '</a></li>' : '';
-    $paginateView .= (($currentPage + 2) >= $totalPages) ? '<li><a href="'.paginateUrl($currentPage + 2).'">' . ($currentPage + 2) . '</a></li>' : '';
+    $paginateView .= (($currentPage + 1) <= $totalPages) ? '<li><a href="' . paginateUrl($currentPage + 1) . '">' . ($currentPage + 1) . '</a></li>' : '';
+    $paginateView .= (($currentPage + 2) >= $totalPages) ? '<li><a href="' . paginateUrl($currentPage + 2) . '">' . ($currentPage + 2) . '</a></li>' : '';
     $paginateView .= ($currentPage != $totalPages) ? '<li class="homec-pagination__button">
-             <a href=" '.paginateUrl($totalPages).' ">
+             <a href=" ' . paginateUrl($totalPages) . ' ">
             قبلی
-            </a></li>':'';
+            </a></li>' : '';
 
     return
         ' <div class="homec-pagination">
@@ -85,8 +85,25 @@ function paginate($data, $per_page = 10, $page = 1, $options = []): string
 }
 
 
-function paginateUrl($page)
+function paginateUrl($page): string
 {
+    $urlArray = explode('?', currentUrl());
+    if (isset($urlArray)) {
+        // hard way
+        // if in url we may have other parameters
+        $_GET['page'] = $page;
+        # $_GET array 1
+        # array_keys($_GET) array 2
+        # map on these array
+        $getVariable = array_map(function ($value, $key) {
+            return $key . '=' . $value;
+        }, $_GET, array_keys($_GET));
 
+        return  $urlArray[0] .'?'.implode('&',$getVariable);
+
+    } else {
+        // easy way
+        return currentUrl() . '?page=' . $page;
+    }
 
 }
