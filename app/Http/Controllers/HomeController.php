@@ -52,7 +52,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->limit(0, 3)
             ->get();
-        return view('app.post_index', compact('posts'));
+        return view('app.post_index');
     }
 //
 //    public function edit($id)
