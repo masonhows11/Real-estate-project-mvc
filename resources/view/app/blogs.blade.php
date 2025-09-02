@@ -56,7 +56,7 @@
                                                 <path d="M5.45453 7.27266H4V8.72719H5.45453V7.27266Z" />
                                                 <path d="M5.45453 9.81816H4V11.2727H5.45453V9.81816Z" />
                                             </svg>
-                                            23 اسفند 1403
+                                           <?= \Morilog\Jalali\Jalalian::forge($post->created_at)->format('%A, %d %B %y'); ?>
                                         </li>
                                         <li class="active">
                                             <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
