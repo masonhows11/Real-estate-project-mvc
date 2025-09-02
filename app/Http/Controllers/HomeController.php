@@ -53,11 +53,12 @@ class HomeController extends Controller
             ->get();
         return view('app.blogs',compact('posts'));
     }
-//
-//    public function edit($id)
-//    {
-//        echo "edit method in HomeController";
-//    }
+
+    public function post($id)
+    {
+        $post = Post::find($id);
+        return view('app.post',compact('post'));
+    }
 //
 //    public function update($id)
 //    {
