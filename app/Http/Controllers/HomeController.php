@@ -48,16 +48,16 @@ class HomeController extends Controller
     public function all_post(): null
     {
         $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))
-            ->orderBy('created_at', 'desc')
-            ->limit(0, 3)
-            ->get();
+            ->orderBy('created_at', 'asc')->get();
         return view('app.blogs',compact('posts'));
     }
 
     public function post($id)
     {
+        $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))
+            ->orderBy('created_at', 'desc')->limit(0,4)->get();
         $post = Post::find($id);
-        return view('app.post',compact('post'));
+        return view('app.blog',compact('post','posts'));
     }
 //
 //    public function update($id)

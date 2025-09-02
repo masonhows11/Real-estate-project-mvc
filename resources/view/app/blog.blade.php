@@ -10,8 +10,8 @@
                     <div class="breadcrumb-content">
                         <h2 class="breadcrumb__title m-0">جزئیات وبلاگ</h2>
                         <ul class="breadcrumb__menu list-none">
-                            <li><a href="index.html">صفحه اصلی</a></li>
-                            <li class="active"><a href="blog-single.html">جزئیات وبلاگ</a></li>
+                            <li><a href="<?= route('home.index') ?>">صفحه اصلی</a></li>
+                            <li class="active"><a href="<?= route('post',['id' => $post->id]) ?>">جزئیات وبلاگ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -25,28 +25,25 @@
                 <div class="col-lg-8 col-12 mg-top-30">
                     <div class="homec-blog-meta">
                         <ul class="homec-blog-meta__list list-none">
-                            <li><img src="assets/img/user-icon.svg" alt="#" /> <a href="#">توسط ادمین</a></li>
-                            <li><img src="assets/img/calendar.svg" alt="#" /> 31 اسفند 1403</li>
-                            <li><img src="assets/img/comment.svg" alt="#" /> 20 نظر</li>
+                            <li><img src="<?= asset('app_assets/img/user-icon.svg') ?>" alt="#" /> <a href="#">توسط <?= $post->user()->first_name ?></a></li>
+                            <li><img src="<?= asset('app_assets/img/calendar.svg') ?>" alt="#" /><?= \Morilog\Jalali\Jalalian::forge($post->created_at)->format('%A, %d %B %y'); ?></li>
+                            <li><img src="<?= asset('app_assets/img/comment.svg') ?>" alt="#" /> 20 نظر</li>
                         </ul>
                     </div>
                     <div class="homec-blog-content">
-                        <h1 class="homec-blog-content__title">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h1>
+                        <h1 class="homec-blog-content__title">
+                            <?= $post->title ?>
+                        </h1>
                         <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود
+                           <?= html($post->body) ?>
                         </p>
-                        <img src="assets/img/blog-single1.jpg" alt="#" />
-                        <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود
-                        </p>
-                        <blockquote>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</blockquote>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی</p>
-                        <div class="row">
+                        <img src="<?= $post->image ? asset($post->image) : asset('app_assets/img/blog-single1.jpg') ?>" alt="#" />
+                            <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
-                                <img src="assets/img/blog-column1.jpg" alt="#" />
+                                <img src="<?= asset('app_assets/img/blog-column1.jpg') ?>" alt="#" />
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
-                                <img src="assets/img/blog-column2.jpg" alt="#" />
+                                <img src="<?= asset('app_assets/img/blog-column2.jpg') ?>" alt="#" />
                             </div>
                         </div>
                     </div>
@@ -129,13 +126,14 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-12 mg-top-60">
                             <div class="homec-blog-comments">
                                 <h2 class="homec-blog-detail__title">03 Comments</h2>
 
                                 <div class="homec-blog-comments__single">
-                                    <img src="assets/img/blog-comment1.png" alt="#" />
+                                    <img src="<?= asset('app_assets/img/blog-comment1.png') ?>" alt="#" />
                                     <div class="homec-blog-comments__detail">
                                         <h4 class="homec-blog-comments__title">
                                             میشل هولدر <span><i class="fa-solid fa-clock"></i> 1 اسفند 1403 در 11:27 ق.ظ</span>
@@ -146,7 +144,7 @@
                                 </div>
 
                                 <div class="homec-blog-comments__single homec-blog-comments__single--reply mg-top-30">
-                                    <img src="assets/img/blog-comment2.png" alt="#" />
+                                    <img src="<?= asset('app_assets/img/blog-comment2.png') ?>" alt="#" />
                                     <div class="homec-blog-comments__detail">
                                         <h4 class="homec-blog-comments__title">
                                             میشل هولدر <span><i class="fa-solid fa-clock"></i> 1 اسفند 1403 در 11:27 ق.ظ</span>
@@ -157,7 +155,7 @@
                                 </div>
 
                                 <div class="homec-blog-comments__single mg-top-30">
-                                    <img src="assets/img/blog-comment3.png" alt="#" />
+                                    <img src="<?= asset('app_assets/img/blog-comment3.png') ?>" alt="#" />
                                     <div class="homec-blog-comments__detail">
                                         <h4 class="homec-blog-comments__title">
                                             میشل هولدر <span><i class="fa-solid fa-clock"></i> 1 اسفند 1403 در 11:27 ق.ظ</span>
@@ -168,7 +166,7 @@
                                 </div>
 
                                 <div class="homec-blog-comments__single mg-top-30">
-                                    <img src="assets/img/blog-comment1.png" alt="#" />
+                                    <img src="<?= asset('app_assets/img/blog-comment1.png') ?>" alt="#" />
                                     <div class="homec-blog-comments__detail">
                                         <h4 class="homec-blog-comments__title">
                                             میشل هولدر <span><i class="fa-solid fa-clock"></i> 1 اسفند 1403 در 11:27 ق.ظ</span>
@@ -180,6 +178,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-12">
                             <div class="homec-comments-form mg-top-60">
@@ -209,6 +208,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-12">
                     <div class="homec-sidebar">
                         <div class="homec-sidebar__single blog-search mg-top-30">
@@ -218,40 +218,23 @@
                             </div>
                         </div>
 
+
+
                         <div class="homec-sidebar__single recent-post">
                             <h3 class="homec-sidebar__title">آخرین وبلاگ ها</h3>
 
+                            <?php foreach ($posts as $post) { ?>
                             <div class="homec-sidebar__post">
-                                <div class="homec-sidebar__img"><img src="assets/img/blog-sidebar1.jpg" alt="#" /></div>
+                                <div class="homec-sidebar__img"><img src="<?= $post->image ? asset($post->image) : asset('app_assets/img/blog-sidebar1.jpg') ?>" alt="#" /></div>
                                 <div class="homec-sidebar__content">
-                                    <h5 class="homec-sidebar__content--title"><a href="blog-single.html">لورم ایپسوم متن ساختگی با تولید سادگی</a></h5>
-                                    <div class="homec-sidebar__content--date"><img src="assets/img/calendar.svg" alt="#" />31 اسفند 1403</div>
+                                    <h5 class="homec-sidebar__content--title"><a href="blog-single.html"><?= $post->title ?></a></h5>
+                                    <div class="homec-sidebar__content--date"><img src="<?=  asset('app_assets/img/calendar.svg') ?>" alt="#" />
+                                            <?= \Morilog\Jalali\Jalalian::forge($post->created_at)->format('%A, %d %B %y'); ?>
+                                    </div>
                                 </div>
                             </div>
+                            <?php } ?>
 
-                            <div class="homec-sidebar__post">
-                                <div class="homec-sidebar__img"><img src="assets/img/blog-sidebar2.jpg" alt="#" /></div>
-                                <div class="homec-sidebar__content">
-                                    <h5 class="homec-sidebar__content--title"><a href="blog-single.html">لورم ایپسوم متن ساختگی با تولید سادگی</a></h5>
-                                    <div class="homec-sidebar__content--date"><img src="assets/img/calendar.svg" alt="#" />31 اسفند 1403</div>
-                                </div>
-                            </div>
-
-                            <div class="homec-sidebar__post">
-                                <div class="homec-sidebar__img"><img src="assets/img/blog-sidebar3.jpg" alt="#" /></div>
-                                <div class="homec-sidebar__content">
-                                    <h5 class="homec-sidebar__content--title"><a href="blog-single.html">لورم ایپسوم متن ساختگی با تولید سادگی</a></h5>
-                                    <div class="homec-sidebar__content--date"><img src="assets/img/calendar.svg" alt="#" />31 اسفند 1403</div>
-                                </div>
-                            </div>
-
-                            <div class="homec-sidebar__post">
-                                <div class="homec-sidebar__img"><img src="assets/img/blog-sidebar4.jpg" alt="#" /></div>
-                                <div class="homec-sidebar__content">
-                                    <h5 class="homec-sidebar__content--title"><a href="blog-single.html">لورم ایپسوم متن ساختگی با تولید سادگی</a></h5>
-                                    <div class="homec-sidebar__content--date"><img src="assets/img/calendar.svg" alt="#" />31 اسفند 1403</div>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="homec-sidebar__single">

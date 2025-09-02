@@ -184,7 +184,7 @@
                                                     <li><a href="index-3.html">صفحه اصلی 3</a></li>
                                                 </ul> -->
                                             </li>
-                                            <li class="menu-item-has-children">
+                                            <li class="menu-item-has-children <?= (currentUrl() == route('ads_list')) ? 'active' : '' ?>">
                                                 <a href="#">ملک‌ها</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="<?= route('ads_list') ?>">ملک‌ها</a></li>
@@ -214,7 +214,7 @@
                                                     <li><a href="#">جزئیات مشاوران</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children">
+                                            <li class="menu-item-has-children <?= (currentUrl() == route('posts')) ? 'active' : '' ?>" >
                                                 <a href="#">وبلاگ</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="<?= route('posts') ?>">وبلاگ</a></li>
