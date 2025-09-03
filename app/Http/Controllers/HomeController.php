@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ads;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 
 class HomeController extends Controller
@@ -54,10 +55,12 @@ class HomeController extends Controller
 
     public function post($id)
     {
+        $categories = Category::all();
         $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))
             ->orderBy('created_at', 'desc')->limit(0,4)->get();
         $post = Post::find($id);
-        return view('app.blog',compact('post','posts'));
+        $comments = Comment::where('approved',1)->whereNull('parent_id')->where('post_id',$id)->get();
+        return view('app.blog',compact('post','posts','categories','comments'));
     }
 //
 //    public function update($id)
