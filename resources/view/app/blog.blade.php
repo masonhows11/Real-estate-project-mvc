@@ -3,7 +3,7 @@
     پست
 @endsection
 @section('main_content')
-    <section class="breadcrumbs__content" style="background-image: url(assets/img/bread-overlay.jpg);">
+    <section class="breadcrumbs__content" style="background-image: url(<?= asset('app_assets/img/bread-overlay.jpg') ?>);">
         <div class="container">
             <div class="row">
                 <div class="col-12">

@@ -15,23 +15,23 @@
                     <p class="homec-blog-comments__text">
                             <?= $comment->comment ?>
                     </p>
-                    <a class="homec-blog-comments__button" href="#">پاسخ</a>
+                    <!-- <a class="homec-blog-comments__button" href="#">پاسخ</a> -->
                 </div>
             </div>
                 <?php $child = $comment->child()->get(); ?>
                 <?php if (!empty($child)) { ?>
-
+                <?php foreach ($child as $comment){ ?>
                     <div class="homec-blog-comments__single homec-blog-comments__single--reply mg-top-30">
-                        <img src="<?= asset('app_assets/img/blog-comment2.png') ?>" alt="#"/>
+                        <img src="<?= $comment->user()->avatar ? asset($comment->user()->avatar) : asset('app_assets/img/blog-comment1.png') ?>" alt="#"/>
                         <div class="homec-blog-comments__detail">
                             <h4 class="homec-blog-comments__title">
-                                میشل هولدر <span><i class="fa-solid fa-clock"></i> 1 اسفند 1403 در 11:27 ق.ظ</span>
+                                    <?= $comment->user()->first_name ?> <span><i class="fa-solid fa-clock"></i><?= \Morilog\Jalali\Jalalian::forge($comment->created_at)->format('%A, %d %B %y'); ?></span>
                             </h4>
-                            <p class="homec-blog-comments__text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله</p>
-                            <a class="homec-blog-comments__button" href="#">پاسخ</a>
+                            <p class="homec-blog-comments__text"><?= $comment->comment ?></p>
+                            <!-- <a class="homec-blog-comments__button" href="#">پاسخ</a> -->
                         </div>
                     </div>
+                    <?php } ?>
                 <?php  } ?>
 
             <?php } ?>
