@@ -14,10 +14,6 @@
                             <input type="text" name="search" placeholder="جستجو ..."/>
                             <button type="submit" class="homec-btn"><span>جستجو</span></button>
                         </form>
-
-                       <!-- <div class="hoemc-showing-results">
-                            <p class="hoemc-showing-results__text">نمایش <span>1-2</span> از <span>17</span> نتیجه</p>
-                        </div> -->
                     </div>
                 </div>
             </div>

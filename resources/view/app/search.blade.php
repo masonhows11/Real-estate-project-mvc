@@ -12,7 +12,7 @@
                     <div class="breadcrumb-content">
                         <ul class="breadcrumb__menu list-none">
                             <li><a href="<?= route('home.index') ?>">صفحه اصلی</a></li>
-                            <li class="active"><a href="<?= route('posts') ?>">نتایج جستجو</a></li>
+                            <h3>نتایج جستجو</h3>
                         </ul>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
 
     <section id="blog" class="blog-area pd-top-90 pd-btm-120">
         <div class="hoemc-showing-results">
-            <p class="hoemc-showing-results__text"> <span><?= $_GET['search'] ?></span> نتیجه</p>
+            <p class="hoemc-showing-results__text"><span><?= $_GET['search'] ?></span> نتیجه</p>
         </div>
         <div class="blog-bg-pattern">
             <div class="container">
