@@ -84,10 +84,18 @@ class HomeController extends Controller
 
     #[NoReturn] public function search($search): null
     {
-        dd('hi');
         $posts = '';
         $ads = '';
-        return view('app.search', compact('posts', 'ads',));
+        if (isset($_GET['search'])) {
+            $search = '%' . $_GET['search'] . '%';
+            $posts = Post::where('title', 'like', $search)->whereOr('tag', 'like', $search)->get();
+            $ads = Ads::where('title', 'like', $search)->get();
+            return view('app.search', compact('posts', 'ads',));
+        } else {
+            return back();
+        }
+
+
     }
 
 
