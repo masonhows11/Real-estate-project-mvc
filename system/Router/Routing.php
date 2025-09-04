@@ -45,6 +45,7 @@ class Routing
 
         if (empty($match)) {
 
+
             $this->error404();
         }
 
@@ -56,27 +57,30 @@ class Routing
         // if don't exists
         if (!file_exists($path))
         {
+
             $this->error404();
         }
 
         // create instance from founded class controller
         // then get method & execute method
         $class = "\App\Http\Controllers\\" . $match["class"];
-
         $obj = new $class();
         if (method_exists($obj, $match['method'])) {
 
             $reflection = new ReflectionMethod($class, $match["method"]);
+
             $parameterCount = $reflection->getNumberOfParameters();
 
             if ($parameterCount <= count($this->values)) {
                 call_user_func_array(array($obj, $match["method"]), $this->values);
             } else {
 
+                dd('this 3');
                 $this->error404();
             }
 
         } else {
+
 
 
             $this->error404();

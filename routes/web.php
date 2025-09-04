@@ -128,4 +128,4 @@ Route::get('/ads_list','HomeController@ads_list','ads_list');
 Route::get('/posts','HomeController@all_post','posts');
 Route::get('/post/{id}','HomeController@post','post');
 Route::post('/add/comment','HomeController@addComment','add_comment');
-Route::get('/search','HomeController@search','home.search');
+Route::get('/search','HomeController@searchSection','home.search');

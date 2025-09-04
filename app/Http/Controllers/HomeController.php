@@ -82,7 +82,7 @@ class HomeController extends Controller
         #
     }
 
-     public function search($search): null
+     public function searchSection($search): null
     {
         $posts = '';
         $ads = '';
