@@ -68,10 +68,9 @@ class HomeController extends Controller
     public function addComment()
     {
 
-        $request = new  CommentRequest();
-        $req = $request->all();
-        dd($req);
-        $inputs['post_id'] = $req['id'];
+        $request = new CommentRequest();
+        $inputs = $request->all();
+        $inputs['post_id'] = $inputs['id'];
         $inputs['approved'] = 0;
         $inputs['status'] = 0;
         $inputs['user_id'] = Auth::user()->id;

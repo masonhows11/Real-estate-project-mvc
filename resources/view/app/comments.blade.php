@@ -77,6 +77,7 @@
 
 <div class="row">
     <div class="col-12">
+        <?php if(\System\Auth\Auth::checkLogin()){ ?>
         <div class="homec-comments-form mg-top-60">
             <h2 class="homec-comments-form__title m-0">ارسال نظرات</h2>
             <p class="homec-comments-form__text">آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی مشخص شده اند *</p>
@@ -93,7 +94,16 @@
                 </div>
             </div>
             </form>
-           
         </div>
+        <?php } else { ?>
+        <div class="homec-comments-form mg-top-60">
+            <h2 class="homec-comments-form__title m-0">برای ارسال نظر باید وارد شوید</h2>
+            <div class="col-12 d-flex justify-content-end mg-top-20">
+                <a href="<?= route('auth.register.form') ?>"  class="homec-btn homec-btn__second ms-2"><span>ثبت نام</span></a>
+                <a href="<?= route('auth.login.form') ?>"  class="homec-btn homec-btn__thrid"><span>ورود</span></a>
+            </div>
+        </div>
+        <?php } ?>
+
     </div>
 </div>
