@@ -80,7 +80,8 @@
         <div class="homec-comments-form mg-top-60">
             <h2 class="homec-comments-form__title m-0">ارسال نظرات</h2>
             <p class="homec-comments-form__text">آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی مشخص شده اند *</p>
-            <div class="row">
+            <form accept="<?= route('add_comment',['id' => $post->id]) ?>" method="POST">
+                 <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-group homec-form-input">
                         <input class="ecom-wc__form-input" type="text" name="f_name" placeholder="میشل هولدر"
@@ -102,6 +103,8 @@
                     <button type="submit" class="homec-btn homec-btn__second"><span>ارسال نظر</span></button>
                 </div>
             </div>
+            </form>
+           
         </div>
     </div>
 </div>

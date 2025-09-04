@@ -127,3 +127,4 @@ Route::get('/ads/{id}','HomeController@ads','ads');
 Route::get('/ads_list','HomeController@ads_list','ads_list');
 Route::get('/posts','HomeController@all_post','posts');
 Route::get('/post/{id}','HomeController@post','post');
+Route::post('/add/commet/{id}','Home@addComment','add_comment');

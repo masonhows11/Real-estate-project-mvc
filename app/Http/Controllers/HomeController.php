@@ -62,11 +62,11 @@ class HomeController extends Controller
         $comments = Comment::where('approved',1)->whereNull('parent_id')->where('post_id',$id)->get();
         return view('app.blog',compact('post','posts','categories','comments'));
     }
-//
-//    public function update($id)
-//    {
-//        echo "update method in HomeController";
-//    }
+
+   public function addComment($id)
+   {
+       dd($id);
+   }
 //
 //    public function delete($id)
 //    {
