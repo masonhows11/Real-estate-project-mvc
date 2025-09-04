@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Ads;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Post;
-
+use System\Auth\Auth;
+use App\Http\Request\CommentRequest;
 class HomeController extends Controller
 {
 
@@ -50,23 +52,34 @@ class HomeController extends Controller
     {
         $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))
             ->orderBy('created_at', 'asc')->get();
-        return view('app.blogs',compact('posts'));
+        return view('app.blogs', compact('posts'));
     }
 
     public function post($id)
     {
         $categories = Category::all();
         $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))
-            ->orderBy('created_at', 'desc')->limit(0,4)->get();
+            ->orderBy('created_at', 'desc')->limit(0, 4)->get();
         $post = Post::find($id);
-        $comments = Comment::where('approved',1)->whereNull('parent_id')->where('post_id',$id)->get();
-        return view('app.blog',compact('post','posts','categories','comments'));
+        $comments = Comment::where('approved', 1)->whereNull('parent_id')->where('post_id', $id)->get();
+        return view('app.blog', compact('post', 'posts', 'categories', 'comments'));
     }
 
-   public function addComment($id)
-   {
-       dd($id);
-   }
+    public function addComment()
+    {
+
+        $request = new  CommentRequest();
+        $req = $request->all();
+        dd($req);
+        $inputs['post_id'] = $req['id'];
+        $inputs['approved'] = 0;
+        $inputs['status'] = 0;
+        $inputs['user_id'] = Auth::user()->id;
+        $comment = Comment::create($inputs);
+        return back();
+
+        #
+    }
 //
 //    public function delete($id)
 //    {

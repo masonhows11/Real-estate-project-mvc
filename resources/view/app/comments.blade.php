@@ -80,23 +80,12 @@
         <div class="homec-comments-form mg-top-60">
             <h2 class="homec-comments-form__title m-0">ارسال نظرات</h2>
             <p class="homec-comments-form__text">آدرس ایمیل شما منتشر نخواهد شد. فیلدهای الزامی مشخص شده اند *</p>
-            <form accept="<?= route('add_comment',['id' => $post->id]) ?>" method="POST">
+            <form action="<?= route('add_comment') ?>" method="POST">
                  <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group homec-form-input">
-                        <input class="ecom-wc__form-input" type="text" name="f_name" placeholder="میشل هولدر"
-                               required="required"/>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="form-group homec-form-input">
-                        <input class="ecom-wc__form-input" type="email" name="f_name" placeholder="ایمیل شما"
-                               required="required"/>
-                    </div>
-                </div>
+                     <input type="hidden" name="id" value="<?= $post->id ?>">
                 <div class="col-12">
                     <div class="form-group homec-form-input">
-                        <textarea class="ecom-wc__form-input" name="f_name" placeholder="اینجا پیام دهید"></textarea>
+                        <textarea class="ecom-wc__form-input" name="comment" placeholder="اینجا پیام دهید"></textarea>
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-end mg-top-20">
