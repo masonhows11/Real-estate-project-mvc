@@ -31,7 +31,7 @@ class DBConnection
     private function dbConnection(): false|\PDO
     {
         // config pdo options
-        $options = array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC);
+        $options = array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8");
         try {
 
             return  new \PDO("mysql:host=".Config::get('database.DBHOST').";dbname=".Config::get('database.DBNAME'),Config::get('database.DBUSERNAME'),Config::get('database.DBPASSWORD'),$options);

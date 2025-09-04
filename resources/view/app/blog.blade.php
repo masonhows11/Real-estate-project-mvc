@@ -164,7 +164,7 @@
                             <ul class="homec-sidebar__category list-none">
                                 <?php foreach ($categories as $cat) { ?>
                                 <li>
-                                    <a href="#"><?= $cat->name ?><span>(232)</span></a>
+                                    <a href="#"><?= $cat->name ?><span><?= count($cat->ads()->get()) ?></span></a>
                                 </li>
                                 <?php } ?>
                             </ul>
