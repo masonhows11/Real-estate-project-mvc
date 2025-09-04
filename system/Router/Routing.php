@@ -39,17 +39,10 @@ class Routing
      */
     public function run(): void
     {
-
-
         $match = $this->match();
-
         if (empty($match)) {
-
-
             $this->error404();
         }
-
-        // dd($match);
         // call controller class if exists
         $controllerPath = str_replace('\\', '/', $match["class"]);
         // var_dump($controllerPath);
@@ -57,10 +50,8 @@ class Routing
         // if don't exists
         if (!file_exists($path))
         {
-
             $this->error404();
         }
-
         // create instance from founded class controller
         // then get method & execute method
         $class = "\App\Http\Controllers\\" . $match["class"];
@@ -68,23 +59,15 @@ class Routing
         if (method_exists($obj, $match['method'])) {
 
             $reflection = new ReflectionMethod($class, $match["method"]);
-
             $parameterCount = $reflection->getNumberOfParameters();
 
             if ($parameterCount <= count($this->values)) {
                 call_user_func_array(array($obj, $match["method"]), $this->values);
             } else {
-
-                dd('this 3');
                 $this->error404();
             }
-
         } else {
-
-
-
             $this->error404();
-
         };
 
     }
@@ -95,48 +78,34 @@ class Routing
         // means route start with get method type
         // & we get all routes start with Route::get()
         // $this->routes is array that contain routes
-        // with http verb like get post
-
-
+        // with http verb like get pos
         $reservedRoutes = $this->routes[$this->method_field];
-
-
 
         foreach ($reservedRoutes as $reservedRoute) {
 
             if ($this->compare($reservedRoute['url'])) {
-
                 // get controller & method name from route reserved
                 return ["class" => $reservedRoute["class"], "method" => $reservedRoute["method"]];
-
             } else {
-
                 $this->values = [];
             }
         }
         return [];
-
     }
 
     public function compare($reservedRouteUrl): ?bool
     {
-
         //// part 1
         // check / after domain name between current url & reserved url
         if (trim($reservedRouteUrl, '/') === '') {
             return trim($this->current_route[0], '/') === '';
         }
-
-
         //// part 2
         // compare to route with by array & size array items
         $reservedRouteUrlArray = explode('/', $reservedRouteUrl);
         if (sizeof($this->current_route) != sizeof($reservedRouteUrlArray)) {
             return false;
         }
-
-
-
         //part3
         foreach ($this->current_route as $key => $currentRouteElement) {
             $reservedRouteUrlElement = $reservedRouteUrlArray[$key];
@@ -150,14 +119,11 @@ class Routing
             }
         }
         return true;
-
     }
 
     private function methodField(): string
     {
         $method = strtolower($_SERVER['REQUEST_METHOD']);
-
-
         if ($method == 'post') {
 
             if (isset($_POST['_method'])) {

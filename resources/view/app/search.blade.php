@@ -22,11 +22,14 @@
 
 
     <section id="blog" class="blog-area pd-top-90 pd-btm-120">
-        <div class="hoemc-showing-results">
-            <p class="hoemc-showing-results__text"><span><?= $_GET['search'] ?></span> نتیجه</p>
-        </div>
+
         <div class="blog-bg-pattern">
             <div class="container">
+                <div class="hoemc-showing-results">
+                    <h3>مقالات</h3>
+                    <p class="hoemc-showing-results__text"> نتیجه <span><?= $_GET['search'] ?></span></p>
+                </div>
+
                 <div class="row">
                     <?php foreach ($posts as $post){ ?>
                     <div class="col-lg-4 col-md-6 col-12">
@@ -103,11 +106,13 @@
     </section>
 
     <section id="blog" class="blog-area pd-top-90 pd-btm-120">
-        <div class="hoemc-showing-results">
-            <p class="hoemc-showing-results__text"><span><?= $_GET['search'] ?></span> نتیجه</p>
-        </div>
+
         <div class="blog-bg-pattern">
             <div class="container">
+                <div class="hoemc-showing-results">
+                    <h3>اگهی ها</h3>
+                    <p class="hoemc-showing-results__text"> نتیجه <span><?= $_GET['search'] ?></span></p>
+                </div>
                 <div class="row">
                     <?php foreach ($ads as $ad){ ?>
                     <div class="col-lg-4 col-md-6 col-12">
@@ -143,7 +148,7 @@
                                                 <path d="M5.45453 7.27266H4V8.72719H5.45453V7.27266Z"/>
                                                 <path d="M5.45453 9.81816H4V11.2727H5.45453V9.81816Z"/>
                                             </svg>
-                                                <?= \Morilog\Jalali\Jalalian::forge($post->created_at)->format('%A, %d %B %y'); ?>
+                                                <?= \Morilog\Jalali\Jalalian::forge($ad->created_at)->format('%A, %d %B %y'); ?>
                                         </li>
                                         <li class="active">
                                             <svg width="15" height="17" viewBox="0 0 15 17" fill="none"
