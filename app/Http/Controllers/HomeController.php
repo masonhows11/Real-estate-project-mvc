@@ -7,8 +7,10 @@ use App\Models\Ads;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Post;
+use JetBrains\PhpStorm\NoReturn;
 use System\Auth\Auth;
 use App\Http\Request\CommentRequest;
+
 class HomeController extends Controller
 {
 
@@ -79,10 +81,14 @@ class HomeController extends Controller
 
         #
     }
-//
-//    public function delete($id)
-//    {
-//        echo "delete method in HomeController";
-//    }
+
+    #[NoReturn] public function search($search): null
+    {
+        dd('hi');
+        $posts = '';
+        $ads = '';
+        return view('app.search', compact('posts', 'ads',));
+    }
+
 
 }
