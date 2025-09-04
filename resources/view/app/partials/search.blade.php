@@ -52,7 +52,7 @@
                     </form> -->
                     <div class="homec-property-bar__single">
                         <form action="<?= route('home.search') ?>" method="get" class="homec-form__form homec-form__form--bar">
-                            <input type="text" name="search" placeholder="جستجو ..." required />
+                            <input type="text" name="search" placeholder="جستجو ..."/>
                             <button type="submit" class="homec-btn"><span>جستجو</span></button>
                         </form>
 

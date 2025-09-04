@@ -12,6 +12,7 @@
 
 <div>
     <h1 style="text-align: center">404 Not Found</h1>
+    <h3 style="text-align: center">Current route not found</h3>
 </div>
 
 </body>
