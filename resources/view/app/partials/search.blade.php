@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="homec-search-form mg-top-10" data-aos="fade-up" data-aos-delay="500">
-                    <form class="homec-search-form__form homec-search-form__form--city" action="https://websmithyui.com/homeco-demo/property-grid.html">
+                    <!--<form class="homec-search-form__form homec-search-form__form--city" action="https://websmithyui.com/homeco-demo/property-grid.html">
                         <div class="homec-search-form__group">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <mask id="mask0_275_829" style="mask-type: luminance;" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -49,7 +49,17 @@
                                         <span>جستجو</span>
                                     </span>
                         </button>
-                    </form>
+                    </form> -->
+                    <div class="homec-property-bar__single">
+                        <form action="<?= ?>" method="get" class="homec-form__form homec-form__form--bar">
+                            <input type="text" name="search" placeholder="جستجو ..." required />
+                            <button type="submit" class="homec-btn"><span>جستجو</span></button>
+                        </form>
+
+                       <!-- <div class="hoemc-showing-results">
+                            <p class="hoemc-showing-results__text">نمایش <span>1-2</span> از <span>17</span> نتیجه</p>
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
