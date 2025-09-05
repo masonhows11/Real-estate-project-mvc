@@ -102,4 +102,26 @@ class HomeController extends Controller
     }
 
 
+    public function ajaxPosts()
+    {
+        $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))
+            ->orderBy('created_at', 'asc')->limit(0,4)->get();
+
+
+        foreach ($posts as $post){
+            $post->user = $post->user()->first_name .''.$post->user()->last_name;
+            unset($post->user_id);
+            $post->created_at = Morilog\Jalali\Jalalian::forge($post->created_at)->format('%A, %d %B %y');
+            $post->url = route('post',['id'=>$post->id]);
+        }
+
+        // set this header
+        header('Content-type: application/json');
+        $result = json_encode($posts,JSON_UNESCAPED_UNICODE);
+        echo $result;
+        exit();
+
+    }
+
+
 }

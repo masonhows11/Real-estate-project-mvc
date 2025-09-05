@@ -129,3 +129,4 @@ Route::get('/posts','HomeController@all_post','posts');
 Route::get('/post/{id}','HomeController@post','post');
 Route::post('/add/comment','HomeController@addComment','add_comment');
 Route::get('/search','HomeController@searchSection','home.search');
+Route::get('/ajax/posts','HomeController@ajaxPosts','ajax.posts');
