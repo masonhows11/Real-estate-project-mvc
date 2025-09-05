@@ -128,6 +128,7 @@
     <script type="text/javascript">
         $(window).on('load', function () {
 
+            let loaded = document.getElementById('load-ajax-posts');
             $.ajax({
                 url: "<?= route('ajax.posts') ?>",
                 method: "GET",
@@ -226,7 +227,9 @@
                         htmlString += ' </div>';
                     }
                     //console.log(htmlString);
-                    $('#load_ajax_posts').html(htmlString);
+
+                    console.log(loaded)
+                    loaded.html(htmlString);
 
                 },
                 failed: function (error) {
