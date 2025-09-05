@@ -1,7 +1,7 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" style="font-family: iransansdn,sans-serif" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto"><a class="navbar-brand" href="#"><span class="brand-logo">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="<?= route('admin.index') ?>"><span class="brand-logo">
                             <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                                 <defs>
                                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -25,8 +25,9 @@
                                     </g>
                                 </g>
                             </svg></span>
-                    <h2 class="brand-text">Vuexy</h2>
-                </a></li>
+                    <h2 class="brand-text">پنل مدیریت</h2>
+                </a>
+            </li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
         </ul>
     </div>
@@ -42,6 +43,10 @@
                 </ul>
             </li> -->
             <li class="navigation-header font-large-1 "><span data-i18n="Apps&amp;Pages">پنل مدیریت</span><i data-feather="more-horizontal"></i></li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="<?= route('home.index') ?>"><i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="home">سایت</span></a>
+            </li>
             <li class="nav-item">
                 <a class="d-flex align-items-center <?= sidebarActive(route('admin.index'),false) ?>" href="<?= route('admin.index') ?>"><i data-feather="home"></i>
                     <span class="menu-title text-truncate" data-i18n="home">خانه</span></a>
