@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Post;
 use JetBrains\PhpStorm\NoReturn;
+use Morilog\Jalali\Jalalian;
 use System\Auth\Auth;
 use App\Http\Request\CommentRequest;
 
@@ -111,7 +112,7 @@ class HomeController extends Controller
         foreach ($posts as $post){
             $post->user = $post->user()->first_name .''.$post->user()->last_name;
             unset($post->user_id);
-            $post->created_at = Morilog\Jalali\Jalalian::forge($post->created_at)->format('%A, %d %B %y');
+            $post->created_at = Jalalian::forge($post->created_at)->format('%A, %d %B %y');
             $post->url = route('post',['id'=>$post->id]);
         }
 
