@@ -226,10 +226,9 @@
                         htmlString += ' </div>';
                         htmlString += ' </div>';
                     }
-                    //console.log(htmlString);
 
                     console.log(loaded)
-                    loaded.html(htmlString);
+                    $("#load-ajax-posts").html(htmlString);
 
                 },
                 failed: function (error) {
